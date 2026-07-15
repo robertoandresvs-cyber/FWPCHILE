@@ -6,11 +6,15 @@
     <title>Transforma tu Biología con FWP | Nutrición de Precisión</title>
     <meta name="description" content="Descubre la revolución en biohacking y bienestar con FWP. Tecnología epigenética para regeneración, quema de grasa y longevidad.">
     
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
+    <!-- Favicon optimizado para buscadores (Google) y dispositivos -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
+    <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -27,23 +31,23 @@
                             darker: '#020617'
                         },
                         burn: {
-                            main: '#a3e635', // Lime/Greenish
+                            main: '#a3e635', 
                             dark: '#4d7c0f'
                         },
                         b24: {
-                            main: '#4ade80', // Green
+                            main: '#4ade80', 
                             dark: '#166534'
                         },
                         rva: {
-                            main: '#9b2c86', // Purple/Magenta
+                            main: '#9b2c86', 
                             dark: '#4c1d95'
                         },
                         liv: {
-                            main: '#4ade80', // Soft Green
+                            main: '#4ade80', 
                             dark: '#14532d'
                         },
                         eboost: {
-                            main: '#f97316', // Orange
+                            main: '#f97316', 
                             dark: '#9a3412'
                         }
                     }
@@ -61,11 +65,11 @@
 
         /* Glassmorphism Panels */
         .glass-panel {
-            background: rgba(30, 41, 59, 0.4); /* Slate 800 with opacity */
+            background: rgba(15, 23, 42, 0.6); /* Slate 900 con opacidad */
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
 
         /* Smooth Reveal Animation on Scroll */
@@ -79,24 +83,33 @@
             transform: translateY(0);
         }
 
-        /* Custom Glow Effects for Products */
-        .glow-burn:hover { box-shadow: 0 0 40px rgba(163, 230, 53, 0.2); border-color: rgba(163, 230, 53, 0.4); }
-        .glow-b24:hover { box-shadow: 0 0 40px rgba(74, 222, 128, 0.2); border-color: rgba(74, 222, 128, 0.4); }
-        .glow-rva:hover { box-shadow: 0 0 40px rgba(155, 44, 134, 0.2); border-color: rgba(155, 44, 134, 0.4); }
-        .glow-liv:hover { box-shadow: 0 0 40px rgba(74, 222, 128, 0.2); border-color: rgba(74, 222, 128, 0.4); }
-        .glow-eboost:hover { box-shadow: 0 0 40px rgba(249, 115, 22, 0.2); border-color: rgba(249, 115, 22, 0.4); }
+        /* Hover animations para tarjetas de diagnóstico */
+        .diagnostic-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .diagnostic-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
 
-        /* Floating Effect for Images */
+        /* Efectos de resplandor para productos individuales con drop-shadow nativo para evitar recuadros */
+        .glow-burn:hover { box-shadow: 0 0 40px rgba(163, 230, 53, 0.15); border-color: rgba(163, 230, 53, 0.3); }
+        .glow-b24:hover { box-shadow: 0 0 40px rgba(74, 222, 128, 0.15); border-color: rgba(74, 222, 128, 0.3); }
+        .glow-rva:hover { box-shadow: 0 0 40px rgba(155, 44, 134, 0.15); border-color: rgba(155, 44, 134, 0.3); }
+        .glow-liv:hover { box-shadow: 0 0 40px rgba(74, 222, 128, 0.15); border-color: rgba(74, 222, 128, 0.3); }
+        .glow-eboost:hover { box-shadow: 0 0 40px rgba(249, 115, 22, 0.15); border-color: rgba(249, 115, 22, 0.3); }
+
+        /* Efecto flotante para imágenes de producto */
         .animate-float {
             animation: float 6s ease-in-out infinite;
         }
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-12px); }
             100% { transform: translateY(0px); }
         }
 
-        /* Background Gradient Animation */
+        /* Animación de fondo en gradiente */
         .bg-gradient-animate {
             background-size: 200% 200%;
             animation: gradientMove 15s ease infinite;
@@ -126,6 +139,20 @@
         .group:hover .testimonial-img {
             transform: scale(1.05);
         }
+
+        /* Card active and highlight states */
+        .protocol-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .protocol-card.highlighted {
+            border-color: #22c55e !important;
+            box-shadow: 0 0 35px rgba(34, 197, 94, 0.25);
+            transform: scale(1.02);
+        }
+        .protocol-card.dimmed {
+            opacity: 0.35;
+            filter: grayscale(40%);
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-fwp-green selection:text-black">
@@ -137,7 +164,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
                     <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.2)] p-1 overflow-hidden">
-                        <img src="LOGO_FWP NEGRO.png" alt="Logo FWP" class="w-full h-full object-contain object-center scale-150 transform" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?font=inter&text=FWP'; this.classList.remove('scale-150');">
+                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png" alt="Logo FWP" class="w-full h-full object-contain object-center scale-150 transform" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?font=inter&text=FWP'; this.classList.remove('scale-150');">
                     </div>
                     <span class="font-bold text-xl tracking-wider hidden sm:block">FUTURE<span class="text-gray-400 font-light">WELLNESS</span></span>
                 </div>
@@ -146,7 +173,8 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#inicio" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Inicio</a>
                     <a href="#ciencia" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">La Ciencia</a>
-                    <a href="#productos" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Ecosistema</a>
+                    <a href="#diagnostico" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Ecosistema</a>
+                    <a href="#productos-unidad" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Por Unidad</a>
                     <a href="#testimonios" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Testimonios</a>
                 </div>
 
@@ -161,7 +189,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section id="inicio" class="relative min-h-screen flex items-center pt-24 overflow-hidden pb-16">
         <!-- Background Elements -->
         <div class="absolute inset-0 z-0">
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-fwp-blue/20 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow"></div>
@@ -181,15 +209,15 @@
             </h1>
             
             <p class="text-lg md:text-2xl text-gray-400 max-w-4xl mx-auto mb-6 font-light leading-relaxed">
-                <strong class="text-white font-semibold">Redefine tu potencial biológico.</strong> No has llegado aquí simplemente para adquirir un suplemento, sino para descubrir una solución definitiva diseñada para optimizar tu biología desde la raíz.
+                <strong class="text-white font-semibold">Redefine tu potencial biológico.</strong> Bienvenido a la convergencia entre la innovación científica más rigurosa y tu vitalidad personal. No has llegado aquí simplemente para adquirir un suplemento, sino para descubrir una solución definitiva diseñada para optimizar tu biología desde la raíz.
             </p>
-            <p class="text-md md:text-lg text-gray-500 max-w-3xl mx-auto mb-12">
-                En un mundo que exige un rendimiento constante, es momento de dejar de sobrevivir y comenzar a prosperar mediante herramientas nutricionales de alto impacto basadas en la evidencia.
+            <p class="text-md md:text-lg text-gray-500 max-w-3xl mx-auto mb-12 leading-relaxed">
+                Nuestras fórmulas representan la cúspide de la nutrición basada en evidencia. No se trata de azar, sino de aplicar señales bioquímicas precisas para hackear tu organismo y desbloquear una energía sostenida y una longevidad real, protegiéndote activamente del estrés oxidativo diario.
             </p>
 
             <!-- Botones Hero -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#productos" class="px-8 py-4 bg-gradient-to-r from-fwp-blue to-fwp-green text-white rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(37,99,235,0.4)]">
+                <a href="#diagnostico" class="px-8 py-4 bg-gradient-to-r from-fwp-blue to-fwp-green text-white rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_30px_rgba(37,99,235,0.4)]">
                     [ Optimiza tu Biología Ahora ]
                 </a>
                 <a href="https://wa.me/56936200521?text=¡Hola!%20Deseo%20conocer%20más%20sobre%20el%20ecosistema%20de%20longevidad%20FWP." target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-white/5 border border-white/20 text-white rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
@@ -199,8 +227,8 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-            <span class="text-xs text-gray-500 uppercase tracking-widest mb-2 font-semibold">Descubre la Ciencia</span>
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+            <span class="text-xs text-gray-500 uppercase tracking-widest mb-1 font-semibold">Descubre la Ciencia</span>
             <i class="fas fa-chevron-down text-gray-400"></i>
         </div>
     </section>
@@ -251,201 +279,661 @@
         </div>
     </section>
 
-    <!-- Banner Crononutrición -->
-    <section class="py-12 bg-gradient-to-r from-fwp-darker via-slate-900 to-fwp-darker border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-            <h4 class="text-fwp-green font-bold tracking-widest text-sm uppercase mb-2">Ecosistema de Alto Rendimiento</h4>
-            <h2 class="text-2xl md:text-3xl font-black text-white">Sinergia absoluta con tu Ritmo Circadiano</h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto text-sm">La salud no es un evento estático; es un flujo continuo. Nuestro sistema está diseñado para acompañar cada fase de tu día, respetando la crononutrición para maximizar resultados.</p>
-        </div>
-    </section>
-
-    <!-- Productos Principales (Core) -->
-    <section id="productos" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="space-y-24">
-                
-                <!-- RENÖVA+ (AURA/ESTRELLA) -->
-                <div id="prod-rva" class="glass-panel rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center reveal glow-rva transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-rva-main/10 rounded-full blur-[100px] -z-10 group-hover:bg-rva-main/20 transition-all"></div>
-                    
-                    <div class="w-full md:w-5/12 flex flex-col items-center justify-center relative">
-                        <div class="absolute inset-0 bg-gradient-to-t from-rva-main/20 to-transparent blur-2xl -z-10 rounded-full"></div>
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" alt="RENÖVA+ Colágeno Peptan" class="w-full max-w-[220px] md:max-w-[260px] object-contain drop-shadow-[0_20px_50px_rgba(155,44,134,0.4)] animate-float" onerror="this.src='https://placehold.co/400x500/0f172a/9b2c86?text=RENOVA%2B'">
-                    </div>
-                    
-                    <div class="w-full md:w-7/12">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rva-main/20 text-rva-main font-bold uppercase tracking-wider text-xs mb-6 border border-rva-main/30">
-                            La Ciencia de la Regeneración
-                        </div>
-                        <h3 class="text-4xl md:text-6xl font-black text-white mb-4">RENÖVA+ <span class="text-xl font-normal text-gray-500">con Peptan®</span></h3>
-                        
-                        <p class="text-xl font-light text-gray-300 mb-6">
-                            El colágeno es la proteína más abundante de tu cuerpo, pero su calidad determina la velocidad de tu envejecimiento. RENÖVA+ no es un colágeno convencional; es una inversión en tu capital estructural.
-                        </p>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                            <div class="bg-black/40 rounded-xl p-5 border border-white/5">
-                                <span class="block text-rva-main font-bold mb-2 text-lg"><i class="fas fa-microscope mr-2"></i>Péptidos Bioactivos</span>
-                                <p class="text-sm text-gray-400">Actúan como moléculas de señalización: ordenan a tus células reactivar la producción natural de colágeno (11.4g por dosis).</p>
-                            </div>
-                            <div class="bg-black/40 rounded-xl p-5 border border-white/5">
-                                <span class="block text-rva-main font-bold mb-2 text-lg"><i class="fas fa-shield-alt mr-2"></i>Escudo Antioxidante</span>
-                                <p class="text-sm text-gray-400">Dosis masiva de <strong>300mg de Resveratrol puro y Q10</strong> para frenar la oxidación celular y proteger arterias.</p>
-                            </div>
-                        </div>
-
-                        <div class="mb-8 border-l-2 border-rva-main pl-4">
-                            <h5 class="text-white font-bold mb-2">Impacto Real en tu Vitalidad:</h5>
-                            <ul class="space-y-2 text-sm text-gray-300">
-                                <li><strong class="text-white">Piel:</strong> Recupera el soporte, reduce arrugas y mejora la elasticidad.</li>
-                                <li><strong class="text-white">Articulaciones:</strong> Protege el cartílago para una movilidad sin dolor.</li>
-                                <li><strong class="text-white">Vigor Celular:</strong> Complejo de Vitaminas A, C, B, Magnesio y Zinc.</li>
-                            </ul>
-                        </div>
-                        
-                        <a href="https://mpago.la/13YQiGo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-rva-main text-white rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_20px_rgba(155,44,134,0.4)]">
-                            Invertir en RENÖVA+ Ahora
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 24BURN -->
-                <div id="prod-24burn" class="glass-panel rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row-reverse gap-12 items-center reveal glow-burn transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-96 h-96 bg-burn-main/10 rounded-full blur-[100px] -z-10 group-hover:bg-burn-main/20 transition-all"></div>
-                    <div class="w-full md:w-5/12 flex justify-center">
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24BURN.png" alt="24BURN Activación Metabólica" class="w-full max-w-[220px] md:max-w-[260px] object-contain drop-shadow-[0_20px_50px_rgba(163,230,53,0.3)] animate-float" style="animation-delay: 1s;" onerror="this.src='https://placehold.co/400x500/0f172a/a3e635?text=24BURN'">
-                    </div>
-                    <div class="w-full md:w-7/12">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-burn-main/20 text-burn-main font-bold uppercase tracking-wider text-xs mb-6 border border-burn-main/30">
-                            Fase Diurna: Activación Metabólica Inteligente
-                        </div>
-                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">24BURN</h3>
-                        <p class="text-xl font-light text-gray-300 mb-6">
-                            Optimiza la forma en que tu cuerpo procesa la energía. No solo quema; educa a tu organismo para procesar calorías de forma eficiente.
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-4 mb-8">
-                            <div class="bg-black/30 rounded-xl p-4 border border-white/5">
-                                <span class="block text-burn-main font-bold mb-1"><i class="fas fa-fire mr-2"></i>Té Verde (95%)</span>
-                                <span class="text-xs text-gray-400">Polifenoles para termogénesis activa</span>
-                            </div>
-                            <div class="bg-black/30 rounded-xl p-4 border border-white/5">
-                                <span class="block text-burn-main font-bold mb-1"><i class="fas fa-bolt mr-2"></i>L-Carnitina & Kelp</span>
-                                <span class="text-xs text-gray-400">Potencia la oxidación (lipólisis)</span>
-                            </div>
-                        </div>
-
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-burn-main mt-1"></i><span class="text-gray-300">Acelera el metabolismo basal de forma inteligente.</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-burn-main mt-1"></i><span class="text-gray-300">Incrementa el rendimiento deportivo y físico.</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-burn-main mt-1"></i><span class="text-gray-300">Controla eficazmente el apetito y genera saciedad.</span></li>
-                        </ul>
-                        <a href="https://mpago.la/1HbxUGB" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-burn-main text-black rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_20px_rgba(163,230,53,0.4)]">
-                            Activar 24BURN
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 24B+ -->
-                <div id="prod-24b" class="glass-panel rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center reveal glow-b24 transition-all duration-500 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-b24-main/10 rounded-full blur-[100px] -z-10 group-hover:bg-b24-main/20 transition-all"></div>
-                    <div class="w-full md:w-5/12 flex justify-center">
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24B.png" alt="24B+ Recuperación" class="w-full max-w-[220px] md:max-w-[260px] object-contain drop-shadow-[0_20px_50px_rgba(74,222,128,0.3)] animate-float" style="animation-delay: 2s;" onerror="this.src='https://placehold.co/400x500/0f172a/4ade80?text=24B%2B'">
-                    </div>
-                    <div class="w-full md:w-7/12">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-b24-main/20 text-b24-main font-bold uppercase tracking-wider text-xs mb-6 border border-b24-main/30">
-                            Fase Nocturna: Regeneración Profunda
-                        </div>
-                        <h3 class="text-4xl md:text-5xl font-black text-white mb-4">24B+</h3>
-                        <p class="text-xl font-light text-gray-300 mb-6">
-                            El descanso que transforma. Optimiza la recuperación muscular y facilita la desintoxicación hepática mientras duermes, completando el ciclo circadiano.
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-4 mb-8">
-                            <div class="bg-black/30 rounded-xl p-4 border border-white/5">
-                                <span class="block text-b24-main font-bold mb-1"><i class="fas fa-moon mr-2"></i>Melisa & Manzanilla</span>
-                                <span class="text-xs text-gray-400">Regula cortisol y melatonina</span>
-                            </div>
-                            <div class="bg-black/30 rounded-xl p-4 border border-white/5">
-                                <span class="block text-b24-main font-bold mb-1"><i class="fas fa-seedling mr-2"></i>Fibra & Alcachofa</span>
-                                <span class="text-xs text-gray-400">Detox profundo en fase de sueño</span>
-                            </div>
-                        </div>
-
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-b24-main mt-1"></i><span class="text-gray-300">Favorece la recuperación muscular nocturna.</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-b24-main mt-1"></i><span class="text-gray-300">Mejora la arquitectura y calidad del sueño.</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-b24-main mt-1"></i><span class="text-gray-300">Asegura que la energía diurna no sabotee el descanso.</span></li>
-                        </ul>
-                        <a href="https://mpago.la/2ZhHBsM" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-b24-main text-black rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0_0_20px_rgba(74,222,128,0.4)]">
-                            Obtener 24B+
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Otros Productos (Complementarios) -->
-    <section class="py-24 bg-fwp-darker border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Diagnóstico e Interactividad (¿Cuál es tu principal objetivo?) -->
+    <section id="diagnostico" class="py-24 bg-[#010413] border-t border-white/5 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Herramientas Específicas</h2>
-                <p class="text-gray-400 text-lg">Soluciones avanzadas para el intestino y el sistema nervioso central.</p>
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Asistente de Precisión</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">¿Cuál es tu principal objetivo de salud hoy?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Selecciona tu meta biológica principal para recibir una recomendación adaptada a tu metabolismo y necesidades.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Diagnostic cards layout (4 Large Options) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto reveal">
+                <!-- Option 1: Weight Loss -->
+                <button onclick="selectObjective('peso')" class="diagnostic-card text-left bg-gradient-to-b from-slate-900 to-slate-950/90 rounded-3xl p-8 border border-white/5 hover:border-green-500/40 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <div class="w-12 h-12 rounded-2xl bg-green-500/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-weight-scale text-green-400 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-green-400 uppercase tracking-widest mb-2 block">Metabolismo Activo</span>
+                    <h3 class="text-xl font-black text-white mb-3">Quiero bajar de peso y desinflamarme</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">Oxidación de grasa corporal constante y soporte profundo a tu microbiota digestiva para desinflamar el abdomen.</p>
+                    <span class="text-xs font-bold text-white flex items-center gap-2 mt-auto">Recomendar Protocolos <i class="fas fa-arrow-right text-green-400 text-[10px]"></i></span>
+                </button>
+
+                <!-- Option 2: Energy -->
+                <button onclick="selectObjective('energia')" class="diagnostic-card text-left bg-gradient-to-b from-slate-900 to-slate-950/90 rounded-3xl p-8 border border-white/5 hover:border-orange-500/40 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-orange-400 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-orange-400 uppercase tracking-widest mb-2 block">Enfoque y Vigor</span>
+                    <h3 class="text-xl font-black text-white mb-3">Quiero tener más energía y enfoque</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">Adiós al cansancio extremo y a los picos de ansiedad. Energía celular constante para liderar tu jornada laboral o deportiva.</p>
+                    <span class="text-xs font-bold text-white flex items-center gap-2 mt-auto">Recomendar Protocolos <i class="fas fa-arrow-right text-orange-400 text-[10px]"></i></span>
+                </button>
+
+                <!-- Option 3: Beauty -->
+                <button onclick="selectObjective('belleza')" class="diagnostic-card text-left bg-gradient-to-b from-slate-900 to-slate-950/90 rounded-3xl p-8 border border-white/5 hover:border-purple-500/40 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-wand-magic-sparkles text-purple-400 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-2 block">Juventud Estructural</span>
+                    <h3 class="text-xl font-black text-white mb-3">Quiero mejorar mi piel, cabello y uñas</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">Nutrición interna profunda con péptidos bioactivos Peptan® de colágeno y antioxidantes para regenerar tu belleza celular.</p>
+                    <span class="text-xs font-bold text-white flex items-center gap-2 mt-auto">Recomendar Protocolos <i class="fas fa-arrow-right text-purple-400 text-[10px]"></i></span>
+                </button>
+
+                <!-- Option 4: Holistic -->
+                <button onclick="selectObjective('integral')" class="diagnostic-card text-left bg-gradient-to-b from-slate-900 to-slate-950/90 rounded-3xl p-8 border border-white/5 hover:border-blue-500/40 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-blue-400 text-2xl"></i>
+                    </div>
+                    <span class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-2 block">Protección Circadiana</span>
+                    <h3 class="text-xl font-black text-white mb-3">Quiero un bienestar y salud integral</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">Armonía de tu reloj biológico: control inmunológico, bienestar gastrointestinal y protección frente al estrés oxidativo.</p>
+                    <span class="text-xs font-bold text-white flex items-center gap-2 mt-auto">Recomendar Protocolos <i class="fas fa-arrow-right text-blue-400 text-[10px]"></i></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosistema de Protocolos (Grid Unificado de 7 Tarjetas con la misma Estructura) -->
+    <section id="productos" class="py-24 bg-fwp-darker border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider" id="filter-badge">Ecosistema de Precisión</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-4">Elige tu Protocolo de Longevidad</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Selecciona la combinación diseñada para tus objetivos biológicos específicos con dosis clínicamente efectivas.</p>
                 
-                <!-- LIV -->
-                <div class="glass-panel rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal glow-liv group">
-                    <div class="flex flex-col h-full justify-between">
-                        <div>
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-liv-main/20 text-liv-main text-xs font-bold uppercase tracking-wider mb-4 border border-liv-main/30">
-                                Segundo Cerebro
+                <!-- Reset Filter Button -->
+                <div id="reset-filter-container" class="mt-6 hidden transition-all duration-300">
+                    <button onclick="resetFilters()" class="px-6 py-2 bg-white/10 hover:bg-white/20 border border-white/10 rounded-full text-xs font-bold text-white flex items-center gap-2 mx-auto">
+                        <i class="fas fa-times"></i> Mostrar todos los protocolos de longevidad
+                    </button>
+                </div>
+            </div>
+
+            <!-- Protocols Grid - 3 Columns Layout (capture 1 restored!) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="protocols-grid">
+                
+                <!-- PROTOCOLO 1: PÉRDIDA DE PESO INTELIGENTE -->
+                <div data-categories="peso" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border-2 border-green-500/30 hover:border-green-500/60 relative overflow-hidden group">
+                    <!-- Ribbon -->
+                    <div class="absolute -right-16 top-6 bg-gradient-to-r from-green-500 to-emerald-600 text-black text-[9px] font-black py-1.5 px-16 rotate-45 uppercase tracking-widest shadow-lg z-10">
+                        MÁS ELEGIDO
+                    </div>
+
+                    <div>
+                        <!-- Header badge and Rating -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] sm:text-xs font-bold text-green-400 bg-green-500/10 px-3 py-1 rounded-full uppercase tracking-widest">⭐ MÁS VENDIDO</span>
+                            <span class="text-yellow-500 text-xs font-bold"><i class="fas fa-star"></i> 5.0 (248 opiniones)</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-2">
+                            🔥 PÉRDIDA DE PESO INTELIGENTE
+                        </h3>
+                        <p class="text-xs font-bold text-green-400 uppercase tracking-widest mb-4 flex items-center gap-1">
+                            <i class="fas fa-weight-scale"></i> DIGESTIÓN & DESINFLAMACIÓN
+                        </p>
+                        
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Combina el estímulo metabólico diurno y la termogénesis activa con el soporte profundo de fibra y probióticos de LIV para un reseteo gastrointestinal efectivo y control de peso sin rebotes.
+                        </p>
+
+                        <!-- Overlapping Mockup with Exact Proportion Scaling -->
+                        <div class="relative bg-black/20 rounded-2xl p-4 flex justify-center items-end h-48 mb-6 overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-red-600/90 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase flex items-center gap-1 z-10 animate-bounce-subtle">
+                                <i class="fas fa-gift"></i> Regalo Incluido
                             </div>
-                            <h3 class="text-3xl font-black mb-2 text-white">LIV</h3>
-                            <p class="text-gray-400 mb-6 text-sm">Ligereza que fluye. Sinergia de fibras de alta calidad con probióticos específicos (Bifidobacterium lactis 1x10¹⁰ UFC) para sostener tu equilibrio interno.</p>
+                            <div class="flex items-end justify-center -space-x-12 max-w-full">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 0s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24BURN.png" class="object-contain animate-float z-10 filter drop-shadow-[0_12px_24px_rgba(163,230,53,0.4)]" style="width: 135px; height: 185px; animation-delay: 1.5s;" alt="24BURN" onerror="this.src='https://placehold.co/135x185/0f172a/a3e635?text=24BURN'">
+                            </div>
                         </div>
-                        <div class="flex justify-center mb-6 h-56 relative w-full">
-                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" alt="LIV Digestión" class="absolute inset-0 w-full h-full object-contain drop-shadow-xl animate-float" style="animation-delay: 0.5s;" onerror="this.src='https://placehold.co/300x400/0f172a/4ade80?text=LIV'">
+
+                        <!-- Included Products -->
+                        <div class="mb-6">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">INCLUYE</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-green-400"></i> 24BURN</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-green-400"></i> LIV</span>
+                            </div>
                         </div>
-                        <div class="flex flex-col gap-4">
-                            <ul class="text-sm text-gray-300 space-y-2 mb-2 bg-black/30 p-4 rounded-xl border border-white/5">
-                                <li><i class="fas fa-microscope text-liv-main mr-2"></i> <strong>Complejo de Superfrutas:</strong> Pitahaya, Papaya, Ciruela y Manzana.</li>
-                                <li><i class="fas fa-check text-liv-main mr-2"></i> Promueve limpieza profunda y desinflamación.</li>
+
+                        <!-- Benefits Expected -->
+                        <div class="mb-6 bg-black/25 p-4 rounded-xl border border-white/5">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">BENEFICIOS ESPERADOS</span>
+                            <ul class="text-xs text-gray-300 space-y-1.5">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-[10px]"></i> Favorece el equilibrio de la microbiota.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-[10px]"></i> Apoya una digestión saludable y desinflamación.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-[10px]"></i> Ayuda a modular y controlar el apetito.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-[10px]"></i> Contribuye al metabolismo graso activo.</li>
                             </ul>
-                            <a href="https://mpago.la/2oGDjEH" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-white/10 hover:bg-liv-main hover:text-black border border-liv-main/50 rounded-xl font-bold text-center transition-all">
-                                Protocolo Digestivo
-                            </a>
                         </div>
+
+                        <!-- Info tags -->
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-xs border-t border-b border-white/10 py-3">
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">DURACIÓN</span>
+                                <span class="text-white font-bold">28 a 33 días</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">IDEAL PARA</span>
+                                <span class="text-white font-bold truncate block">Pesadez / Inflamación</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STACK VALUE & CTA -->
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-gray-500 text-xs font-bold line-through">Val. Ind: $103.176</span>
+                            <span class="text-fwp-green text-xs font-black bg-fwp-green/10 px-2 py-0.5 rounded">💰 Ahorras $17.196</span>
+                        </div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Valor Protocolo</span>
+                            <span class="text-3xl font-black text-white">$85.980</span>
+                        </div>
+                        <a href="https://wa.me/56936200521?text=¡Hola!%20Quiero%20el%20protocolo%20de%20Pérdida%20de%20Peso%20Inteligente." target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-black font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_15px_rgba(34,197,94,0.3)]">
+                            [ QUIERO ESTE PROTOCOLO ]
+                        </a>
                     </div>
                 </div>
 
-                <!-- EBOOST -->
-                <div class="glass-panel rounded-3xl p-8 hover:-translate-y-2 transition-transform duration-300 reveal glow-eboost group" style="transition-delay: 100ms;">
-                    <div class="flex flex-col h-full justify-between">
-                        <div>
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-eboost-main/20 text-eboost-main text-xs font-bold uppercase tracking-wider mb-4 border border-eboost-main/30">
-                                Dominio Cognitivo
+                <!-- PROTOCOLO 2: ENERGÍA 24/7 -->
+                <div data-categories="energia" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border border-white/10 hover:border-orange-500/40 relative overflow-hidden group">
+                    <div>
+                        <!-- Header badge and Rating -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] sm:text-xs font-bold text-orange-400 bg-orange-500/10 px-3 py-1 rounded-full uppercase tracking-widest">⭐ ENERGÍA CONTINUA</span>
+                            <span class="text-yellow-500 text-xs font-bold"><i class="fas fa-star"></i> 5.0 (185 opiniones)</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-2">
+                            ⚡ ENERGÍA 24/7
+                        </h3>
+                        <p class="text-xs font-bold text-orange-400 uppercase tracking-widest mb-4 flex items-center gap-1">
+                            <i class="fas fa-brain"></i> RENDIMIENTO Y ENFOQUE
+                        </p>
+                        
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Para quienes llegan agotados al final del día o necesitan mantenerse enfocados. Sinergia limpia de adaptógenos naturales (EBOOST) y soporte celular nocturno (24B+).
+                        </p>
+
+                        <!-- Overlapping Mockup -->
+                        <div class="relative bg-black/20 rounded-2xl p-4 flex justify-center items-end h-48 mb-6 overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-red-600/90 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase flex items-center gap-1 z-10 animate-bounce-subtle">
+                                <i class="fas fa-gift"></i> Regalo Incluido
                             </div>
-                            <h3 class="text-3xl font-black mb-2 text-white">EBOOST</h3>
-                            <p class="text-gray-400 mb-6 text-sm">La herramienta definitiva para dominar tu mañana sin el "crash" de la cafeína sintética. Combina Blend NRG (BCAAs) y adaptógenos naturales.</p>
+                            <div class="flex items-end justify-center -space-x-12 max-w-full">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24B.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="24B+" onerror="this.src='https://placehold.co/135x185/0f172a/4ade80?text=24B%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_EBOOST.png" class="object-contain animate-float z-10 filter drop-shadow-[0_12px_24px_rgba(249,115,22,0.4)]" style="width: 85px; height: 80px; animation-delay: 1.5s;" alt="EBOOST" onerror="this.src='https://placehold.co/85x80/0f172a/f97316?text=EBOOST'">
+                            </div>
                         </div>
-                        <div class="flex justify-center mb-6 h-56 relative w-full">
-                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_EBOOST.png" alt="EBOOST Energía" class="absolute inset-0 w-full h-full object-contain drop-shadow-xl animate-float" style="animation-delay: 1.5s;" onerror="this.src='https://placehold.co/300x400/0f172a/f97316?text=EBOOST'">
+
+                        <!-- Included Products -->
+                        <div class="mb-6">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">INCLUYE</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-orange-400"></i> 24B+</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-orange-400"></i> EBOOST</span>
+                            </div>
                         </div>
-                        <div class="flex flex-col gap-4">
-                            <ul class="text-sm text-gray-300 space-y-2 mb-2 bg-black/30 p-4 rounded-xl border border-white/5">
-                                <li><i class="fas fa-brain text-eboost-main mr-2"></i> <strong>Sinergia:</strong> Guaraná, Té Negro y Yerba Mate.</li>
-                                <li><i class="fas fa-battery-full text-eboost-main mr-2"></i> Freno de seguridad: plató constante, sin ansiedad.</li>
+
+                        <!-- Benefits Expected -->
+                        <div class="mb-6 bg-black/25 p-4 rounded-xl border border-white/5">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">BENEFICIOS ESPERADOS</span>
+                            <ul class="text-xs text-gray-300 space-y-1.5">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-orange-400 text-[10px]"></i> Energía física limpia y sin temblores.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-orange-400 text-[10px]"></i> Enfoque mental, vitalidad y rendimiento diario.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-orange-400 text-[10px]"></i> Mayor vitalidad y resistencia celular.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-orange-400 text-[10px]"></i> Soporte para jornadas físicamente exigentes.</li>
                             </ul>
-                            <a href="https://mpago.la/2ko6eB2" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-white/10 hover:bg-eboost-main hover:text-white border border-eboost-main/50 rounded-xl font-bold text-center transition-all">
-                                Potencia Tu Enfoque
-                            </a>
                         </div>
+
+                        <!-- Info tags -->
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-xs border-t border-b border-white/10 py-3">
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">DURACIÓN</span>
+                                <span class="text-white font-bold">30 días continuos</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">IDEAL PARA</span>
+                                <span class="text-white font-bold truncate block">Profesionales / Emprendedores</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STACK VALUE & CTA -->
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-gray-500 text-xs font-bold line-through">Val. Ind: $95.976</span>
+                            <span class="text-orange-400 text-xs font-black bg-orange-500/10 px-2 py-0.5 rounded">💰 Ahorras $15.996</span>
+                        </div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Valor Protocolo</span>
+                            <span class="text-3xl font-black text-white">$79.980</span>
+                        </div>
+                        <a href="https://wa.me/56936200521?text=¡Hola!%20Quiero%20el%20protocolo%20Energía%2024/7." target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_15px_rgba(249,115,22,0.3)]">
+                            [ QUIERO ESTE PROTOCOLO ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROTOCOLO 3: BELLEZA DESDE ADENTRO -->
+                <div data-categories="belleza" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border border-white/10 hover:border-purple-500/40 relative overflow-hidden group">
+                    <div>
+                        <!-- Header badge and Rating -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] sm:text-xs font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full uppercase tracking-widest">⭐ RECONSTRUCCIÓN</span>
+                            <span class="text-yellow-500 text-xs font-bold"><i class="fas fa-star"></i> 4.9 (135 opiniones)</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-2">
+                            ✨ BELLEZA DESDE ADENTRO
+                        </h3>
+                        <p class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4 flex items-center gap-1">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> REGENERACIÓN DERMATOLÓGICA
+                        </p>
+                        
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Nutre tu piel, cabello y uñas desde el interior biológico. Combina el poder regenerativo de RENÖVA+ con el efecto desinflamatorio gastrointestinal de LIV.
+                        </p>
+
+                        <!-- Overlapping Mockup -->
+                        <div class="relative bg-black/20 rounded-2xl p-4 flex justify-center items-end h-48 mb-6 overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-red-600/90 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase flex items-center gap-1 z-10 animate-bounce-subtle">
+                                <i class="fas fa-gift"></i> Regalo Incluido
+                            </div>
+                            <div class="flex items-end justify-center -space-x-12 max-w-full">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float z-10 filter drop-shadow-[0_12px_24px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 1.5s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
+                            </div>
+                        </div>
+
+                        <!-- Included Products -->
+                        <div class="mb-6">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">INCLUYE</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-purple-400"></i> RENÖVA+</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-purple-400"></i> LIV</span>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Expected -->
+                        <div class="mb-6 bg-black/25 p-4 rounded-xl border border-white/5">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">BENEFICIOS ESPERADOS</span>
+                            <ul class="text-xs text-gray-300 space-y-1.5">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-[10px]"></i> Nutre y da firmeza a la piel.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-[10px]"></i> Fortalece y otorga vitalidad al cabello y uñas.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-[10px]"></i> Favorece la asimilación y la salud intestinal.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400 text-[10px]"></i> Protege la mucosa intestinal.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Info tags -->
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-xs border-t border-b border-white/10 py-3">
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">DURACIÓN</span>
+                                <span class="text-white font-bold">30 a 45 días</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">IDEAL PARA</span>
+                                <span class="text-white font-bold truncate block">Envejecimiento Celular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STACK VALUE & CTA -->
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-gray-500 text-xs font-bold line-through">Val. Ind: $119.976</span>
+                            <span class="text-purple-400 text-xs font-black bg-purple-500/10 px-2 py-0.5 rounded">💰 Ahorras $19.996</span>
+                        </div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Valor Protocolo</span>
+                            <span class="text-3xl font-black text-white">$99.980</span>
+                        </div>
+                        <a href="https://wa.me/56936200521?text=¡Hola!%20Quiero%20el%20protocolo%20Belleza%20desde%20Adentro." target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_15px_rgba(155,44,134,0.3)]">
+                            [ QUIERO ESTE PROTOCOLO ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROTOCOLO 4: MUJER +35 -->
+                <div data-categories="belleza" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border border-white/10 hover:border-pink-500/40 relative overflow-hidden group">
+                    <div>
+                        <!-- Header badge and Rating -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] sm:text-xs font-bold text-pink-400 bg-pink-500/10 px-3 py-1 rounded-full uppercase tracking-widest">⭐ RECOMENDADO</span>
+                            <span class="text-yellow-500 text-xs font-bold"><i class="fas fa-star"></i> 4.9 (190 opiniones)</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-2">
+                            💜 MUJER +35
+                        </h3>
+                        <p class="text-xs font-bold text-pink-400 uppercase tracking-widest mb-4 flex items-center gap-1">
+                            <i class="fas fa-venus"></i> EQUILIBRIO & VITALIDAD FEMENINA
+                        </p>
+                        
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Una combinación creada para acompañar el bienestar femenino, aportando energía, nutrición y apoyo digestivo para enfrentar cada día con mayor vitalidad.
+                        </p>
+
+                        <!-- Overlapping Mockup -->
+                        <div class="relative bg-black/20 rounded-2xl p-4 flex justify-center items-end h-48 mb-6 overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-red-600/90 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase flex items-center gap-1 z-10 animate-bounce-subtle">
+                                <i class="fas fa-gift"></i> Regalo Incluido
+                            </div>
+                            <div class="flex items-end justify-center -space-x-12 max-w-full">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24B.png" class="object-contain animate-float z-10 filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 135px; height: 185px; animation-delay: 1s;" alt="24B+" onerror="this.src='https://placehold.co/135x185/0f172a/4ade80?text=24B%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float z-20 filter drop-shadow-[0_12px_24px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 2s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
+                            </div>
+                        </div>
+
+                        <!-- Included Products -->
+                        <div class="mb-6">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">INCLUYE</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-pink-400"></i> RENÖVA+</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-pink-400"></i> 24B+</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-pink-400"></i> LIV</span>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Expected -->
+                        <div class="mb-6 bg-black/25 p-4 rounded-xl border border-white/5">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">BENEFICIOS ESPERADOS</span>
+                            <ul class="text-xs text-gray-300 space-y-1.5">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400 text-[10px]"></i> Brinda energía sostenida y vitalidad diaria.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400 text-[10px]"></i> Estimula la síntesis de colágeno natural.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400 text-[10px]"></i> Apoya una digestión ligera y desinflamada.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-pink-400 text-[10px]"></i> Favorece el bienestar integral diario.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Info tags -->
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-xs border-t border-b border-white/10 py-3">
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">DURACIÓN</span>
+                                <span class="text-white font-bold">Plan Mensual</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">IDEAL PARA</span>
+                                <span class="text-white font-bold truncate block">Mujeres +35 años</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STACK VALUE & CTA -->
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-gray-500 text-xs font-bold line-through">Val. Ind: $167.964</span>
+                            <span class="text-pink-400 text-xs font-black bg-pink-500/10 px-2 py-0.5 rounded">💰 Ahorras $27.994</span>
+                        </div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Valor Protocolo</span>
+                            <span class="text-3xl font-black text-white">$139.970</span>
+                        </div>
+                        <a href="https://wa.me/56936200521?text=¡Hola!%20Quiero%20el%20protocolo%20Mujer%20+35." target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-gradient-to-r from-pink-500 to-rose-600 text-white font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_15px_rgba(244,63,94,0.3)]">
+                            [ QUIERO ESTE PROTOCOLO ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROTOCOLO 5: HOMBRE ACTIVO -->
+                <div data-categories="energia" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border border-white/10 hover:border-blue-500/40 relative overflow-hidden group">
+                    <div>
+                        <!-- Header badge and Rating -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] sm:text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full uppercase tracking-widest">⭐ ENERGÍA FÍSICA</span>
+                            <span class="text-yellow-500 text-xs font-bold"><i class="fas fa-star"></i> 4.8 (115 opiniones)</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-2">
+                            💪 HOMBRE ACTIVO
+                        </h3>
+                        <p class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-4 flex items-center gap-1">
+                            <i class="fas fa-dumbbell"></i> RENDIMIENTO Y COMPOSICIÓN
+                        </p>
+                        
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Diseñado para quienes buscan mantenerse activos con energía, rendimiento físico y mental, y apoyo al metabolismo en una sola rutina de biohacking.
+                        </p>
+
+                        <!-- Overlapping Mockup (Symmetric 135x185px for 24BURN) -->
+                        <div class="relative bg-black/20 rounded-2xl p-4 flex justify-center items-end h-48 mb-6 overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-red-600/90 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase flex items-center gap-1 z-10 animate-bounce-subtle">
+                                <i class="fas fa-gift"></i> Regalo Incluido
+                            </div>
+                            <div class="flex items-end justify-center -space-x-12 max-w-full">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24B.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="24B+" onerror="this.src='https://placehold.co/135x185/0f172a/4ade80?text=24B%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_EBOOST.png" class="object-contain animate-float z-10 filter drop-shadow-[0_8px_16px_rgba(249,115,22,0.4)]" style="width: 85px; height: 80px; animation-delay: 1s;" alt="EBOOST" onerror="this.src='https://placehold.co/85x80/0f172a/f97316?text=EBOOST'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24BURN.png" class="object-contain animate-float z-20 filter drop-shadow-[0_12px_24px_rgba(163,230,53,0.4)]" style="width: 135px; height: 185px; animation-delay: 2s;" alt="24BURN" onerror="this.src='https://placehold.co/135x185/0f172a/a3e635?text=24BURN'">
+                            </div>
+                        </div>
+
+                        <!-- Included Products -->
+                        <div class="mb-6">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">INCLUYE</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-blue-400"></i> 24BURN</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-blue-400"></i> EBOOST</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-blue-400"></i> 24B+</span>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Expected -->
+                        <div class="mb-6 bg-black/25 p-4 rounded-xl border border-white/5">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">BENEFICIOS ESPERADOS</span>
+                            <ul class="text-xs text-gray-300 space-y-1.5">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400 text-[10px]"></i> Eleva los niveles de energía física y mental.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400 text-[10px]"></i> Optimiza el rendimiento deportivo y de fuerza.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400 text-[10px]"></i> Activa el metabolismo y favorece la quema grasa.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400 text-[10px]"></i> Mejora la composición corporal general.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Info tags -->
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-xs border-t border-b border-white/10 py-3">
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">DURACIÓN</span>
+                                <span class="text-white font-bold">30 días continuos</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">IDEAL PARA</span>
+                                <span class="text-white font-bold truncate block">Deportistas / Profesionales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STACK VALUE & CTA -->
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-gray-500 text-xs font-bold line-through">Val. Ind: $139.164</span>
+                            <span class="text-blue-400 text-xs font-black bg-blue-500/10 px-2 py-0.5 rounded">💰 Ahorras $23.194</span>
+                        </div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Valor Protocolo</span>
+                            <span class="text-3xl font-black text-white">$115.970</span>
+                        </div>
+                        <a href="https://wa.me/56936200521?text=¡Hola!%20Quiero%20el%20protocolo%20Hombre%20Activo." target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_15px_rgba(59,130,246,0.3)]">
+                            [ QUIERO ESTE PROTOCOLO ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROTOCOLO 6: BIENESTAR INTEGRAL -->
+                <div data-categories="integral" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border-2 border-emerald-500/30 hover:border-emerald-500/60 relative overflow-hidden group">
+                    <!-- High-Value Glowing Ribbon -->
+                    <div class="absolute -right-16 top-6 bg-gradient-to-r from-emerald-500 to-teal-600 text-black text-[9px] font-black py-1.5 px-16 rotate-45 uppercase tracking-widest shadow-lg z-10">
+                        MAYOR VALOR
+                    </div>
+
+                    <div>
+                        <!-- Header badge and Rating -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] sm:text-xs font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full uppercase tracking-widest">⭐ MÁXIMA SINERGIA</span>
+                            <span class="text-yellow-500 text-xs font-bold"><i class="fas fa-star"></i> 5.0 (310 opiniones)</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-2">
+                            🌿 BIENESTAR INTEGRAL
+                        </h3>
+                        <p class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-4 flex items-center gap-1">
+                            <i class="fas fa-dna"></i> BIOHACKING BIO-CIRCADIANO
+                        </p>
+                        
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            El protocolo más completo para quienes buscan apoyar su bienestar diario con una combinación de alta pureza que integra nutrición, energía y salud digestiva.
+                        </p>
+
+                        <!-- Overlapping Mockup -->
+                        <div class="relative bg-black/20 rounded-2xl p-4 flex justify-center items-end h-48 mb-6 overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-red-600/90 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase flex items-center gap-1 z-10 animate-bounce-subtle">
+                                <i class="fas fa-gift"></i> Regalo Incluido
+                            </div>
+                            <div class="flex items-end justify-center -space-x-12 max-w-full">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float z-10 filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 0.8s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24B.png" class="object-contain animate-float z-20 filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 135px; height: 185px; animation-delay: 1.6s;" alt="24B+" onerror="this.src='https://placehold.co/135x185/0f172a/4ade80?text=24B%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_EBOOST.png" class="object-contain animate-float z-30 filter drop-shadow-[0_12px_24px_rgba(249,115,22,0.4)]" style="width: 85px; height: 80px; animation-delay: 2.4s;" alt="EBOOST" onerror="this.src='https://placehold.co/85x80/0f172a/f97316?text=EBOOST'">
+                            </div>
+                        </div>
+
+                        <!-- Included Products -->
+                        <div class="mb-6">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">INCLUYE</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-emerald-400"></i> RENÖVA+</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-emerald-400"></i> LIV</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-emerald-400"></i> 24B+</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-emerald-400"></i> EBOOST</span>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Expected -->
+                        <div class="mb-6 bg-black/25 p-4 rounded-xl border border-white/5">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">BENEFICIOS ESPERADOS</span>
+                            <ul class="text-xs text-gray-300 space-y-1.5">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-[10px]"></i> Energía limpia de nivel superior.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-[10px]"></i> Digestión ligera, asimilación y desinflamación.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-[10px]"></i> Regeneración celular y firmeza de la piel.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400 text-[10px]"></i> Vitalidad biológica y descanso reparador.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Info tags -->
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-xs border-t border-b border-white/10 py-3">
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">DURACIÓN</span>
+                                <span class="text-white font-bold">Ciclo de 30 días</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">IDEAL PARA</span>
+                                <span class="text-white font-bold truncate block">Biohacking de Élite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STACK VALUE & CTA -->
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-gray-500 text-xs font-bold line-through">Val. Ind: $211.152</span>
+                            <span class="text-emerald-400 text-xs font-black bg-emerald-500/10 px-2 py-0.5 rounded">💰 Ahorras $35.192</span>
+                        </div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Valor Protocolo</span>
+                            <span class="text-3xl font-black text-white">$175.960</span>
+                        </div>
+                        <a href="https://wa.me/56936200521?text=¡Hola!%20Quiero%20el%20protocolo%20Bienestar%20Integral." target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_20px_rgba(16,185,129,0.4)]">
+                            [ QUIERO ESTE PROTOCOLO ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROTOCOLO 7: REINICIO 30 DÍAS -->
+                <div data-categories="peso" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border border-white/10 hover:border-teal-500/40 relative overflow-hidden group">
+                    <div>
+                        <!-- Header badge and Rating -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] sm:text-xs font-bold text-teal-400 bg-teal-500/10 px-3 py-1 rounded-full uppercase tracking-widest">⭐ REINICIO TOTAL</span>
+                            <span class="text-yellow-500 text-xs font-bold"><i class="fas fa-star"></i> 4.9 (155 opiniones)</span>
+                        </div>
+                        
+                        <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-2">
+                            🌱 REINICIO 30 DÍAS
+                        </h3>
+                        <p class="text-xs font-bold text-teal-400 uppercase tracking-widest mb-4 flex items-center gap-1">
+                            <i class="fas fa-seedling"></i> RESETEO METABÓLICO & ESTÉTICO
+                        </p>
+                        
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Comienza una nueva etapa con una rutina diseñada para apoyar tu metabolismo, bienestar digestivo y cuidado de la piel desde el primer día.
+                        </p>
+
+                        <!-- Overlapping Mockup -->
+                        <div class="relative bg-black/20 rounded-2xl p-4 flex justify-center items-end h-48 mb-6 overflow-hidden">
+                            <div class="absolute top-2 right-2 bg-red-600/90 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase flex items-center gap-1 z-10 animate-bounce-subtle">
+                                <i class="fas fa-gift"></i> Regalo Incluido
+                            </div>
+                            <div class="flex items-end justify-center -space-x-12 max-w-full">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float z-10 filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 1s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24BURN.png" class="object-contain animate-float z-20 filter drop-shadow-[0_12px_24px_rgba(163,230,53,0.4)]" style="width: 135px; height: 185px; animation-delay: 2s;" alt="24BURN" onerror="this.src='https://placehold.co/135x185/0f172a/a3e635?text=24BURN'">
+                            </div>
+                        </div>
+
+                        <!-- Included Products -->
+                        <div class="mb-6">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">INCLUYE</span>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-teal-400"></i> RENÖVA+</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-teal-400"></i> LIV</span>
+                                <span class="bg-white/5 border border-white/5 text-[10px] font-bold text-gray-300 px-3 py-1 rounded-full flex items-center gap-1.5"><i class="fas fa-check text-teal-400"></i> 24BURN</span>
+                            </div>
+                        </div>
+
+                        <!-- Benefits Expected -->
+                        <div class="mb-6 bg-black/25 p-4 rounded-xl border border-white/5">
+                            <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-2">BENEFICIOS ESPERADOS</span>
+                            <ul class="text-xs text-gray-300 space-y-1.5">
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-teal-400 text-[10px]"></i> Apoya y acelera el metabolismo basal.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-teal-400 text-[10px]"></i> Favorece la digestión y desinflamación estomacal.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-teal-400 text-[10px]"></i> Nutre y rejuvenece la elasticidad de la piel.</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-check text-teal-400 text-[10px]"></i> Promueve un cambio biológico óptimo de 30 días.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Info tags -->
+                        <div class="grid grid-cols-2 gap-4 mb-6 text-xs border-t border-b border-white/10 py-3">
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">DURACIÓN</span>
+                                <span class="text-white font-bold">30 días de impacto</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block text-[10px] uppercase font-bold">IDEAL PARA</span>
+                                <span class="text-white font-bold truncate block">Reseteo Estético Integral</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STACK VALUE & CTA -->
+                    <div class="mt-auto">
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="text-gray-500 text-xs font-bold line-through">Val. Ind: $163.164</span>
+                            <span class="text-teal-400 text-xs font-black bg-teal-500/10 px-2 py-0.5 rounded">💰 Ahorras $27.194</span>
+                        </div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-gray-400 uppercase font-bold tracking-wider">Valor Protocolo</span>
+                            <span class="text-3xl font-black text-white">$135.970</span>
+                        </div>
+                        <a href="https://wa.me/56936200521?text=¡Hola!%20Quiero%20el%20protocolo%20Reinicio%2030%20Días." target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-black font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_15px_rgba(20,184,166,0.3)]">
+                            [ QUIERO ESTE PROTOCOLO ]
+                        </a>
                     </div>
                 </div>
 
@@ -453,28 +941,205 @@
         </div>
     </section>
 
-    <!-- Banner Confianza -->
-    <section class="py-16 bg-gradient-to-br from-[#020617] to-slate-900 border-t border-white/10">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center reveal">
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-8">Autoridad, Transparencia y Confianza Científica</h2>
-            <p class="text-gray-400 mb-10">La confianza en el bienestar se construye con datos, no con promesas. Nuestro compromiso es la transparencia total en cada sachet.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <div class="bg-black/50 p-6 rounded-2xl border border-white/5">
-                    <i class="fas fa-clock text-2xl text-fwp-blue mb-4"></i>
-                    <h4 class="text-white font-bold mb-2">Respeto Circadiano</h4>
-                    <p class="text-gray-500 text-sm">Fórmulas que respetan los ciclos de cortisol y melatonina, asegurando el equilibrio diario.</p>
+    <!-- Sección de Garantías Hormozi Style -->
+    <section class="py-12 bg-slate-950 border-t border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+                <div class="flex flex-col items-center justify-center p-4">
+                    <i class="fas fa-gift text-2xl text-red-500 mb-2"></i>
+                    <span class="text-xs font-black text-white uppercase">INCLUYE REGALO</span>
+                    <span class="text-[10px] text-gray-500">Vaso o termo FWP</span>
                 </div>
-                <div class="bg-black/50 p-6 rounded-2xl border border-white/5">
-                    <i class="fas fa-star text-2xl text-fwp-green mb-4"></i>
-                    <h4 class="text-white font-bold mb-2">Grado Premium</h4>
-                    <p class="text-gray-500 text-sm">Materias primas rigurosamente seleccionadas y polifenoles de alta pureza.</p>
+                <div class="flex flex-col items-center justify-center p-4">
+                    <i class="fas fa-truck text-2xl text-green-400 mb-2"></i>
+                    <span class="text-xs font-black text-white uppercase">ENVÍO GRATIS</span>
+                    <span class="text-[10px] text-gray-500">A todo Chile</span>
                 </div>
-                <div class="bg-black/50 p-6 rounded-2xl border border-white/5">
-                    <i class="fas fa-user-shield text-2xl text-purple-500 mb-4"></i>
-                    <h4 class="text-white font-bold mb-2">Seguridad Médica</h4>
-                    <p class="text-gray-500 text-sm">Aptos para rutinas de alto rendimiento, seguros para diabéticos y sin rellenos.</p>
+                <div class="flex flex-col items-center justify-center p-4">
+                    <i class="fas fa-book-open text-2xl text-blue-400 mb-2"></i>
+                    <span class="text-xs font-black text-white uppercase">GUÍA DE CONSUMO PRO</span>
+                    <span class="text-[10px] text-gray-500">Recomendaciones de uso</span>
                 </div>
+                <div class="flex flex-col items-center justify-center p-4">
+                    <i class="fas fa-user-doctor text-2xl text-purple-400 mb-2"></i>
+                    <span class="text-xs font-black text-white uppercase">ASESORÍA DIRECTA</span>
+                    <span class="text-[10px] text-gray-500">Acompañamiento 24/7</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-4 col-span-2 md:col-span-1">
+                    <i class="fas fa-shield-halved text-2xl text-yellow-500 mb-2"></i>
+                    <span class="text-xs font-black text-white uppercase">COMPRA 100% SEGURA</span>
+                    <span class="text-[10px] text-gray-500">Tus datos protegidos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: FÓRMULAS POR UNIDAD (Con proporción de dimensiones, descuento psicológico y drop-shadow orgánico) -->
+    <section id="productos-unidad" class="py-24 bg-[#010413] border-t border-white/5 relative">
+        <div class="absolute inset-0 bg-gradient-to-t from-transparent via-blue-950/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold text-purple-400 bg-purple-500/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Unidades Individuales</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">¿Prefieres comprar solo un producto?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Optimiza aspectos específicos de tu biología con nuestras fórmulas por unidad. Tecnología epigenética de alta pureza sin comprometerte a un protocolo completo.</p>
+            </div>
+
+            <!-- Single Products Grid (Ajustado con escala física perfecta y sombras orgánicas) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto reveal">
+                
+                <!-- RENÖVA+ Unidad ($52.990 - 11.67% DCTO) -->
+                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-purple-500/30 transition-all duration-300 glow-rva relative overflow-hidden">
+                    <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
+                        ⚡ -11.67% OFF
+                    </div>
+                    <div>
+                        <!-- Contenedor alineado abajo (items-end) para base física de suelo -->
+                        <div class="relative bg-black/40 rounded-2xl p-4 flex justify-center items-end h-48 mb-4 overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" alt="RENÖVA+ Unidad" class="object-contain animate-float h-[185px] filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                        </div>
+                        <h4 class="text-lg font-black text-white mb-1">RENÖVA+</h4>
+                        <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest block mb-2">Colágeno Peptan® (315g)</span>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">Péptidos de colágeno bioactivos premium con 300mg de Resveratrol y Coenzima Q10. Juventud real y estructural.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex flex-col gap-1 mb-4 border-t border-white/10 pt-3">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-gray-500">Precio Normal:</span>
+                                <span class="text-gray-500 line-through">$59.988</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="bg-purple-500/10 text-purple-400 text-[10px] font-black px-2 py-0.5 rounded">⚡ 11.67% DCTO</span>
+                                <span class="text-xl font-black text-white">$52.990</span>
+                            </div>
+                        </div>
+                        <a href="#" data-product="renova" class="checkout-btn w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(155,44,134,0.3)]">
+                            [ COMPRAR AHORA ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LIV Unidad ($52.990 - 11.67% DCTO) -->
+                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-green-500/30 transition-all duration-300 glow-liv relative overflow-hidden">
+                    <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
+                        ⚡ -11.67% OFF
+                    </div>
+                    <div>
+                        <div class="relative bg-black/40 rounded-2xl p-4 flex justify-center items-end h-48 mb-4 overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" alt="LIV Unidad" class="object-contain animate-float h-[150px] filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
+                        </div>
+                        <h4 class="text-lg font-black text-white mb-1">LIV</h4>
+                        <span class="text-[10px] font-bold text-green-400 uppercase tracking-widest block mb-2">Salud Gastrointestinal (280g)</span>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">Sinergia de fibras solubles de alta calidad enriquecida con probióticos específicos (1x10¹⁰ UFC) para desinflamación.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex flex-col gap-1 mb-4 border-t border-white/10 pt-3">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-gray-500">Precio Normal:</span>
+                                <span class="text-gray-500 line-through">$59.988</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="bg-green-500/10 text-green-400 text-[10px] font-black px-2 py-0.5 rounded">⚡ 11.67% DCTO</span>
+                                <span class="text-xl font-black text-white">$52.990</span>
+                            </div>
+                        </div>
+                        <a href="#" data-product="liv" class="checkout-btn w-full py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(74,222,128,0.3)]">
+                            [ COMPRAR AHORA ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 24B+ Unidad ($42.990 - 10.42% DCTO) -->
+                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-emerald-500/30 transition-all duration-300 glow-b24 relative overflow-hidden">
+                    <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
+                        ⚡ -10.42% OFF
+                    </div>
+                    <div>
+                        <div class="relative bg-black/40 rounded-2xl p-4 flex justify-center items-end h-48 mb-4 overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24B.png" alt="24B+ Unidad" class="object-contain animate-float h-[185px] filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" onerror="this.src='https://placehold.co/135x185/0f172a/4ade80?text=24B%2B'">
+                        </div>
+                        <h4 class="text-lg font-black text-white mb-1">24B+</h4>
+                        <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest block mb-2">Soporte Nocturno (28 Sachets)</span>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">Té sabor limón formulado para regular cortisol y melatonina. Apoya el sueño reparador y la recuperación celular.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex flex-col gap-1 mb-4 border-t border-white/10 pt-3">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-gray-500">Precio Normal:</span>
+                                <span class="text-gray-500 line-through">$47.988</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-black px-2 py-0.5 rounded">⚡ 10.42% DCTO</span>
+                                <span class="text-xl font-black text-white">$42.990</span>
+                            </div>
+                        </div>
+                        <a href="#" data-product="24b" class="checkout-btn w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(16,185,129,0.3)]">
+                            [ COMPRAR AHORA ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- EBOOST Unidad ($42.990 - 10.42% DCTO) -->
+                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-orange-500/30 transition-all duration-300 glow-eboost relative overflow-hidden">
+                    <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
+                        ⚡ -10.42% OFF
+                    </div>
+                    <div>
+                        <!-- Altura de caja EBOOST calculada proporcionalmente a 80px -->
+                        <div class="relative bg-black/40 rounded-2xl p-4 flex justify-center items-end h-48 mb-4 overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_EBOOST.png" alt="EBOOST Unidad" class="object-contain animate-float h-[80px] filter drop-shadow-[0_8px_16px_rgba(249,115,22,0.4)]" onerror="this.src='https://placehold.co/85x80/0f172a/f97316?text=EBOOST'">
+                        </div>
+                        <h4 class="text-lg font-black text-white mb-1">EBOOST</h4>
+                        <span class="text-[10px] font-bold text-orange-400 uppercase tracking-widest block mb-2">Energía Cognitiva (196g)</span>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">Fórmula nootrópica y adaptógena con BCAAs. Enfoque mental y energía constante libre de crash o picos de ansiedad.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex flex-col gap-1 mb-4 border-t border-white/10 pt-3">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-gray-500">Precio Normal:</span>
+                                <span class="text-gray-500 line-through">$47.988</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="bg-orange-500/10 text-orange-400 text-[10px] font-black px-2 py-0.5 rounded">⚡ 10.42% DCTO</span>
+                                <span class="text-xl font-black text-white">$42.990</span>
+                            </div>
+                        </div>
+                        <a href="#" data-product="eboost" class="checkout-btn w-full py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(249,115,22,0.3)]">
+                            [ COMPRAR AHORA ]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 24BURN Unidad ($38.990 - 9.72% DCTO) -->
+                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-lime-500/30 transition-all duration-300 glow-burn relative overflow-hidden">
+                    <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
+                        ⚡ -9.72% OFF
+                    </div>
+                    <div>
+                        <!-- Proporción de tarro 24BURN unificada a 185px de alto -->
+                        <div class="relative bg-black/40 rounded-2xl p-4 flex justify-center items-end h-48 mb-4 overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24BURN.png" alt="24BURN Unidad" class="object-contain animate-float h-[185px] filter drop-shadow-[0_8px_16px_rgba(163,230,53,0.4)]" onerror="this.src='https://placehold.co/135x185/0f172a/a3e635?text=24BURN'">
+                        </div>
+                        <h4 class="text-lg font-black text-white mb-1">24BURN</h4>
+                        <span class="text-[10px] font-bold text-lime-400 uppercase tracking-widest block mb-2">Activación Diurna (500g)</span>
+                        <p class="text-xs text-gray-400 mb-4 leading-relaxed">Termogénesis de alto impacto con Té Verde, Panax Ginseng y L-Carnitina. Oxidación celular inteligente.</p>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="flex flex-col gap-1 mb-4 border-t border-white/10 pt-3">
+                            <div class="flex justify-between text-[11px]">
+                                <span class="text-gray-500">Precio Normal:</span>
+                                <span class="text-gray-500 line-through">$43.188</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="bg-lime-500/10 text-lime-400 text-[10px] font-black px-2 py-0.5 rounded">⚡ 9.72% DCTO</span>
+                                <span class="text-xl font-black text-white">$38.990</span>
+                            </div>
+                        </div>
+                        <a href="#" data-product="24burn" class="checkout-btn w-full py-3 bg-lime-600 hover:bg-lime-500 text-black font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(16,185,129,0.3)]">
+                            [ COMPRAR AHORA ]
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -498,47 +1163,46 @@
 
             <!-- Gallery Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- RENÖVA+ Testimonials (Aparecen primero en DOM si se filtra 'all', pero dejaremos la lógica igual) -->
+                <!-- Testimonios RENÖVA+ -->
                 <div class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72">
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio1%20RENÖVA+.png" alt="Testimonio 1 RENÖVA+" class="w-full h-full object-contain testimonial-img" onerror="this.src='https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B'">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio1%20RENÖVA+.png" alt="Testimonio 1 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B';">
                         <div class="absolute top-2 right-2 bg-rva-main text-white text-xs font-bold px-2 py-1 rounded shadow-lg">RENÖVA+</div>
                     </div>
                 </div>
 
                 <div class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden" style="transition-delay: 100ms;">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72">
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio2%20RENÖVA+.png" alt="Testimonio 2 RENÖVA+" class="w-full h-full object-contain testimonial-img" onerror="this.src='https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B'">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio2%20RENÖVA+.png" alt="Testimonio 2 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B';">
                         <div class="absolute top-2 right-2 bg-rva-main text-white text-xs font-bold px-2 py-1 rounded shadow-lg">RENÖVA+</div>
                     </div>
                 </div>
 
                 <div class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden" style="transition-delay: 200ms;">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72">
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio3%20RENÖVA+.png" alt="Testimonio 3 RENÖVA+" class="w-full h-full object-contain testimonial-img" onerror="this.src='https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B'">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio3%20RENÖVA+.png" alt="Testimonio 3 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B';">
                         <div class="absolute top-2 right-2 bg-rva-main text-white text-xs font-bold px-2 py-1 rounded shadow-lg">RENÖVA+</div>
                     </div>
                 </div>
 
-                <!-- 24BURN Testimonials -->
+                <!-- Testimonios 24BURN -->
                 <div class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72">
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Termimonio1%2024BURN%20Alvaro.png" alt="Testimonio Alvaro 24BURN" class="w-full h-full object-contain testimonial-img" onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=Alvaro'">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Termimonio1%2024BURN%20Alvaro.png" alt="Testimonio Alvaro 24BURN" class="max-h-full max-w-full object-contain testimonial-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/a3e635?text=Alvaro';">
                         <div class="absolute top-2 right-2 bg-burn-main text-black text-xs font-bold px-2 py-1 rounded shadow-lg">24BURN</div>
                     </div>
                 </div>
 
                 <div class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden" style="transition-delay: 100ms;">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72">
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio2%2024BURN%20Ana.png" alt="Testimonio Ana 24BURN" class="w-full h-full object-contain testimonial-img" onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=Ana'">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio2%2024BURN%20Ana.png" alt="Testimonio Ana 24BURN" class="max-h-full max-w-full object-contain testimonial-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/a3e635?text=Ana';">
                         <div class="absolute top-2 right-2 bg-burn-main text-black text-xs font-bold px-2 py-1 rounded shadow-lg">24BURN</div>
                     </div>
                 </div>
 
                 <div class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden" style="transition-delay: 200ms;">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72">
-                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio3%2024BURN%20Damy.png" alt="Testimonio Damy 24BURN" class="w-full h-full object-contain testimonial-img" onerror="this.src='https://placehold.co/600x400/0f172a/a3e635?text=Damy'">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Testimonios/Testimonio3%2024BURN%20Damy.png" alt="Testimonio Damy 24BURN" class="max-h-full max-w-full object-contain testimonial-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/0f172a/a3e635?text=Damy';">
                         <div class="absolute top-2 right-2 bg-burn-main text-black text-xs font-bold px-2 py-1 rounded shadow-lg">24BURN</div>
                     </div>
                 </div>
@@ -557,13 +1221,14 @@
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-4xl md:text-5xl font-black text-white mb-6">Tu transformación comienza con una decisión</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">La salud es la única meta que te permite lograr todas las demás. Integrar este ecosistema en tu rutina es un hábito diario, pero su impacto se siente en la claridad de tus pensamientos, la firmeza de tu piel y la energía con la que cierras cada jornada.</p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                    La salud es la única meta que te permite lograr todas las demás. Integrar este ecosistema en tu rutina es un hábito diario, pero su impacto se siente en la claridad de tus pensamientos, la firmeza de tu piel y la energía con la que cierras cada jornada.
+                </p>
                 <a href="https://wa.me/56936200521?text=¡Hola!%20Deseo%20acceder%20al%20ecosistema%20de%20longevidad." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-                    <i class="fab fa-whatsapp text-2xl mr-3 text-green-500"></i> Accede al Ecosistema
+                    <i class="fab fa-whatsapp text-2xl mr-3 text-green-500"></i> Accede al Ecosistema de Longevidad
                 </a>
             </div>
             
-            <!-- A/B Testing Variations / Dynamic Copy Points -->
             <div class="flex flex-wrap justify-center gap-4 text-sm font-medium text-gray-400 mt-8">
                 <span class="bg-black/30 px-4 py-2 rounded-full border border-white/10">Juventud Real (Peptan®)</span>
                 <span class="bg-black/30 px-4 py-2 rounded-full border border-white/10">Productividad Sostenida</span>
@@ -572,14 +1237,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with integrated legal links triggers -->
     <footer class="bg-black py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-white rounded flex items-center justify-center p-1 overflow-hidden">
-                            <img src="LOGO_FWP NEGRO.png" alt="Logo FWP" class="w-full h-full object-contain scale-150 transform" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?font=inter&text=FWP'; this.classList.remove('scale-150');">
+                        <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center p-1 overflow-hidden">
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png" alt="Logo FWP" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?font=inter&text=FWP';">
                         </div>
                         <span class="font-bold text-lg tracking-wider text-white">FUTURE<span class="text-gray-400 font-light">WELLNESS</span></span>
                     </div>
@@ -590,8 +1255,18 @@
                     <h4 class="text-white font-bold mb-4">Ecosistema</h4>
                     <ul class="space-y-2 text-sm text-gray-500">
                         <li><a href="#ciencia" class="hover:text-white transition-colors">La Ciencia</a></li>
-                        <li><a href="#productos" class="hover:text-white transition-colors">Fórmulas</a></li>
+                        <li><a href="#diagnostico" class="hover:text-white transition-colors">Fórmulas y Protocolos</a></li>
                         <li><a href="#testimonios" class="hover:text-white transition-colors">Evidencia Clínica</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Políticas Legales</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><button onclick="openLegalModal('terminos')" class="hover:text-white transition-colors text-left focus:outline-none">Términos y Condiciones</button></li>
+                        <li><button onclick="openLegalModal('privacidad')" class="hover:text-white transition-colors text-left focus:outline-none">Política de Privacidad</button></li>
+                        <li><button onclick="openLegalModal('devoluciones')" class="hover:text-white transition-colors text-left focus:outline-none">Devoluciones y Reembolsos</button></li>
+                        <li><button onclick="openLegalModal('envios')" class="hover:text-white transition-colors text-left focus:outline-none">Política de Envíos</button></li>
                     </ul>
                 </div>
 
@@ -609,10 +1284,27 @@
             </div>
             
             <div class="border-t border-white/10 pt-8 text-center text-sm text-gray-600">
-                <p>&copy; 2024 Distribuidor Independiente FWP. La información contenida tiene fines educativos. Consulte a su médico.</p>
+                <p>&copy; 2026 Distribuidor Independiente FWP. La información contenida tiene fines educativos. Consulte a su médico.</p>
             </div>
         </div>
     </footer>
+
+    <!-- VENTANA MODAL DE POLÍTICAS LEGALES (Glassmorphic Scrollable sin referencias a marcas antiguas) -->
+    <div id="legalModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-panel w-full max-w-4xl max-h-[85vh] rounded-3xl p-6 sm:p-8 flex flex-col relative overflow-hidden border border-white/20 animate-fade-in">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center border-b border-white/10 pb-4 mb-6">
+                <h3 id="legalModalTitle" class="text-2xl font-black text-white">Documento Legal</h3>
+                <button onclick="closeLegalModal()" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 text-white transition-colors focus:outline-none">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            <!-- Modal Scrollable Content Container -->
+            <div id="legalModalContent" class="overflow-y-auto text-sm text-gray-300 leading-relaxed space-y-4 pr-2 max-h-[60vh]">
+                <!-- El contenido se inyecta dinámicamente mediante javascript -->
+            </div>
+        </div>
+    </div>
 
     <!-- Botón WhatsApp Flotante -->
     <a href="https://wa.me/56936200521?text=¡Hola!%20Vengo%20de%20tu%20página%20y%20deseo%20asesoría%20sobre%20biohacking%20nutricional." target="_blank" rel="noopener noreferrer" aria-label="Escríbeme al WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform animate-bounce-subtle">
@@ -621,6 +1313,194 @@
 
     <!-- Scripts -->
     <script>
+        // CONFIGURACIÓN DE ENLACES DE PAGO POR PRODUCTO CON PRECIOS PSICOLÓGICOS REDONDEADOS
+        const PAYMENT_LINKS = {
+            renova: "https://wa.me/56936200521?text=¡Hola!%20Deseo%20comprar%201%20unidad%20de%20RENÖVA+%20(Colágeno%20Peptan)%20con%20el%2011.67%25%20de%20descuento%20por%20$52.990.",
+            liv: "https://wa.me/56936200521?text=¡Hola!%20Deseo%20comprar%201%20unidad%20de%20LIV%20(Salud%20Gastrointestinal)%20con%20el%2011.67%25%20de%20descuento%20por%20$52.990.",
+            "24b": "https://wa.me/56936200521?text=¡Hola!%20Deseo%20comprar%201%20unidad%20de%2024B+%20(Soporte%20Nocturno)%20con%20el%2010.42%25%20de%20descuento%20por%20$42.990.",
+            eboost: "https://wa.me/56936200521?text=¡Hola!%20Deseo%20comprar%201%20unidad%20de%20EBOOST%20(Energía%20Cognitiva)%20con%20el%2010.42%25%20de%20descuento%20por%20$42.990.",
+            "24burn": "https://wa.me/56936200521?text=¡Hola!%20Deseo%20comprar%201%20unidad%20de%2024BURN%20(Activación%20Diurna)%20con%20el%209.72%25%20de%20descuento%20por%20$38.990."
+        };
+
+        // TEXTOS LEGALES INTEGRADOS EXCLUSIVAMENTE CON FWPCHILE.LAT (Chile, Leyes N° 19.496 y N° 19.628, vigentes)
+        const LEGAL_DATA = {
+            terminos: {
+                title: "Términos y Condiciones",
+                content: `
+                    <p class="text-xs text-gray-400 mb-4">Última actualización: 1 de julio de 2026</p>
+                    <p>Estos Términos y Condiciones regulan el uso del sitio web y la compra de productos en fwpchile.lat, operado por una persona natural en Chile. Al navegar o comprar en este sitio, aceptas estos términos.</p>
+                    <p><strong>Identificación del vendedor:</strong> por motivos de privacidad, los datos de identificación completos (nombre y RUT) no se publican en el sitio, pero serán proporcionados sin inconveniente a las autoridades competentes (SERNAC, Servicio de Impuestos Internos y tribunales de justicia) o a quien la ley faculte para requerirlos. Para cualquier gestión, escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">1. Aceptación</h4>
+                    <p>El uso del sitio implica la aceptación plena de estos Términos y Condiciones y de nuestra Política de Privacidad. Si no estás de acuerdo, te pedimos no utilizar el sitio.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">2. Productos y precios</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Los precios se expresan en pesos chilenos (CLP) e incluyen IVA, salvo que se indique lo contrario.</li>
+                        <li>Nos reservamos el derecho de modificar precios y disponibilidad en cualquier momento y sin previo aviso.</li>
+                        <li>Las imágenes son referenciales; pueden existir variaciones menores respecto del producto físico.</li>
+                        <li>En caso de un error evidente de precio o de stock, podremos anular el pedido e informarte, reintegrando lo pagado si corresponde.</li>
+                    </ul>
+                    <h4 class="text-white font-bold mt-6 mb-2">3. Proceso de compra</h4>
+                    <p>La selección de productos se realiza a través de la web. La compra se coordina y confirma mediante WhatsApp u otro canal informado, donde acordamos el medio de pago y el despacho. El pedido se considera confirmado una vez validado el pago.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">4. Medios de pago</h4>
+                    <p>Ofrecemos pago contra entrega: pagas al recibir tu pedido. fwpchile.lat no almacena datos de tarjetas; cuando corresponda, estos son gestionados por los proveedores de pago.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">5. Despacho</h4>
+                    <p>El envío es gratis a todo Chile. Los plazos y la cobertura se detallan en nuestra Política de Envíos.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">6. Cambios, devoluciones y derecho a retracto</h4>
+                    <p>Las condiciones de cambios y reembolsos se detallan en nuestra Política de Devoluciones. Conforme a la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores, cuando corresponda podrás ejercer el derecho a retracto dentro de los 10 días corridos siguientes a la recepción del producto, en los términos establecidos por la ley.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">7. Garantía legal</h4>
+                    <p>Todos los productos cuentan con la garantía legal establecida en la Ley N° 19.496. Si un producto presenta fallas o no corresponde a lo ofrecido, tienes derecho a la reparación, el cambio o la devolución del dinero según lo dispone la ley.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">8. Propiedad intelectual</h4>
+                    <p>La marca FWP, su logotipo, textos, imágenes y demás contenidos del sitio son de propiedad del titular de fwpchile.lat o se usan con autorización, y están protegidos por la legislación vigente. No está permitida su reproducción sin autorización.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">9. Responsabilidad</h4>
+                    <p>Hacemos nuestro mejor esfuerzo para que la información del sitio sea correcta y esté actualizada, pero no garantizamos que esté libre de errores. No seremos responsables por daños derivados del uso indebido de los productos o del sitio, dentro de los límites que permite la ley.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">10. Legislación aplicable y jurisdicción</h4>
+                    <p>Estos Términos se rigen por las leyes de la República de Chile. Cualquier controversia se someterá a los tribunales competentes que correspondan según la ley, sin perjuicio de los derechos que la Ley del Consumidor reconoce a los consumidores.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">11. Contacto</h4>
+                    <p>Para dudas sobre estos Términos, escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</p>
+                `
+            },
+            privacidad: {
+                title: "Política de Privacidad",
+                content: `
+                    <p class="text-xs text-gray-400 mb-4">Última actualización: 1 de julio de 2026</p>
+                    <p>En fwpchile.lat (en adelante, "la Tienda", "nosotros"), operada por una persona natural en Chile, respetamos tu privacidad y protegemos tus datos personales conforme a la Ley N° 19.628 sobre Protección de la Vida Privada y demás normativa chilena aplicable.</p>
+                    <p><strong>Identificación del vendedor:</strong> por motivos de privacidad, los datos de identificación completos (nombre y RUT) no se publican en el sitio, pero serán proporcionados sin inconveniente a las autoridades competentes (SERNAC, Servicio de Impuestos Internos y tribunales de justicia) o a quien la ley faculte para requerirlos. Para cualquier gestión, escríbenos a robertoandresvs@gmail.com o al +56 9 3620 0521.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">1. Responsable del tratamiento</h4>
+                    <p>El responsable del tratamiento de tus datos personales es el titular de fwpchile.lat (persona natural), identificable ante las autoridades competentes según lo indicado más arriba. Para cualquier consulta sobre privacidad puedes escribirnos a robertoandresvs@gmail.com.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">2. Qué datos recopilamos</h4>
+                    <p>Podemos recopilar los siguientes datos cuando compras o te contactas con nosotros:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Datos de identificación y contacto: nombre, correo electrónico, teléfono.</li>
+                        <li>Datos de despacho: dirección de entrega, comuna y región.</li>
+                        <li>Datos de la compra: productos, montos y comunicaciones (por ejemplo, mensajes por WhatsApp).</li>
+                        <li>Datos técnicos: dirección IP, tipo de dispositivo y navegador, mediante cookies o herramientas similares.</li>
+                    </ul>
+                    <p>No almacenamos datos de tarjetas de pago; estos son procesados directamente por nuestros proveedores de pago.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">3. Cómo usamos tus datos</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Procesar y gestionar tus pedidos y despachos.</li>
+                        <li>Contactarte para coordinar pagos, entregas o posventa.</li>
+                        <li>Responder tus consultas y solicitudes.</li>
+                        <li>Cumplir obligaciones legales y tributarias.</li>
+                        <li>Enviarte comunicaciones comerciales solo si nos has dado tu consentimiento (puedes revocarlo cuando quieras).</li>
+                    </ul>
+                    <h4 class="text-white font-bold mt-6 mb-2">4. Con quién compartimos tus datos</h4>
+                    <p>Podemos compartir tus datos únicamente con proveedores que nos ayudan a operar, como empresas de despacho, plataformas de pago y servicios tecnológicos. Estos terceros solo acceden a la información necesaria para prestar su servicio y están obligados a resguardarla.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">5. Cookies</h4>
+                    <p>Nuestro sitio puede usar cookies para mejorar tu experiencia, recordar preferencias y medir el uso del sitio. Puedes configurar tu navegador para bloquear o eliminar cookies; ten en cuenta que algunas funciones podrían no operar correctamente.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">6. Seguridad</h4>
+                    <p>Adoptamos medidas razonables de seguridad para proteger tus datos frente a accesos no autorizados, pérdida o alteración. Sin embargo, ningún sistema es 100% infalible.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">7. Tus derechos</h4>
+                    <p>Conforme a la Ley N° 19.628, puedes ejercer tus derechos de acceso, rectificación, cancelación (eliminación) y oposición respecto de tus datos personales. Para ejercerlos, escríbenos a oyarzunvaldesyoel@gmail.com y responderemos en los plazos legales.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">8. Menores de edad</h4>
+                    <p>Nuestros productos están dirigidos a personas mayores de 18 años. No recopilamos conscientemente datos de menores sin autorización de sus padres o tutores.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">9. Cambios a esta política</h4>
+                    <p>Podemos actualizar esta política en cualquier momento. Publicaremos la versión vigente en esta página con su fecha de actualización.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">10. Contacto</h4>
+                    <p>Ante cualquier duda sobre esta política o el tratamiento de tus datos, escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</p>
+                `
+            },
+            devoluciones: {
+                title: "Política de Devoluciones y Reembolsos",
+                content: `
+                    <p class="text-xs text-gray-400 mb-4">Última actualización: 1 de julio de 2026</p>
+                    <p>En fwpchile.lat queremos que compres con confianza. Aquí explicamos cómo funcionan los cambios, las devoluciones y los reembolsos, respetando la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">1. Derecho a retracto</h4>
+                    <p>Al tratarse de compras a distancia, tienes derecho a poner término anticipado a la compra dentro de un plazo de 10 días corridos contados desde la recepción del producto, conforme al artículo 3° bis de la Ley N° 19.496, siempre que el producto se encuentre sin uso, en buen estado y con su embalaje original. Para ejercerlo, contáctanos dentro del plazo.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">2. Cambios y devoluciones voluntarias</h4>
+                    <p>Adicionalmente, ofrecemos un plazo de 30 días desde la recepción para solicitar cambios o devoluciones, siempre que el producto:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>No haya sido usado y conserve sus etiquetas y embalaje original.</li>
+                        <li>Se encuentre en las mismas condiciones en que fue recibido.</li>
+                        <li>Cuente con comprobante de compra.</li>
+                    </ul>
+                    <h4 class="text-white font-bold mt-6 mb-2">3. Garantía legal por productos con falla</h4>
+                    <p>Si el producto presenta fallas de fabricación o no corresponde a lo ofrecido, la Ley N° 19.496 te reconoce la garantía legal: puedes optar por la reparación gratuita, el cambio o la devolución del dinero, dentro de los plazos que establece la ley. Este derecho es independiente de nuestra política voluntaria de cambios.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">4. Cómo solicitar un cambio o devolución</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</li>
+                        <li>Indícanos tu número de pedido y el motivo.</li>
+                        <li>Si es por falla, adjunta fotos o video del problema.</li>
+                        <li>Te indicaremos los pasos para el retiro o envío del producto.</li>
+                    </ul>
+                    <h4 class="text-white font-bold mt-6 mb-2">5. Costos de la devolución</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Si la devolución es por una falla del producto o un error nuestro, nosotros asumimos el costo de envío.</li>
+                        <li>Si es por retracto o cambio voluntario (por gusto o talla), el costo de envío de la devolución puede ser asumido por el cliente, salvo que se indique lo contrario.</li>
+                    </ul>
+                    <h4 class="text-white font-bold mt-6 mb-2">6. Reembolsos</h4>
+                    <p>Una vez recibido y revisado el producto, procesaremos el reembolso dentro de 10 días hábiles, por el mismo medio de pago utilizado o el que acordemos contigo. Te avisaremos cuando esté realizado.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">7. Excepciones</h4>
+                    <p>Por razones de higiene o seguridad, algunos productos pueden no ser elegibles para cambio o devolución una vez abiertos, salvo que presenten fallas. Te informaremos si tu producto está dentro de estas excepciones.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">8. Contacto</h4>
+                    <p>¿Necesitas ayuda con un cambio o devolución? Escríbenos a oyarzunvaldesyoel@gmail.com o por WhatsApp al +56 9 3544 0084. También puedes acudir al SERNAC si consideras que tus derechos como consumidor no fueron respetados.</p>
+                `
+            },
+            envios: {
+                title: "Política de Envíos",
+                content: `
+                    <p class="text-xs text-gray-400 mb-4">Última actualización: 1 de julio de 2026</p>
+                    <p>En fwpchile.lat el envío es gratis a todo Chile y puedes pagar contra entrega (al recibir tu pedido). A continuación detallamos cómo funcionan nuestros envíos.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">1. Cobertura</h4>
+                    <p>Actualmente enviamos únicamente dentro de Chile, a través de empresas de despacho con cobertura nacional. Por ahora no realizamos envíos internacionales.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">2. Preparación del pedido</h4>
+                    <p>Preparamos y despachamos los pedidos dentro de las 24 horas hábiles siguientes a la confirmación del pago. Los pedidos realizados en fin de semana o festivos se procesan el siguiente día hábil.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">3. Plazos de entrega estimados</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>Región Metropolitana: 2 a 4 días hábiles.</li>
+                        <li>Regiones: 3 a 7 días hábiles.</li>
+                        <li>Zonas extremas o de difícil acceso: 5 a 10 días hábiles.</li>
+                    </ul>
+                    <p class="text-xs text-gray-500">Los plazos son estimados y pueden variar por factores del courier, clima o alta demanda.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">4. Costos de envío</h4>
+                    <p>El envío es gratis a todo Chile, sin monto mínimo de compra. No pagas costos adicionales de despacho.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">5. Seguimiento</h4>
+                    <p>Una vez despachado tu pedido, te compartiremos el número de seguimiento (cuando el courier lo proporcione) para que puedas revisar el estado de tu envío.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">6. Retrasos</h4>
+                    <p>No somos responsables por retrasos atribuibles al courier o a causas de fuerza mayor. Si tu pedido se demora más de lo estimado, contáctanos y te ayudaremos a hacer el seguimiento.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">7. Problemas con la entrega</h4>
+                    <p>Si el paquete llega dañado o con productos faltantes, contáctanos dentro de las 48 horas desde la recepción, adjuntando fotos, para gestionar una solución. Revisa también nuestra Política de Devoluciones.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">8. Datos de despacho</h4>
+                    <p>Es responsabilidad del cliente entregar una dirección completa y correcta. Los reenvíos por datos erróneos pueden tener un costo adicional.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">9. Contacto</h4>
+                    <p>¿Dudas con tu envío? Escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</p>
+                `
+            }
+        };
+
+        // LÓGICA DE APERTURA Y CIERRE DEL MODAL DE POLÍTICAS
+        function openLegalModal(policyKey) {
+            const modal = document.getElementById('legalModal');
+            const title = document.getElementById('legalModalTitle');
+            const content = document.getElementById('legalModalContent');
+            
+            if (LEGAL_DATA[policyKey]) {
+                title.innerText = LEGAL_DATA[policyKey].title;
+                content.innerHTML = LEGAL_DATA[policyKey].content;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+            }
+        }
+
+        function closeLegalModal() {
+            const modal = document.getElementById('legalModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restaura scroll
+        }
+
+        // Asignar dinámicamente los enlaces de pago a los botones "Comprar Ahora"
+        document.addEventListener("DOMContentLoaded", () => {
+            const checkoutButtons = document.querySelectorAll(".checkout-btn");
+            checkoutButtons.forEach(btn => {
+                const productKey = btn.getAttribute("data-product");
+                if (PAYMENT_LINKS[productKey]) {
+                    btn.setAttribute("href", PAYMENT_LINKS[productKey]);
+                    btn.setAttribute("target", "_blank");
+                    btn.setAttribute("rel", "noopener noreferrer");
+                }
+            });
+        });
+
         // Animación de aparición al hacer scroll
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
@@ -676,6 +1556,56 @@
             });
             
             setTimeout(reveal, 50);
+        }
+
+        // Diagnostic / Objective Selector Functionality
+        function selectObjective(objectiveKey) {
+            const cards = document.querySelectorAll('.protocol-card');
+            const container = document.getElementById('reset-filter-container');
+            const badge = document.getElementById('filter-badge');
+            
+            // Highlight matching cards, fade out others
+            cards.forEach(card => {
+                const categories = card.getAttribute('data-categories').split(' ');
+                if (categories.includes(objectiveKey)) {
+                    card.classList.remove('dimmed');
+                    card.classList.add('highlighted');
+                } else {
+                    card.classList.remove('highlighted');
+                    card.classList.add('dimmed');
+                }
+            });
+
+            // Update filters heading status & button visibility
+            container.classList.remove('hidden');
+            let objectiveName = '';
+            if (objectiveKey === 'peso') objectiveName = 'Pérdida de Peso & Desinflamación';
+            if (objectiveKey === 'energia') objectiveName = 'Energía, Enfoque & Rendimiento';
+            if (objectiveKey === 'belleza') objectiveName = 'Piel, Cabello & Uñas (Belleza)';
+            if (objectiveKey === 'integral') objectiveName = 'Bienestar e Inmunidad Integral';
+            
+            badge.innerText = `Recomendación: ${objectiveName}`;
+            badge.classList.remove('bg-fwp-green/10', 'text-fwp-green');
+            badge.classList.add('bg-blue-500/10', 'text-blue-400');
+
+            // Scroll smoothly to products section
+            document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Reset Filter function to show all cards
+        function resetFilters() {
+            const cards = document.querySelectorAll('.protocol-card');
+            const container = document.getElementById('reset-filter-container');
+            const badge = document.getElementById('filter-badge');
+
+            cards.forEach(card => {
+                card.classList.remove('highlighted', 'dimmed');
+            });
+
+            container.classList.add('hidden');
+            badge.innerText = 'Ecosistema de Precisión';
+            badge.classList.remove('bg-blue-500/10', 'text-blue-400');
+            badge.classList.add('bg-fwp-green/10', 'text-fwp-green');
         }
         
         filterTestimonials('all');
