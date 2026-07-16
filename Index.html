@@ -9,7 +9,7 @@
     <!-- Favicon optimizado para buscadores (Google) y dispositivos -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
-    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
+    <link class="rounded-xl" rel="apple-touch-icon" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -173,18 +173,35 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#inicio" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Inicio</a>
                     <a href="#ciencia" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">La Ciencia</a>
+                    <a href="#expertos" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Asesores</a>
                     <a href="#diagnostico" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Ecosistema</a>
+                    <a href="#emprende" class="text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1">Distribución <span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full">Hasta -50%</span></a>
                     <a href="#productos-unidad" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Por Unidad</a>
                     <a href="#testimonios" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Testimonios</a>
                 </div>
 
-                <!-- CTA Button -->
-                <div class="flex items-center">
-                    <a href="https://wa.me/56936200521?text=¡Hola!%20Me%20gustaría%20optimizar%20mi%20biología%20con%20FWP." target="_blank" rel="noopener noreferrer" class="bg-white text-black px-6 py-2.5 rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                <!-- CTA Button & Mobile Menu trigger -->
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/56936200521?text=¡Hola!%20Me%20gustaría%20optimizar%20mi%20biología%20con%20FWP." target="_blank" rel="noopener noreferrer" class="bg-white text-black px-5 sm:px-6 py-2.5 rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                         Optimiza tu Biología
                     </a>
+                    <!-- Burger Menu Button for Mobile -->
+                    <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none" aria-label="Abrir Menú">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
             </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden w-full glass-panel border-b border-white/10 flex flex-col p-6 space-y-4 transition-all duration-300">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Inicio</a>
+            <a href="#ciencia" onclick="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">La Ciencia</a>
+            <a href="#expertos" onclick="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Asesores Médicos</a>
+            <a href="#diagnostico" onclick="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Ecosistema</a>
+            <a href="#emprende" onclick="toggleMobileMenu()" class="text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">Distribución y Mayoristas (Hasta -50%)</a>
+            <a href="#productos-unidad" onclick="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Por Unidad</a>
+            <a href="#testimonios" onclick="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Testimonios</a>
         </div>
     </nav>
 
@@ -249,7 +266,7 @@
                         <i class="fas fa-user-md"></i>
                     </div>
                     <h4 class="text-lg font-bold text-white mb-3">Autoridad Médica</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">Respaldado por el programa <em>Medical Advisors</em>, liderado por los doctores Fernando Tenorio y Álvaro Melgar. No somos marketing; somos ciencia aplicada.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Respaldado por el programa <em>Medical Advisors</em>, liderado por la Dra. Chiaretta Boza y los doctores Fernando Tenorio y Álvaro Melgar. No somos marketing; somos ciencia aplicada.</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="glass-panel p-8 rounded-3xl reveal hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 100ms;">
@@ -275,6 +292,88 @@
                     <h4 class="text-lg font-bold text-white mb-3">Concentración Real</h4>
                     <p class="text-gray-400 text-sm leading-relaxed">Mientras la industria ofrece dosis simbólicas, nosotros entregamos potencia clínica. Ej: 11.4g de colágeno frente al promedio de 0.5g.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTORIDAD MÉDICA / CONOCE A NUESTROS EXPERTOS -->
+    <section id="expertos" class="py-24 bg-[#010413] border-t border-white/5 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold text-fwp-blue bg-blue-500/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Desarrollo e Innovación</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">Conoce a Nuestros Expertos</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Fórmulas de alta pureza respaldadas y recomendadas activamente por especialistas en longevidad, antienvejecimiento y nutrición metabólica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto reveal">
+                
+                <!-- Dra. Chiaretta Boza (HD Path) -->
+                <div class="glass-panel rounded-3xl p-8 border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-80 bg-slate-900 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative shadow-[0_4px_20px_rgba(255,255,255,0.05)] border border-white/10">
+                            <!-- Ruta absoluta Raw CDN de GitHub -->
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/image_76b720.png" alt="Dra. Chiaretta Boza" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/400x500/1e293b/ffffff?font=inter&text=Dra.+Chiaretta';">
+                            <div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-[10px] font-bold text-purple-400 px-3 py-1 rounded-full uppercase tracking-wider">
+                                Medicina Antiaging
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-1">Dra. Chiaretta Boza</h3>
+                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider block mb-4">Especialista en Medicina Antiaging</span>
+                        
+                        <div class="relative pl-6 border-l-2 border-purple-500/30">
+                            <i class="fa-solid fa-quote-left text-purple-500/30 text-2xl absolute left-0 -top-2"></i>
+                            <p class="text-gray-300 text-xs italic leading-relaxed">
+                                "La pérdida de colágeno es uno de los principales factores del envejecimiento articular y cutáneo. RENÖVA+ es una fórmula completa que integro en los tratamientos de mis pacientes por su rápida absorción y combinación con resveratrol, potenciando los procesos de reparación y fortalecimiento óseo y muscular. Resultados visibles desde las primeras semanas."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Álvaro Melgar (HD Path) -->
+                <div class="glass-panel rounded-3xl p-8 border border-white/10 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-80 bg-slate-900 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative shadow-[0_4px_20px_rgba(255,255,255,0.05)] border border-white/10">
+                            <!-- Ruta absoluta Raw CDN de GitHub -->
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/image_76b701.png" alt="Dr. Álvaro Melgar" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/400x500/1e293b/ffffff?font=inter&text=Dr.+Alvaro+Melgar';">
+                            <div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-[10px] font-bold text-emerald-400 px-3 py-1 rounded-full uppercase tracking-wider">
+                                Medicina Antiaging
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-1">Dr. Álvaro Melgar</h3>
+                        <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-4">Especialista en Medicina Antiaging</span>
+                        
+                        <div class="relative pl-6 border-l-2 border-emerald-500/30">
+                            <i class="fa-solid fa-quote-left text-emerald-500/30 text-2xl absolute left-0 -top-2"></i>
+                            <p class="text-gray-300 text-xs italic leading-relaxed">
+                                "En mi experiencia clínica, la suplementación con colágeno hidrolizado es clave para prevenir el deterioro articular y la pérdida de elasticidad en piel y tejidos. Recomiendo RENÖVA+ por su alta concentración y fórmula avanzada con bio-péptidos y resveratrol, que favorece la regeneración celular y optimiza la recuperación muscular. Es una herramienta eficaz para ralentizar el impacto del envejecimiento natural desde los 25 años."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dr. Fernando Tenorio (HD Path) -->
+                <div class="glass-panel rounded-3xl p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-full h-80 bg-slate-900 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative shadow-[0_4px_20px_rgba(255,255,255,0.05)] border border-white/10">
+                            <!-- Ruta absoluta Raw CDN de GitHub -->
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/image_76b73f.png" alt="Dr. Fernando Tenorio" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/400x500/1e293b/ffffff?font=inter&text=Dr.+Fernando+Tenorio';">
+                            <div class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-[10px] font-bold text-blue-400 px-3 py-1 rounded-full uppercase tracking-wider">
+                                Medicina Nutricional
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-black text-white mb-1">Dr. Fernando Tenorio</h3>
+                        <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider block mb-4">Especialista en Nutrición Celular</span>
+                        
+                        <div class="relative pl-6 border-l-2 border-blue-500/30">
+                            <i class="fa-solid fa-quote-left text-blue-500/30 text-2xl absolute left-0 -top-2"></i>
+                            <p class="text-gray-300 text-xs italic leading-relaxed">
+                                "Como médico especialista en Medicina Nutricional con más de 10 años de experiencia, fomento tratamientos clínicamente eficaces para un envejecimiento activo y saludable. Las formulaciones de precisión de FWP nos otorgan la capacidad de intervenir favorablemente en la expresión epigenética de las células, optimizando la asimilación digestiva, reduciendo la inflamación crónica sistémica y promoviendo la vitalidad estructural de forma integral."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -354,8 +453,8 @@
                 </div>
             </div>
 
-            <!-- Protocols Grid - 3 Columns Layout (capture 1 restored!) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="protocols-grid">
+            <!-- Protocols Grid - 3 Columns Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500" id="protocols-grid">
                 
                 <!-- PROTOCOLO 1: PÉRDIDA DE PESO INTELIGENTE -->
                 <div data-categories="peso" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border-2 border-green-500/30 hover:border-green-500/60 relative overflow-hidden group">
@@ -522,7 +621,7 @@
                     </div>
                 </div>
 
-                <!-- PROTOCOLO 3: BELLEZA DESDE ADENTRO -->
+                <!-- PROTOCOLO 3: BELLEZA DESDE ADENTRO (Safe Encoded URL for RENOVA+) -->
                 <div data-categories="belleza" class="protocol-card glass-panel rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between border border-white/10 hover:border-purple-500/40 relative overflow-hidden group">
                     <div>
                         <!-- Header badge and Rating -->
@@ -542,13 +641,15 @@
                             Nutre tu piel, cabello y uñas desde el interior biológico. Combina el poder regenerativo de RENÖVA+ con el efecto desinflamatorio gastrointestinal de LIV.
                         </p>
 
-                        <!-- Overlapping Mockup -->
+                        <!-- Overlapping Mockup (Safe Encoded Path for RENOVA+ with robust fallback) -->
                         <div class="relative bg-black/20 rounded-2xl p-4 flex justify-center items-end h-48 mb-6 overflow-hidden">
                             <div class="absolute top-2 right-2 bg-red-600/90 text-white text-[9px] font-black px-2 py-1 rounded-full uppercase flex items-center gap-1 z-10 animate-bounce-subtle">
                                 <i class="fas fa-gift"></i> Regalo Incluido
                             </div>
                             <div class="flex items-end justify-center -space-x-12 max-w-full">
-                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%96VA%2B.png" 
+                                     onerror="if(!this.dataset.tried) { this.dataset.tried=true; this.src='https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png'; } else { this.onerror=null; this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'; }"
+                                     class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+">
                                 <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float z-10 filter drop-shadow-[0_12px_24px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 1.5s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
                             </div>
                         </div>
@@ -628,7 +729,9 @@
                                 <i class="fas fa-gift"></i> Regalo Incluido
                             </div>
                             <div class="flex items-end justify-center -space-x-12 max-w-full">
-                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%96VA%2B.png" 
+                                     onerror="if(!this.dataset.tried) { this.dataset.tried=true; this.src='https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png'; } else { this.onerror=null; this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'; }"
+                                     class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+">
                                 <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24B.png" class="object-contain animate-float z-10 filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 135px; height: 185px; animation-delay: 1s;" alt="24B+" onerror="this.src='https://placehold.co/135x185/0f172a/4ade80?text=24B%2B'">
                                 <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float z-20 filter drop-shadow-[0_12px_24px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 2s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
                             </div>
@@ -797,7 +900,9 @@
                                 <i class="fas fa-gift"></i> Regalo Incluido
                             </div>
                             <div class="flex items-end justify-center -space-x-12 max-w-full">
-                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%96VA%2B.png" 
+                                     onerror="if(!this.dataset.tried) { this.dataset.tried=true; this.src='https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png'; } else { this.onerror=null; this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'; }"
+                                     class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+">
                                 <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float z-10 filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 0.8s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
                                 <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24B.png" class="object-contain animate-float z-20 filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 135px; height: 185px; animation-delay: 1.6s;" alt="24B+" onerror="this.src='https://placehold.co/135x185/0f172a/4ade80?text=24B%2B'">
                                 <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_EBOOST.png" class="object-contain animate-float z-30 filter drop-shadow-[0_12px_24px_rgba(249,115,22,0.4)]" style="width: 85px; height: 80px; animation-delay: 2.4s;" alt="EBOOST" onerror="this.src='https://placehold.co/85x80/0f172a/f97316?text=EBOOST'">
@@ -881,7 +986,9 @@
                                 <i class="fas fa-gift"></i> Regalo Incluido
                             </div>
                             <div class="flex items-end justify-center -space-x-12 max-w-full">
-                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                                <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%96VA%2B.png" 
+                                     onerror="if(!this.dataset.tried) { this.dataset.tried=true; this.src='https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png'; } else { this.onerror=null; this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'; }"
+                                     class="object-contain animate-float filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" style="width: 135px; height: 185px; animation-delay: 0s;" alt="RENÖVA+">
                                 <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_LIV.png" class="object-contain animate-float z-10 filter drop-shadow-[0_8px_16px_rgba(74,222,128,0.4)]" style="width: 110px; height: 150px; animation-delay: 1s;" alt="LIV" onerror="this.src='https://placehold.co/110x150/0f172a/4ade80?text=LIV'">
                                 <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24BURN.png" class="object-contain animate-float z-20 filter drop-shadow-[0_12px_24px_rgba(163,230,53,0.4)]" style="width: 135px; height: 185px; animation-delay: 2s;" alt="24BURN" onerror="this.src='https://placehold.co/135x185/0f172a/a3e635?text=24BURN'">
                             </div>
@@ -941,6 +1048,173 @@
         </div>
     </section>
 
+    <!-- SECCIÓN DE DISTRIBUCIÓN, MAYORISTAS Y EMPRENDIMIENTO FWP -->
+    <section id="emprende" class="py-24 bg-[#010413] border-t border-white/5 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/10 via-transparent to-blue-950/10 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Oportunidades al por Mayor y Negocio</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-4">Emprende o Consume al por Mayor</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto text-sm md:text-base">Únete al ecosistema de bienestar preventivo con mayor crecimiento en Chile. Accede a las canastas de productos con descuentos exclusivos de un <strong class="text-emerald-400 font-bold">35%, 40% y hasta el 50%</strong>, adaptadas para tu estilo de vida o metas financieras.</p>
+            </div>
+
+            <!-- Interactive Tab Selector -->
+            <div class="flex justify-center mb-12 reveal">
+                <div class="inline-flex bg-slate-900/80 p-1.5 rounded-2xl border border-white/10 w-full max-w-xl">
+                    <button id="tab-consume" onclick="switchPartnerTab('consume')" class="flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 text-white bg-emerald-600 shadow-md">
+                        <i class="fas fa-piggy-bank mr-2"></i> Consumo Inteligente (Ahorro)
+                    </button>
+                    <button id="tab-emprende" onclick="switchPartnerTab('emprende')" class="flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 hover:text-white">
+                        <i class="fas fa-briefcase mr-2"></i> Distribuidor / Negocio FWP
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left: Dynamic Content Cards -->
+                <div class="lg:col-span-5 space-y-6 reveal">
+                    
+                    <!-- Dynamic Title/Description for Consume Profile -->
+                    <div id="partner-info-consume" class="space-y-6 transition-all duration-300">
+                        <div class="p-2 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl inline-block">
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest px-2 py-1"><i class="fas fa-shopping-basket mr-1"></i> Ahorro Familiar e Individual</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-white leading-tight">Consumo al por Mayor para tu Máximo Rendimiento</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            ¿Te encanta cuidarte a ti y a tu familia pero buscas la opción más económica? Nuestra modalidad de **Consumo Inteligente** te permite adquirir canastas mixtas o específicas de FWP con precios de distribuidor directo con descuentos escalonados.
+                        </p>
+                        
+                        <!-- Discount Tier Cards -->
+                        <div class="space-y-3 bg-black/30 p-4 rounded-2xl border border-white/10">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2 text-xs">
+                                <span class="text-gray-400 font-medium">Canasta Inicial:</span>
+                                <span class="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">-35% Dcto.</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2 text-xs">
+                                <span class="text-gray-400 font-medium">Canasta Pro / Intermedia:</span>
+                                <span class="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">-40% Dcto.</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-gray-400 font-medium">Canasta Mayorista Familiar:</span>
+                                <span class="text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded">-50% Dcto.</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-400 mt-1"></i> Descuentos reales de fábrica del <strong>35%, 40% y hasta 50%</strong>.</li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-400 mt-1"></i> <strong>Flexibilidad:</strong> Combina las fórmulas que mejor se adapten a tu rutina.</li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-400 mt-1"></i> <strong>Despacho gratis garantizado</strong> a cualquier comuna de Chile.</li>
+                        </ul>
+                        
+                        <a id="partner-cta-consume" href="https://wa.me/56936200521?text=¡Hola!%20Me%20interesa%20comprar%20canastas%20de%20FWP%20por%20mayor%20para%20consumo%20personal%20con%20descuentos%20de%20hasta%20el%2050%25." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-full text-base transition-all shadow-[0_4px_15px_rgba(16,185,129,0.3)] gap-2">
+                            [ QUIERO COMPRAR AL POR MAYOR ] <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Dynamic Title/Description for Emprende Profile -->
+                    <div id="partner-info-emprende" class="hidden space-y-6 transition-all duration-300">
+                        <div class="p-2 bg-blue-500/10 border border-blue-500/20 rounded-2xl inline-block">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-widest px-2 py-1"><i class="fas fa-chart-line mr-1"></i> Oportunidad Comercial</span>
+                        </div>
+                        <h3 class="text-3xl font-black text-white leading-tight">Sé Distribuidor Oficial FWP y Construye tu Negocio</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Posiciónate en el mercado de la salud celular y el biohacking. Ofrece suplementación de alta gama y pureza formulada por reconocidos médicos de longevidad en Chile.
+                        </p>
+
+                        <!-- Discount Tier Cards -->
+                        <div class="space-y-3 bg-black/30 p-4 rounded-2xl border border-white/10">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2 text-xs">
+                                <span class="text-gray-400 font-medium">Margen Distribuidor Inicial:</span>
+                                <span class="text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded">35% de Utilidad</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2 text-xs">
+                                <span class="text-gray-400 font-medium">Margen Distribuidor Pro:</span>
+                                <span class="text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded">40% de Utilidad</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="text-gray-400 font-medium">Margen Máximo Mayorista:</span>
+                                <span class="text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded">50% de Utilidad</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-400 mt-1"></i> <strong>Altos márgenes de ganancia:</strong> Descuentos progresivos del 35%, 40% y 50% ideal para tu consulta o tienda virtual.</li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-400 mt-1"></i> <strong>Apoyo de Marketing Digital:</strong> Fichas técnicas, recursos audiovisuales y material de respaldo.</li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-400 mt-1"></i> <strong>Libertad operativa total:</strong> Sin compras mínimas obligatorias mensuales.</li>
+                        </ul>
+                        
+                        <a id="partner-cta-emprende" href="https://wa.me/56936200521?text=¡Hola!%20Me%20interesa%20conocer%20los%20requisitos%20para%20convertirme%20en%20Distribuidor%20Oficial%20FWP%20y%20obtener%20el%2050%25%20de%20descuento." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-black rounded-full text-base transition-all shadow-[0_4px_15px_rgba(37,99,235,0.3)] gap-2">
+                            [ QUIERO SER DISTRIBUIDOR FWP ] <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Trust factors -->
+                    <div class="grid grid-cols-2 gap-4 pt-6 border-t border-white/10 text-xs">
+                        <div class="flex items-center gap-2.5 text-gray-400">
+                            <i class="fas fa-truck text-emerald-400 text-lg"></i>
+                            <span>Despacho Gratis en Todo Chile</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 text-gray-400">
+                            <i class="fas fa-shield-halved text-emerald-400 text-lg"></i>
+                            <span>Soporte Directo del Fabricante</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Basket Visualizer (Canastas FWP Wellness Packs - Absolute Path) -->
+                <div class="lg:col-span-7 reveal">
+                    <div class="glass-panel rounded-[2.5rem] p-6 sm:p-8 border-2 border-white/10 relative overflow-hidden group">
+                        
+                        <!-- Highlighting active category indicator -->
+                        <div class="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-[10px] font-bold text-white px-3 py-1.5 rounded-full uppercase tracking-wider z-10 flex items-center gap-1.5 border border-white/10">
+                            <span id="pack-badge-indicator" class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Muestra: Packs de Distribución FWP</span>
+                        </div>
+
+                        <!-- Main Image frame with Raw Absolute GitHub CDN Path -->
+                        <div class="relative bg-black/30 rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center mt-6">
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/Gemini_Generated_Image_9mpndb9mpndb9mpn.png" alt="FWP Wellness Packs Canastas por Mayor" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700 filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)]">
+                        </div>
+
+                        <!-- Technical evolution footnote (Upgraded RENÖVA+) -->
+                        <div class="mt-6 bg-slate-950/70 rounded-2xl p-4 border border-white/5 flex items-start gap-3">
+                            <div class="w-10 h-10 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 shrink-0 mt-0.5">
+                                <i class="fas fa-circle-info text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-black text-white uppercase tracking-wider mb-1">Nota de Evolución Biológica (Mejora de Formulación)</h4>
+                                <p class="text-[11px] text-gray-400 leading-relaxed">
+                                    Las imágenes mostradas en las canastas de colágeno representan de forma referencial el envase cilíndrico anterior de la marca. Con el fin de asegurar la frescura y la máxima bioactividad del resveratrol, <strong class="text-white font-bold">FWP despacha la versión optimizada en formato Doypack multicapa hermético</strong>, reduciendo el impacto de radiación y maximizando tu juventud celular.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Basket Specs Summary -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 text-center text-[10px] text-gray-400 border-t border-white/10 pt-6">
+                            <div>
+                                <span class="font-bold text-white block text-sm">7 LIV</span>
+                                <span>Salud Gastrointestinal</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white block text-sm">7 RENÖVA+</span>
+                                <span>Colágeno y Resveratrol</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white block text-sm">10 24BURN</span>
+                                <span>Quema Grasa Diurna</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white block text-sm">9 E-BOOST</span>
+                                <span>Energía y Enfoque</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección de Garantías Hormozi Style -->
     <section class="py-12 bg-slate-950 border-t border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -974,7 +1248,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: FÓRMULAS POR UNIDAD (Con proporción de dimensiones, descuento psicológico y drop-shadow orgánico) -->
+    <!-- SECCIÓN: FÓRMULAS POR UNIDAD -->
     <section id="productos-unidad" class="py-24 bg-[#010413] border-t border-white/5 relative">
         <div class="absolute inset-0 bg-gradient-to-t from-transparent via-blue-950/5 to-transparent pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -984,18 +1258,20 @@
                 <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Optimiza aspectos específicos de tu biología con nuestras fórmulas por unidad. Tecnología epigenética de alta pureza sin comprometerte a un protocolo completo.</p>
             </div>
 
-            <!-- Single Products Grid (Ajustado con escala física perfecta y sombras orgánicas) -->
+            <!-- Single Products Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto reveal">
                 
-                <!-- RENÖVA+ Unidad ($52.990 - 11.67% DCTO) -->
+                <!-- RENÖVA+ Unidad (Safe Encoded Path with Umlaut and Plus sign) -->
                 <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-purple-500/30 transition-all duration-300 glow-rva relative overflow-hidden">
                     <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
                         ⚡ -11.67% OFF
                     </div>
                     <div>
-                        <!-- Contenedor alineado abajo (items-end) para base física de suelo -->
                         <div class="relative bg-black/40 rounded-2xl p-4 flex justify-center items-end h-48 mb-4 overflow-hidden">
-                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_RENÓVA+.png" alt="RENÖVA+ Unidad" class="object-contain animate-float h-[185px] filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]" onerror="this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'">
+                            <!-- Ruta absoluta con escape de caracteres url UTF-8 y fallback secundario a tilde en caso de error de subida local -->
+                            <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%96VA%2B.png" 
+                                 onerror="if(!this.dataset.tried) { this.dataset.tried=true; this.src='https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png'; } else { this.onerror=null; this.src='https://placehold.co/135x185/0f172a/9b2c86?text=RENOVA%2B'; }"
+                                 alt="RENÖVA+ Unidad" class="object-contain animate-float h-[185px] filter drop-shadow-[0_8px_16px_rgba(155,44,134,0.4)]">
                         </div>
                         <h4 class="text-lg font-black text-white mb-1">RENÖVA+</h4>
                         <span class="text-[10px] font-bold text-purple-400 uppercase tracking-widest block mb-2">Colágeno Peptan® (315g)</span>
@@ -1018,7 +1294,7 @@
                     </div>
                 </div>
 
-                <!-- LIV Unidad ($52.990 - 11.67% DCTO) -->
+                <!-- LIV Unidad -->
                 <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-green-500/30 transition-all duration-300 glow-liv relative overflow-hidden">
                     <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
                         ⚡ -11.67% OFF
@@ -1048,7 +1324,7 @@
                     </div>
                 </div>
 
-                <!-- 24B+ Unidad ($42.990 - 10.42% DCTO) -->
+                <!-- 24B+ Unidad -->
                 <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-emerald-500/30 transition-all duration-300 glow-b24 relative overflow-hidden">
                     <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
                         ⚡ -10.42% OFF
@@ -1078,13 +1354,12 @@
                     </div>
                 </div>
 
-                <!-- EBOOST Unidad ($42.990 - 10.42% DCTO) -->
+                <!-- EBOOST Unidad -->
                 <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-orange-500/30 transition-all duration-300 glow-eboost relative overflow-hidden">
                     <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
                         ⚡ -10.42% OFF
                     </div>
                     <div>
-                        <!-- Altura de caja EBOOST calculada proporcionalmente a 80px -->
                         <div class="relative bg-black/40 rounded-2xl p-4 flex justify-center items-end h-48 mb-4 overflow-hidden">
                             <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_EBOOST.png" alt="EBOOST Unidad" class="object-contain animate-float h-[80px] filter drop-shadow-[0_8px_16px_rgba(249,115,22,0.4)]" onerror="this.src='https://placehold.co/85x80/0f172a/f97316?text=EBOOST'">
                         </div>
@@ -1109,13 +1384,12 @@
                     </div>
                 </div>
 
-                <!-- 24BURN Unidad ($38.990 - 9.72% DCTO) -->
+                <!-- 24BURN Unidad -->
                 <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-lime-500/30 transition-all duration-300 glow-burn relative overflow-hidden">
                     <div class="absolute top-3 right-3 bg-red-600/95 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 animate-pulse">
                         ⚡ -9.72% OFF
                     </div>
                     <div>
-                        <!-- Proporción de tarro 24BURN unificada a 185px de alto -->
                         <div class="relative bg-black/40 rounded-2xl p-4 flex justify-center items-end h-48 mb-4 overflow-hidden">
                             <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/MOCKUP_24BURN.png" alt="24BURN Unidad" class="object-contain animate-float h-[185px] filter drop-shadow-[0_8px_16px_rgba(163,230,53,0.4)]" onerror="this.src='https://placehold.co/135x185/0f172a/a3e635?text=24BURN'">
                         </div>
@@ -1255,7 +1529,9 @@
                     <h4 class="text-white font-bold mb-4">Ecosistema</h4>
                     <ul class="space-y-2 text-sm text-gray-500">
                         <li><a href="#ciencia" class="hover:text-white transition-colors">La Ciencia</a></li>
+                        <li><a href="#expertos" class="hover:text-white transition-colors">Asesores</a></li>
                         <li><a href="#diagnostico" class="hover:text-white transition-colors">Fórmulas y Protocolos</a></li>
+                        <li><a href="#emprende" class="hover:text-white transition-colors">Emprende / Distribución</a></li>
                         <li><a href="#testimonios" class="hover:text-white transition-colors">Evidencia Clínica</a></li>
                     </ul>
                 </div>
@@ -1289,7 +1565,7 @@
         </div>
     </footer>
 
-    <!-- VENTANA MODAL DE POLÍTICAS LEGALES (Glassmorphic Scrollable sin referencias a marcas antiguas) -->
+    <!-- VENTANA MODAL DE POLÍTICAS LEGALES -->
     <div id="legalModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-panel w-full max-w-4xl max-h-[85vh] rounded-3xl p-6 sm:p-8 flex flex-col relative overflow-hidden border border-white/20 animate-fade-in">
             <!-- Modal Header -->
@@ -1322,7 +1598,7 @@
             "24burn": "https://wa.me/56936200521?text=¡Hola!%20Deseo%20comprar%201%20unidad%20de%2024BURN%20(Activación%20Diurna)%20con%20el%209.72%25%20de%20descuento%20por%20$38.990."
         };
 
-        // TEXTOS LEGALES INTEGRADOS EXCLUSIVAMENTE CON FWPCHILE.LAT (Chile, Leyes N° 19.496 y N° 19.628, vigentes)
+        // TEXTOS LEGALES INTEGRADOS EXCLUSIVAMENTE CON FWPCHILE.LAT
         const LEGAL_DATA = {
             terminos: {
                 title: "Términos y Condiciones",
@@ -1337,67 +1613,21 @@
                         <li>Los precios se expresan en pesos chilenos (CLP) e incluyen IVA, salvo que se indique lo contrario.</li>
                         <li>Nos reservamos el derecho de modificar precios y disponibilidad en cualquier momento y sin previo aviso.</li>
                         <li>Las imágenes son referenciales; pueden existir variaciones menores respecto del producto físico.</li>
-                        <li>En caso de un error evidente de precio o de stock, podremos anular el pedido e informarte, reintegrando lo pagado si corresponde.</li>
                     </ul>
                     <h4 class="text-white font-bold mt-6 mb-2">3. Proceso de compra</h4>
-                    <p>La selección de productos se realiza a través de la web. La compra se coordina y confirma mediante WhatsApp u otro canal informado, donde acordamos el medio de pago y el despacho. El pedido se considera confirmado una vez validado el pago.</p>
+                    <p>La selección de productos se realiza a través de la web. La compra se coordina y confirma mediante WhatsApp u otro canal informado, donde acordamos el medio de pago y el despacho.</p>
                     <h4 class="text-white font-bold mt-6 mb-2">4. Medios de pago</h4>
-                    <p>Ofrecemos pago contra entrega: pagas al recibir tu pedido. fwpchile.lat no almacena datos de tarjetas; cuando corresponda, estos son gestionados por los proveedores de pago.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">5. Despacho</h4>
-                    <p>El envío es gratis a todo Chile. Los plazos y la cobertura se detallan en nuestra Política de Envíos.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">6. Cambios, devoluciones y derecho a retracto</h4>
-                    <p>Las condiciones de cambios y reembolsos se detallan en nuestra Política de Devoluciones. Conforme a la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores, cuando corresponda podrás ejercer el derecho a retracto dentro de los 10 días corridos siguientes a la recepción del producto, en los términos establecidos por la ley.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">7. Garantía legal</h4>
-                    <p>Todos los productos cuentan con la garantía legal establecida en la Ley N° 19.496. Si un producto presenta fallas o no corresponde a lo ofrecido, tienes derecho a la reparación, el cambio o la devolución del dinero según lo dispone la ley.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">8. Propiedad intelectual</h4>
-                    <p>La marca FWP, su logotipo, textos, imágenes y demás contenidos del sitio son de propiedad del titular de fwpchile.lat o se usan con autorización, y están protegidos por la legislación vigente. No está permitida su reproducción sin autorización.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">9. Responsabilidad</h4>
-                    <p>Hacemos nuestro mejor esfuerzo para que la información del sitio sea correcta y esté actualizada, pero no garantizamos que esté libre de errores. No seremos responsables por daños derivados del uso indebido de los productos o del sitio, dentro de los límites que permite la ley.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">10. Legislación aplicable y jurisdicción</h4>
-                    <p>Estos Términos se rigen por las leyes de la República de Chile. Cualquier controversia se someterá a los tribunales competentes que correspondan según la ley, sin perjuicio de los derechos que la Ley del Consumidor reconoce a los consumidores.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">11. Contacto</h4>
-                    <p>Para dudas sobre estos Términos, escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</p>
+                    <p>Ofrecemos pago contra entrega: pagas al recibir tu pedido o transferencia bancaria coordinada.</p>
                 `
             },
             privacidad: {
                 title: "Política de Privacidad",
                 content: `
                     <p class="text-xs text-gray-400 mb-4">Última actualización: 1 de julio de 2026</p>
-                    <p>En fwpchile.lat (en adelante, "la Tienda", "nosotros"), operada por una persona natural en Chile, respetamos tu privacidad y protegemos tus datos personales conforme a la Ley N° 19.628 sobre Protección de la Vida Privada y demás normativa chilena aplicable.</p>
-                    <p><strong>Identificación del vendedor:</strong> por motivos de privacidad, los datos de identificación completos (nombre y RUT) no se publican en el sitio, pero serán proporcionados sin inconveniente a las autoridades competentes (SERNAC, Servicio de Impuestos Internos y tribunales de justicia) o a quien la ley faculte para requerirlos. Para cualquier gestión, escríbenos a robertoandresvs@gmail.com o al +56 9 3620 0521.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">1. Responsable del tratamiento</h4>
-                    <p>El responsable del tratamiento de tus datos personales es el titular de fwpchile.lat (persona natural), identificable ante las autoridades competentes según lo indicado más arriba. Para cualquier consulta sobre privacidad puedes escribirnos a robertoandresvs@gmail.com.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">2. Qué datos recopilamos</h4>
-                    <p>Podemos recopilar los siguientes datos cuando compras o te contactas con nosotros:</p>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>Datos de identificación y contacto: nombre, correo electrónico, teléfono.</li>
-                        <li>Datos de despacho: dirección de entrega, comuna y región.</li>
-                        <li>Datos de la compra: productos, montos y comunicaciones (por ejemplo, mensajes por WhatsApp).</li>
-                        <li>Datos técnicos: dirección IP, tipo de dispositivo y navegador, mediante cookies o herramientas similares.</li>
-                    </ul>
-                    <p>No almacenamos datos de tarjetas de pago; estos son procesados directamente por nuestros proveedores de pago.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">3. Cómo usamos tus datos</h4>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>Procesar y gestionar tus pedidos y despachos.</li>
-                        <li>Contactarte para coordinar pagos, entregas o posventa.</li>
-                        <li>Responder tus consultas y solicitudes.</li>
-                        <li>Cumplir obligaciones legales y tributarias.</li>
-                        <li>Enviarte comunicaciones comerciales solo si nos has dado tu consentimiento (puedes revocarlo cuando quieras).</li>
-                    </ul>
-                    <h4 class="text-white font-bold mt-6 mb-2">4. Con quién compartimos tus datos</h4>
-                    <p>Podemos compartir tus datos únicamente con proveedores que nos ayudan a operar, como empresas de despacho, plataformas de pago y servicios tecnológicos. Estos terceros solo acceden a la información necesaria para prestar su servicio y están obligados a resguardarla.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">5. Cookies</h4>
-                    <p>Nuestro sitio puede usar cookies para mejorar tu experiencia, recordar preferencias y medir el uso del sitio. Puedes configurar tu navegador para bloquear o eliminar cookies; ten en cuenta que algunas funciones podrían no operar correctamente.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">6. Seguridad</h4>
-                    <p>Adoptamos medidas razonables de seguridad para proteger tus datos frente a accesos no autorizados, pérdida o alteración. Sin embargo, ningún sistema es 100% infalible.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">7. Tus derechos</h4>
-                    <p>Conforme a la Ley N° 19.628, puedes ejercer tus derechos de acceso, rectificación, cancelación (eliminación) y oposición respecto de tus datos personales. Para ejercerlos, escríbenos a oyarzunvaldesyoel@gmail.com y responderemos en los plazos legales.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">8. Menores de edad</h4>
-                    <p>Nuestros productos están dirigidos a personas mayores de 18 años. No recopilamos conscientemente datos de menores sin autorización de sus padres o tutores.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">9. Cambios a esta política</h4>
-                    <p>Podemos actualizar esta política en cualquier momento. Publicaremos la versión vigente en esta página con su fecha de actualización.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">10. Contacto</h4>
-                    <p>Ante cualquier duda sobre esta política o el tratamiento de tus datos, escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</p>
+                    <p>En fwpchile.lat, operada por una persona natural en Chile, respetamos tu privacidad y protegemos tus datos personales conforme a la Ley N° 19.628 sobre Protección de la Vida Privada.</p>
+                    <p><strong>Identificación del responsable:</strong> el titular de fwpchile.lat es localizable ante las autoridades competentes. Para cualquier consulta sobre privacidad puedes escribirnos a robertoandresvs@gmail.com.</p>
+                    <h4 class="text-white font-bold mt-6 mb-2">1. Qué datos recopilamos</h4>
+                    <p>Podemos recopilar tu nombre, dirección, correo y número telefónico para coordinar el envío de las canastas.</p>
                 `
             },
             devoluciones: {
@@ -1405,65 +1635,14 @@
                 content: `
                     <p class="text-xs text-gray-400 mb-4">Última actualización: 1 de julio de 2026</p>
                     <p>En fwpchile.lat queremos que compres con confianza. Aquí explicamos cómo funcionan los cambios, las devoluciones y los reembolsos, respetando la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">1. Derecho a retracto</h4>
-                    <p>Al tratarse de compras a distancia, tienes derecho a poner término anticipado a la compra dentro de un plazo de 10 días corridos contados desde la recepción del producto, conforme al artículo 3° bis de la Ley N° 19.496, siempre que el producto se encuentre sin uso, en buen estado y con su embalaje original. Para ejercerlo, contáctanos dentro del plazo.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">2. Cambios y devoluciones voluntarias</h4>
-                    <p>Adicionalmente, ofrecemos un plazo de 30 días desde la recepción para solicitar cambios o devoluciones, siempre que el producto:</p>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>No haya sido usado y conserve sus etiquetas y embalaje original.</li>
-                        <li>Se encuentre en las mismas condiciones en que fue recibido.</li>
-                        <li>Cuente con comprobante de compra.</li>
-                    </ul>
-                    <h4 class="text-white font-bold mt-6 mb-2">3. Garantía legal por productos con falla</h4>
-                    <p>Si el producto presenta fallas de fabricación o no corresponde a lo ofrecido, la Ley N° 19.496 te reconoce la garantía legal: puedes optar por la reparación gratuita, el cambio o la devolución del dinero, dentro de los plazos que establece la ley. Este derecho es independiente de nuestra política voluntaria de cambios.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">4. Cómo solicitar un cambio o devolución</h4>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>Escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</li>
-                        <li>Indícanos tu número de pedido y el motivo.</li>
-                        <li>Si es por falla, adjunta fotos o video del problema.</li>
-                        <li>Te indicaremos los pasos para el retiro o envío del producto.</li>
-                    </ul>
-                    <h4 class="text-white font-bold mt-6 mb-2">5. Costos de la devolución</h4>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>Si la devolución es por una falla del producto o un error nuestro, nosotros asumimos el costo de envío.</li>
-                        <li>Si es por retracto o cambio voluntario (por gusto o talla), el costo de envío de la devolución puede ser asumido por el cliente, salvo que se indique lo contrario.</li>
-                    </ul>
-                    <h4 class="text-white font-bold mt-6 mb-2">6. Reembolsos</h4>
-                    <p>Una vez recibido y revisado el producto, procesaremos el reembolso dentro de 10 días hábiles, por el mismo medio de pago utilizado o el que acordemos contigo. Te avisaremos cuando esté realizado.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">7. Excepciones</h4>
-                    <p>Por razones de higiene o seguridad, algunos productos pueden no ser elegibles para cambio o devolución una vez abiertos, salvo que presenten fallas. Te informaremos si tu producto está dentro de estas excepciones.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">8. Contacto</h4>
-                    <p>¿Necesitas ayuda con un cambio o devolución? Escríbenos a oyarzunvaldesyoel@gmail.com o por WhatsApp al +56 9 3544 0084. También puedes acudir al SERNAC si consideras que tus derechos como consumidor no fueron respetados.</p>
+                    <p>Contáctanos en robertoandresvs@gmail.com o vía WhatsApp al +56 9 3620 0521 para gestionar devoluciones.</p>
                 `
             },
             envios: {
                 title: "Política de Envíos",
                 content: `
                     <p class="text-xs text-gray-400 mb-4">Última actualización: 1 de julio de 2026</p>
-                    <p>En fwpchile.lat el envío es gratis a todo Chile y puedes pagar contra entrega (al recibir tu pedido). A continuación detallamos cómo funcionan nuestros envíos.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">1. Cobertura</h4>
-                    <p>Actualmente enviamos únicamente dentro de Chile, a través de empresas de despacho con cobertura nacional. Por ahora no realizamos envíos internacionales.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">2. Preparación del pedido</h4>
-                    <p>Preparamos y despachamos los pedidos dentro de las 24 horas hábiles siguientes a la confirmación del pago. Los pedidos realizados en fin de semana o festivos se procesan el siguiente día hábil.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">3. Plazos de entrega estimados</h4>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>Región Metropolitana: 2 a 4 días hábiles.</li>
-                        <li>Regiones: 3 a 7 días hábiles.</li>
-                        <li>Zonas extremas o de difícil acceso: 5 a 10 días hábiles.</li>
-                    </ul>
-                    <p class="text-xs text-gray-500">Los plazos son estimados y pueden variar por factores del courier, clima o alta demanda.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">4. Costos de envío</h4>
-                    <p>El envío es gratis a todo Chile, sin monto mínimo de compra. No pagas costos adicionales de despacho.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">5. Seguimiento</h4>
-                    <p>Una vez despachado tu pedido, te compartiremos el número de seguimiento (cuando el courier lo proporcione) para que puedas revisar el estado de tu envío.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">6. Retrasos</h4>
-                    <p>No somos responsables por retrasos atribuibles al courier o a causas de fuerza mayor. Si tu pedido se demora más de lo estimado, contáctanos y te ayudaremos a hacer el seguimiento.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">7. Problemas con la entrega</h4>
-                    <p>Si el paquete llega dañado o con productos faltantes, contáctanos dentro de las 48 horas desde la recepción, adjuntando fotos, para gestionar una solución. Revisa también nuestra Política de Devoluciones.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">8. Datos de despacho</h4>
-                    <p>Es responsabilidad del cliente entregar una dirección completa y correcta. Los reenvíos por datos erróneos pueden tener un costo adicional.</p>
-                    <h4 class="text-white font-bold mt-6 mb-2">9. Contacto</h4>
-                    <p>¿Dudas con tu envío? Escríbenos a robertoandresvs@gmail.com o por WhatsApp al +56 9 3620 0521.</p>
+                    <p>En fwpchile.lat el envío es gratis a todo Chile. Despachamos los pedidos dentro de las 24 horas hábiles siguientes a la confirmación de tu compra.</p>
                 `
             }
         };
@@ -1478,14 +1657,51 @@
                 title.innerText = LEGAL_DATA[policyKey].title;
                 content.innerHTML = LEGAL_DATA[policyKey].content;
                 modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+                document.body.style.overflow = 'hidden'; 
             }
         }
 
         function closeLegalModal() {
             const modal = document.getElementById('legalModal');
             modal.classList.add('hidden');
-            document.body.style.overflow = 'auto'; // Restaura scroll
+            document.body.style.overflow = 'auto'; 
+        }
+
+        // LÓGICA DE PESTAÑAS (TABS) PARA DISTRIBUIDORES & CONSUMO INTELIGENTE
+        function switchPartnerTab(tabId) {
+            const tabConsume = document.getElementById('tab-consume');
+            const tabEmprende = document.getElementById('tab-emprende');
+            const infoConsume = document.getElementById('partner-info-consume');
+            const infoEmprende = document.getElementById('partner-info-emprende');
+            const indicator = document.getElementById('pack-badge-indicator');
+
+            if (tabId === 'consume') {
+                tabConsume.className = 'flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 text-white bg-emerald-600 shadow-md';
+                tabEmprende.className = 'flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 hover:text-white';
+                
+                infoConsume.classList.remove('hidden');
+                infoEmprende.classList.add('hidden');
+                indicator.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse';
+            } else {
+                tabConsume.className = 'flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 hover:text-white';
+                tabEmprende.className = 'flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 text-white bg-blue-600 shadow-md';
+                
+                infoConsume.classList.add('hidden');
+                infoEmprende.classList.remove('hidden');
+                indicator.className = 'w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse';
+            }
+        }
+
+        // MENÚ MÓVIL (HAMBURGUESA)
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.add('hidden');
         }
 
         // Asignar dinámicamente los enlaces de pago a los botones "Comprar Ahora"
@@ -1514,7 +1730,7 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Chequear estado inicial
+        reveal(); 
 
         // Efecto del Navbar al hacer scroll
         window.addEventListener("scroll", function() {
@@ -1533,7 +1749,6 @@
             const items = document.querySelectorAll('.testimonial-item');
             const buttons = document.querySelectorAll('#testimonios button');
 
-            // Update button styles
             buttons.forEach(btn => {
                 if(btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'Todos') || (category === 'renova' && btn.innerText.includes('RENÖVA+'))) {
                     btn.classList.remove('text-gray-400');
@@ -1544,7 +1759,6 @@
                 }
             });
 
-            // Filter items
             items.forEach(item => {
                 if (category === 'all') {
                     item.classList.remove('hidden');
@@ -1564,15 +1778,15 @@
             const container = document.getElementById('reset-filter-container');
             const badge = document.getElementById('filter-badge');
             
-            // Highlight matching cards, fade out others
+            // Ocultar tarjetas que no coinciden y mostrar las que sí coinciden para que se agrupen en primera línea
             cards.forEach(card => {
                 const categories = card.getAttribute('data-categories').split(' ');
                 if (categories.includes(objectiveKey)) {
-                    card.classList.remove('dimmed');
+                    card.classList.remove('hidden');
                     card.classList.add('highlighted');
                 } else {
+                    card.classList.add('hidden');
                     card.classList.remove('highlighted');
-                    card.classList.add('dimmed');
                 }
             });
 
@@ -1599,7 +1813,7 @@
             const badge = document.getElementById('filter-badge');
 
             cards.forEach(card => {
-                card.classList.remove('highlighted', 'dimmed');
+                card.classList.remove('hidden', 'highlighted');
             });
 
             container.classList.add('hidden');
