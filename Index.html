@@ -6,6 +6,24 @@
     <title>Transforma tu Biología con FWP | Nutrición de Precisión</title>
     <meta name="description" content="Descubre la revolución en biohacking y bienestar con FWP. Tecnología epigenética para regeneración, quema de grasa y longevidad.">
     
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3974003632907236');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3974003632907236&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
     <!-- Favicon optimizado para buscadores -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
@@ -1932,6 +1950,19 @@
                 img.src = "https://placehold.co/110x150/0f172a/9b2c86?text=RENOVA%2B";
             }
         }
+
+        // Meta Pixel: Detección y rastreo automático de clics a pasarelas de Mercado Pago
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.addEventListener("click", function(event) {
+                const targetLink = event.target.closest("a");
+                if (targetLink && targetLink.href) {
+                    const url = targetLink.href;
+                    if (url.includes("mpago.la") || url.includes("mpago.li") || url.includes("mercadopago")) {
+                        fbq('track', 'InitiateCheckout');
+                    }
+                }
+            });
+        });
 
         // Lógica de la caja sorpresa del Embajador
         function openAmbassadorGift() {

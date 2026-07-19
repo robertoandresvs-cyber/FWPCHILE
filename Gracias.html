@@ -6,6 +6,29 @@
     <title>¡Gracias por tu Compra! | FWP Chile</title>
     <meta name="description" content="Confirma los datos de tu despacho prioritario para procesar tu pedido FWP de inmediato.">
     
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3974003632907236');
+        fbq('track', 'PageView');
+        
+        // Registrar evento Purchase exactamente una vez por carga de página
+        fbq('track', 'Purchase', {
+            currency: 'CLP'
+        });
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3974003632907236&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
@@ -332,6 +355,9 @@
                 document.getElementById('validation-error-alert').classList.remove('hidden');
                 return;
             }
+
+            // Meta Pixel: Ejecutar CompleteRegistration cuando el formulario sea validado correctamente
+            fbq('track', 'CompleteRegistration');
 
             // Generar el mensaje de WhatsApp estructurado con jerarquía visual de alto nivel
             const whatsappMessage = `¡Hola FWP Chile! He completado mi pago. Aquí tienes mis datos de envío para activar mi despacho prioritario:
