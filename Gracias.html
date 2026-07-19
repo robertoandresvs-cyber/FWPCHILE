@@ -19,10 +19,20 @@
         fbq('init', '3974003632907236');
         fbq('track', 'PageView');
         
-        // Registrar evento Purchase exactamente una vez por carga de página
-        fbq('track', 'Purchase', {
-            currency: 'CLP'
-        });
+        // Evitar compras duplicadas mediante sessionStorage y registrar el valor de compra (dinámico o por defecto)
+        if (!sessionStorage.getItem('purchaseTracked')) {
+            // Obtiene el parámetro 'val' de la URL si existe (ej: gracias.html?val=85980)
+            const urlParams = new URLSearchParams(window.location.search);
+            const purchaseValue = parseFloat(urlParams.get('val')) || 99980;
+
+            fbq('track', 'Purchase', {
+                value: purchaseValue,
+                currency: 'CLP'
+            });
+
+            // Guarda la marca en la sesión del navegador para no repetir el evento en recargas
+            sessionStorage.setItem('purchaseTracked', 'true');
+        }
     </script>
     <noscript>
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=3974003632907236&ev=PageView&noscript=1" />
