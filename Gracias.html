@@ -1,89 +1,385 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Gracias por tu Compra! | FWP Chile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Confirma los datos de tu despacho prioritario para procesar tu pedido FWP de inmediato.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
+    
+    <!-- Tailwind CSS & FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        fwp: {
+                            blue: '#2563eb',
+                            green: '#00e676',
+                            emerald: '#059669',
+                            dark: '#0f172a',
+                            darker: '#020617'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0d0d0d;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
+            background-color: #020617; /* Slate 950 */
+            color: #f8fafc; /* Slate 50 */
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 500px;
-            padding: 40px 20px;
-            background: #141414;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid #222;
-            margin: 20px;
+
+        /* Glassmorphism Panel style */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
-        .icon {
-            font-size: 64px;
-            color: #00e676;
-            margin-bottom: 20px;
+
+        /* Ambient Glow animation background */
+        .glow-sphere {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 230, 118, 0.15) 0%, transparent 70%);
+            filter: blur(40px);
+            z-index: 0;
+            pointer-events: none;
         }
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #ffffff;
+
+        /* Pulse and bounce transitions */
+        .animate-bounce-slow {
+            animation: bounceSlow 3s infinite;
         }
-        p {
-            font-size: 16px;
-            color: #aaaaaa;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        @keyframes bounceSlow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
-        .highlight {
-            color: #00e676;
-            font-weight: 600;
+
+        .success-checkmark {
+            animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
         }
-        .btn {
-            display: inline-block;
-            background-color: #00e676;
-            color: #000000;
-            text-decoration: none;
-            padding: 14px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3);
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 230, 118, 0.5);
+
+        /* Sleek custom focus states */
+        .fwp-input {
+            background: rgba(2, 6, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .footer-text {
-            font-size: 12px;
-            color: #555555;
-            margin-top: 30px;
+        .fwp-input:focus {
+            border-color: #00e676;
+            box-shadow: 0 0 15px rgba(0, 230, 118, 0.15);
+            outline: none;
+            background: rgba(15, 23, 42, 0.8);
         }
     </style>
+</head>
+<body class="antialiased selection:bg-fwp-green selection:text-black min-h-screen flex flex-col justify-between relative">
 
-    </head>
-<body>
+    <!-- Ambient background glows -->
+    <div class="glow-sphere top-[-50px] left-[-50px]"></div>
+    <div class="glow-sphere bottom-[-50px] right-[-50px] bg-emerald-950/15"></div>
 
-    <div class="container">
-        <div class="icon">✓</div>
-        <h1>¡Pedido Confirmado!</h1>
-        <p>Hemos recibido tu pago con éxito. Tu cuerpo está a punto de pasar al <span class="highlight">siguiente nivel</span>.</p>
-        
-        <p>En los próximos minutos recibirás un correo de confirmación y nos pondremos en contacto contigo vía WhatsApp para coordinar el despacho rápido de tu arsenal FWP.</p>
-        
-        <a href="https://fwpchile.lat" class="btn">Volver a la Tienda</a>
-        
-        <p class="footer-text">Si tienes alguna duda inmediata, escríbenos al soporte oficial de FWP Chile.</p>
-    </div>
+    <!-- Header / Brand Identity bar -->
+    <header class="w-full py-6 px-4 sm:px-8 border-b border-white/5 relative z-10 bg-slate-950/40 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center p-1 shadow-[0_0_15px_rgba(255,255,255,0.15)] overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/robertoandresvs-cyber/FWPCHILE/main/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png" alt="Logo FWP" class="w-full h-full object-contain scale-150 transform" onerror="this.onerror=null; this.src='https://placehold.co/100x100/ffffff/000000?text=FWP';">
+                </div>
+                <span class="font-bold text-lg tracking-wider text-white">FUTURE<span class="text-gray-400 font-light">WELLNESS</span></span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-fwp-green animate-pulse"></span>
+                <span class="text-[10px] sm:text-xs font-bold text-fwp-green uppercase tracking-widest font-mono">Soporte Logístico Activo</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dynamic Content Station -->
+    <main class="flex-grow flex items-center justify-center p-4 sm:p-6 relative z-10 my-8">
+        <div class="w-full max-w-xl glass-panel rounded-[2.5rem] p-6 sm:p-10 border border-white/10 relative overflow-hidden transition-all duration-500">
+            <!-- Decorative border line matching the theme -->
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-emerald-500 via-fwp-green to-teal-500"></div>
+
+            <!-- STEP CONTAINER 1: Form and Urgent Delivery Details -->
+            <div id="step-form-delivery" class="transition-all duration-500 block">
+                <!-- Icon Header Success State -->
+                <div class="flex justify-center mb-6">
+                    <div class="w-20 h-20 bg-fwp-green/10 border-2 border-fwp-green/30 rounded-full flex items-center justify-center text-4xl text-fwp-green success-checkmark animate-bounce-slow shadow-[0_0_25px_rgba(0,230,118,0.2)]">
+                        <i class="fas fa-circle-check"></i>
+                    </div>
+                </div>
+
+                <div class="text-center mb-8">
+                    <span class="text-[10px] sm:text-xs font-black text-fwp-green bg-fwp-green/10 px-3.5 py-1.5 rounded-full uppercase tracking-widest font-mono">
+                        Paso 1: Pago Verificado con Éxito
+                    </span>
+                    <h1 class="text-3xl font-black text-white mt-4 tracking-tight">¡Muchas Gracias por tu Compra!</h1>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        Tu pago fue acreditado con éxito. Ahora, para activar tu <strong class="text-white">Despacho Prioritario Gratis en menos de 24 horas</strong> y garantizar tu shaker oficial de regalo, completa tus datos a continuación:
+                    </p>
+                </div>
+
+                <!-- Custom Alert Container for Validation (without using alerts) -->
+                <div id="validation-error-alert" class="hidden mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs text-left flex items-start gap-3">
+                    <i class="fas fa-triangle-exclamation text-base mt-0.5 shrink-0"></i>
+                    <div>
+                        <strong class="font-bold block mb-0.5">Por favor, revisa el formulario:</strong>
+                        <span>Todos los campos con (*) son obligatorios para procesar tu despacho.</span>
+                    </div>
+                </div>
+
+                <!-- Shipping Form Details -->
+                <form id="fwp-shipping-form" onsubmit="handleShippingSubmit(event)" class="space-y-4 text-left">
+                    <div>
+                        <label for="fullName" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Nombre Completo *</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500"><i class="fas fa-user text-xs"></i></span>
+                            <input type="text" id="fullName" class="w-full pl-10 pr-4 py-3.5 rounded-2xl fwp-input text-white text-sm" placeholder="Ej: Roberto Vega" required>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="address" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Dirección de Envío *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500"><i class="fas fa-location-dot text-xs"></i></span>
+                                <input type="text" id="address" class="w-full pl-10 pr-4 py-3.5 rounded-2xl fwp-input text-white text-sm" placeholder="Calle, número, departamento" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="comuna" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Comuna / Región *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500"><i class="fas fa-map text-xs"></i></span>
+                                <input type="text" id="comuna" class="w-full pl-10 pr-4 py-3.5 rounded-2xl fwp-input text-white text-sm" placeholder="Ej: Providencia, Metropolitana" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="phone" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Teléfono de Contacto *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500 font-bold text-xs font-mono">+56</span>
+                                <input type="tel" id="phone" class="w-full pl-12 pr-4 py-3.5 rounded-2xl fwp-input text-white text-sm" placeholder="9 3620 0521" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Correo Electrónico <span class="text-gray-500 lowercase">(no obligatorio)</span></label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500"><i class="fas fa-envelope text-xs"></i></span>
+                                <input type="email" id="email" class="w-full pl-10 pr-4 py-3.5 rounded-2xl fwp-input text-white text-sm" placeholder="tu@correo.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-white/5">
+                        <button type="submit" class="w-full py-4 bg-[#00e676] hover:bg-[#00c853] text-black font-black rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all text-center text-sm uppercase tracking-wider shadow-[0_4px_25px_rgba(0,230,118,0.3)] flex items-center justify-center gap-2">
+                            <span>CONFIRMAR Y ACTIVAR DESPACHO</span>
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-6 flex items-center justify-center gap-2 text-xs text-gray-500 font-mono">
+                    <i class="fas fa-lock text-emerald-500"></i>
+                    <span>Tus datos de envío están completamente encriptados y protegidos.</span>
+                </div>
+            </div>
+
+            <!-- STEP CONTAINER 2: Dynamic Success Dispatch Ticket (Loaded via JS) -->
+            <div id="step-success-delivery" class="hidden transition-all duration-500 animate-fade-in text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="w-20 h-20 bg-blue-500/10 border-2 border-blue-500/30 rounded-full flex items-center justify-center text-4xl text-blue-400 success-checkmark shadow-[0_0_25px_rgba(59,130,246,0.2)]">
+                        <i class="fas fa-truck-ramp-box"></i>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <span class="text-[10px] font-black text-blue-400 bg-blue-500/10 px-3.5 py-1.5 rounded-full uppercase tracking-widest font-mono">
+                        Paso 2: Ticket de Despacho Registrado
+                    </span>
+                    <h2 class="text-3xl font-black text-white mt-4 tracking-tight">¡Logística Activada!</h2>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        Tus datos han sido procesados y copiados automáticamente al portapapeles. Se ha generado un ticket de despacho con el estado <span class="text-fwp-green font-bold">"PROCESAMIENTO INMEDIATO"</span>.
+                    </p>
+                </div>
+
+                <!-- Digital Ticket Representation -->
+                <div class="bg-black/30 border border-white/10 rounded-3xl p-5 mb-8 text-left space-y-3 font-mono text-xs relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-fwp-green/5 rounded-bl-[100%] border-l border-b border-white/5 flex items-start justify-end p-2.5">
+                        <i class="fas fa-receipt text-fwp-green opacity-40 text-sm"></i>
+                    </div>
+                    
+                    <div class="border-b border-white/5 pb-2.5 flex justify-between items-center">
+                        <span class="text-gray-500 text-[10px] uppercase font-bold">LOGÍSTICA FWP CHILE</span>
+                        <span class="text-fwp-green font-black">FWP-TICKET-OK</span>
+                    </div>
+
+                    <div class="space-y-1.5 font-sans">
+                        <div class="flex justify-between">
+                            <span class="text-gray-500 text-xs">Destinatario:</span>
+                            <span id="ticket-name" class="text-white font-semibold text-right">...</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500 text-xs">Dirección:</span>
+                            <span id="ticket-address" class="text-white font-semibold text-right truncate max-w-[220px]">...</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500 text-xs">Comuna:</span>
+                            <span id="ticket-comuna" class="text-white font-semibold text-right">...</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500 text-xs">Teléfono:</span>
+                            <span id="ticket-phone" class="text-white font-semibold text-right">...</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500 text-xs">Email:</span>
+                            <span id="ticket-email" class="text-white font-semibold text-right">...</span>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-white/5 pt-2.5 flex justify-between items-center">
+                        <span class="text-[10px] text-gray-500 font-bold uppercase">Estado Despacho:</span>
+                        <span class="text-[10px] text-black bg-fwp-green px-2 py-0.5 rounded font-black uppercase tracking-wider font-mono">PRIORITARIO 24H</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <a id="whatsapp-direct-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-[#00e676] hover:bg-[#00c853] text-black font-black rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all text-center text-sm uppercase tracking-wider shadow-[0_4px_25px_rgba(0,230,118,0.3)] flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>ABRIR CHAT DE RESPALDO WHATSAPP</span>
+                    </a>
+
+                    <a href="https://fwpchile.lat" class="w-full py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 font-bold rounded-full text-center block text-xs transition-colors">
+                        Volver a la Tienda Oficial FWP
+                    </a>
+                </div>
+
+                <p class="text-gray-500 text-[11px] mt-6 leading-relaxed font-sans">
+                    Nuestros asesores logísticos te contactarán en breves instantes para enviarte el código de seguimiento (Starken / Chilexpress / BlueExpress).
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Security Trust Badges -->
+    <footer class="w-full py-8 border-t border-white/5 bg-black/60 backdrop-blur-md relative z-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-8 text-xs text-gray-500 font-mono mb-4">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-truck text-fwp-green"></i>
+                    <span>Envíos prioritarios Starken / Chilexpress</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-shield-halved text-fwp-green"></i>
+                    <span>Compra protegida y regulada</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-headset text-fwp-green"></i>
+                    <span>Asesoría directa post-venta</span>
+                </div>
+            </div>
+            <p class="text-[10px] text-gray-600 font-sans">
+                &copy; 2026 fwpchile.lat. Todas las transacciones están encriptadas. Soporte Técnico: robertoandresvs@gmail.com
+            </p>
+        </div>
+    </footer>
+
+    <!-- Vanilla Javascript Logic for Automated Clipboard copying and WhatsApp pre-fill -->
+    <script>
+        function handleShippingSubmit(event) {
+            event.preventDefault();
+
+            // Ocultar cualquier error anterior
+            document.getElementById('validation-error-alert').classList.add('hidden');
+
+            // Capturar datos del DOM
+            const name = document.getElementById('fullName').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const comuna = document.getElementById('comuna').value.trim();
+            const phoneInput = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim() || 'No proporcionado';
+
+            // Formatear el teléfono
+            const formattedPhone = phoneInput.startsWith('+') ? phoneInput : `+56 ${phoneInput}`;
+
+            // Validar campos obligatorios
+            if (!name || !address || !comuna || !phoneInput) {
+                document.getElementById('validation-error-alert').classList.remove('hidden');
+                return;
+            }
+
+            // Generar el mensaje de WhatsApp estructurado con jerarquía visual de alto nivel
+            const whatsappMessage = `¡Hola FWP Chile! He completado mi pago. Aquí tienes mis datos de envío para activar mi despacho prioritario:
+
+👤 *Nombre:* ${name}
+📍 *Dirección:* ${address}
+🏡 *Comuna:* ${comuna}
+📞 *Teléfono:* ${formattedPhone}
+📧 *Correo:* ${email}
+
+Quedo atento a la confirmación de mi despacho prioritario. 🚀`;
+
+            // Codificar el mensaje para URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const targetPhone = "56936200521"; // Número oficial de soporte FWP Chile
+            const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedMessage}`;
+
+            // Copiar los datos al portapapeles usando document.execCommand para máxima compatibilidad con iframe
+            const tempTextArea = document.createElement("textarea");
+            tempTextArea.value = whatsappMessage;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.warn('No se pudo copiar automáticamente al portapapeles: ', err);
+            }
+            document.body.removeChild(tempTextArea);
+
+            // Poblar dinámicamente los datos en el ticket virtual
+            document.getElementById('ticket-name').innerText = name;
+            document.getElementById('ticket-address').innerText = address;
+            document.getElementById('ticket-comuna').innerText = comuna;
+            document.getElementById('ticket-phone').innerText = formattedPhone;
+            document.getElementById('ticket-email').innerText = email;
+
+            // Configurar el enlace del botón de chat en el paso de éxito
+            document.getElementById('whatsapp-direct-link').setAttribute('href', whatsappUrl);
+
+            // Transicionar de pantallas de forma suave
+            document.getElementById('step-form-delivery').classList.add('hidden');
+            const successContainer = document.getElementById('step-success-delivery');
+            successContainer.classList.remove('hidden');
+
+            // Abrir automáticamente WhatsApp en una pestaña nueva para facilitar la conversión inmediata
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
 
 </body>
 </html>
