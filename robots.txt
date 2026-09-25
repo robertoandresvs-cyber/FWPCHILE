@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Gracias.html
+
+Sitemap: https://fwpchile.lat/sitemap.xml

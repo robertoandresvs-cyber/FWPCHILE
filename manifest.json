@@ -1,0 +1,16 @@
+{
+  "name": "FWP Chile | Future Wellness",
+  "short_name": "FWP Chile",
+  "lang": "es-CL",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/MOCKUP%20Productos/LOGO_FWP%20NEGRO.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
