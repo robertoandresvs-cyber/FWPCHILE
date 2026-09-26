@@ -1,0 +1,96 @@
+.fa, .fas, .fa-solid { font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.fab, .fa-brands { font-family: "Font Awesome 6 Brands"; font-weight: 400; }
+.fa, .fas, .fab, .fa-solid, .fa-brands {
+  -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased;
+  display: var(--fa-display,inline-block); font-style: normal; font-variant: normal;
+  line-height: 1; text-rendering: auto;
+}
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype"); }
+.fa-arrow-right::before {
+  content: "\f061"; }
+.fa-bars::before {
+  content: "\f0c9"; }
+.fa-bolt::before {
+  content: "\f0e7"; }
+.fa-book-open::before {
+  content: "\f518"; }
+.fa-brain::before {
+  content: "\f5dc"; }
+.fa-chart-line::before {
+  content: "\f201"; }
+.fa-chevron-down::before {
+  content: "\f078"; }
+.fa-circle-check::before {
+  content: "\f058"; }
+.fa-clipboard-list::before {
+  content: "\f46d"; }
+.fa-dna::before {
+  content: "\f471"; }
+.fa-envelope::before {
+  content: "\f0e0"; }
+.fa-gift::before {
+  content: "\f06b"; }
+.fa-headset::before {
+  content: "\f590"; }
+.fa-heart::before {
+  content: "\f004"; }
+.fa-info-circle::before {
+  content: "\f05a"; }
+.fa-leaf::before {
+  content: "\f06c"; }
+.fa-location-dot::before {
+  content: "\f3c5"; }
+.fa-lock::before {
+  content: "\f023"; }
+.fa-map::before {
+  content: "\f279"; }
+.fa-microscope::before {
+  content: "\f610"; }
+.fa-quote-left::before {
+  content: "\f10d"; }
+.fa-receipt::before {
+  content: "\f543"; }
+.fa-shopping-bag::before {
+  content: "\f290"; }
+.fa-star::before {
+  content: "\f005"; }
+.fa-times::before {
+  content: "\f00d"; }
+.fa-triangle-exclamation::before {
+  content: "\f071"; }
+.fa-truck::before {
+  content: "\f0d1"; }
+.fa-truck-ramp-box::before {
+  content: "\f4de"; }
+.fa-user::before {
+  content: "\f007"; }
+.fa-user-doctor::before {
+  content: "\f0f0"; }
+.fa-user-md::before {
+  content: "\f0f0"; }
+.fa-venus::before {
+  content: "\f221"; }
+.fa-vial::before {
+  content: "\f492"; }
+.fa-wand-magic-sparkles::before {
+  content: "\e2ca"; }
+.fa-weight-scale::before {
+  content: "\f496"; }
+.fa-instagram:before {
+  content: "\f16d"; }
+.fa-tiktok:before {
+  content: "\e07b"; }
+.fa-whatsapp:before {
+  content: "\f232"; }.fa-shield-alt::before {
+  content: "\f3ed"; }
