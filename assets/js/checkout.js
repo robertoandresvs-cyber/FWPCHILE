@@ -40,6 +40,8 @@
         if (fab) fab.classList.add('!bottom-24');
     }
 
+    function clearCart() { cart = []; renderCartBar(); }
+
     function addToCart(id, name, price, btn) {
         if (cart.some(function (i) { return i.id === id; })) return;
         cart.push({ id: id, name: name, price: price });
@@ -70,7 +72,7 @@
             '<input required id="fwp-m-phone" placeholder="Teléfono" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-fwp-green">' +
             '<label class="flex items-start gap-2 text-[11px] text-gray-300 bg-fwp-green/5 border border-fwp-green/20 rounded-xl px-3 py-2.5 cursor-pointer">' +
             '<input type="checkbox" id="fwp-m-subscribe" class="mt-0.5 accent-fwp-green">' +
-            '<span><span class="font-bold text-fwp-green">Suscríbeme a reposición mensual</span> — recibe recordatorio y % preferencial cuando se acerque tu próxima compra.</span>' +
+            '<span><span class="font-bold text-fwp-green">Suscríbeme a reposición mensual</span> — recibe tu recordatorio automático y prioridad de stock antes que se agote.</span>' +
             '</label>' +
             '<button type="submit" class="w-full py-3 bg-fwp-green text-black font-black rounded-xl text-sm mt-2">Confirmar y continuar</button>' +
             '</form>' +
@@ -178,5 +180,5 @@
     }
 
     document.addEventListener('DOMContentLoaded', bindBuyButtons);
-    window.FWP_CHECKOUT = Object.freeze({ addToCart: addToCart, openShippingModal: openShippingModal });
+    window.FWP_CHECKOUT = Object.freeze({ addToCart: addToCart, openShippingModal: openShippingModal, clearCart: clearCart });
 }(window, document));

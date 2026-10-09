@@ -507,7 +507,7 @@
                     infoConsume.classList.add("hidden");
                     indicator.className = "w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse";
                     
-                    dynamicImg.src = "MOCKUP%20Productos/Emprende%20.png";
+                    dynamicImg.src = "MOCKUP%20Productos/Emprende.png";
                 }
                 dynamicImg.style.opacity = 1;
             }, 150);
