@@ -29,3 +29,6 @@ body { background-color: #020617; color: #f8fafc; overflow-x: hidden; }
 @keyframes itemPop { 0% { opacity: 0; transform: translateY(30px) scale(.8); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 .shimmer-effect { background: linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent); background-size: 200% 100%; animation: shimmer 2.5s infinite; }
 @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.cycle-badge{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;padding:.6rem 1.1rem;border-radius:999px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.35);color:#e2e8f0;font-size:.8rem;font-weight:700;line-height:1.3}
+.cycle-badge .cycle-time{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#22c55e;font-weight:800;letter-spacing:.02em}
+.cycle-badge .cycle-sep{opacity:.5}

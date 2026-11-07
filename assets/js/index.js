@@ -532,9 +532,12 @@
             devoluciones: {
                 title: "Política de Devoluciones y Reembolsos",
                 content: `
-                    <p class="text-xs text-gray-400 mb-4 font-mono">Última actualización: 18 de julio de 2026</p>
-                    <p>En fwpchile.lat queremos que compres con confianza. Aquí explicamos cómo funcionan los cambios, las devoluciones y los reembolsos, respetando la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores.</p>
-                    <p>Al tratarse de compras a distancia, tienes derecho a poner término anticipado a la compra dentro de un plazo de 10 días corridos contados desde la recepción del producto, conforme al artículo 3° bis de la Ley N° 19.496, siempre que el producto se encuentre sin uso, en buen estado y con su embalaje original.</p>
+                    <p class="text-xs text-gray-400 mb-4 font-mono">Última actualización: 6 de noviembre de 2026</p>
+                    <p>En fwpchile.lat queremos que compres con confianza. Aquí explicamos cómo funcionan las devoluciones y los reembolsos, respetando la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores.</p>
+                    <p><strong>Devolución en 10 días.</strong> Al tratarse de una compra a distancia, puedes poner término a tu compra dentro de 10 días corridos contados desde que recibes el producto, conforme al artículo 3° bis de la Ley N° 19.496. Como se trata de suplementos alimenticios de uso personal, la devolución aplica solo si el envase se encuentra sellado y sin abrir.</p>
+                    <p><strong>Cómo solicitarla.</strong> Escríbenos por WhatsApp dentro del plazo, indicando tu nombre y tu pedido, y coordinamos contigo la devolución y el reembolso.</p>
+                    <p><strong>Productos con defectos.</strong> Si tu pedido llega dañado, incompleto o con algún defecto, escríbenos de inmediato: esos casos se rigen por la garantía legal de la Ley N° 19.496, aunque el envase ya esté abierto.</p>
+                    <p>Esta política no limita ninguno de los derechos que la ley te reconoce como consumidor.</p>
                 `
             },
             envios: {
