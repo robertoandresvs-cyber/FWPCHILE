@@ -136,6 +136,7 @@
     <script src="assets/js/checkout.js" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        window.FWP_ANALYTICS && window.FWP_ANALYTICS.track('ViewContent', { content_name: 'EBOOST', content_type: 'product', content_ids: ['eboost'], value: 42990, currency: 'CLP' }, { dedupeKey: 'viewcontent-eboost' });
         const options = document.querySelectorAll('.pack-option');
         const stickyPrice = document.getElementById('sticky-price');
         let selected = options[0];

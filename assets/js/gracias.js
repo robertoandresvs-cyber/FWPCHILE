@@ -1,14 +1,24 @@
 function trackPurchaseFromUrl() {
     const params = new URLSearchParams(window.location.search);
-    const value = Number.parseFloat(params.get('val')) || 99980;
-    const transactionId = params.get('transaction_id') || params.get('order_id') || params.get('reference') || '';
-    const storageKey = `fwp-purchase:${transactionId || `${value}:${window.location.pathname}`}`;
+
+    // Si Mercado Pago informa un estado y no es aprobado, no se registra la compra.
+    const status = (params.get('collection_status') || params.get('status') || '').toLowerCase();
+    if (status && status !== 'approved' && status !== 'success') return;
+
+    // El monto viene en la URL (?val=). Si falta, se envía la compra sin monto en vez de inventar uno.
+    const rawValue = Number.parseFloat(params.get('val'));
+    const hasValue = Number.isFinite(rawValue) && rawValue > 0;
+
+    const transactionId = params.get('payment_id') || params.get('collection_id') || params.get('transaction_id') ||
+        params.get('order_id') || params.get('merchant_order_id') || params.get('reference') || '';
+    const storageKey = `fwp-purchase:${transactionId || `${hasValue ? rawValue : 'sin-monto'}:${window.location.pathname}`}`;
     if (sessionStorage.getItem(storageKey)) return;
-    const eventId = FWP_ANALYTICS.track('Purchase', {
-        value,
-        currency: FWP_CONFIG.currency,
-        transaction_id: transactionId || undefined
-    }, { dedupeKey: storageKey });
+
+    const data = { currency: FWP_CONFIG.currency };
+    if (hasValue) data.value = rawValue;
+    if (transactionId) data.transaction_id = transactionId;
+
+    const eventId = FWP_ANALYTICS.track('Purchase', data, { dedupeKey: storageKey });
     sessionStorage.setItem(storageKey, eventId);
 }
 

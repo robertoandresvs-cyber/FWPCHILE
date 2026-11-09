@@ -147,6 +147,7 @@
     <script src="assets/js/checkout.js" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
+        window.FWP_ANALYTICS && window.FWP_ANALYTICS.track('ViewContent', { content_name: 'LIV', content_type: 'product', content_ids: ['liv'], value: 52990, currency: 'CLP' }, { dedupeKey: 'viewcontent-liv' });
         const options = document.querySelectorAll('.pack-option');
         const stickyPrice = document.getElementById('sticky-price');
         let selected = options[0];
