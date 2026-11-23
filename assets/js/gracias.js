@@ -1,24 +1,57 @@
-function trackPurchaseFromUrl() {
+function readLastOrder() {
+    try { return JSON.parse(localStorage.getItem('fwp-last-order') || 'null'); } catch (_) { return null; }
+}
+
+function paymentStatus() {
     const params = new URLSearchParams(window.location.search);
-
-    // Si Mercado Pago informa un estado y no es aprobado, no se registra la compra.
-    // Solo se registra la compra si Mercado Pago confirma el pago (estado aprobado o id de pago).
     const status = (params.get('collection_status') || params.get('status') || '').toLowerCase();
-    const paymentRef = params.get('payment_id') || params.get('collection_id');
-    if (status && status !== 'approved' && status !== 'success') return;
-    if (!status && !paymentRef) return;
+    const paymentId = params.get('payment_id') || params.get('collection_id') || '';
+    return { status, paymentId, reference: params.get('external_reference') || '' };
+}
 
-    // El monto viene en la URL (?val=). Si falta, se envía la compra sin monto en vez de inventar uno.
-    const rawValue = Number.parseFloat(params.get('val'));
-    const hasValue = Number.isFinite(rawValue) && rawValue > 0;
+function fmtCLP(n) { return '$' + Math.round(Number(n)).toLocaleString('es-CL'); }
 
-    const transactionId = params.get('payment_id') || params.get('collection_id') || params.get('transaction_id') ||
-        params.get('order_id') || params.get('merchant_order_id') || params.get('reference') || '';
-    const storageKey = `fwp-purchase:${transactionId || `${hasValue ? rawValue : 'sin-monto'}:${window.location.pathname}`}`;
+function orderLines(order) {
+    if (!order || !Array.isArray(order.items)) return [];
+    return order.items.map((it) => `${it.qty} x ${(FWP_CONFIG.products[it.key] || { name: it.key }).name}`);
+}
+
+function renderPaymentState() {
+    const { status } = paymentStatus();
+    const order = readLastOrder();
+    const badge = document.getElementById('pay-status-badge');
+    const text = document.getElementById('pay-status-text');
+    if (status === 'pending' || status === 'in_process') {
+        badge.innerText = 'Paso 1: Pago en proceso';
+        text.innerHTML = 'Tu pago está siendo procesado por Mercado Pago. Completa tus datos y te confirmamos el despacho apenas se acredite.';
+    } else if (status !== 'approved' && status !== 'success') {
+        badge.innerText = 'Paso 1: Datos de despacho';
+        text.innerHTML = 'Completa tus datos para coordinar el <strong class="text-white">despacho gratis</strong> de tu pedido.';
+    }
+    if (order && Date.now() - order.createdAt < 3 * 24 * 3600 * 1000) {
+        const box = document.getElementById('order-summary');
+        box.innerHTML = '<strong class="text-white">Tu pedido:</strong><br>' + orderLines(order).join('<br>') + `<br><strong class="text-white">Total: ${fmtCLP(order.total)}</strong>`;
+        box.classList.remove('hidden');
+        if (order.gift) document.getElementById('gift-notice').classList.remove('hidden');
+    }
+}
+
+function trackPurchaseFromUrl() {
+    // Solo se registra la compra si Mercado Pago confirma el pago aprobado.
+    const { status, paymentId, reference } = paymentStatus();
+    if (status !== 'approved' && status !== 'success') return;
+    const order = readLastOrder();
+
+    const transactionId = paymentId || reference || '';
+    const storageKey = `fwp-purchase:${transactionId || 'sin-id:' + window.location.search}`;
     if (sessionStorage.getItem(storageKey)) return;
 
     const data = { currency: FWP_CONFIG.currency };
-    if (hasValue) data.value = rawValue;
+    if (order && order.total > 0) {
+        data.value = order.total;
+        data.content_ids = order.items.map((it) => it.key);
+        data.num_items = order.items.reduce((sum, it) => sum + it.qty, 0);
+    }
     if (transactionId) data.transaction_id = transactionId;
 
     const eventId = FWP_ANALYTICS.track('Purchase', data, { dedupeKey: storageKey });
@@ -50,8 +83,15 @@ function handleShippingSubmit(event) {
             FWP_ANALYTICS.track('CompleteRegistration', { form: 'shipping' }, { dedupeKey: 'shipping-registration' });
 
             // Generar el mensaje de WhatsApp estructurado con jerarquía visual de alto nivel
-            const whatsappMessage = `¡Hola FWP Chile! He completado mi pago. Aquí tienes mis datos de envío para activar mi despacho prioritario:
-
+            const order = readLastOrder();
+            const { status, paymentId, reference } = paymentStatus();
+            const paid = status === 'approved' || status === 'success';
+            const lines = orderLines(order);
+            const orderText = lines.length ? `\n🛒 *Pedido:*\n${lines.map((l) => '• ' + l).join('\n')}\n💰 *Total:* ${fmtCLP(order.total)}\n` : '';
+            const giftText = order && order.gift ? '🎁 Compré dentro de los 30 min: incluye muestra de regalo\n' : '';
+            const payText = paymentId ? `🧾 *Pago Mercado Pago:* ${paymentId}${reference ? ' (' + reference + ')' : ''}\n` : '';
+            const whatsappMessage = `¡Hola FWP Chile! ${paid ? 'He completado mi pago.' : 'Quiero coordinar mi pedido.'} Aquí tienes mis datos de envío:
+${orderText}${giftText}${payText}
 👤 *Nombre:* ${name}
 📍 *Dirección:* ${address}
 🏡 *Comuna:* ${comuna}
@@ -83,6 +123,7 @@ Quedo atento a la confirmación de mi despacho prioritario. 🚀`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            renderPaymentState();
             trackPurchaseFromUrl();
             document.getElementById('fwp-shipping-form').addEventListener('submit', handleShippingSubmit);
             FWP_WHATSAPP.bindLinks();

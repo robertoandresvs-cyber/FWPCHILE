@@ -146,14 +146,10 @@
         function finderOrder() {
             const st = finderState();
             if (!st.products.length || !window.FWP_CHECKOUT) return;
-            if (st.exact) {
-                const proto = st.exact;
-                FWP_CHECKOUT.pay(proto.key, `Protocolo ${proto.name.replace(/^\S+\s/, '')}`, st.total);
-                return;
-            }
-            FWP_CHECKOUT.clearCart();
-            st.products.forEach((k) => FWP_CHECKOUT.addToCart('finder-' + k, `${FWP_CONFIG.products[k].name} Unidad`, FWP_CONFIG.products[k].price));
-            FWP_CHECKOUT.openShippingModal({ type: 'cart' });
+            FWP_CHECKOUT.checkout(st.products.map((k) => ({ key: k, qty: 1 })), {
+                label: st.exact ? 'Protocolo ' + st.exact.name.replace(/^\S+\s/, '') : 'Rutina recomendada',
+                linkKey: st.exact ? st.exact.key : ''
+            });
         }
 
         // Testimonial Lightbox

@@ -23,16 +23,16 @@
     <link rel="icon" type="image/png" href="MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
     <!-- Tailwind CSS & FontAwesome -->
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/analytics.js" defer></script>
-    <script src="assets/js/helpers.js" defer></script>
-    <script src="assets/js/whatsapp.js" defer></script>
-    <link href="assets/css/fontawesome-fwp.css" rel="stylesheet">
+    <script src="assets/js/config.js?v=20261123"></script>
+    <script src="assets/js/analytics.js?v=20261123" defer></script>
+    <script src="assets/js/helpers.js?v=20261123" defer></script>
+    <script src="assets/js/whatsapp.js?v=20261123" defer></script>
+    <link href="assets/css/fontawesome-fwp.css?v=20261123" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
     
 
-    <link rel="stylesheet" href="assets/css/gracias.css">
+    <link rel="stylesheet" href="assets/css/gracias.css?v=20261123">
 </head>
 <body class="antialiased selection:bg-fwp-green selection:text-black min-h-screen flex flex-col justify-between relative">
 
@@ -72,14 +72,17 @@
                 </div>
 
                 <div class="text-center mb-8">
-                    <span class="text-[10px] sm:text-xs font-black text-fwp-green bg-fwp-green/10 px-3.5 py-1.5 rounded-full uppercase tracking-widest font-mono">
+                    <span id="pay-status-badge" class="text-[10px] sm:text-xs font-black text-fwp-green bg-fwp-green/10 px-3.5 py-1.5 rounded-full uppercase tracking-widest font-mono">
                         Paso 1: Pago Verificado con Éxito
                     </span>
                     <h1 class="text-3xl font-black text-white mt-4 tracking-tight">¡Muchas Gracias por tu Compra!</h1>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
-                        Tu pago fue acreditado con éxito. Ahora, para activar tu <strong class="text-white">Despacho gratis (procesado en 24 horas hábiles)</strong> y garantizar tu batidor recargable de regalo, completa tus datos a continuación:
+                    <p id="pay-status-text" class="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        Tu pago fue acreditado con éxito. Ahora, para activar tu <strong class="text-white">Despacho gratis (procesado en 24 horas hábiles)</strong> y coordinar tus regalos, completa tus datos a continuación:
                     </p>
                 </div>
+
+                <div id="order-summary" class="hidden mb-6 p-4 rounded-xl border border-white/10 text-left text-xs text-gray-300" style="background:rgba(255,255,255,.04)"></div>
+                <div id="gift-notice" class="hidden mb-6 p-4 rounded-xl text-left text-xs" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.35);color:#fcd34d">🎁 Compraste dentro de los 30 minutos: tu pedido incluye una <strong>muestra de regalo</strong>.</div>
 
                 <!-- Custom Alert Container for Validation (without using alerts) -->
                 <div id="validation-error-alert" class="hidden mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs text-left flex items-start gap-3">
@@ -250,7 +253,7 @@
     </footer>
 
     <!-- Vanilla Javascript Logic for Automated Clipboard copying and WhatsApp pre-fill -->
-    <script src="assets/js/gracias.js" defer></script>
+    <script src="assets/js/gracias.js?v=20261123" defer></script>
 
 </body>
 </html>

@@ -38,16 +38,16 @@
     <meta name="msapplication-TileImage" content="MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
     <!-- Tailwind CSS & FontAwesome -->
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/analytics.js" defer></script>
-    <script src="assets/js/helpers.js" defer></script>
-    <script src="assets/js/whatsapp.js" defer></script>
-    <link href="assets/css/fontawesome-fwp.css" rel="stylesheet">
+    <script src="assets/js/config.js?v=20261123"></script>
+    <script src="assets/js/analytics.js?v=20261123" defer></script>
+    <script src="assets/js/helpers.js?v=20261123" defer></script>
+    <script src="assets/js/whatsapp.js?v=20261123" defer></script>
+    <link href="assets/css/fontawesome-fwp.css?v=20261123" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
     
 
-    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/site.css?v=20261123">
 </head>
 <body class="antialiased selection:bg-fwp-green selection:text-black bg-fwp-darker">
 
@@ -69,7 +69,7 @@
                     <a href="#ciencia" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">La Ciencia</a>
                     <a href="#expertos" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Asesores</a>
                     <a href="#sorpresa-embajador" class="text-sm font-semibold text-amber-400 hover:text-amber-300 transition-colors">🎁 Sorpresa</a>
-                    <a href="#diagnostico" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Ecosistema</a>
+                    <a href="#diagnostico" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Tu Rutina</a>
                     <a href="#emprende" class="text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1">Distribución <span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full whitespace-nowrap">35% - 50% Off</span></a>
                     <a href="#productos-unitario" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Por Unidad</a>
                     <a href="#testimonios" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Testimonios</a>
@@ -126,9 +126,8 @@
 
             <div class="mb-8">
                 <div class="cycle-badge" data-cycle>
-                    <span>🎁 Dosis extra de regalo en tu pedido</span>
-                    <span class="cycle-sep">·</span>
-                    <span>termina en <span class="cycle-time" data-cycle-time>—</span></span>
+                    <span>🎁 Muestra de regalo si compras dentro de los próximos</span>
+                    <span><span class="cycle-time" data-cycle-time>30:00</span> min</span>
                 </div>
             </div>
 
@@ -347,9 +346,9 @@
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16 reveal">
-                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Buscador de Beneficios</span>
-                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">¿Qué quieres lograr o mejorar?</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Elige uno o varios beneficios y te muestro qué productos te ayudan, cuándo tomarlos para sacarles el máximo provecho y el protocolo que mejor calza contigo.</p>
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Recomendador personalizado</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">Encuentra los productos ideales para ti</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Marca lo que quieres mejorar y te muestro qué productos tomar, en qué momento del día y cuánto cuesta tu rutina.</p>
             </div>
 
             <!-- Buscador de beneficios -->
@@ -358,17 +357,50 @@
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500"></div>
 
                     <div class="flex justify-between items-center mb-5">
-                        <span class="text-xs font-black text-emerald-400 uppercase tracking-widest">Paso 1 · Elige uno o varios beneficios</span>
+                        <span class="text-xs font-black text-emerald-400 uppercase tracking-widest">1 · Toca lo que quieres mejorar (puedes elegir varios)</span>
                         <button type="button" data-action="finderReset()" class="text-[11px] text-gray-400 hover:text-white underline">Limpiar</button>
                     </div>
-                    <div id="finder-benefits" class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8"></div>
+                    <div id="finder-benefits" class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+                        <button type="button" data-action="finderToggle('energia')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
+                            <span class="text-2xl block mb-1">⚡</span>
+                            <span class="text-xs font-bold text-white block leading-tight">Más energía durante el día</span>
+                        </button>
+                        <button type="button" data-action="finderToggle('enfoque')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
+                            <span class="text-2xl block mb-1">🎯</span>
+                            <span class="text-xs font-bold text-white block leading-tight">Enfoque y concentración</span>
+                        </button>
+                        <button type="button" data-action="finderToggle('descanso')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
+                            <span class="text-2xl block mb-1">🌙</span>
+                            <span class="text-xs font-bold text-white block leading-tight">Descansar mejor</span>
+                        </button>
+                        <button type="button" data-action="finderToggle('digestion')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
+                            <span class="text-2xl block mb-1">🌿</span>
+                            <span class="text-xs font-bold text-white block leading-tight">Digestión liviana, menos hinchazón</span>
+                        </button>
+                        <button type="button" data-action="finderToggle('peso')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
+                            <span class="text-2xl block mb-1">🔥</span>
+                            <span class="text-xs font-bold text-white block leading-tight">Apoyar el control de peso</span>
+                        </button>
+                        <button type="button" data-action="finderToggle('piel')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
+                            <span class="text-2xl block mb-1">✨</span>
+                            <span class="text-xs font-bold text-white block leading-tight">Piel, cabello y uñas</span>
+                        </button>
+                        <button type="button" data-action="finderToggle('articulaciones')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
+                            <span class="text-2xl block mb-1">🦴</span>
+                            <span class="text-xs font-bold text-white block leading-tight">Articulaciones y movilidad</span>
+                        </button>
+                        <button type="button" data-action="finderToggle('integral')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
+                            <span class="text-2xl block mb-1">🌐</span>
+                            <span class="text-xs font-bold text-white block leading-tight">Bienestar integral</span>
+                        </button>
+                    </div>
 
                     <div id="finder-empty" class="text-center text-sm text-gray-400 py-8 border-t border-white/10">
                         Toca los beneficios que buscas y aquí aparecerá tu rutina recomendada: qué productos, cuándo tomarlos y cuánto cuesta.
                     </div>
 
                     <div id="finder-result" class="hidden border-t border-white/10 pt-8">
-                        <span class="text-xs font-black text-emerald-400 uppercase tracking-widest block mb-5">Paso 2 · Tu rutina recomendada</span>
+                        <span class="text-xs font-black text-emerald-400 uppercase tracking-widest block mb-5">2 · Tu rutina recomendada</span>
                         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                             <div id="finder-products" class="lg:col-span-7 space-y-3"></div>
 
@@ -413,9 +445,8 @@
                 <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base text-center">Combinaciones de productos pensadas para ayudarte a lograr tus metas biológicas de forma integral.</p>
                 <div style="margin-top:1.25rem">
                     <div class="cycle-badge" data-cycle>
-                        <span>🎁 Dosis extra de regalo en cada protocolo</span>
-                        <span class="cycle-sep">·</span>
-                        <span>termina en <span class="cycle-time" data-cycle-time>—</span></span>
+                        <span>🎁 Muestra de regalo si compras dentro de los próximos</span>
+                    <span><span class="cycle-time" data-cycle-time>30:00</span> min</span>
                     </div>
                 </div>
                 
@@ -507,7 +538,7 @@
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">✓</span> <span>Envío gratis a todo Chile</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">✓</span> <span>Asesoría personalizada por WhatsApp</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">✓</span> <span>Recomendaciones PRO de consumo</span></div>
-                            <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">🎁</span> <span>Dosis extra de regalo — <span data-cycle-until>solo este ciclo</span></span></div>
+                            <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">🎁</span> <span>Muestra de regalo si compras en <span data-cycle-until>30:00 min</span></span></div>
                         </div>
                     </div>
 
@@ -522,7 +553,7 @@
                                 <span class="text-2xl font-black text-white">$85.980</span>
                             </div>
                         </div>
-                        <a href="#" data-mp-key="proto-peso" data-product-name="Protocolo Pérdida de Peso Inteligente (LIV + 24BURN)" data-product-price="85980" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-[#00e676] text-black font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_20px_rgba(0,230,118,0.3)] font-black">
+                        <a href="#" data-buy-items="liv,24burn" data-link-key="proto-peso" data-buy-label="Protocolo Pérdida de Peso Inteligente (LIV + 24BURN)" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-[#00e676] text-black font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_20px_rgba(0,230,118,0.3)] font-black">
                             ADQUIRIR PROTOCOLO
                         </a>
                     </div>
@@ -600,7 +631,7 @@
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-orange-400">✓</span> <span>Envío gratis a todo Chile</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-orange-400">✓</span> <span>Asesoría personalizada por WhatsApp</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-orange-400">✓</span> <span>Recomendaciones PRO de consumo</span></div>
-                            <div class="flex items-center gap-2 text-gray-300"><span class="text-orange-400">🎁</span> <span>Dosis extra de regalo — <span data-cycle-until>solo este ciclo</span></span></div>
+                            <div class="flex items-center gap-2 text-gray-300"><span class="text-orange-400">🎁</span> <span>Muestra de regalo si compras en <span data-cycle-until>30:00 min</span></span></div>
                         </div>
                     </div>
 
@@ -615,7 +646,7 @@
                                 <span class="text-2xl font-black text-white">$79.980</span>
                             </div>
                         </div>
-                        <a href="#" data-mp-key="proto-energia" data-product-name="Protocolo Energía 24/7 (E-BOOST + 24B+)" data-product-price="79980" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_20px_rgba(249,115,22,0.3)] font-black">
+                        <a href="#" data-buy-items="eboost,24b" data-link-key="proto-energia" data-buy-label="Protocolo Energía 24/7 (E-BOOST + 24B+)" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_20px_rgba(249,115,22,0.3)] font-black">
                             ADQUIRIR PROTOCOLO
                         </a>
                     </div>
@@ -694,7 +725,7 @@
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-purple-400">✓</span> <span>Envío gratis a todo Chile</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-purple-400">✓</span> <span>Asesoría personalizada por WhatsApp</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-purple-400">✓</span> <span>Recomendaciones PRO de consumo</span></div>
-                            <div class="flex items-center gap-2 text-gray-300"><span class="text-purple-400">🎁</span> <span>Dosis extra de regalo — <span data-cycle-until>solo este ciclo</span></span></div>
+                            <div class="flex items-center gap-2 text-gray-300"><span class="text-purple-400">🎁</span> <span>Muestra de regalo si compras en <span data-cycle-until>30:00 min</span></span></div>
                         </div>
                     </div>
 
@@ -709,7 +740,7 @@
                                 <span class="text-2xl font-black text-white">$99.980</span>
                             </div>
                         </div>
-                        <a href="#" data-mp-key="proto-belleza" data-product-name="Protocolo Belleza desde Adentro (LIV + RENÖVA+)" data-product-price="99980" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_15px_rgba(155,44,134,0.3)] font-black">
+                        <a href="#" data-buy-items="liv,renova" data-link-key="proto-belleza" data-buy-label="Protocolo Belleza desde Adentro (LIV + RENÖVA+)" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_15px_rgba(155,44,134,0.3)] font-black">
                             ADQUIRIR PROTOCOLO
                         </a>
                     </div>
@@ -794,7 +825,7 @@
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-pink-400">✓</span> <span>Envío gratis a todo Chile</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-pink-400">✓</span> <span>Asesoría personalizada por WhatsApp</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-pink-400">✓</span> <span>Recomendaciones PRO de consumo</span></div>
-                            <div class="flex items-center gap-2 text-gray-300"><span class="text-pink-400">🎁</span> <span>Dosis extra de regalo — <span data-cycle-until>solo este ciclo</span></span></div>
+                            <div class="flex items-center gap-2 text-gray-300"><span class="text-pink-400">🎁</span> <span>Muestra de regalo si compras en <span data-cycle-until>30:00 min</span></span></div>
                         </div>
                     </div>
 
@@ -809,7 +840,7 @@
                                 <span class="text-2xl font-black text-white">$139.970</span>
                             </div>
                         </div>
-                        <a href="#" data-mp-key="proto-mujer" data-product-name="Protocolo Mujer +35 (LIV + RENÖVA+ + 24B+)" data-product-price="139970" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_15px_rgba(244,63,94,0.3)] font-black">
+                        <a href="#" data-buy-items="liv,renova,24b" data-link-key="proto-mujer" data-buy-label="Protocolo Mujer +35 (LIV + RENÖVA+ + 24B+)" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_15px_rgba(244,63,94,0.3)] font-black">
                             ADQUIRIR PROTOCOLO
                         </a>
                     </div>
@@ -893,7 +924,7 @@
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-blue-400">✓</span> <span>Envío gratis a todo Chile</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-blue-400">✓</span> <span>Asesoría personalizada por WhatsApp</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-blue-400">✓</span> <span>Recomendaciones PRO de consumo</span></div>
-                            <div class="flex items-center gap-2 text-gray-300"><span class="text-blue-400">🎁</span> <span>Dosis extra de regalo — <span data-cycle-until>solo este ciclo</span></span></div>
+                            <div class="flex items-center gap-2 text-gray-300"><span class="text-blue-400">🎁</span> <span>Muestra de regalo si compras en <span data-cycle-until>30:00 min</span></span></div>
                         </div>
                     </div>
 
@@ -908,7 +939,7 @@
                                 <span class="text-2xl font-black text-white">$135.970</span>
                             </div>
                         </div>
-                        <a href="#" data-mp-key="proto-reinicio" data-product-name="Protocolo Reinicio 30 Días (RENÖVA+ + LIV + 24BURN)" data-product-price="135970" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_15px_rgba(59,130,246,0.3)] font-black">
+                        <a href="#" data-buy-items="renova,liv,24burn" data-link-key="proto-reinicio" data-buy-label="Protocolo Reinicio 30 Días (RENÖVA+ + LIV + 24BURN)" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_15px_rgba(59,130,246,0.3)] font-black">
                             ADQUIRIR PROTOCOLO
                         </a>
                     </div>
@@ -1007,7 +1038,7 @@
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">✓</span> <span>Envío gratis a todo Chile</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">✓</span> <span>Asesoría personalizada por WhatsApp</span></div>
                             <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">✓</span> <span>Recomendaciones PRO de consumo</span></div>
-                            <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">🎁</span> <span>Dosis extra de regalo — <span data-cycle-until>solo este ciclo</span></span></div>
+                            <div class="flex items-center gap-2 text-gray-300"><span class="text-emerald-400">🎁</span> <span>Muestra de regalo si compras en <span data-cycle-until>30:00 min</span></span></div>
                         </div>
                     </div>
 
@@ -1022,7 +1053,7 @@
                                 <span class="text-2xl font-black text-white">$215.950</span>
                             </div>
                         </div>
-                        <a href="#" data-mp-key="proto-integral" data-product-name="Protocolo Bienestar Integral (5 productos)" data-product-price="215950" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-emerald-500 hover:bg-[#00e676] hover:text-black text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_20px_rgba(16,185,129,0.4)] font-black">
+                        <a href="#" data-buy-items="renova,liv,eboost,24burn,24b" data-link-key="proto-integral" data-buy-label="Protocolo Bienestar Integral (5 productos)" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-emerald-500 hover:bg-[#00e676] hover:text-black text-white font-bold rounded-full hover:scale-105 transition-all text-center block text-sm tracking-wider shadow-[0_4px_20px_rgba(16,185,129,0.4)] font-black">
                             ADQUIRIR PROTOCOLO
                         </a>
                     </div>
@@ -1312,7 +1343,7 @@
                             <span class="text-[10px] text-gray-500 uppercase font-bold font-mono">Precio Detalle</span>
                             <span class="text-xl font-black text-white font-mono">$49.990</span>
                         </div>
-                        <a href="#" data-mp-key="renova" data-product-name="RENÖVA+ Unidad" data-product-price="49990" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(155,44,134,0.3)] font-bold">
+                        <a href="#" data-buy-items="renova" data-link-key="renova" data-buy-label="RENÖVA+ Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(155,44,134,0.3)] font-bold">
                             COMPRAR AHORA
                         </a>
                         <button type="button" data-add-cart data-product-id="renova" data-product-name="RENÖVA+ Unidad" data-product-price="49990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
@@ -1357,7 +1388,7 @@
                             <span class="text-[10px] text-gray-500 uppercase font-bold">Precio Detalle</span>
                             <span class="text-xl font-black text-white font-mono">$49.990</span>
                         </div>
-                        <a href="#" data-mp-key="liv" data-product-name="LIV Unidad" data-product-price="49990" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(74,222,128,0.3)] font-bold">
+                        <a href="#" data-buy-items="liv" data-link-key="liv" data-buy-label="LIV Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(74,222,128,0.3)] font-bold">
                             COMPRAR AHORA
                         </a>
                         <button type="button" data-add-cart data-product-id="liv" data-product-name="LIV Unidad" data-product-price="49990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
@@ -1402,7 +1433,7 @@
                             <span class="text-[10px] text-gray-500 uppercase font-bold">Precio Detalle</span>
                             <span class="text-xl font-black text-white font-mono">$39.990</span>
                         </div>
-                        <a href="#" data-mp-key="24b" data-product-name="24B+ Unidad" data-product-price="39990" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(16,185,129,0.3)] font-bold">
+                        <a href="#" data-buy-items="24b" data-link-key="24b" data-buy-label="24B+ Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(16,185,129,0.3)] font-bold">
                             COMPRAR AHORA
                         </a>
                         <button type="button" data-add-cart data-product-id="24b" data-product-name="24B+ Unidad" data-product-price="39990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
@@ -1447,7 +1478,7 @@
                             <span class="text-[10px] text-gray-500 uppercase font-bold">Precio Detalle</span>
                             <span class="text-xl font-black text-white font-mono">$39.990</span>
                         </div>
-                        <a href="#" data-mp-key="eboost" data-product-name="EBOOST Unidad" data-product-price="39990" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(249,115,22,0.3)] font-bold">
+                        <a href="#" data-buy-items="eboost" data-link-key="eboost" data-buy-label="EBOOST Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(249,115,22,0.3)] font-bold">
                             COMPRAR AHORA
                         </a>
                         <button type="button" data-add-cart data-product-id="eboost" data-product-name="EBOOST Unidad" data-product-price="39990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
@@ -1492,7 +1523,7 @@
                             <span class="text-[10px] text-gray-500 uppercase font-bold">Precio Detalle</span>
                             <span class="text-xl font-black text-white font-mono">$35.990</span>
                         </div>
-                        <a href="#" data-mp-key="24burn" data-product-name="24BURN Unidad" data-product-price="35990" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-lime-600 hover:bg-lime-500 text-black font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(16,185,129,0.3)] font-bold">
+                        <a href="#" data-buy-items="24burn" data-link-key="24burn" data-buy-label="24BURN Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-lime-600 hover:bg-lime-500 text-black font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(16,185,129,0.3)] font-bold">
                             COMPRAR AHORA
                         </a>
                         <button type="button" data-add-cart data-product-id="24burn" data-product-name="24BURN Unidad" data-product-price="35990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
@@ -1829,9 +1860,9 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="assets/js/index.js" defer></script>
-    <script src="assets/js/checkout.js" defer></script>
-    <script src="assets/js/hero-particles.js" defer></script>
-    <script src="assets/js/cycle-countdown.js" defer></script>
+    <script src="assets/js/index.js?v=20261123" defer></script>
+    <script src="assets/js/checkout.js?v=20261123" defer></script>
+    <script src="assets/js/hero-particles.js?v=20261123" defer></script>
+    <script src="assets/js/cycle-countdown.js?v=20261123" defer></script>
 </body>
 </html>

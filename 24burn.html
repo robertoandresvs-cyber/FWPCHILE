@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="assets/css/fontawesome-fwp.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/site.css">
-    <script src="assets/js/config.js"></script>
+    <link href="assets/css/fontawesome-fwp.css?v=20261123" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css?v=20261123">
+    <script src="assets/js/config.js?v=20261123"></script>
 </head>
 <body class="bg-fwp-darker text-white font-sans antialiased" style="padding-bottom:100px;">
 
@@ -101,6 +101,7 @@
             </div>
 
             <button id="burn-cta" type="button" class="w-full py-4 bg-lime-600 hover:bg-lime-500 text-black font-black rounded-full text-center text-sm tracking-wider transition-colors mb-3">COMPRAR AHORA</button>
+            <div class="text-center mb-3"><div class="cycle-badge" data-cycle><span>🎁 Muestra de regalo si compras dentro de los próximos</span> <span><span class="cycle-time" data-cycle-time>30:00</span> min</span></div></div>
             <p class="text-center text-[11px] text-gray-400 mb-2">¿Más de 8 unidades? <a href="/#calculadora-canastas" class="text-emerald-400 font-bold underline">Compra mayorista con hasta 50% de descuento</a></p>
             <p class="text-center text-[11px] text-gray-500">🔒 Pagos seguros con Mercado Pago · Atención personalizada por WhatsApp · Devolución en 10 días (envase sellado)</p>
         </div>
@@ -164,10 +165,11 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="assets/js/analytics.js" defer></script>
-    <script src="assets/js/helpers.js" defer></script>
-    <script src="assets/js/whatsapp.js" defer></script>
-    <script src="assets/js/checkout.js" defer></script>
+    <script src="assets/js/analytics.js?v=20261123" defer></script>
+    <script src="assets/js/helpers.js?v=20261123" defer></script>
+    <script src="assets/js/whatsapp.js?v=20261123" defer></script>
+    <script src="assets/js/checkout.js?v=20261123" defer></script>
+    <script src="assets/js/cycle-countdown.js?v=20261123" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         window.FWP_ANALYTICS && window.FWP_ANALYTICS.track('ViewContent', { content_name: '24BURN', content_type: 'product', content_ids: ['24burn'], value: 35990, currency: 'CLP' }, { dedupeKey: 'viewcontent-24burn' });
@@ -188,16 +190,7 @@
 
         function buy() {
             const qty = parseInt(selected.getAttribute('data-qty'), 10);
-            const total = parseInt(selected.getAttribute('data-total'), 10);
-            if (qty === 1) {
-                window.FWP_CHECKOUT && window.FWP_CHECKOUT.pay('24burn', '24BURN Unidad', total);
-            } else if (window.FWP_CHECKOUT) {
-                window.FWP_CHECKOUT.clearCart();
-                for (let i = 0; i < qty; i++) {
-                    window.FWP_CHECKOUT.addToCart('burn-' + i, '24BURN Unidad', Math.round(total / qty));
-                }
-                window.FWP_CHECKOUT.openShippingModal({ type: 'cart' });
-            }
+            window.FWP_CHECKOUT && window.FWP_CHECKOUT.checkout([{ key: '24burn', qty: qty }], { label: '24BURN x' + qty });
         }
         document.getElementById('burn-cta').addEventListener('click', buy);
         document.getElementById('sticky-cta').addEventListener('click', buy);

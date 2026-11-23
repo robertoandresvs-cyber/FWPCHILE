@@ -38,15 +38,25 @@ window.FWP_CONFIG = Object.freeze({
     ])
   }),
 
-  /* Promoción del ciclo (dosis extra de regalo + cuenta regresiva).
-     Cambia a false cuando la compañía no tenga promoción activa. */
+  /* Oferta de bienvenida: cada visitante tiene `minutes` minutos desde que entra
+     por primera vez para comprar y recibir el regalo. Cambia active a false para apagarla. */
   promo: Object.freeze({
-    active: true
+    active: true,
+    minutes: 30,
+    gift: 'muestra de regalo'
   }),
 
-  /* Links de pago de Mercado Pago para venta directa (1 a 7 unidades).
-     Pega aquí cada link nuevo creado con el precio actualizado.
-     Si un link queda vacío (''), el botón abre el pedido por WhatsApp. */
+  /* Descuento de los packs de 2 y 3 unidades del mismo producto (venta directa). */
+  packDiscounts: Object.freeze({ 2: 6000, 3: 9000 }),
+
+  /* Pago con Mercado Pago Checkout Pro: la función de Netlify crea el cobro por el monto exacto
+     y Mercado Pago devuelve al cliente a Gracias.html. Requiere la variable MP_ACCESS_TOKEN en Netlify. */
+  payments: Object.freeze({
+    endpoint: '/.netlify/functions/crear-pago'
+  }),
+
+  /* Respaldo (solo si Checkout Pro no está activo): links fijos de Mercado Pago.
+     Si un link queda vacío (''), el pedido se envía por WhatsApp. */
   mercadoPago: Object.freeze({
     renova: '',          // $49.990
     liv: '',             // $49.990
