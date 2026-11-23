@@ -53,11 +53,11 @@ window.FWP_CONFIG = Object.freeze({
     '24b': '',           // $39.990
     eboost: '',          // $39.990
     '24burn': '',        // $35.990
-    'proto-peso': '',      // LIV + 24BURN          $79.980
-    'proto-energia': '',   // E-BOOST + 24B+        $73.980
-    'proto-belleza': '',   // LIV + RENÖVA+         $93.980
-    'proto-mujer': '',     // LIV + RENÖVA+ + 24B+  $130.970
-    'proto-reinicio': '',  // RENÖVA+ + LIV + 24BURN $106.970
-    'proto-integral': ''   // Los 5 productos       $160.960
+    'proto-peso': '',      // LIV + 24BURN          $85.980
+    'proto-energia': '',   // E-BOOST + 24B+        $79.980
+    'proto-belleza': '',   // LIV + RENÖVA+         $99.980
+    'proto-mujer': '',     // LIV + RENÖVA+ + 24B+  $139.970
+    'proto-reinicio': '',  // RENÖVA+ + LIV + 24BURN $135.970
+    'proto-integral': ''   // Los 5 productos       $215.950
   })
 });

@@ -15,109 +15,119 @@
             document.getElementById('gift-opened').classList.remove('hidden');
         }
 
-        // Lógica del Cuestionario Molecular (Asistente de Precisión con Animación de Carga)
-        let quizAnswers = {};
-        
-        function nextQuizStep(step, data) {
-            quizAnswers = { ...quizAnswers, ...data };
-            
-            const currentStepEl = document.getElementById(`quiz-step-${step - 1}`);
-            if (currentStepEl) currentStepEl.classList.add('hidden');
-            
-            const nextStepEl = document.getElementById(`quiz-step-${step}`);
-            if (nextStepEl) nextStepEl.classList.remove('hidden');
+        // Buscador de beneficios del Ecosistema: recomienda productos, rutina PRO y protocolo.
+        const FINDER_BENEFITS = [
+            { key: 'energia', icon: '⚡', label: 'Más energía durante el día', products: ['eboost'] },
+            { key: 'enfoque', icon: '🎯', label: 'Enfoque y concentración', products: ['eboost'] },
+            { key: 'descanso', icon: '🌙', label: 'Descansar mejor', products: ['24b'] },
+            { key: 'digestion', icon: '🌿', label: 'Digestión liviana, menos hinchazón', products: ['liv'] },
+            { key: 'peso', icon: '🔥', label: 'Apoyar el control de peso', products: ['24burn', 'liv'] },
+            { key: 'piel', icon: '✨', label: 'Piel, cabello y uñas', products: ['renova'] },
+            { key: 'articulaciones', icon: '🦴', label: 'Articulaciones y movilidad', products: ['renova'] },
+            { key: 'integral', icon: '🌐', label: 'Bienestar integral', products: ['renova', 'liv', 'eboost', '24burn', '24b'] }
+        ];
+        const FINDER_PRODUCTS = {
+            renova: { color: '#c084fc', page: 'renova.html', slot: 'manana', when: 'Mañana, en ayunas',
+                desc: 'Colágeno hidrolizado Peptan® con resveratrol, Q10, vitaminas y minerales para nutrir piel, cabello, uñas y articulaciones desde el interior.',
+                tip: '1 sachet (15 g) al día en agua fría o tibia, idealmente en ayunas. La constancia es clave: los cambios en piel y cabello se notan con semanas de uso.' },
+            liv: { color: '#4ade80', page: 'liv.html', slot: 'manana', when: 'Mañana, en ayunas',
+                desc: 'Fibras solubles y probióticos que apoyan tu equilibrio digestivo, ayudan a reducir la sensación de hinchazón y favorecen un tránsito regular.',
+                tip: '1 sachet al día en agua; muchos clientes lo prefieren en la mañana en ayunas. Acompáñalo con buena hidratación durante el día.' },
+            eboost: { color: '#fb923c', page: 'eboost.html', slot: 'manana', when: 'Mañana o antes de tu jornada',
+                desc: 'Activador con aminoácidos (BCAAs) sabor mandarina para mantener el enfoque y una energía limpia durante tu jornada.',
+                tip: '1 sachet al día en agua, en la mañana o antes de tu jornada más exigente. Evítalo en la noche para no interferir con tu descanso.' },
+            '24burn': { color: '#a3e635', page: '24burn.html', slot: 'dia', when: 'Durante el día',
+                desc: 'Té verde, Panax Ginseng y L-Carnitina para apoyar tu metabolismo todos los días, con 0 g de azúcar y 0 g de grasas.',
+                tip: '1 scoop al día en agua, fría o caliente como un té. Tómalo durante el día: es un termogénico diurno. Súmale movimiento diario para potenciar tu rutina.' },
+            '24b': { color: '#34d399', page: '24b.html', slot: 'noche', when: 'Noche, antes de dormir',
+                desc: 'Soporte nocturno sabor limón para acompañar tu rutina de descanso y ayudarte a armonizar tu ritmo circadiano.',
+                tip: '1 sachet en agua antes de dormir. Combínalo con horarios regulares y menos pantallas en la noche.' }
+        };
+        const FINDER_PROTOCOLS = [
+            { key: 'proto-peso', id: 'protocol-detox', name: '🔥 Pérdida de Peso Inteligente', products: ['liv', '24burn'] },
+            { key: 'proto-energia', id: 'protocol-energy', name: '⚡ Energía 24/7', products: ['eboost', '24b'] },
+            { key: 'proto-belleza', id: 'protocol-beauty', name: '✨ Belleza desde Adentro', products: ['liv', 'renova'] },
+            { key: 'proto-mujer', id: 'protocol-women', name: '💜 Mujer +35', products: ['liv', 'renova', '24b'] },
+            { key: 'proto-reinicio', id: 'protocol-men', name: '🌱 Reinicio 30 Días', products: ['renova', 'liv', '24burn'] },
+            { key: 'proto-integral', id: 'protocol-integral', name: '🌿 Bienestar Integral', products: ['renova', 'liv', 'eboost', '24burn', '24b'] }
+        ];
+        const FINDER_ORDER = ['renova', 'liv', 'eboost', '24burn', '24b'];
+        const finderSelected = new Set();
+        const finderFmt = (n) => '$' + Math.round(n).toLocaleString('es-CL');
+
+        function finderState() {
+            const products = FINDER_ORDER.filter((k) => FINDER_BENEFITS.some((b) => finderSelected.has(b.key) && b.products.includes(k)));
+            const total = products.reduce((sum, k) => sum + FWP_CONFIG.products[k].price, 0);
+            const exact = FINDER_PROTOCOLS.find((p) => p.products.length === products.length && products.every((k) => p.products.includes(k))) || null;
+            const containing = FINDER_PROTOCOLS
+                .filter((p) => products.length && products.every((k) => p.products.includes(k)))
+                .sort((x, y) => x.products.length - y.products.length)[0] || null;
+            return { products, total, exact, suggested: exact || containing };
         }
 
-        function finishQuiz(data) {
-            quizAnswers = { ...quizAnswers, ...data };
-            
-            // Ocultar paso 3 y mostrar estado de carga animado
-            document.getElementById('quiz-step-3').classList.add('hidden');
-            const loader = document.getElementById('quiz-loading');
-            loader.classList.remove('hidden');
-            
-            setTimeout(() => {
-                // Ocultar cargador tras 2 segundos de simulación analítica
-                loader.classList.add('hidden');
-                
-                let recommendation = {
-                    name: "🌿 BIENESTAR INTEGRAL",
-                    targetId: "protocol-integral",
-                    filterKey: "integral",
-                    desc: "Tu perfil biológico indica la conveniencia de una cobertura completa. El Protocolo de Bienestar Integral combina soporte nootrópico diurno con reposición estructural de colágeno Peptan® y balance para tu microbiota intestinal.",
-                    alts: [
-                        { name: "⚡ ENERGÍA 24/7", targetId: "protocol-energy", desc: "Aporte y enfoque constante." },
-                        { name: "✨ BELLEZA DESDE ADENTRO", targetId: "protocol-beauty", desc: "Nutrición estructural y elástica." }
-                    ]
-                };
+        function renderFinder() {
+            const grid = document.getElementById('finder-benefits');
+            if (!grid) return;
+            grid.innerHTML = FINDER_BENEFITS.map((b) => {
+                const on = finderSelected.has(b.key);
+                return `<button type="button" data-action="finderToggle('${b.key}')" aria-pressed="${on}" class="p-4 rounded-2xl border text-left transition-all" style="border-color:${on ? '#22c55e' : 'rgba(255,255,255,.08)'};background:${on ? 'rgba(34,197,94,.12)' : 'rgba(0,0,0,.4)'}">
+                        <span class="text-2xl block mb-1">${b.icon}</span>
+                        <span class="text-xs font-bold text-white block leading-tight">${b.label}</span>
+                    </button>`;
+            }).join('');
 
-                if (quizAnswers.goal === 'energy' || quizAnswers.symptom === 'fatigue') {
-                    recommendation = {
-                        name: "⚡ ENERGÍA 24/7",
-                        targetId: "protocol-energy",
-                        filterKey: "energia",
-                        desc: "La asimilación de energía celular es clave. El Protocolo de Energía 24/7 aportará un flujo constante de vitalidad mental libre de picos de agitación, regulando el descanso circadiano nocturno.",
-                        alts: [
-                            { name: "🌿 BIENESTAR INTEGRAL", targetId: "protocol-integral", desc: "Soporte biológico de amplio espectro." },
-                            { name: "🌱 REINICIO 30 DÍAS", targetId: "protocol-men", desc: "Reset celular y digestivo profundo." }
-                        ]
-                    };
-                } else if (quizAnswers.goal === 'digestive' || quizAnswers.symptom === 'bloating') {
-                    recommendation = {
-                        name: "🔥 PÉRDIDA DE PESO INTELIGENTE",
-                        targetId: "protocol-detox",
-                        filterKey: "peso",
-                        desc: "Tu flora intestinal se verá sumamente respaldada por la combinación de probióticos y fibra soluble activa de LIV junto al estímulo del metabolismo diurno y termogénesis de 24BURN.",
-                        alts: [
-                            { name: "🌱 REINICIO 30 DÍAS", targetId: "protocol-men", desc: "Reseteo metabólico y estructural." },
-                            { name: "🌿 BIENESTAR INTEGRAL", targetId: "protocol-integral", desc: "Soporte fisiológico integral." }
-                        ]
-                    };
-                } else if (quizAnswers.goal === 'structural' || quizAnswers.symptom === 'aging') {
-                    recommendation = {
-                        name: "✨ BELLEZA DESDE ADENTRO",
-                        targetId: "protocol-beauty",
-                        filterKey: "belleza",
-                        desc: "Tu organismo se beneficiará óptimamente de la reposición de péptidos bioactivos de colágeno Peptan® de RENÖVA+, apoyando la elasticidad celular, cabello, piel, uñas y salud articular.",
-                        alts: [
-                            { name: "💜 MUJER +35", targetId: "protocol-women", desc: "Equilibrio hormonal y estructural." },
-                            { name: "🌿 BIENESTAR INTEGRAL", targetId: "protocol-integral", desc: "Nutrición biológica completa." }
-                        ]
-                    };
-                }
+            const st = finderState();
+            const empty = !st.products.length;
+            document.getElementById('finder-empty').classList.toggle('hidden', !empty);
+            document.getElementById('finder-result').classList.toggle('hidden', empty);
+            if (empty) return;
 
-                window.activeQuizRecommendationId = recommendation.targetId;
-                window.activeQuizFilterKey = recommendation.filterKey;
-
-                // Renderizar los resultados
-                document.getElementById('quiz-rec-title').innerText = recommendation.name;
-                document.getElementById('quiz-recommended-description').innerText = recommendation.desc;
-                
-                // Renderizar las alternativas "También podrían interesarte"
-                const altsContainer = document.getElementById('quiz-alternatives-container');
-                altsContainer.innerHTML = '';
-                recommendation.alts.forEach(alt => {
-                    altsContainer.innerHTML += `
-                        <button data-action="scrollToProtocolDirect('${alt.targetId}')" class="p-4 rounded-xl bg-black/40 border border-white/5 hover:border-emerald-500/30 text-left transition-all w-full flex justify-between items-center group">
-                            <div>
-                                <span class="block font-black text-xs text-white uppercase tracking-wider">${alt.name}</span>
-                                <span class="text-[10px] text-gray-400 block">${alt.desc}</span>
+            document.getElementById('finder-products').innerHTML = st.products.map((k) => {
+                const p = FWP_CONFIG.products[k];
+                const info = FINDER_PRODUCTS[k];
+                const tags = FINDER_BENEFITS.filter((b) => finderSelected.has(b.key) && b.products.includes(k))
+                    .map((b) => `<span class="text-[10px] bg-white/5 border border-white/10 px-2 py-0.5 rounded-full text-gray-300">${b.icon} ${b.label}</span>`).join(' ');
+                return `<div class="p-4 rounded-2xl bg-black/40 border border-white/5" style="border-left:3px solid ${info.color}">
+                        <div class="flex justify-between items-start gap-3 mb-2">
+                            <div class="flex items-center gap-3">
+                                <img src="${p.img}" alt="${p.name}" class="object-contain shrink-0" style="height:56px;width:46px">
+                                <div>
+                                    <a href="${info.page}" class="text-sm font-black text-white hover:text-white">${p.name}</a>
+                                    <span class="text-[11px] text-gray-400 block">${info.when}</span>
+                                </div>
                             </div>
-                            <i class="fas fa-chevron-right text-gray-500 group-hover:text-emerald-400 transition-colors text-xs"></i>
-                        </button>
-                    `;
-                });
+                            <span class="text-sm font-black text-white font-mono shrink-0">${finderFmt(p.price)}</span>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-2">${info.desc}</p>
+                        <div class="flex flex-wrap gap-1.5 mb-2">${tags}</div>
+                        <p class="text-[11px] text-gray-300 bg-white/5 rounded-xl p-3"><strong class="text-emerald-400">Recomendación PRO:</strong> ${info.tip}</p>
+                    </div>`;
+            }).join('');
 
-                document.getElementById('quiz-result').classList.remove('hidden');
-            }, 2000);
-        }
+            const slots = [['manana', '☀️ Mañana'], ['dia', '🌤️ Durante el día'], ['noche', '🌙 Noche']];
+            document.getElementById('finder-routine').innerHTML = slots.map(([slot, label]) => {
+                const names = st.products.filter((k) => FINDER_PRODUCTS[k].slot === slot).map((k) => FWP_CONFIG.products[k].name);
+                if (!names.length) return '';
+                return `<div class="flex justify-between gap-3 text-xs p-3 rounded-xl bg-black/25 border border-white/5"><span class="text-gray-400">${label}</span><span class="text-white font-bold text-right">${names.join(' + ')}</span></div>`;
+            }).join('');
 
-        function scrollToProtocol() {
-            if (window.activeQuizFilterKey) {
-                selectObjective(window.activeQuizFilterKey);
+            document.getElementById('finder-count').innerText = `${st.products.length} producto${st.products.length === 1 ? '' : 's'} · 30 días`;
+            document.getElementById('finder-total').innerText = finderFmt(st.total);
+
+            const proto = document.getElementById('finder-protocol');
+            if (st.suggested) {
+                const extra = st.suggested.products.filter((k) => !st.products.includes(k)).map((k) => FWP_CONFIG.products[k].name);
+                proto.innerHTML = st.exact
+                    ? `Tu rutina corresponde al protocolo <strong class="text-white">${st.suggested.name}</strong>. <button type="button" data-action="scrollToProtocolDirect('${st.suggested.id}')" class="text-emerald-400 font-bold underline">Ver protocolo</button>`
+                    : `Para un resultado más completo, mira el protocolo <strong class="text-white">${st.suggested.name}</strong>, que suma ${extra.join(' + ')}. <button type="button" data-action="scrollToProtocolDirect('${st.suggested.id}')" class="text-emerald-400 font-bold underline">Ver protocolo</button>`;
+                proto.classList.remove('hidden');
+            } else {
+                proto.classList.add('hidden');
             }
-            const el = document.getElementById(window.activeQuizRecommendationId);
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            const goals = FINDER_BENEFITS.filter((b) => finderSelected.has(b.key)).map((b) => b.label.toLowerCase()).join(', ');
+            const msg = `¡Hola Roberto! Usé el buscador de beneficios de tu página. Busco: ${goals}.\n\nMe recomendó: ${st.products.map((k) => FWP_CONFIG.products[k].name).join(' + ')} (${finderFmt(st.total)}).\n\n¿Me asesoras para elegir bien?`;
+            document.getElementById('finder-whatsapp').setAttribute('data-whatsapp-message', encodeURIComponent(msg));
         }
 
         function scrollToProtocolDirect(id) {
@@ -125,13 +135,25 @@
             if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
-        function restartQuiz() {
-            quizAnswers = {};
-            document.getElementById('quiz-result').classList.add('hidden');
-            document.getElementById('quiz-loading').classList.add('hidden');
-            document.getElementById('quiz-step-1').classList.remove('hidden');
-            document.getElementById('quiz-step-2').classList.add('hidden');
-            document.getElementById('quiz-step-3').classList.add('hidden');
+        function finderToggle(key) {
+            if (finderSelected.has(key)) finderSelected.delete(key); else finderSelected.add(key);
+            renderFinder();
+            if (finderSelected.size) FWP_ANALYTICS.track('FinderSelect', { benefit: key, selected: finderSelected.size });
+        }
+
+        function finderReset() { finderSelected.clear(); renderFinder(); }
+
+        function finderOrder() {
+            const st = finderState();
+            if (!st.products.length || !window.FWP_CHECKOUT) return;
+            if (st.exact) {
+                const proto = st.exact;
+                FWP_CHECKOUT.pay(proto.key, `Protocolo ${proto.name.replace(/^\S+\s/, '')}`, st.total);
+                return;
+            }
+            FWP_CHECKOUT.clearCart();
+            st.products.forEach((k) => FWP_CHECKOUT.addToCart('finder-' + k, `${FWP_CONFIG.products[k].name} Unidad`, FWP_CONFIG.products[k].price));
+            FWP_CHECKOUT.openShippingModal({ type: 'cart' });
         }
 
         // Testimonial Lightbox
@@ -460,6 +482,7 @@
         
         document.addEventListener("DOMContentLoaded", () => {
             initSimulator();
+            renderFinder();
             filterTestimonials('all'); 
             reveal(); 
             FWP_WHATSAPP.bindLinks();
@@ -476,10 +499,9 @@
 
         const ACTIONS = {
             openAmbassadorGift,
-            nextQuizStep,
-            finishQuiz,
-            scrollToProtocol,
-            restartQuiz,
+            finderToggle,
+            finderReset,
+            finderOrder,
             selectObjective,
             resetFilters,
             switchPartnerTab,
