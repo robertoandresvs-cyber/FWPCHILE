@@ -135,6 +135,12 @@
 .fwp-co-method input{position:absolute;top:14px;left:14px;width:18px;height:18px;accent-color:#0f172a}
 .fwp-co-logo{height:30px;display:flex;align-items:center;justify-content:center;margin:6px 0 8px;font-size:24px}
 .fwp-co-logo img{max-height:30px;max-width:120px}
+.fwp-co-logo-mp{height:44px;margin:0 0 6px}
+.fwp-co-logo-mp img{max-height:none;max-width:none;height:64px;width:auto}
+.fwp-co-pay.is-mp{background:#0a0080;display:flex;align-items:center;justify-content:center;gap:2px;padding:10px 16px;min-height:56px}
+.fwp-co-pay.is-mp:hover:not(:disabled){background:#14139a}
+.fwp-co-pay.is-mp:disabled{background:#0a0080;opacity:.4}
+.fwp-co-pay.is-mp img{height:46px;width:auto;margin:-6px -8px -6px -4px}
 .fwp-co-mname{font-weight:700;font-size:15px}
 .fwp-co-msub{color:#64748b;font-size:12px;margin-top:2px}
 .fwp-co-chips{border-top:1px solid #e2e8f0;margin-top:12px;padding-top:10px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
@@ -184,8 +190,7 @@
         <div class="fwp-co-methods">
           <label class="fwp-co-method is-active" data-method="mp">
             <input type="radio" name="fwp-co-method" value="mp" checked>
-            <div class="fwp-co-logo"><img src="assets/img/mercadopago.png" alt="Mercado Pago" data-co-logo><span data-co-logo-fallback hidden>💳</span></div>
-            <div class="fwp-co-mname">Mercado Pago</div>
+            <div class="fwp-co-logo fwp-co-logo-mp"><img src="assets/img/mercadopago.svg" alt="Mercado Pago" data-co-logo><span class="fwp-co-mname" data-co-logo-fallback hidden>Mercado Pago</span></div>
             <div class="fwp-co-msub">Cobro en CLP</div>
             <div class="fwp-co-chips"><span class="fwp-co-chip">VISA</span><span class="fwp-co-chip">MASTERCARD</span><span class="fwp-co-chip">DÉBITO</span></div>
           </label>
@@ -255,17 +260,27 @@
         return el;
     }
 
-    function setPayButton(text, disabled) {
+    function setPayButton(text, disabled, withLogo) {
         const btn = document.getElementById('fwp-co-pay');
         if (!btn) return;
-        btn.textContent = text;
+        btn.classList.toggle('is-mp', method === 'mp');
+        btn.innerHTML = '';
+        btn.appendChild(document.createTextNode(text));
+        if (withLogo) {
+            const img = document.createElement('img');
+            img.src = 'assets/img/mercadopago-blanco.svg';
+            img.alt = 'Mercado Pago';
+            img.addEventListener('error', function () { img.replaceWith(document.createTextNode(' Mercado Pago')); });
+            btn.appendChild(img);
+        }
         btn.disabled = disabled;
     }
 
     function refreshPay() {
         if (!currentOrder || !document.getElementById('fwp-co-accept')) return;
         const ok = document.getElementById('fwp-co-accept').checked;
-        setPayButton(method === 'wa' ? 'Enviar pedido por WhatsApp' : 'Pagar ' + fmt(currentOrder.total), !ok);
+        if (method === 'wa') setPayButton('Enviar pedido por WhatsApp', !ok, false);
+        else setPayButton('Pagar ' + fmt(currentOrder.total) + ' con', !ok, true);
     }
 
     function refreshMethod() {
