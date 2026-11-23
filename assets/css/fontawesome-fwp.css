@@ -31,6 +31,8 @@
   content: "\f201"; }
 .fa-chevron-down::before {
   content: "\f078"; }
+.fa-chevron-right::before {
+  content: "\f054"; }
 .fa-circle-check::before {
   content: "\f058"; }
 .fa-clipboard-list::before {

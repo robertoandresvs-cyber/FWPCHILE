@@ -42,6 +42,15 @@
     }
 
     function start() {
+        var cfg = window.FWP_CONFIG && window.FWP_CONFIG.promo;
+        if (cfg && cfg.active === false) {
+            // Sin promoción activa: se ocultan la cuenta regresiva y las líneas de "dosis extra de regalo".
+            document.querySelectorAll('[data-cycle]').forEach(function (el) { (el.parentElement || el).style.display = 'none'; });
+            document.querySelectorAll('[data-cycle-until]').forEach(function (el) {
+                var row = el.closest('div'); if (row) row.style.display = 'none';
+            });
+            return;
+        }
         tick();
         window.setInterval(function () { if (!document.hidden) tick(); }, 1000);
     }

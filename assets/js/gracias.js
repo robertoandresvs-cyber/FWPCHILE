@@ -2,8 +2,11 @@ function trackPurchaseFromUrl() {
     const params = new URLSearchParams(window.location.search);
 
     // Si Mercado Pago informa un estado y no es aprobado, no se registra la compra.
+    // Solo se registra la compra si Mercado Pago confirma el pago (estado aprobado o id de pago).
     const status = (params.get('collection_status') || params.get('status') || '').toLowerCase();
+    const paymentRef = params.get('payment_id') || params.get('collection_id');
     if (status && status !== 'approved' && status !== 'success') return;
+    if (!status && !paymentRef) return;
 
     // El monto viene en la URL (?val=). Si falta, se envía la compra sin monto en vez de inventar uno.
     const rawValue = Number.parseFloat(params.get('val'));

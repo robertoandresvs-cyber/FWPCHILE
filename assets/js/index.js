@@ -9,19 +9,6 @@
             img.src = 'https://placehold.co/110x150/0f172a/9b2c86?text=RENOVA%2B';
         }
 
-        // Meta Pixel: Detección y rastreo automático de clics a pasarelas de Mercado Pago
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.addEventListener("click", function(event) {
-                const targetLink = event.target.closest("a");
-                if (targetLink && targetLink.href) {
-                    const url = targetLink.href;
-                    if (url.includes("mpago.la") || url.includes("mpago.li") || url.includes("mercadopago")) {
-                        FWP_ANALYTICS.track('InitiateCheckout', { checkout_url: url }, { dedupeKey: `checkout-${url}` });
-                    }
-                }
-            });
-        });
-
         // Lógica de la caja sorpresa del Embajador
         function openAmbassadorGift() {
             document.getElementById('gift-closed').classList.add('hidden');
@@ -160,324 +147,122 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Base de Datos de Canastas Mayoristas
-        const CALCULATOR_PACKS = {
-            "35": [
-                {
-                    id: "c35-1",
-                    name: "Pack Puramente RENÖVA+",
-                    totalQty: 7,
-                    priceRegular: 419916, 
-                    pricePack: 240500,
-                    savings: 179416,
-                    roi: "74.6%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Puro RENOVA+ con 35% de descuento por $240.500. Por favor ayúdame con el pedido.",
-                    items: [
-                        { name: "RENÖVA+", qty: 7, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" }
-                    ]
-                },
-                {
-                    id: "c35-2",
-                    name: "Pack Mixto 24BURN + RENÖVA+",
-                    totalQty: 9,
-                    priceRegular: 439092, 
-                    pricePack: 240500,
-                    savings: 198592,
-                    roi: "82.5%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Mixto (6 24BURN + 3 RENOVA+) con 35% de descuento por $240.500. Por favor ayúdame.",
-                    items: [
-                        { name: "24BURN", qty: 6, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" },
-                        { name: "RENÖVA+", qty: 3, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" }
-                    ]
-                },
-                {
-                    id: "c35-3",
-                    name: "Pack Triple Sinergia",
-                    totalQty: 9,
-                    priceRegular: 427092, 
-                    pricePack: 240500,
-                    savings: 186592,
-                    roi: "77.5%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Triple Sinergia (6 24BURN + 2 RENOVA+ + 1 EBOOST) con 35% de descuento por $240.500.",
-                    items: [
-                        { name: "24BURN", qty: 6, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" },
-                        { name: "RENÖVA+", qty: 2, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" },
-                        { name: "EBOOST", qty: 1, color: "orange", img: "MOCKUP%20Productos/MOCKUP_EBOOST.png", height: "120px" }
-                    ]
-                },
-                {
-                    id: "c35-4",
-                    name: "Pack Completo Mixto 9",
-                    totalQty: 9,
-                    priceRegular: 477492, 
-                    pricePack: 265200,
-                    savings: 212292,
-                    roi: "80.0%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Completo (3 24BURN + 3 LIV + 2 RENOVA+ + 1 EBOOST) con 35% de descuento por $265.200.",
-                    items: [
-                        { name: "24BURN", qty: 3, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" },
-                        { name: "LIV", qty: 3, color: "green", img: "MOCKUP%20Productos/MOCKUP_LIV.png", height: "140px" }, 
-                        { name: "RENÖVA+", qty: 2, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" },
-                        { name: "EBOOST", qty: 1, color: "orange", img: "MOCKUP%20Productos/MOCKUP_EBOOST.png", height: "120px" }
-                    ]
-                }
-            ],
-            "40": [
-                {
-                    id: "c40-1",
-                    name: "Pack Puro RENÖVA+ 15",
-                    totalQty: 15,
-                    priceRegular: 899820, 
-                    pricePack: 456500,
-                    savings: 443320,
-                    roi: "97.1%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Puro RENOVA+ con 40% de descuento (15 unidades) por $456.500.",
-                    items: [
-                        { name: "RENÖVA+", qty: 15, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" }
-                    ]
-                },
-                {
-                    id: "c40-2",
-                    name: "Pack Dual 10 24BURN + 8 RENÖVA+",
-                    totalQty: 18,
-                    priceRegular: 911784, 
-                    pricePack: 462500,
-                    savings: 449284,
-                    roi: "97.1%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Dual (10 24BURN + 8 RENOVA+) con 40% de descuento por $462.500.",
-                    items: [
-                        { name: "24BURN", qty: 10, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" },
-                        { name: "RENÖVA+", qty: 8, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" }
-                    ]
-                },
-                {
-                    id: "c40-3",
-                    name: "Pack Mayorista Completo 18",
-                    totalQty: 18,
-                    priceRegular: 937784, 
-                    pricePack: 493000,
-                    savings: 444784,
-                    roi: "90.2%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Mayorista Mixto 18 (5 24BURN + 4 RENOVA+ + 4 EBOOST + 5 LIV) con 40% de descuento por $493.000.",
-                    items: [
-                        { name: "24BURN", qty: 5, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" },
-                        { name: "RENÖVA+", qty: 4, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" },
-                        { name: "EBOOST", qty: 4, color: "orange", img: "MOCKUP%20Productos/MOCKUP_EBOOST.png", height: "120px" },
-                        { name: "LIV", qty: 5, color: "green", img: "MOCKUP%20Productos/MOCKUP_LIV.png", height: "140px" }
-                    ]
-                },
-                {
-                    id: "c40-4",
-                    name: "Pack Fuerza Activa 18",
-                    totalQty: 18,
-                    priceRegular: 863784, 
-                    pricePack: 438422,
-                    savings: 425362,
-                    roi: "97.0%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Fuerza Activa 18 (10 24BURN + 4 RENOVA+ + 4 EBOOST) con 40% de descuento por $438.422.",
-                    items: [
-                        { name: "24BURN", qty: 10, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" },
-                        { name: "RENÖVA+", qty: 4, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" },
-                        { name: "EBOOST", qty: 4, color: "orange", img: "MOCKUP%20Productos/MOCKUP_EBOOST.png", height: "120px" }
-                    ]
-                }
-            ],
-            "50": [
-                {
-                    id: "c50-1",
-                    name: "Pack Puro RENÖVA+ 36",
-                    totalQty: 36,
-                    priceRegular: 2159568, 
-                    pricePack: 906500,
-                    savings: 1253068,
-                    roi: "138.2%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Puro RENOVA+ con 50% de descuento (36 unidades) por $906.500.",
-                    items: [
-                        { name: "RENÖVA+", qty: 36, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" }
-                    ]
-                },
-                {
-                    id: "c50-2",
-                    name: "Pack Mixto Rendimiento 40",
-                    totalQty: 40,
-                    priceRegular: 1943520, 
-                    pricePack: 816500,
-                    savings: 1127020,
-                    roi: "138.0%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Mixto Rendimiento (10 RENOVA+ + 20 24BURN + 10 EBOOST) con 50% de descuento por $816.500.",
-                    items: [
-                        { name: "RENÖVA+", qty: 10, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" },
-                        { name: "24BURN", qty: 20, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" },
-                        { name: "EBOOST", qty: 10, color: "orange", img: "MOCKUP%20Productos/MOCKUP_EBOOST.png", height: "120px" }
-                    ]
-                },
-                {
-                    id: "c50-3",
-                    name: "Pack Dual Max 40",
-                    totalQty: 40,
-                    priceRegular: 2063520, 
-                    pricePack: 866500,
-                    savings: 1197020,
-                    roi: "138.1%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Dual Max (20 RENOVA+ + 20 24BURN) con 50% de descuento por $866.500.",
-                    items: [
-                        { name: "RENÖVA+", qty: 20, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" },
-                        { name: "24BURN", qty: 20, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" }
-                    ]
-                },
-                {
-                    id: "c50-4",
-                    name: "Pack Sinergia Total 40",
-                    totalQty: 40,
-                    priceRegular: 2111520, 
-                    pricePack: 936500,
-                    savings: 1175020,
-                    roi: "125.4%",
-                    whatsappMsg: "¡Hola! Deseo adquirir el Pack Sinergia Total (10 EBOOST + 10 RENOVA+ + 10 24BURN + 10 LIV) con 50% de descuento por $936.500.",
-                    items: [
-                        { name: "EBOOST", qty: 10, color: "orange", img: "MOCKUP%20Productos/MOCKUP_EBOOST.png", height: "120px" },
-                        { name: "RENÖVA+", qty: 10, color: "purple", img: "MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png", height: "140px" },
-                        { name: "24BURN", qty: 10, color: "lime", img: "MOCKUP%20Productos/MOCKUP_24BURN.png", height: "130px" },
-                        { name: "LIV", qty: 10, color: "green", img: "MOCKUP%20Productos/MOCKUP_LIV.png", height: "140px" }
-                    ]
-                }
-            ]
-        };
+        // Simulador de puntos del portal mayorista (reglas en config.js)
+        const SIM_ORDER = ['renova', 'liv', '24b', 'eboost', '24burn'];
+        const simQty = { renova: 0, liv: 0, '24b': 0, eboost: 0, '24burn': 0 };
+        const simFmt = (n) => '$' + Math.round(n).toLocaleString('es-CL');
 
-        let currentDiscountTier = "50"; 
-        let activePackId = "c50-2"; 
-
-        function setCalcDiscountTier(tier) {
-            currentDiscountTier = tier;
-            
-            const tiers = ["35", "40", "50"];
-            tiers.forEach(t => {
-                const btn = document.getElementById(`tier-btn-${t}`);
-                if (t === tier) {
-                    btn.className = "py-3 text-xs font-black rounded-xl transition-all duration-300 text-white bg-emerald-600 shadow-lg";
-                } else {
-                    btn.className = "py-3 text-xs font-black rounded-xl transition-all duration-300 text-gray-400 hover:text-white";
-                }
+        function simTotals() {
+            const products = FWP_CONFIG.products;
+            const portal = FWP_CONFIG.portal;
+            let points = 0, list = 0, units = 0;
+            SIM_ORDER.forEach((key) => {
+                points += simQty[key] * products[key].points;
+                list += simQty[key] * products[key].price;
+                units += simQty[key];
             });
+            let tier = null, next = portal.tiers[0];
+            portal.tiers.forEach((t, i) => { if (points >= t.points) { tier = t; next = portal.tiers[i + 1] || null; } });
+            const discount = tier ? tier.discount : 0;
+            const subtotal = Math.round(list * (1 - discount / 100));
+            const shipping = units > 0 ? portal.shippingCLP : 0;
+            return { points, list, units, tier, next, discount, subtotal, shipping, total: subtotal + shipping };
+        }
 
-            renderPacksList();
-            
-            if (CALCULATOR_PACKS[tier] && CALCULATOR_PACKS[tier].length > 0) {
-                selectActivePack(CALCULATOR_PACKS[tier][0].id);
+        function renderSimulator() {
+            const list = document.getElementById('sim-products');
+            if (!list) return;
+            const products = FWP_CONFIG.products;
+            list.innerHTML = SIM_ORDER.map((key) => {
+                const p = products[key];
+                return `
+                    <div class="flex items-center justify-between gap-3 p-3 rounded-2xl bg-black/40 border border-white/5">
+                        <div class="flex items-center gap-3">
+                            <img src="${p.img}" alt="${p.name}" class="object-contain shrink-0" style="height:52px;width:44px">
+                            <div class="text-left">
+                                <span class="text-sm font-black text-white block">${p.name}</span>
+                                <span class="text-[11px] text-gray-400 font-mono">${simFmt(p.price)} · ${p.points} pts</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <button type="button" data-action="simSub('${key}')" aria-label="Quitar ${p.name}" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white font-black">−</button>
+                            <span class="w-8 text-center font-black text-white font-mono" aria-live="polite">${simQty[key]}</span>
+                            <button type="button" data-action="simAdd('${key}')" aria-label="Agregar ${p.name}" class="w-8 h-8 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-black">+</button>
+                        </div>
+                    </div>`;
+            }).join('');
+
+            const t = simTotals();
+            const goal = t.next ? t.next.points : (t.tier ? t.tier.points : FWP_CONFIG.portal.tiers[0].points);
+            const pct = Math.min(100, Math.round((t.points / goal) * 100));
+            const bar = document.getElementById('sim-progress-bar');
+            bar.style.width = pct + '%';
+            bar.style.background = t.tier ? '#22c55e' : '#f59e0b';
+            document.getElementById('sim-points').innerText = `${t.points} / ${goal} pts`;
+
+            let msg;
+            if (!t.tier) {
+                const missing = FWP_CONFIG.portal.tiers[0].points - t.points;
+                msg = t.points === 0
+                    ? 'Agrega productos para ver tu descuento. Mínimo mayorista: 154 pts (ej: 8 RENÖVA+).'
+                    : `Te faltan ${missing} pts para acceder al 35% de descuento mayorista.`;
+            } else if (t.next) {
+                msg = `¡${t.discount}% de descuento alcanzado! Suma ${t.next.points - t.points} pts más para llegar al ${t.next.discount}%.`;
+            } else {
+                msg = `¡Alcanzaste el descuento máximo del ${t.discount}%!`;
             }
+            document.getElementById('sim-message').innerText = msg;
+
+            document.getElementById('sim-units').innerText = `${t.units} unidad${t.units === 1 ? '' : 'es'}`;
+            document.getElementById('sim-list').innerText = simFmt(t.list);
+            document.getElementById('sim-discount-label').innerText = `Descuento (${t.discount}%)`;
+            document.getElementById('sim-discount').innerText = '-' + simFmt(t.list - t.subtotal);
+            document.getElementById('sim-shipping').innerText = simFmt(t.shipping);
+            document.getElementById('sim-total').innerText = simFmt(t.total);
+
+            const resale = document.getElementById('sim-resale');
+            if (t.tier) {
+                const gain = t.list - t.total;
+                resale.classList.remove('hidden');
+                document.getElementById('sim-resale-value').innerText = `${simFmt(gain)} (+${Math.round((gain / t.total) * 100)}%)`;
+            } else {
+                resale.classList.add('hidden');
+            }
+
+            document.querySelectorAll('[data-sim-tier]').forEach((el) => {
+                const active = t.tier && String(t.tier.discount) === el.getAttribute('data-sim-tier');
+                el.style.borderColor = active ? '#22c55e' : '';
+                el.style.boxShadow = active ? '0 0 25px rgba(34,197,94,.25)' : '';
+            });
+
+            const portalBtn = document.getElementById('sim-portal-btn');
+            portalBtn.style.opacity = t.tier ? '1' : '.55';
+            const items = SIM_ORDER.filter((k) => simQty[k] > 0).map((k) => `• ${simQty[k]} x ${FWP_CONFIG.products[k].name}`).join('\n');
+            const waMsg = items
+                ? `¡Hola Roberto! Armé este pedido mayorista en tu página:\n\n${items}\n\n⭐ ${t.points} pts · ${t.discount}% de descuento\n💰 Total estimado: ${simFmt(t.total)} (envío incluido)\n\n¿Me ayudas a completarlo en el portal?`
+                : '¡Hola Roberto! Quiero información sobre la compra mayorista FWP.';
+            document.getElementById('sim-whatsapp-btn').setAttribute('data-whatsapp-message', encodeURIComponent(waMsg));
         }
 
-        function renderPacksList() {
-            const listContainer = document.getElementById("calc-packs-list");
-            listContainer.innerHTML = "";
-
-            const packs = CALCULATOR_PACKS[currentDiscountTier] || [];
-            packs.forEach(pack => {
-                const isActive = pack.id === activePackId;
-                const activeClass = isActive 
-                    ? "border-emerald-500 bg-emerald-500/10 text-white shadow-md shadow-emerald-500/5" 
-                    : "border-white/5 bg-black/20 text-gray-400 hover:border-white/20 hover:text-white";
-
-                const itemsSummary = pack.items.map(i => `${i.qty}x ${i.name}`).join(" + ");
-
-                listContainer.innerHTML += `
-                    <button data-action="selectActivePack('${pack.id}')" class="w-full text-left p-4 rounded-2xl border transition-all duration-300 flex justify-between items-center ${activeClass}">
-                        <div class="pr-3">
-                            <span class="text-xs font-black block text-emerald-400 uppercase tracking-wider mb-1">${pack.name}</span>
-                            <span class="text-[11px] text-gray-400 block truncate max-w-[280px] font-mono">${itemsSummary}</span>
-                        </div>
-                        <div class="text-right shrink-0">
-                            <span class="text-[10px] text-gray-500 block uppercase font-bold">VALOR PACK</span>
-                            <span class="text-sm font-black text-white font-mono">$${pack.pricePack.toLocaleString('es-CL')}</span>
-                        </div>
-                    </button>
-                `;
-            });
+        function simAdd(key) { if (key in simQty) { simQty[key] = Math.min(99, simQty[key] + 1); renderSimulator(); } }
+        function simSub(key) { if (key in simQty) { simQty[key] = Math.max(0, simQty[key] - 1); renderSimulator(); } }
+        function simReset() { Object.keys(simQty).forEach((k) => { simQty[k] = 0; }); renderSimulator(); }
+        function simPreset(units) {
+            Object.keys(simQty).forEach((k) => { simQty[k] = 0; });
+            simQty.renova = parseInt(units, 10) || 0;
+            renderSimulator();
         }
 
-        function selectActivePack(packId) {
-            activePackId = packId;
-            renderPacksList(); 
-
-            const pack = CALCULATOR_PACKS[currentDiscountTier].find(p => p.id === packId);
-            if (!pack) return;
-
-            document.getElementById("calc-active-pack-title").innerText = pack.name;
-            document.getElementById("calc-active-pack-qty").innerText = `${pack.totalQty} Productos`;
-
-            const drawerItemsContainer = document.getElementById("calc-drawer-items-container");
-            drawerItemsContainer.innerHTML = "";
-
-            // Inyectar representaciones visuales agrupadas
-            pack.items.forEach((item) => {
-                let glowClass = "";
-                let floatClass = "";
-                let translationClass = "";
-                
-                if (item.name.includes("RENÖVA")) {
-                    glowClass = "glow-rva-img";
-                    floatClass = "animate-float-1";
-                } else if (item.name.includes("LIV")) {
-                    glowClass = "glow-liv-img";
-                    floatClass = "animate-float-2";
-                } else if (item.name.includes("24BURN")) {
-                    glowClass = "glow-burn-img";
-                    floatClass = "animate-float-3";
-                    translationClass = "translate-y-[12px]"; // El 24BURN se baja para coincidir con la base de los doypacks
-                } else if (item.name.includes("EBOOST")) {
-                    glowClass = "glow-eboost-img";
-                    floatClass = "animate-float-1";
-                } else {
-                    glowClass = "glow-b24-img";
-                    floatClass = "animate-float-2";
-                }
-
-                drawerItemsContainer.innerHTML += `
-                    <div class="relative flex flex-col items-center justify-end select-none shrink-0 overflow-visible z-10 p-2 drawer-item-animate self-end">
-                        <img src="${item.img}" 
-                             style="height: ${item.height};"
-                             class="object-contain shrink-0 transition-transform duration-300 origin-bottom hover:scale-110 ${floatClass} ${glowClass} ${translationClass} self-end mb-1" 
-                             alt="${item.name}"
-                             data-image-fallback="renova">
-                        <div class="bg-emerald-500 text-black font-black font-mono text-[10px] px-2 py-0.5 rounded-full shadow-[0_2px_8px_rgba(16,185,129,0.4)] z-20">
-                            x${item.qty}
-                        </div>
-                    </div>
-                `;
+        function initSimulator() {
+            const portalBtn = document.getElementById('sim-portal-btn');
+            if (!portalBtn) return;
+            portalBtn.setAttribute('href', FWP_CONFIG.portal.url);
+            portalBtn.addEventListener('click', () => {
+                const t = simTotals();
+                FWP_ANALYTICS.track('InitiateCheckout', { content_type: 'portal_mayorista', num_items: t.units, value: t.total, currency: 'CLP' });
+                FWP_ANALYTICS.track('PortalClick', { points: t.points, discount: t.discount });
             });
-
-            // Actualizar listado físico del desglose de la caja
-            const inventoryList = document.getElementById("calc-drawer-inventory-list");
-            inventoryList.innerHTML = "";
-            pack.items.forEach(item => {
-                let badgeColorClass = "";
-                if (item.name.includes("RENÖVA")) badgeColorClass = "text-purple-400 bg-purple-500/10 border-purple-500/20";
-                else if (item.name.includes("LIV")) badgeColorClass = "text-green-400 bg-green-500/10 border-green-500/20";
-                else if (item.name.includes("24BURN")) badgeColorClass = "text-lime-400 bg-lime-500/10 border-lime-500/20";
-                else if (item.name.includes("EBOOST")) badgeColorClass = "text-orange-400 bg-orange-500/10 border-orange-500/20";
-                else badgeColorClass = "text-emerald-400 bg-emerald-500/10 border-emerald-500/20";
-
-                inventoryList.innerHTML += `
-                    <div class="flex items-center gap-3 p-3 rounded-xl bg-black/40 border border-white/5">
-                        <span class="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm border shrink-0 font-mono ${badgeColorClass}">
-                            ${item.qty}
-                        </span>
-                        <div>
-                            <span class="text-xs font-bold text-white block font-sans">${item.name}</span>
-                            <span class="text-[9px] text-gray-500 uppercase font-semibold">Tecnología de Precisión</span>
-                        </div>
-                    </div>
-                `;
-            });
-
-            // Totales e indicadores financieros
-            document.getElementById("calc-val-retail").innerText = `$${pack.priceRegular.toLocaleString('es-CL')}`;
-            document.getElementById("calc-val-savings").innerText = `$${pack.savings.toLocaleString('es-CL')}`;
-            document.getElementById("calc-val-pack").innerText = `$${pack.pricePack.toLocaleString('es-CL')}`;
-            document.getElementById("calc-roi-percentage").innerText = `+${pack.roi} ROI`;
-
-            const whatsappBtn = document.getElementById("calc-order-whatsapp-btn");
-            whatsappBtn.setAttribute("href", FWP_WHATSAPP.toUrl(pack.whatsappMsg));
+            simPreset('8');
         }
 
         // Interruptor de propuesta de valor (Consumo vs Emprende)
@@ -544,8 +329,9 @@
                 title: "Política de Envíos",
                 content: `
                     <p class="text-xs text-gray-400 mb-4 font-mono">Última actualización: 18 de julio de 2026</p>
-                    <p>En fwpchile.lat el envío es gratis a todo Chile. A continuación detallamos cómo funcionan nuestros despachos.</p>
+                    <p>En las compras directas en fwpchile.lat (1 a 7 unidades), el envío es gratis a todo Chile. A continuación detallamos cómo funcionan nuestros despachos.</p>
                     <p>Los pedidos se procesan dentro de las primeras 24 horas hábiles y se despachan de forma prioritaria de norte a sur.</p>
+                    <p><strong>Compras mayoristas en el portal oficial.</strong> Los pedidos mayoristas (desde 154 puntos) se pagan y despachan directamente desde el portal oficial de la compañía, que aplica su propio costo de envío (referencial: $6.530) y sus propias condiciones de despacho.</p>
                 `
             }
         };
@@ -673,7 +459,7 @@
         }
         
         document.addEventListener("DOMContentLoaded", () => {
-            setCalcDiscountTier("50"); 
+            initSimulator();
             filterTestimonials('all'); 
             reveal(); 
             FWP_WHATSAPP.bindLinks();
@@ -697,12 +483,14 @@
             selectObjective,
             resetFilters,
             switchPartnerTab,
-            setCalcDiscountTier,
+            simAdd,
+            simSub,
+            simReset,
+            simPreset,
             filterTestimonials,
             openTestimonialLightbox,
             closeTestimonialLightbox,
             scrollToProtocolDirect,
-            selectActivePack,
             openLegalModal,
             closeLegalModal,
             toggleMobileMenu

@@ -25,6 +25,7 @@
             bar = document.createElement('div');
             bar.id = 'fwp-cart-bar';
             bar.className = 'fixed bottom-0 left-0 right-0 z-40 bg-[#020617]/95 backdrop-blur-lg border-t border-white/10 px-4 py-3 flex items-center justify-between gap-3 font-sans';
+            bar.style.zIndex = '55'; // sobre la barra fija de compra de las fichas
             document.body.appendChild(bar);
         }
         bar.innerHTML =
@@ -136,7 +137,9 @@
             '\n🏡 *Comuna:* ' + comuna +
             '\n📞 *Teléfono:* ' + formattedPhone +
             (wantsSubscription ? '\n\n🔁 *Quiero suscribirme a reposición mensual*' : '') +
-            (currentContext.type === 'single' ? '\n\nYa abrí el link de pago, quedo atento a la confirmación de mi despacho. 🚀' : '\n\n¿Me confirman el link de pago para este pedido combinado?');
+            (currentContext.type === 'single' && currentContext.mpUrl
+                ? '\n\nYa abrí el link de pago, quedo atento a la confirmación de mi despacho. 🚀'
+                : '\n\n¿Me envían el link de pago para este pedido?');
 
         if (window.FWP_WHATSAPP) {
             window.FWP_WHATSAPP.open('checkout_modal', message, {
@@ -179,6 +182,28 @@
         });
     }
 
+    // Pago directo: usa el link de Mercado Pago de config.js; si está vacío, abre el pedido por WhatsApp.
+    function pay(key, name, price) {
+        const links = (window.FWP_CONFIG && window.FWP_CONFIG.mercadoPago) || {};
+        const url = links[key] || '';
+        if (url) {
+            window.FWP_ANALYTICS && window.FWP_ANALYTICS.track('InitiateCheckout', { content_ids: [key], value: price, currency: 'CLP' });
+            window.open(url, '_blank', 'noopener');
+            return;
+        }
+        openShippingModal({ type: 'single', name: name, price: price, mpUrl: '' });
+    }
+
+    function bindPayButtons() {
+        document.querySelectorAll('[data-mp-key]').forEach(function (el) {
+            el.addEventListener('click', function (e) {
+                e.preventDefault();
+                pay(el.getAttribute('data-mp-key'), el.getAttribute('data-product-name'), parseInt(el.getAttribute('data-product-price'), 10));
+            });
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', bindBuyButtons);
-    window.FWP_CHECKOUT = Object.freeze({ addToCart: addToCart, openShippingModal: openShippingModal, clearCart: clearCart });
+    document.addEventListener('DOMContentLoaded', bindPayButtons);
+    window.FWP_CHECKOUT = Object.freeze({ addToCart: addToCart, openShippingModal: openShippingModal, clearCart: clearCart, pay: pay });
 }(window, document));
