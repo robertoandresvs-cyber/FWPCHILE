@@ -364,9 +364,12 @@
             const title = document.getElementById('legalModalTitle');
             const content = document.getElementById('legalModalContent');
             
-            if (LEGAL_DATA[policyKey]) {
-                title.innerText = LEGAL_DATA[policyKey].title;
-                content.innerHTML = LEGAL_DATA[policyKey].content;
+            const data = policyKey === 'terminos' && window.FWP_TERMS
+                ? { title: window.FWP_TERMS.title, content: window.FWP_TERMS.html }
+                : LEGAL_DATA[policyKey];
+            if (data) {
+                title.innerText = data.title;
+                content.innerHTML = data.content;
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden'; 
             }
