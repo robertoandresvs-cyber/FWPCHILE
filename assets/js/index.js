@@ -44,13 +44,38 @@
                 tip: '1 sachet al día en 200 ml de agua, de día: antes o después de entrenar. Trae 4,5 mg de cafeína, así que mejor evítalo en la noche.' }
         };
         const FINDER_PROTOCOLS = [
-            { key: 'proto-peso', tagline: 'Digestión liviana y metabolismo activo', id: 'protocol-detox', name: '🔥 Pérdida de Peso Inteligente', products: ['liv', '24burn'] },
-            { key: 'proto-energia', tagline: 'Energía y enfoque para tus días exigentes', id: 'protocol-energy', name: '⚡ Energía Activa', products: ['eboost', '24b'] },
-            { key: 'proto-belleza', tagline: 'Piel, cabello y digestión en equilibrio', id: 'protocol-beauty', name: '✨ Belleza desde Adentro', products: ['liv', 'renova'] },
-            { key: 'proto-mujer', tagline: 'Belleza, digestión y energía para tu día', id: 'protocol-women', name: '💜 Mujer +35', products: ['liv', 'renova', '24b'] },
-            { key: 'proto-reinicio', tagline: 'Un mes para reordenar tus hábitos', id: 'protocol-men', name: '🌱 Reinicio 30 Días', products: ['renova', 'liv', '24burn'] },
-            { key: 'proto-integral', tagline: 'Los 5 productos: tu rutina completa', id: 'protocol-integral', name: '🌿 Bienestar Integral', products: ['renova', 'liv', 'eboost', '24burn', '24b'] }
+            { key: 'proto-peso', id: 'protocol-detox', name: '🔥 Pérdida de Peso Inteligente', title: 'Pérdida de Peso Inteligente', img: 'peso', products: ['liv', '24burn'],
+              tagline: 'Primero desinflamar, después activar',
+              para: 'Para bajar de peso de forma ordenada, sin pasar hambre ni sentirte pesado.',
+              porque: 'Cuando la digestión está lenta, el cuerpo se siente hinchado y cuesta ver avances. Por eso partimos con LIV, que ordena el tránsito y reduce la sensación de hinchazón, y sumamos 24BURN para activar tu metabolismo durante el día.' },
+            { key: 'proto-energia', id: 'protocol-energy', name: '⚡ Energía Activa', title: 'Energía Activa', img: 'energia', products: ['eboost', '24b'],
+              tagline: 'Energía estable, cabeza despejada',
+              para: 'Para días largos, trabajo exigente o entrenamiento, sin bajones a media tarde.',
+              porque: 'La energía tiene dos frentes: la mente y el cuerpo. E-BOOST trabaja el enfoque con BCAA y cafeína natural de guaraná y yerba mate; 24B+ sostiene la energía física con tres tés, ginseng y vitaminas para rendir al entrenar.' },
+            { key: 'proto-belleza', id: 'protocol-beauty', name: '✨ Belleza desde Adentro', title: 'Belleza desde Adentro', img: 'belleza', products: ['liv', 'renova'],
+              tagline: 'Piel, cabello y uñas que se notan',
+              para: 'Para ver cambios en piel, cabello y uñas trabajando desde adentro.',
+              porque: 'Lo que se ve por fuera empieza por dentro. LIV mantiene tu digestión en orden, la base de cualquier rutina, y RENÖVA+ aporta colágeno Peptan® con 18 vitaminas y minerales que nutren piel, cabello, uñas y articulaciones.' },
+            { key: 'proto-mujer', id: 'protocol-women', name: '💜 Mujer +35', title: 'Mujer +35', img: 'mujer', products: ['liv', 'renova', '24b'],
+              tagline: 'Firmeza, digestión y energía',
+              para: 'Para mujeres que desde los 35 notan menos energía, menos firmeza o una digestión más pesada.',
+              porque: 'Con los años el cuerpo produce menos colágeno de forma natural. RENÖVA+ lo repone, LIV mantiene la digestión liviana y 24B+ te da la energía para moverte y entrenar, que es lo que mantiene la firmeza.' },
+            { key: 'proto-reinicio', id: 'protocol-men', name: '🌱 Reinicio 30 Días', title: 'Reinicio 30 Días', img: 'reinicio', products: ['renova', 'liv', '24burn'],
+              tagline: 'Una limpieza de hábitos en 30 días',
+              para: 'Para empezar de cero: reordenar digestión, metabolismo y hábitos en un mes.',
+              porque: 'Es un reinicio en tres frentes: LIV limpia y ordena la digestión, 24BURN activa el metabolismo y RENÖVA+ nutre piel y articulaciones mientras haces el cambio. Funciona mejor junto a la alimentación y el movimiento.' },
+            { key: 'proto-integral', id: 'protocol-integral', name: '🌿 Bienestar Integral', title: 'Bienestar Integral', img: 'integral', products: ['renova', 'liv', 'eboost', '24burn', '24b'],
+              tagline: 'La rutina completa, de la mañana a la noche',
+              para: 'Para cubrir todo: digestión, metabolismo, energía, enfoque y belleza.',
+              porque: 'Cada producto cubre un momento y una necesidad: en la mañana RENÖVA+ y LIV preparan tu cuerpo; durante el día 24BURN activa, 24B+ te da energía para moverte y E-BOOST mantiene el enfoque.' }
         ];
+        const PRODUCT_ROLES = {
+            liv: 'Reduce la hinchazón y ordena la digestión',
+            '24burn': 'Activa tu metabolismo durante el día',
+            renova: 'Colágeno para piel, cabello y articulaciones',
+            '24b': 'Energía para moverte y entrenar',
+            eboost: 'Enfoque y energía mental'
+        };
         const FINDER_ORDER = ['renova', 'liv', 'eboost', '24burn', '24b'];
         const finderSelected = new Set();
         const finderFmt = (n) => '$' + Math.round(n).toLocaleString('es-CL');
@@ -140,7 +165,7 @@
             renderFinderHero(st);
         }
 
-        // Vista unificada: el resultado se presenta como protocolo (solo si existe #finder-hero)
+        // Vista unificada: el resultado se presenta como protocolo
         function renderFinderHero(st) {
             const hero = document.getElementById('finder-hero');
             const chips = document.getElementById('finder-protocols');
@@ -148,16 +173,22 @@
                 chips.innerHTML = FINDER_PROTOCOLS.map((p) => {
                     const on = st && st.exact && st.exact.key === p.key;
                     const price = p.products.reduce((sum, k) => sum + FWP_CONFIG.products[k].price, 0);
-                    return `<button type="button" data-action="selectProtocol('${p.key}')" class="proto-chip${on ? ' is-on' : ''}"><strong>${p.name}</strong><span>${p.products.length} productos · ${finderFmt(price)}</span></button>`;
+                    return `<button type="button" data-action="selectProtocol('${p.key}')" class="proto-chip${on ? ' is-on' : ''}">
+                        <img src="assets/img/protocolos/${p.img}.webp" alt="" width="52" height="52" loading="lazy">
+                        <span class="pc-txt"><strong>${p.title}</strong><em>${p.tagline}</em><span>${p.products.length} productos · ${finderFmt(price)}</span></span>
+                    </button>`;
                 }).join('');
             }
             if (!hero || !st || !st.products.length) return;
-            const name = st.exact ? st.exact.name : 'Tu rutina personalizada';
-            const tagline = st.exact ? st.exact.tagline : 'Armada con lo que marcaste';
-            hero.innerHTML = `<span class="hero-kicker">${st.exact ? 'Tu protocolo recomendado' : 'Tu rutina recomendada'}</span>
-                <h3 class="hero-name">${name}</h3>
-                <p class="hero-tag">${tagline}</p>
-                <div class="hero-thumbs">${st.products.map((k) => `<img src="${FWP_CONFIG.products[k].img}" alt="${FWP_CONFIG.products[k].name}">`).join('')}</div>`;
+            const p = st.exact;
+            const roles = `<div class="hero-roles">${st.products.map((k) => `<div class="hero-role"><img src="${FWP_CONFIG.products[k].img}" alt=""><div><strong>${FWP_CONFIG.products[k].name}</strong><span>${PRODUCT_ROLES[k]}</span></div></div>`).join('')}</div>`;
+            hero.innerHTML = p ? `<div class="hero-top"><img class="hero-ico" src="assets/img/protocolos/${p.img}.webp" alt=""><div><span class="hero-kicker">Tu protocolo recomendado</span><h3 class="hero-name">${p.title}</h3></div></div>
+                <p class="hero-para">${p.para}</p>
+                <span class="hero-sub">¿Por qué estos productos juntos?</span>
+                <p class="hero-why">${p.porque}</p>
+                <span class="hero-sub">El rol de cada uno</span>${roles}`
+                : `<span class="hero-kicker">Tu rutina recomendada</span><h3 class="hero-name">Tu rutina personalizada</h3>
+                <p class="hero-para">Armada con lo que marcaste. Cada producto cumple un rol:</p>${roles}`;
             const inc = document.getElementById('finder-includes');
             if (inc) {
                 const units = st.products.length;
@@ -167,7 +198,7 @@
             const note = document.getElementById('finder-protocol');
             if (note && !st.exact && st.suggested) {
                 const extra = st.suggested.products.filter((k) => !st.products.includes(k)).map((k) => FWP_CONFIG.products[k].name);
-                note.innerHTML = `¿Quieres más? Sumando <strong class="text-white">${extra.join(' + ')}</strong> completas el protocolo <strong class="text-white">${st.suggested.name}</strong>. <button type="button" data-action="selectProtocol('${st.suggested.key}')" class="text-emerald-400 font-bold underline">Ver protocolo</button>`;
+                note.innerHTML = `¿Quieres más? Sumando <strong class="text-white">${extra.join(' + ')}</strong> completas el protocolo <strong class="text-white">${st.suggested.title}</strong>. <button type="button" data-action="selectProtocol('${st.suggested.key}')" class="text-emerald-400 font-bold underline">Ver protocolo</button>`;
             } else if (note && st.exact && hero) {
                 note.classList.add('hidden');
             }
