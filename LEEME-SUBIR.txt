@@ -8,6 +8,9 @@ CÓMO SUBIR
 4. Commit changes. Netlify publica solo en 1 o 2 minutos.
 
 QUÉ INCLUYE
+- Portada enfocada en colágeno (tipografía Poppins y rosa RENÖVA+): "¿Tu piel cambia con los años y notas que ya no es la misma?", títulos con movimiento e íconos premium.
+- Ingredientes en oscuro, con "Lo mejor de cada producto", precio y botón Comprar.
+- E-BOOST y 24BURN con imagen a tamaño correcto.
 - Inicio: nueva sección "Arma tu rutina" (recomendador + protocolos en una sola), íconos con imagen.
 - Protocolos con imagen propia, para qué sirven, por qué esos productos juntos y el rol de cada uno.
 - 24B+ Reduce y activa, oferta $39.990 (antes $44.990). 24BURN 0 g azúcar. LIV sabor manzana verde.

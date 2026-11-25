@@ -94,3 +94,54 @@
   .pf-orbit .pf-ing b{font-size:15px}
   .pf-orbit .pf-ing small{font-size:12.5px}
 }
+
+/* ===== Tema oscuro (igual que la landing) ===== */
+.pf-body{background:#010413;color:#e5e7eb}
+.pf-hero{background:radial-gradient(ellipse at top,rgba(16,185,129,.16) 0%,#010413 65%)}
+.pf-hero h1{color:#fff}
+.pf-hero p{color:#9ca3af}
+.pf-jump a{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);color:#e5e7eb;box-shadow:none}
+.pf-jump a:hover{border-color:rgba(110,231,183,.5);box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.pf{background:linear-gradient(180deg,color-mix(in srgb,var(--c) 13%,#010413) 0%,#010413 75%)}
+.pf+.pf{border-top:1px solid rgba(255,255,255,.05)}
+.pf-kicker{color:color-mix(in srgb,var(--c) 70%,#fff)}
+.pf-head h2{color:#fff}
+.pf-head h2 em{color:color-mix(in srgb,var(--c) 70%,#fff)}
+.pf-head p{color:#9ca3af}
+.pf-ing b{color:color-mix(in srgb,var(--c) 65%,#fff)}
+.pf-ing small{color:#9ca3af}
+.pf-ing .pf-dot img,.pf-ing .pf-dot span{background:#0b1020;border-color:#0b1020}
+.pf-dot i{border-color:#0b1020}
+.pf-center:before{background:radial-gradient(circle,color-mix(in srgb,var(--c) 35%,transparent) 0%,color-mix(in srgb,var(--c) 12%,transparent) 50%,transparent 72%)}
+.pf-center img{filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.pf-orbit:before{border-color:rgba(255,255,255,.1)}
+.pf-card{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.08);box-shadow:none}
+.pf-card h3{color:#fff}
+.pf-card p{color:#cbd5e1}
+.pf-card .pf-src,.pf-nutri h3 span{color:color-mix(in srgb,var(--c) 70%,#fff)}
+.pf-quote{background:color-mix(in srgb,var(--c) 12%,transparent)}
+.pf-quote p{color:#e5e7eb}
+.pf-quote cite,.pf-chip em{color:color-mix(in srgb,var(--c) 60%,#fff)}
+.pf-chip{background:color-mix(in srgb,var(--c) 10%,transparent);color:#e5e7eb}
+.pf-note,.pf-pending{color:#6b7280}
+.pf-pill{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);color:#d1d5db;box-shadow:none}
+.pf-foot{background:#010413}
+.pf-warn{background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.25);color:#fcd34d}
+@media (max-width:900px){.pf-orbit .pf-ing{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}}
+
+/* Lo mejor de cada producto + compra */
+.pf-best{margin-top:40px;border-radius:26px;padding:28px;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 16%,transparent),rgba(255,255,255,.02));border:1px solid color-mix(in srgb,var(--c) 35%,transparent);display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:center}
+.pf-best-head p{margin-top:8px;font-size:15px;color:#cbd5e1;line-height:1.5}
+.pf-best ul{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:0;padding:0;list-style:none}
+.pf-best li{display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:#e5e7eb}
+.pf-best li i{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:900;color:#04130b;background:color-mix(in srgb,var(--c) 75%,#fff)}
+.pf-buy{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 26px}
+.pf-price{display:block;font-size:30px;font-weight:900;color:#fff;font-family:ui-monospace,monospace}
+.pf-price s{font-size:18px;color:#6b7280}
+.pf-price b{font-size:12px;font-family:Inter,sans-serif;color:#04130b;background:#facc15;padding:3px 8px;border-radius:999px;vertical-align:middle}
+.pf-ship{display:block;font-size:13px;color:#6ee7b7;margin-top:2px}
+.pf-cta{border:0;cursor:pointer;color:#fff}
+.pf-more{font-size:13px;font-weight:700;color:#9ca3af;text-decoration:underline}
+@media (max-width:900px){.pf-best{grid-template-columns:1fr}.pf-best ul{grid-template-columns:1fr}}
+
+#eboost .pf-orbit .pf-center img{max-height:360px;max-width:360px}
