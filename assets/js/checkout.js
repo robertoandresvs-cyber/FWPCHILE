@@ -155,6 +155,8 @@
 .fwp-co-green{color:#16a34a !important}
 .fwp-co-sep{border-top:1px solid #e2e8f0;margin:12px 0}
 .fwp-co-total{display:flex;justify-content:space-between;font-size:20px;font-weight:800;color:#0f172a;margin-top:6px}
+.fwp-co-incl{margin-top:12px;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:12px;padding:10px 12px;font-size:12px;color:#065f46;display:flex;flex-direction:column;gap:3px}
+.fwp-co-incl b{font-size:12px;margin-bottom:2px}
 .fwp-co-gift{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:10px;padding:8px 10px;font-size:12px;margin-top:10px}
 .fwp-co-terms{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#334155;margin:16px 0 12px;cursor:pointer}
 .fwp-co-terms input{width:18px;height:18px;margin-top:1px;accent-color:#16a34a;flex-shrink:0}
@@ -302,6 +304,11 @@
         document.querySelector('#fwp-co .fwp-co-card').scrollTop = 0;
     }
 
+    function valueAddsFor(units) {
+        return (cfg().valueAdds || []).filter(function (t) { return units >= t.minUnits; })
+            .reduce(function (all, t) { return all.concat(t.items); }, []);
+    }
+
     function renderSummary(order) {
         const products = cfg().products;
         const discounts = cfg().packDiscounts || {};
@@ -315,6 +322,11 @@
             html += '<div class="fwp-co-row fwp-co-green"><span>Descuento pack x' + order.items[0].qty + '</span><span>-' + fmt(discounts[order.items[0].qty]) + '</span></div>';
         }
         html += '<div class="fwp-co-row fwp-co-green"><span>Envío a todo Chile</span><span>Gratis</span></div>';
+        const units = order.items.reduce(function (n, it) { return n + it.qty; }, 0);
+        const extras = valueAddsFor(units).filter(function (t) { return t.indexOf('Envío') !== 0; });
+        if (extras.length) {
+            html += '<div class="fwp-co-incl"><b>Tu compra incluye</b>' + extras.map(function (t) { return '<span>✓ ' + t + '</span>'; }).join('') + '</div>';
+        }
         html += '<div class="fwp-co-sep"></div>';
         html += '<div class="fwp-co-total"><span>Total</span><span>' + fmt(order.total) + '</span></div>';
         html += '<div class="fwp-co-row" style="font-size:12px;margin-top:2px"><span>IVA incluido</span><span></span></div>';

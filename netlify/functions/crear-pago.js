@@ -10,7 +10,7 @@ const PRODUCTS = {
   eboost: { name: 'E-BOOST', price: 39990 },
   '24burn': { name: '24BURN', price: 35990 }
 };
-const PACK_DISCOUNTS = { 2: 6000, 3: 9000 };
+const PACK_DISCOUNTS = {}; // sin descuentos: política de la compañía
 const MAX_UNITS = 7; // venta directa: 1 a 7 unidades (desde 8 es mayorista en el portal)
 
 const json = (statusCode, body) => ({

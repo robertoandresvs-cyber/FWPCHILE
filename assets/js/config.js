@@ -46,8 +46,14 @@ window.FWP_CONFIG = Object.freeze({
     gift: 'muestra de regalo'
   }),
 
-  /* Descuento de los packs de 2 y 3 unidades del mismo producto (venta directa). */
-  packDiscounts: Object.freeze({ 2: 6000, 3: 9000 }),
+  /* Sin descuentos (política de la compañía): los precios son siempre los de lista.
+     En su lugar, cada compra suma beneficios según la cantidad de unidades (acumulativos). */
+  packDiscounts: Object.freeze({}),
+  valueAdds: Object.freeze([
+    { minUnits: 1, items: ['Envío gratis a todo Chile', 'Guía de consumo PRO', 'Asesoría personalizada por WhatsApp'] },
+    { minUnits: 2, items: ['Recetario saludable'] },
+    { minUnits: 3, items: ['Minuta de alimentación referencial', 'Seguimiento de 30 días por WhatsApp'] }
+  ]),
 
   /* Pago con Mercado Pago Checkout Pro: la función de Netlify crea el cobro por el monto exacto
      y Mercado Pago devuelve al cliente a Gracias.html. Requiere la variable MP_ACCESS_TOKEN en Netlify. */

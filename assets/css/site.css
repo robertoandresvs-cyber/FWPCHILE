@@ -32,3 +32,40 @@ body { background-color: #020617; color: #f8fafc; overflow-x: hidden; }
 .cycle-badge{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;padding:.6rem 1.1rem;border-radius:999px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.35);color:#e2e8f0;font-size:.8rem;font-weight:700;line-height:1.3}
 .cycle-badge .cycle-time{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#22c55e;font-weight:800;letter-spacing:.02em}
 .cycle-badge .cycle-sep{opacity:.5}
+
+/* --- Bienestar: franja de confianza y enfoque (paleta salud) --- */
+.wl-section{position:relative;padding:64px 0;background:radial-gradient(ellipse at top,rgba(16,185,129,.10),transparent 60%),#020617;border-bottom:1px solid rgba(255,255,255,.05)}
+.wl-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 18px 8px 10px;border-radius:999px;background:linear-gradient(135deg,rgba(16,185,129,.16),rgba(20,184,166,.08));border:1px solid rgba(52,211,153,.35);color:#d1fae5;font-size:13px;font-weight:700;letter-spacing:.02em}
+.wl-badge i{width:26px;height:26px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:#10b981;color:#022c22;font-size:13px}
+.wl-badge small{display:block;font-size:11px;font-weight:600;color:#6ee7b7;letter-spacing:.08em;text-transform:uppercase}
+.wl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:32px}
+@media (min-width:768px){.wl-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}}
+@media (min-width:1100px){.wl-grid.wl-6{grid-template-columns:repeat(6,minmax(0,1fr))}.wl-grid.wl-4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.wl-tile{position:relative;border-radius:22px;padding:22px 14px 20px;text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.07);transition:transform .3s,border-color .3s,box-shadow .3s}
+.wl-tile:hover{transform:translateY(-4px);border-color:rgba(52,211,153,.35);box-shadow:0 18px 40px -18px rgba(16,185,129,.45)}
+.wl-icon{width:44px;height:44px;margin:0 auto 12px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#34d399;background:radial-gradient(circle at 30% 30%,rgba(52,211,153,.28),rgba(16,185,129,.08));border:1px solid rgba(52,211,153,.25)}
+.wl-num{display:block;font-size:clamp(22px,4.6vw,30px);font-weight:900;line-height:1.1;letter-spacing:-.02em;background:linear-gradient(135deg,#ecfdf5 10%,#6ee7b7 55%,#2dd4bf);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wl-label{display:block;margin-top:6px;font-size:12px;font-weight:700;color:#e2e8f0}
+.wl-sub{display:block;margin-top:2px;font-size:11px;color:#94a3b8}
+.wl-head{max-width:720px;margin:0 auto 8px;text-align:center}
+.wl-kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#34d399}
+.wl-title{margin-top:8px;font-size:clamp(26px,4vw,40px);font-weight:900;color:#fff;line-height:1.15}
+.wl-lead{margin-top:10px;font-size:15px;color:#94a3b8}
+.wl-note{margin-top:22px;font-size:12px;color:#64748b;text-align:center}
+
+/* --- Página de ingredientes --- */
+.ing-product{margin-top:56px}
+.ing-product-head{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.ing-product-head img{height:72px;width:auto;object-fit:contain}
+.ing-product-head h2{font-size:26px;font-weight:900;color:#fff;line-height:1.1}
+.ing-product-head p{font-size:13px;color:#94a3b8}
+.ing-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:768px){.ing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ing-card{border-radius:22px;padding:22px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.07)}
+.ing-card h3{font-size:17px;font-weight:800;color:#fff;margin-bottom:6px}
+.ing-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#34d399;background:rgba(16,185,129,.12);border:1px solid rgba(52,211,153,.25);border-radius:999px;padding:2px 9px;margin-bottom:10px}
+.ing-card p{font-size:14px;line-height:1.6;color:#cbd5e1;margin-bottom:8px}
+.ing-card .ing-ev{font-size:13px;color:#94a3b8}
+.ing-card .ing-ev strong{color:#e2e8f0}
+.ing-card a{color:#6ee7b7;font-size:12px;font-weight:700;text-decoration:underline}
+.ing-disclaimer{margin-top:48px;border-radius:18px;padding:18px 20px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);color:#fcd34d;font-size:13px;line-height:1.6}
