@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Gracias por tu Compra! | FWP Chile</title>
     <meta name="description" content="Confirma los datos de tu despacho prioritario para procesar tu pedido FWP de inmediato.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:site_name" content="FWP Chile">
+    <meta property="og:title" content="¡Gracias por tu Compra! | FWP Chile">
+    <meta property="og:description" content="Confirma los datos de tu despacho prioritario para procesar tu pedido FWP de inmediato.">
+    <meta property="og:url" content="https://fwpchile.lat/Gracias.html">
+    <meta property="og:image" content="https://fwpchile.lat/assets/img/og/fwp-chile.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#020617">
     <link rel="canonical" href="https://fwpchile.lat/Gracias.html">
@@ -23,16 +33,17 @@
     <link rel="icon" type="image/png" href="MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
     <!-- Tailwind CSS & FontAwesome -->
-    <script src="assets/js/config.js?v=20261125"></script>
-    <script src="assets/js/analytics.js?v=20261125" defer></script>
-    <script src="assets/js/helpers.js?v=20261125" defer></script>
-    <script src="assets/js/whatsapp.js?v=20261125" defer></script>
-    <link href="assets/css/fontawesome-fwp.css?v=20261125" rel="stylesheet">
+    <script src="assets/js/config.js?v=20261125e"></script>
+    <script src="assets/js/analytics.js?v=20261125e" defer></script>
+    <script src="assets/js/helpers.js?v=20261125e" defer></script>
+    <script src="assets/js/whatsapp.js?v=20261125e" defer></script>
+    <link href="assets/css/fontawesome-fwp.css?v=20261125e" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
     
 
-    <link rel="stylesheet" href="assets/css/gracias.css?v=20261125">
+    <link rel="stylesheet" href="assets/css/gracias.css?v=20261125e">
+    <style>html,body{overflow-x:clip;max-width:100%}.fwp-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer}.fwp-select:disabled{opacity:.5;cursor:not-allowed}.fwp-select option{background:#0b1220;color:#fff}</style>
 </head>
 <body class="antialiased selection:bg-fwp-green selection:text-black min-h-screen flex flex-col justify-between relative">
 
@@ -105,19 +116,30 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label for="address" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Dirección de Envío *</label>
+                            <label for="region" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Región *</label>
                             <div class="relative">
-                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500"><i class="fas fa-location-dot text-xs"></i></span>
-                                <input type="text" id="address" class="w-full pl-10 pr-4 py-3.5 rounded-2xl fwp-input text-white text-sm" placeholder="Calle, número, departamento" required>
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500 pointer-events-none"><i class="fas fa-map text-xs"></i></span>
+                                <select id="region" class="fwp-select w-full pl-10 pr-10 py-3.5 rounded-2xl fwp-input text-white text-sm" required>
+                                    <option value="">Elige tu región</option>
+                                </select>
                             </div>
                         </div>
-
                         <div>
-                            <label for="comuna" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Comuna / Región *</label>
+                            <label for="comuna" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Comuna *</label>
                             <div class="relative">
-                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500"><i class="fas fa-map text-xs"></i></span>
-                                <input type="text" id="comuna" class="w-full pl-10 pr-4 py-3.5 rounded-2xl fwp-input text-white text-sm" placeholder="Ej: Providencia, Metropolitana" required>
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500 pointer-events-none"><i class="fas fa-location-dot text-xs"></i></span>
+                                <select id="comuna" class="fwp-select w-full pl-10 pr-10 py-3.5 rounded-2xl fwp-input text-white text-sm" required disabled>
+                                    <option value="">Primero elige la región</option>
+                                </select>
                             </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="address" class="block text-[11px] font-black text-gray-400 uppercase tracking-wider mb-1.5">Dirección de Envío *</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500"><i class="fas fa-truck text-xs"></i></span>
+                            <input type="text" id="address" autocomplete="street-address" class="w-full pl-10 pr-4 py-3.5 rounded-2xl fwp-input text-white text-sm" placeholder="Calle, número, departamento" required>
                         </div>
                     </div>
 
@@ -253,7 +275,8 @@
     </footer>
 
     <!-- Vanilla Javascript Logic for Automated Clipboard copying and WhatsApp pre-fill -->
-    <script src="assets/js/gracias.js?v=20261125" defer></script>
+    <script src="assets/js/comunas.js?v=20261125e" defer></script>
+    <script src="assets/js/gracias.js?v=20261125e" defer></script>
 
 </body>
 </html>

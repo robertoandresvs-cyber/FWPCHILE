@@ -18,11 +18,11 @@ window.FWP_CONFIG = Object.freeze({
 
   /* Precios de venta (iguales al precio lista del portal) y puntos de cada producto. */
   products: Object.freeze({
-    renova: { name: 'RENÖVA+', price: 49990, points: 20, img: 'MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png' },
-    liv:    { name: 'LIV',     price: 49990, points: 20, img: 'MOCKUP%20Productos/MOCKUP_LIV.png' },
-    '24b':  { name: '24B+',    price: 39990, points: 18, img: 'MOCKUP%20Productos/MOCKUP_24B.png' },
-    eboost: { name: 'E-BOOST', price: 39990, points: 15, img: 'MOCKUP%20Productos/MOCKUP_EBOOST.png' },
-    '24burn': { name: '24BURN', price: 35990, points: 18, img: 'MOCKUP%20Productos/MOCKUP_24BURN.png' }
+    renova: { name: 'RENÖVA+', price: 49990, points: 20, img: 'assets/img/productos/renova.webp' },
+    liv:    { name: 'LIV',     price: 49990, points: 20, img: 'assets/img/productos/liv.webp' },
+    '24b':  { name: '24B+',    price: 39990, regularPrice: 44990, points: 18, img: 'assets/img/productos/24b.webp' },
+    eboost: { name: 'E-BOOST', price: 39990, points: 15, img: 'assets/img/productos/eboost.webp' },
+    '24burn': { name: '24BURN', price: 35990, points: 18, img: 'assets/img/productos/24burn.webp' }
   }),
 
   /* Portal oficial de la compañía: solo compras mayoristas (desde 154 puntos). */
@@ -70,7 +70,7 @@ window.FWP_CONFIG = Object.freeze({
     eboost: '',          // $39.990
     '24burn': '',        // $35.990
     'proto-peso': '',      // LIV + 24BURN          $85.980
-    'proto-energia': '',   // E-BOOST + 24B+        $79.980
+    'proto-energia': '',   // Energía Activa: E-BOOST + 24B+        $79.980
     'proto-belleza': '',   // LIV + RENÖVA+         $99.980
     'proto-mujer': '',     // LIV + RENÖVA+ + 24B+  $139.970
     'proto-reinicio': '',  // RENÖVA+ + LIV + 24BURN $135.970

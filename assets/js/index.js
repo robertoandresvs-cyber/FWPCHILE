@@ -2,7 +2,7 @@
         function handleRenovaError(img) {
             if (img.dataset.attempt !== 'local') {
                 img.dataset.attempt = 'local';
-                img.src = 'MOCKUP%20Productos/MOCKUP_DOYPACK_REN%C3%93VA%2B.png';
+                img.src = 'assets/img/productos/renova.webp';
                 return;
             }
             img.removeAttribute('data-image-fallback');
@@ -19,7 +19,7 @@
         const FINDER_BENEFITS = [
             { key: 'energia', icon: '⚡', label: 'Más energía durante el día', products: ['eboost'] },
             { key: 'enfoque', icon: '🎯', label: 'Enfoque y concentración', products: ['eboost'] },
-            { key: 'descanso', icon: '🌙', label: 'Descansar mejor', products: ['24b'] },
+            { key: 'rendimiento', icon: '🏃', label: 'Rendir más al entrenar', products: ['24b'] },
             { key: 'digestion', icon: '🌿', label: 'Digestión liviana, menos hinchazón', products: ['liv'] },
             { key: 'peso', icon: '🔥', label: 'Apoyar el control de peso', products: ['24burn', 'liv'] },
             { key: 'piel', icon: '✨', label: 'Piel, cabello y uñas', products: ['renova'] },
@@ -29,27 +29,27 @@
         const FINDER_PRODUCTS = {
             renova: { color: '#c084fc', page: 'renova.html', slot: 'manana', when: 'Mañana, en ayunas',
                 desc: 'Colágeno hidrolizado Peptan® con resveratrol, Q10, vitaminas y minerales para nutrir piel, cabello, uñas y articulaciones desde el interior.',
-                tip: '1 sachet (15 g) al día en agua fría o tibia, idealmente en ayunas. La constancia es clave: los cambios en piel y cabello se notan con semanas de uso.' },
+                tip: '1 sachet (15 g) al día en agua fría o templada (nunca caliente), en ayunas o 30 min después de la cena. Aléjalo 30 min del café y los lácteos. La constancia es clave: los cambios en piel y cabello se notan con semanas de uso.' },
             liv: { color: '#4ade80', page: 'liv.html', slot: 'manana', when: 'Mañana, en ayunas',
                 desc: 'Fibras solubles y probióticos que apoyan tu equilibrio digestivo, ayudan a reducir la sensación de hinchazón y favorecen un tránsito regular.',
-                tip: '1 sachet al día en agua; muchos clientes lo prefieren en la mañana en ayunas. Acompáñalo con buena hidratación durante el día.' },
+                tip: '1 scoop (10 g) al día en 200 ml de agua; muchos clientes lo prefieren en la mañana en ayunas. Acompáñalo con buena hidratación durante el día.' },
             eboost: { color: '#fb923c', page: 'eboost.html', slot: 'manana', when: 'Mañana o antes de tu jornada',
                 desc: 'Activador con aminoácidos (BCAAs) sabor mandarina para mantener el enfoque y una energía limpia durante tu jornada.',
                 tip: '1 sachet al día en agua, en la mañana o antes de tu jornada más exigente. Evítalo en la noche para no interferir con tu descanso.' },
             '24burn': { color: '#a3e635', page: '24burn.html', slot: 'dia', when: 'Durante el día',
-                desc: 'Té verde, Panax Ginseng y L-Carnitina para apoyar tu metabolismo todos los días, con 0 g de azúcar y 0 g de grasas.',
+                desc: 'Té verde, Panax Ginseng y L-Carnitina para apoyar tu metabolismo todos los días, con 0 g de azúcar y 0 g de grasa por scoop.',
                 tip: '1 scoop al día en agua, fría o caliente como un té. Tómalo durante el día: es un termogénico diurno. Súmale movimiento diario para potenciar tu rutina.' },
-            '24b': { color: '#34d399', page: '24b.html', slot: 'noche', when: 'Noche, antes de dormir',
-                desc: 'Soporte nocturno sabor limón para acompañar tu rutina de descanso y ayudarte a armonizar tu ritmo circadiano.',
-                tip: '1 sachet en agua antes de dormir. Combínalo con horarios regulares y menos pantallas en la noche.' }
+            '24b': { color: '#16a34a', page: '24b.html', slot: 'dia', when: 'De día, antes o después de entrenar',
+                desc: 'Tres tés (verde, negro y rojo) con frutas, verduras, Panax Ginseng y 13 vitaminas y minerales, sabor té limón. Pensado para tus días activos.',
+                tip: '1 sachet al día en 200 ml de agua, de día: antes o después de entrenar. Trae 4,5 mg de cafeína, así que mejor evítalo en la noche.' }
         };
         const FINDER_PROTOCOLS = [
-            { key: 'proto-peso', id: 'protocol-detox', name: '🔥 Pérdida de Peso Inteligente', products: ['liv', '24burn'] },
-            { key: 'proto-energia', id: 'protocol-energy', name: '⚡ Energía 24/7', products: ['eboost', '24b'] },
-            { key: 'proto-belleza', id: 'protocol-beauty', name: '✨ Belleza desde Adentro', products: ['liv', 'renova'] },
-            { key: 'proto-mujer', id: 'protocol-women', name: '💜 Mujer +35', products: ['liv', 'renova', '24b'] },
-            { key: 'proto-reinicio', id: 'protocol-men', name: '🌱 Reinicio 30 Días', products: ['renova', 'liv', '24burn'] },
-            { key: 'proto-integral', id: 'protocol-integral', name: '🌿 Bienestar Integral', products: ['renova', 'liv', 'eboost', '24burn', '24b'] }
+            { key: 'proto-peso', tagline: 'Digestión liviana y metabolismo activo', id: 'protocol-detox', name: '🔥 Pérdida de Peso Inteligente', products: ['liv', '24burn'] },
+            { key: 'proto-energia', tagline: 'Energía y enfoque para tus días exigentes', id: 'protocol-energy', name: '⚡ Energía Activa', products: ['eboost', '24b'] },
+            { key: 'proto-belleza', tagline: 'Piel, cabello y digestión en equilibrio', id: 'protocol-beauty', name: '✨ Belleza desde Adentro', products: ['liv', 'renova'] },
+            { key: 'proto-mujer', tagline: 'Belleza, digestión y energía para tu día', id: 'protocol-women', name: '💜 Mujer +35', products: ['liv', 'renova', '24b'] },
+            { key: 'proto-reinicio', tagline: 'Un mes para reordenar tus hábitos', id: 'protocol-men', name: '🌱 Reinicio 30 Días', products: ['renova', 'liv', '24burn'] },
+            { key: 'proto-integral', tagline: 'Los 5 productos: tu rutina completa', id: 'protocol-integral', name: '🌿 Bienestar Integral', products: ['renova', 'liv', 'eboost', '24burn', '24b'] }
         ];
         const FINDER_ORDER = ['renova', 'liv', 'eboost', '24burn', '24b'];
         const finderSelected = new Set();
@@ -65,13 +65,22 @@
             return { products, total, exact, suggested: exact || containing };
         }
 
+        // Íconos con imagen (solo donde existe la vista unificada, mientras se aprueba)
+        const BENEFIT_IMAGES = ['energia', 'enfoque', 'rendimiento', 'digestion', 'peso', 'piel', 'articulaciones', 'integral'];
+        function benefitIcon(b) {
+            if (document.getElementById('finder-hero') && BENEFIT_IMAGES.includes(b.key)) {
+                return `<span class="ben-img"><img src="assets/img/beneficios/${b.key}.webp" alt="" width="56" height="56" loading="lazy"></span>`;
+            }
+            return `<span class="text-2xl block mb-1">${b.icon}</span>`;
+        }
+
         function renderFinder() {
             const grid = document.getElementById('finder-benefits');
             if (!grid) return;
             grid.innerHTML = FINDER_BENEFITS.map((b) => {
                 const on = finderSelected.has(b.key);
                 return `<button type="button" data-action="finderToggle('${b.key}')" aria-pressed="${on}" class="p-4 rounded-2xl border text-left transition-all" style="border-color:${on ? '#22c55e' : 'rgba(255,255,255,.08)'};background:${on ? 'rgba(34,197,94,.12)' : 'rgba(0,0,0,.4)'}">
-                        <span class="text-2xl block mb-1">${b.icon}</span>
+                        ${benefitIcon(b)}
                         <span class="text-xs font-bold text-white block leading-tight">${b.label}</span>
                     </button>`;
             }).join('');
@@ -80,7 +89,7 @@
             const empty = !st.products.length;
             document.getElementById('finder-empty').classList.toggle('hidden', !empty);
             document.getElementById('finder-result').classList.toggle('hidden', empty);
-            if (empty) return;
+            if (empty) { renderFinderHero(null); return; }
 
             document.getElementById('finder-products').innerHTML = st.products.map((k) => {
                 const p = FWP_CONFIG.products[k];
@@ -128,6 +137,53 @@
             const goals = FINDER_BENEFITS.filter((b) => finderSelected.has(b.key)).map((b) => b.label.toLowerCase()).join(', ');
             const msg = `¡Hola Roberto! Usé el buscador de beneficios de tu página. Busco: ${goals}.\n\nMe recomendó: ${st.products.map((k) => FWP_CONFIG.products[k].name).join(' + ')} (${finderFmt(st.total)}).\n\n¿Me asesoras para elegir bien?`;
             document.getElementById('finder-whatsapp').setAttribute('data-whatsapp-message', encodeURIComponent(msg));
+            renderFinderHero(st);
+        }
+
+        // Vista unificada: el resultado se presenta como protocolo (solo si existe #finder-hero)
+        function renderFinderHero(st) {
+            const hero = document.getElementById('finder-hero');
+            const chips = document.getElementById('finder-protocols');
+            if (chips) {
+                chips.innerHTML = FINDER_PROTOCOLS.map((p) => {
+                    const on = st && st.exact && st.exact.key === p.key;
+                    const price = p.products.reduce((sum, k) => sum + FWP_CONFIG.products[k].price, 0);
+                    return `<button type="button" data-action="selectProtocol('${p.key}')" class="proto-chip${on ? ' is-on' : ''}"><strong>${p.name}</strong><span>${p.products.length} productos · ${finderFmt(price)}</span></button>`;
+                }).join('');
+            }
+            if (!hero || !st || !st.products.length) return;
+            const name = st.exact ? st.exact.name : 'Tu rutina personalizada';
+            const tagline = st.exact ? st.exact.tagline : 'Armada con lo que marcaste';
+            hero.innerHTML = `<span class="hero-kicker">${st.exact ? 'Tu protocolo recomendado' : 'Tu rutina recomendada'}</span>
+                <h3 class="hero-name">${name}</h3>
+                <p class="hero-tag">${tagline}</p>
+                <div class="hero-thumbs">${st.products.map((k) => `<img src="${FWP_CONFIG.products[k].img}" alt="${FWP_CONFIG.products[k].name}">`).join('')}</div>`;
+            const inc = document.getElementById('finder-includes');
+            if (inc) {
+                const units = st.products.length;
+                const items = FWP_CONFIG.valueAdds.filter((t) => units >= t.minUnits).flatMap((t) => t.items);
+                inc.innerHTML = items.map((t) => `<div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span>${t}</span></div>`).join('');
+            }
+            const note = document.getElementById('finder-protocol');
+            if (note && !st.exact && st.suggested) {
+                const extra = st.suggested.products.filter((k) => !st.products.includes(k)).map((k) => FWP_CONFIG.products[k].name);
+                note.innerHTML = `¿Quieres más? Sumando <strong class="text-white">${extra.join(' + ')}</strong> completas el protocolo <strong class="text-white">${st.suggested.name}</strong>. <button type="button" data-action="selectProtocol('${st.suggested.key}')" class="text-emerald-400 font-bold underline">Ver protocolo</button>`;
+            } else if (note && st.exact && hero) {
+                note.classList.add('hidden');
+            }
+        }
+
+        function selectProtocol(key) {
+            const proto = FINDER_PROTOCOLS.find((p) => p.key === key);
+            if (!proto) return;
+            finderSelected.clear();
+            FINDER_BENEFITS.forEach((b) => {
+                if (b.key === 'integral' && proto.products.length < 5) return;
+                if (b.products.every((k) => proto.products.includes(k))) finderSelected.add(b.key);
+            });
+            renderFinder();
+            const res = document.getElementById('finder-result');
+            if (res) res.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function scrollToProtocolDirect(id) {
@@ -302,7 +358,7 @@
                     infoEmprende.classList.add("hidden");
                     indicator.className = "w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse";
                     
-                    dynamicImg.src = "MOCKUP%20Productos/Consume%20Inteligente.png";
+                    dynamicImg.src = "assets/img/productos/consume-inteligente.webp";
                 } else {
                     btnEmprende.className = "flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 text-white bg-blue-600 shadow-md";
                     btnConsume.className = "flex-1 py-3 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 hover:text-white";
@@ -310,7 +366,7 @@
                     infoConsume.classList.add("hidden");
                     indicator.className = "w-2.5 h-2.5 rounded-full bg-blue-400 animate-pulse";
                     
-                    dynamicImg.src = "MOCKUP%20Productos/Emprende.png";
+                    dynamicImg.src = "assets/img/productos/emprende.webp";
                 }
                 dynamicImg.style.opacity = 1;
             }, 150);
@@ -485,7 +541,7 @@
             filterTestimonials('all'); 
             reveal(); 
             FWP_WHATSAPP.bindLinks();
-            const productSection = document.getElementById('productos');
+            const productSection = document.getElementById('diagnostico');
             if (productSection && 'IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries) => {
                     if (!entries.some((entry) => entry.isIntersecting)) return;
@@ -499,6 +555,7 @@
         const ACTIONS = {
             openAmbassadorGift,
             finderToggle,
+            selectProtocol,
             finderReset,
             finderOrder,
             selectObjective,

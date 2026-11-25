@@ -2,11 +2,11 @@
 window.FWP_TERMS = Object.freeze({
   title: 'Términos y Condiciones',
   html: `
-    <p style="font-size:12px;opacity:.7;margin-bottom:14px">Última actualización: 23 de noviembre de 2026</p>
-    <p>Estos Términos y Condiciones regulan las compras realizadas en fwpchile.lat, sitio operado por una persona natural en Chile, distribuidor independiente de productos FWP. Al marcar la casilla de aceptación y pagar, declaras haberlos leído y aceptado.</p>
+    <p style="font-size:12px;opacity:.7;margin-bottom:14px">Última actualización: 25 de noviembre de 2026</p>
+    <p>Estos Términos y Condiciones regulan las compras realizadas en fwpchile.lat, sitio operado por Roberto Andrés Vega San Martín, embajador autorizado de FWP en Chile (código de distribuidor 348677). Al marcar la casilla de aceptación y pagar, declaras haberlos leído y aceptado.</p>
 
     <h4>1. Vendedor y contacto</h4>
-    <p>Por motivos de privacidad, los datos de identificación completos (nombre y RUT) no se publican en el sitio, pero se entregarán a las autoridades competentes (SERNAC, Servicio de Impuestos Internos y tribunales) o a quien la ley faculte para requerirlos. Contacto: robertoandresvs@gmail.com · WhatsApp +56 9 3620 0521.</p>
+    <p>Roberto Andrés Vega San Martín · RUT 16.505.591-8 · Embajador autorizado de FWP, código de distribuidor 348677. Contacto: robertoandresvs@gmail.com · WhatsApp +56 9 3620 0521.</p>
 
     <h4>2. Productos y precios</h4>
     <p>Los productos son suplementos alimenticios originales FWP. Los precios están expresados en pesos chilenos (CLP) e incluyen IVA. Las compras directas en este sitio son de 1 a 7 unidades; las compras mayoristas (desde 154 puntos) se realizan en el portal oficial de la compañía y se rigen por sus propias condiciones, precios y costos de envío.</p>

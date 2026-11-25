@@ -58,7 +58,35 @@ function trackPurchaseFromUrl() {
     sessionStorage.setItem(storageKey, eventId);
 }
 
-function handleShippingSubmit(event) {
+// Región → comuna (listas dependientes)
+        function initComunas() {
+            const regionSel = document.getElementById('region');
+            const comunaSel = document.getElementById('comuna');
+            if (!regionSel || !comunaSel || !window.FWP_REGIONES) return;
+            regionSel.insertAdjacentHTML('beforeend', FWP_REGIONES.map((r, i) => `<option value="${i}">${r.n}</option>`).join(''));
+            regionSel.addEventListener('change', () => {
+                const r = FWP_REGIONES[regionSel.value];
+                if (!r) {
+                    comunaSel.innerHTML = '<option value="">Primero elige la región</option>';
+                    comunaSel.disabled = true;
+                    return;
+                }
+                const comunas = [...r.c].sort((x, y) => x.localeCompare(y, 'es'));
+                comunaSel.innerHTML = '<option value="">Elige tu comuna</option>' + comunas.map((c) => `<option>${c}</option>`).join('');
+                comunaSel.disabled = false;
+                if (comunas.length === 1) comunaSel.value = comunas[0];
+                else comunaSel.focus();
+            });
+        }
+        function selectedLocation() {
+            const r = window.FWP_REGIONES && FWP_REGIONES[document.getElementById('region').value];
+            const c = document.getElementById('comuna').value;
+            if (!r || !c) return '';
+            return `${c}, Región ${r.n === 'Metropolitana' ? 'Metropolitana' : 'de ' + r.n}`;
+        }
+        document.addEventListener('DOMContentLoaded', initComunas);
+
+        function handleShippingSubmit(event) {
             event.preventDefault();
 
             // Ocultar cualquier error anterior
@@ -67,7 +95,7 @@ function handleShippingSubmit(event) {
             // Capturar datos del DOM
             const name = document.getElementById('fullName').value.trim();
             const address = document.getElementById('address').value.trim();
-            const comuna = document.getElementById('comuna').value.trim();
+            const comuna = selectedLocation();
             const phoneInput = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim() || 'No proporcionado';
 
@@ -76,6 +104,7 @@ function handleShippingSubmit(event) {
 
             // Validar campos obligatorios
             if (!name || !address || !comuna || !phoneInput) {
+                if (!comuna) document.getElementById(document.getElementById('region').value ? 'comuna' : 'region').focus();
                 document.getElementById('validation-error-alert').classList.remove('hidden');
                 return;
             }
