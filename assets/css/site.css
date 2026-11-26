@@ -201,3 +201,22 @@ body { background-color: #020617; color: #f8fafc; overflow-x: hidden; }
 .doc-grid{margin-top:44px}.doc-card blockquote.doc-bio{font-style:normal;color:#9ca3af}
 .pcard{padding-top:40px}.pc-feat{padding-top:44px}
 .pc-tag{top:12px;right:14px}
+/* Botón "Ver fórmula y rutina" con borde de luz giratorio */
+@property --pa{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes pcRot{to{--pa:360deg}}
+.pc-more{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:10px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;color:#e5e7eb;text-decoration:none;white-space:nowrap;overflow:hidden;border:1.5px solid transparent;background:linear-gradient(#0b0f1a,#0b0f1a) padding-box,conic-gradient(from var(--pa),var(--c),transparent 30%,var(--c) 60%,transparent 85%,var(--c)) border-box;animation:pcRot 3.2s linear infinite;transition:color .2s}
+.pc-more span{font-size:11px;font-weight:800;color:color-mix(in srgb,var(--c) 70%,#fff)}
+.pc-more:hover{color:#fff}
+.pc-feat .pc-more{display:inline-flex;gap:14px}
+@media (prefers-reduced-motion:reduce){.pc-more{animation:none}}
+/* Barra final: texto de la versión A sobre el fondo vidrio de la versión C */
+.pc-more{font-family:Poppins,Inter,sans-serif;font-weight:600;font-size:12.5px;color:#fff;background:linear-gradient(rgba(255,255,255,.07),rgba(255,255,255,.07)) padding-box,conic-gradient(from var(--pa),var(--c),transparent 30%,var(--c) 60%,transparent 85%,var(--c)) border-box;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.pc-more span{color:#fff;font-weight:700;opacity:.9}
+@media(max-width:420px){.pc-more{font-size:11.5px;padding:6px 10px}.pc-more span{font-size:10px}}.pc-body{min-width:0}.pc-more{max-width:100%}
+/* Barra más suave: el color solo en el borde fino, fondo vidrio claro neutro */
+.pc-more{border-width:1px;background:linear-gradient(rgba(255,255,255,.08),rgba(255,255,255,.08)) padding-box,linear-gradient(#0d1220,#0d1220) padding-box,conic-gradient(from var(--pa),color-mix(in srgb,var(--c) 70%,transparent),transparent 30%,color-mix(in srgb,var(--c) 70%,transparent) 60%,transparent 85%,color-mix(in srgb,var(--c) 70%,transparent)) border-box;color:rgba(255,255,255,.88)}
+.pc-more span{color:color-mix(in srgb,var(--c) 45%,#fff);opacity:1}
+.pc-more:hover{background:linear-gradient(rgba(255,255,255,.13),rgba(255,255,255,.13)) padding-box,linear-gradient(#0d1220,#0d1220) padding-box,conic-gradient(from var(--pa),var(--c),transparent 30%,var(--c) 60%,transparent 85%,var(--c)) border-box}
+/* Barra metalizada translúcida: brillo interior suave + borde de luz */
+.pc-more{background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.06)) padding-box,conic-gradient(from var(--pa),color-mix(in srgb,var(--c) 28%,transparent),transparent 30%,color-mix(in srgb,var(--c) 22%,transparent) 60%,transparent 85%,color-mix(in srgb,var(--c) 28%,transparent)) padding-box,linear-gradient(#0d1220,#0d1220) padding-box,conic-gradient(from var(--pa),color-mix(in srgb,var(--c) 75%,transparent),transparent 30%,color-mix(in srgb,var(--c) 75%,transparent) 60%,transparent 85%,color-mix(in srgb,var(--c) 75%,transparent)) border-box;color:#fff}
+.pc-more:hover{background:linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)) padding-box,conic-gradient(from var(--pa),color-mix(in srgb,var(--c) 40%,transparent),transparent 30%,color-mix(in srgb,var(--c) 35%,transparent) 60%,transparent 85%,color-mix(in srgb,var(--c) 40%,transparent)) padding-box,linear-gradient(#0d1220,#0d1220) padding-box,conic-gradient(from var(--pa),var(--c),transparent 30%,var(--c) 60%,transparent 85%,var(--c)) border-box}
