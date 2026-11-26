@@ -13,6 +13,6 @@ QUÉ INCLUYE
 - Cifras de confianza que cuentan solas e íconos con movimiento.
 - Orden nuevo: Portada > Confianza > Protocolos > Productos > Ciencia > Expertos > Testimonios > Regalo > Mayoristas > Preguntas.
 - Protocolos directos (sin "Toca lo que quieres mejorar"), con Belleza desde Adentro abierto por defecto.
-- Productos: tarjetas con precio y Comprar; la página "Productos" (antes Ingredientes) tiene todo el detalle.
+- Productos: "Conoce cada producto por dentro", tarjetas con precio, Comprar y botón "Ver fórmula y rutina" con borde animado; la página "Productos" (antes Ingredientes) tiene todo el detalle.
 - Se eliminó "Adquisición por unidad".
 - Expertos con foto, Instagram y anillo animado.
