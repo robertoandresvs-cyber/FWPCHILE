@@ -40,16 +40,16 @@
     <meta name="msapplication-TileImage" content="MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
     <!-- Tailwind CSS & FontAwesome -->
-    <script src="assets/js/config.js?v=20261125l"></script>
-    <script src="assets/js/analytics.js?v=20261125l" defer></script>
-    <script src="assets/js/helpers.js?v=20261125l" defer></script>
-    <script src="assets/js/whatsapp.js?v=20261125l" defer></script>
-    <link href="assets/css/fontawesome-fwp.css?v=20261125l" rel="stylesheet">
+    <script src="assets/js/config.js?v=20261126b"></script>
+    <script src="assets/js/analytics.js?v=20261126b" defer></script>
+    <script src="assets/js/helpers.js?v=20261126b" defer></script>
+    <script src="assets/js/whatsapp.js?v=20261126b" defer></script>
+    <link href="assets/css/fontawesome-fwp.css?v=20261126b" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
     
 
-    <link rel="stylesheet" href="assets/css/site.css?v=20261125l">
+    <link rel="stylesheet" href="assets/css/site.css?v=20261126b">
 </head>
 <body class="theme-rva antialiased selection:bg-fwp-green selection:text-black bg-fwp-darker">
 
@@ -120,7 +120,8 @@
                 RENÖVA+ te aporta 11,4 g de colágeno Peptan® al día, con resveratrol, Q10 y 18 vitaminas y minerales, para tu piel, cabello, uñas y articulaciones.
             </p>
 
-            <div class="mb-8">
+            <div class="mb-8 flex flex-col items-center gap-3">
+                <div class="dsp-badge" data-dispatch hidden></div>
                 <div class="cycle-badge" data-cycle>
                     <span>🎁 Muestra de regalo si compras dentro de los próximos</span>
                     <span><span class="cycle-time" data-cycle-time>30:00</span> min</span>
@@ -247,165 +248,18 @@
         </div>
     </section>
 
-    <!-- Bloque 7: Productos (acceso a la página de productos) -->
-    <section id="productos" class="py-24 bg-[#010413] border-t border-white/5 relative font-sans">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12 reveal">
-                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Productos FWP</span>
-                <h2 class="sec-title mt-4 mb-4">Conoce cada producto <span class="title-shine rva">por dentro</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Toca cualquiera para ver su fórmula, sus beneficios y cómo tomarlo. También puedes comprarlo por separado.</p>
-            </div>
-            <div class="pgrid reveal">
-                <article class="pcard pc-feat" style="--c:#e0177a">
-                    <span class="pc-tag">⭐ El más vendido</span>
-                    <a href="productos.html#renova" class="pc-img"><img src="assets/img/productos/renova.webp" alt="RENÖVA+" loading="lazy"></a>
-                    <div class="pc-body">
-                        <h3>RENÖVA+</h3>
-                        <p class="pc-what">Colágeno Peptan® con 18 vitaminas y minerales</p>
-                        <p class="pc-para">Piel, cabello, uñas y articulaciones</p>
-                        <p class="pc-dose">21 sachets · $2.380 al día</p>
-                        <div class="pc-foot">
-                            <span class="pc-price">$49.990</span>
-                            <button type="button" class="pc-buy" data-buy-items="renova" data-buy-label="RENÖVA+ x1">Comprar</button>
-                        </div>
-                        <a href="productos.html#renova" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
-                    </div>
-                </article>
-                <article class="pcard" style="--c:#0ea5b7">
-                    
-                    <a href="productos.html#liv" class="pc-img"><img src="assets/img/productos/liv.webp" alt="LIV" loading="lazy"></a>
-                    <div class="pc-body">
-                        <h3>LIV</h3>
-                        <p class="pc-what">Fibras solubles + probióticos</p>
-                        <p class="pc-para">Digestión liviana, menos hinchazón</p>
-                        <p class="pc-dose">28 porciones · $1.785 al día</p>
-                        <div class="pc-foot">
-                            <span class="pc-price">$49.990</span>
-                            <button type="button" class="pc-buy" data-buy-items="liv" data-buy-label="LIV x1">Comprar</button>
-                        </div>
-                        <a href="productos.html#liv" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
-                    </div>
-                </article>
-                <article class="pcard" style="--c:#16a34a">
-                    <span class="pc-tag off">Oferta por tiempo limitado</span>
-                    <a href="productos.html#24b" class="pc-img"><img src="assets/img/productos/24b.webp" alt="24B+" loading="lazy"></a>
-                    <div class="pc-body">
-                        <h3>24B+</h3>
-                        <p class="pc-what">Tres tés, ginseng y 13 vitaminas</p>
-                        <p class="pc-para">Energía para tus días activos</p>
-                        <p class="pc-dose">28 sachets · $1.428 al día</p>
-                        <div class="pc-foot">
-                            <span class="pc-price"><s>$44.990</s> $39.990</span>
-                            <button type="button" class="pc-buy" data-buy-items="24b" data-buy-label="24B+ x1">Comprar</button>
-                        </div>
-                        <a href="productos.html#24b" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
-                    </div>
-                </article>
-                <article class="pcard" style="--c:#ea580c">
-                    
-                    <a href="productos.html#eboost" class="pc-img"><img src="assets/img/productos/eboost.webp" alt="E-BOOST" loading="lazy"></a>
-                    <div class="pc-body">
-                        <h3>E-BOOST</h3>
-                        <p class="pc-what">BCAA + cafeína natural</p>
-                        <p class="pc-para">Enfoque y energía mental</p>
-                        <p class="pc-dose">28 sachets · $1.428 al día</p>
-                        <div class="pc-foot">
-                            <span class="pc-price">$39.990</span>
-                            <button type="button" class="pc-buy" data-buy-items="eboost" data-buy-label="E-BOOST x1">Comprar</button>
-                        </div>
-                        <a href="productos.html#eboost" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
-                    </div>
-                </article>
-                <article class="pcard" style="--c:#84cc16">
-                    
-                    <a href="productos.html#24burn" class="pc-img"><img src="assets/img/productos/24burn.webp" alt="24BURN" loading="lazy"></a>
-                    <div class="pc-body">
-                        <h3>24BURN</h3>
-                        <p class="pc-what">Té verde, ginseng y L-Carnitina</p>
-                        <p class="pc-para">Metabolismo activo, 0 g azúcar</p>
-                        <p class="pc-dose">33 scoops · $1.091 al día</p>
-                        <div class="pc-foot">
-                            <span class="pc-price">$35.990</span>
-                            <button type="button" class="pc-buy" data-buy-items="24burn" data-buy-label="24BURN x1">Comprar</button>
-                        </div>
-                        <a href="productos.html#24burn" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
-                    </div>
-                </article>
-            </div>
-            <div class="text-center mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <a href="productos.html" class="pc-all">Ver todos los productos en detalle →</a>
-                <a href="https://meli.la/1J7G4Nf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-white border border-white/10 hover:border-white/25 rounded-full px-4 py-2 transition-colors"><i class="fas fa-shield-alt text-yellow-500"></i> ¿Prefieres la garantía de Mercado Libre? <span class="text-white font-semibold underline">Cómpralo aquí</span></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloque 3: Nuestro enfoque (datos de las fichas FWP) -->
-    <section id="ciencia" class="wl-section font-sans">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-            <div class="wl-head">
-                <span class="wl-kicker">Nuestro enfoque</span>
-                <h2 class="wl-title">Menos promesas, más fórmula</h2>
-                <p class="wl-lead">Ingredientes reconocidos y dosis concretas, con el respaldo del programa Medical Advisors de FWP.</p>
-            </div>
-            <div class="wl-grid wl-4">
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-dna"></i></div><span class="wl-num">11,4 g</span><span class="wl-label">de colágeno Peptan®</span><span class="wl-sub">por sachet de RENÖVA+</span></div>
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-leaf"></i></div><span class="wl-num">6 g</span><span class="wl-label">de fibra</span><span class="wl-sub">en cada scoop de LIV</span></div>
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-heart"></i></div><span class="wl-num">18</span><span class="wl-label">vitaminas y minerales</span><span class="wl-sub">en cada sachet de RENÖVA+</span></div>
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-wand-magic-sparkles"></i></div><span class="wl-num">5 productos</span><span class="wl-label">1 rutina diaria</span><span class="wl-sub">mañana, día y noche</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloque 4: Autoridad y Aval Clínico (Medical Advisors) -->
-    <section id="expertos" class="py-24 bg-[#010413] border-t border-white/5 relative overflow-hidden">
-        <div class="doc-glow"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-14 reveal">
-                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Medical Advisors FWP</span>
-                <h2 class="sec-title mt-4 mb-4">Médicos que <span class="title-shine rva">recomiendan RENÖVA+</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Especialistas en medicina antiaging y nutricional que forman parte del programa Medical Advisors de FWP. Puedes ver su trabajo en sus perfiles de Instagram.</p>
-            </div>
-            <div class="doc-grid reveal">
-                <article class="doc-card">
-                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dra. Chiaretta Boza"><img src="assets/img/expertos/chiaretta.webp" alt="Dra. Chiaretta Boza" loading="lazy" width="160" height="160"></a>
-                    <span class="doc-spec">Medicina antiaging</span>
-                    <h3>Dra. Chiaretta Boza</h3>
-                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @dra.chiaretta</a>
-                    <blockquote>“La pérdida de colágeno es uno de los principales factores del envejecimiento articular y cutáneo. Renova es una fórmula completa que integro en los tratamientos de mis pacientes por su rápida absorción y combinación con resveratrol.”</blockquote>
-                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
-                </article>
-                <article class="doc-card">
-                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dr. Álvaro Melgar"><img src="assets/img/expertos/melgar.webp" alt="Dr. Álvaro Melgar" loading="lazy" width="160" height="160"></a>
-                    <span class="doc-spec">Medicina antiaging</span>
-                    <h3>Dr. Álvaro Melgar</h3>
-                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @dr.melgu</a>
-                    <blockquote>“En mi experiencia clínica, la suplementación con colágeno hidrolizado es clave para prevenir el deterioro articular y la pérdida de elasticidad en piel y tejidos. Recomiendo Renova por su alta concentración y fórmula avanzada con bio-péptidos y resveratrol.”</blockquote>
-                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
-                </article>
-                <article class="doc-card">
-                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dr. Fernando Tenorio"><img src="assets/img/expertos/tenorio.webp" alt="Dr. Fernando Tenorio" loading="lazy" width="160" height="160"></a>
-                    <span class="doc-spec">Medicina nutricional</span>
-                    <h3>Dr. Fernando Tenorio</h3>
-                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @drfernandotenorio</a>
-                    <blockquote class="doc-bio">Médico especialista en Medicina Nutricional con más de 10 años de experiencia, promoviendo un envejecimiento saludable a través de la nutrición celular y de precisión.</blockquote>
-                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
     <!-- Bloque 11: Prueba Social Irrefutable (Testimonios Reales) -->
     <section id="testimonios" class="py-24 bg-fwp-darker border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-sm font-bold text-fwp-green tracking-widest uppercase mb-3">Team FWP</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-white mb-4">Personas reales, rutinas reales</h3>
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Resultados reales · Team FWP</span>
+                <h2 class="sec-title mt-4 mb-4">Personas reales, <span class="title-shine rva">resultados reales</span></h2>
                 <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Clientes y embajadores que integraron FWP a su día a día. Más de 1.000 testimonios en Chile; aquí te mostramos algunos. Los resultados dependen de cada persona y de sus hábitos.</p>
             </div>
 
             <!-- Filtros de Testimonios -->
             <div class="flex justify-center gap-4 mb-10 reveal">
-                <div class="inline-flex bg-black/50 p-1 rounded-full border border-white/10 flex-wrap justify-center font-sans">
+                <div class="tm-filters inline-flex bg-black/50 p-1 rounded-full border border-white/10 flex-wrap justify-center font-sans">
                     <button class="px-6 py-2 rounded-full text-sm font-bold bg-white/10 text-white transition-colors" data-action="filterTestimonials('all')">Todos</button>
                     <button class="px-6 py-2 rounded-full text-sm font-bold text-gray-400 hover:text-white transition-colors" data-action="filterTestimonials('renova')">Regeneración (RENÖVA+)</button>
                     <button class="px-6 py-2 rounded-full text-sm font-bold text-gray-400 hover:text-white transition-colors" data-action="filterTestimonials('burn')">Metabolismo (24BURN)</button>
@@ -566,6 +420,153 @@
                 <a href="#" data-whatsapp-location="landing" data-whatsapp-message="¡Hola!%20He%20visto%20los%20testimonios%20de%20FWP%20y%20me%20gustaría%20iniciar%20mi%20proceso." target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-white/10 hover:bg-white hover:text-black border border-white/20 rounded-full font-bold transition-all">
                     Inicia tu Transformación
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque 7: Productos (acceso a la página de productos) -->
+    <section id="productos" class="py-24 bg-[#010413] border-t border-white/5 relative font-sans">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Productos FWP</span>
+                <h2 class="sec-title mt-4 mb-4">Conoce cada producto <span class="title-shine rva">por dentro</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Toca cualquiera para ver su fórmula, sus beneficios y cómo tomarlo. También puedes comprarlo por separado.</p>
+            </div>
+            <div class="pgrid reveal">
+                <article class="pcard pc-feat" style="--c:#e0177a">
+                    <span class="pc-tag">⭐ El más vendido</span>
+                    <a href="productos.html#renova" class="pc-img"><img src="assets/img/productos/renova.webp" alt="RENÖVA+" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>RENÖVA+</h3>
+                        <p class="pc-what">Colágeno Peptan® con 18 vitaminas y minerales</p>
+                        <p class="pc-para">Piel, cabello, uñas y articulaciones</p>
+                        <p class="pc-dose">21 sachets · $2.380 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price">$49.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="renova" data-buy-label="RENÖVA+ x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#renova" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
+                    </div>
+                </article>
+                <article class="pcard" style="--c:#0ea5b7">
+                    
+                    <a href="productos.html#liv" class="pc-img"><img src="assets/img/productos/liv.webp" alt="LIV" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>LIV</h3>
+                        <p class="pc-what">Fibras solubles + probióticos</p>
+                        <p class="pc-para">Digestión liviana, menos hinchazón</p>
+                        <p class="pc-dose">28 porciones · $1.785 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price">$49.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="liv" data-buy-label="LIV x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#liv" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
+                    </div>
+                </article>
+                <article class="pcard" style="--c:#16a34a">
+                    <span class="pc-tag off">Oferta por tiempo limitado</span>
+                    <a href="productos.html#24b" class="pc-img"><img src="assets/img/productos/24b.webp" alt="24B+" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>24B+</h3>
+                        <p class="pc-what">Tres tés, ginseng y 13 vitaminas</p>
+                        <p class="pc-para">Energía para tus días activos</p>
+                        <p class="pc-dose">28 sachets · $1.428 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price"><s>$44.990</s> $39.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="24b" data-buy-label="24B+ x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#24b" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
+                    </div>
+                </article>
+                <article class="pcard" style="--c:#ea580c">
+                    
+                    <a href="productos.html#eboost" class="pc-img"><img src="assets/img/productos/eboost.webp" alt="E-BOOST" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>E-BOOST</h3>
+                        <p class="pc-what">BCAA + cafeína natural</p>
+                        <p class="pc-para">Enfoque y energía mental</p>
+                        <p class="pc-dose">28 sachets · $1.428 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price">$39.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="eboost" data-buy-label="E-BOOST x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#eboost" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
+                    </div>
+                </article>
+                <article class="pcard" style="--c:#84cc16">
+                    
+                    <a href="productos.html#24burn" class="pc-img"><img src="assets/img/productos/24burn.webp" alt="24BURN" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>24BURN</h3>
+                        <p class="pc-what">Té verde, ginseng y L-Carnitina</p>
+                        <p class="pc-para">Metabolismo activo, 0 g azúcar</p>
+                        <p class="pc-dose">33 scoops · $1.091 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price">$35.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="24burn" data-buy-label="24BURN x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#24burn" class="pc-more">Ver fórmula y rutina <span>Toca aquí →</span></a>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
+                <a href="productos.html" class="pc-all">Ver todos los productos en detalle →</a>
+                <a href="https://meli.la/1J7G4Nf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-white border border-white/10 hover:border-white/25 rounded-full px-4 py-2 transition-colors"><i class="fas fa-shield-alt text-yellow-500"></i> ¿Prefieres la garantía de Mercado Libre? <span class="text-white font-semibold underline">Cómpralo aquí</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque 3: Nuestro enfoque (datos de las fichas FWP) -->
+    <section id="ciencia" class="wl-section font-sans">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="wl-head">
+                <span class="wl-kicker">Nuestro enfoque</span>
+                <h2 class="wl-title">Menos promesas, más fórmula</h2>
+                <p class="wl-lead">Ingredientes reconocidos y dosis concretas, con el respaldo del programa Medical Advisors de FWP.</p>
+            </div>
+            <div class="wl-grid wl-4">
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-dna"></i></div><span class="wl-num">11,4 g</span><span class="wl-label">de colágeno Peptan®</span><span class="wl-sub">por sachet de RENÖVA+</span></div>
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-leaf"></i></div><span class="wl-num">6 g</span><span class="wl-label">de fibra</span><span class="wl-sub">en cada scoop de LIV</span></div>
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-heart"></i></div><span class="wl-num">18</span><span class="wl-label">vitaminas y minerales</span><span class="wl-sub">en cada sachet de RENÖVA+</span></div>
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-wand-magic-sparkles"></i></div><span class="wl-num">5 productos</span><span class="wl-label">1 rutina diaria</span><span class="wl-sub">mañana, día y noche</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque 4: Autoridad y Aval Clínico (Medical Advisors) -->
+    <section id="expertos" class="py-24 bg-[#010413] border-t border-white/5 relative overflow-hidden">
+        <div class="doc-glow"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-14 reveal">
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Medical Advisors FWP</span>
+                <h2 class="sec-title mt-4 mb-4">Médicos que <span class="title-shine rva">recomiendan RENÖVA+</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Especialistas en medicina antiaging y nutricional que forman parte del programa Medical Advisors de FWP. Puedes ver su trabajo en sus perfiles de Instagram.</p>
+            </div>
+            <div class="doc-grid reveal">
+                <article class="doc-card">
+                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dra. Chiaretta Boza"><img src="assets/img/expertos/chiaretta.webp" alt="Dra. Chiaretta Boza" loading="lazy" width="160" height="160"></a>
+                    <span class="doc-spec">Medicina antiaging</span>
+                    <h3>Dra. Chiaretta Boza</h3>
+                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @dra.chiaretta</a>
+                    <blockquote>“La pérdida de colágeno es uno de los principales factores del envejecimiento articular y cutáneo. Renova es una fórmula completa que integro en los tratamientos de mis pacientes por su rápida absorción y combinación con resveratrol.”</blockquote>
+                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
+                </article>
+                <article class="doc-card">
+                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dr. Álvaro Melgar"><img src="assets/img/expertos/melgar.webp" alt="Dr. Álvaro Melgar" loading="lazy" width="160" height="160"></a>
+                    <span class="doc-spec">Medicina antiaging</span>
+                    <h3>Dr. Álvaro Melgar</h3>
+                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @dr.melgu</a>
+                    <blockquote>“En mi experiencia clínica, la suplementación con colágeno hidrolizado es clave para prevenir el deterioro articular y la pérdida de elasticidad en piel y tejidos. Recomiendo Renova por su alta concentración y fórmula avanzada con bio-péptidos y resveratrol.”</blockquote>
+                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
+                </article>
+                <article class="doc-card">
+                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dr. Fernando Tenorio"><img src="assets/img/expertos/tenorio.webp" alt="Dr. Fernando Tenorio" loading="lazy" width="160" height="160"></a>
+                    <span class="doc-spec">Medicina nutricional</span>
+                    <h3>Dr. Fernando Tenorio</h3>
+                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @drfernandotenorio</a>
+                    <blockquote class="doc-bio">Médico especialista en Medicina Nutricional con más de 10 años de experiencia, promoviendo un envejecimiento saludable a través de la nutrición celular y de precisión.</blockquote>
+                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
+                </article>
             </div>
         </div>
     </section>
@@ -845,35 +846,40 @@
     <section id="faq" class="py-24 bg-[#010413] border-t border-white/5 relative font-sans">
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-left">
             <div class="text-center mb-16 reveal">
-                <span class="text-xs font-bold text-fwp-blue bg-blue-500/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Preguntas Frecuentes</span>
-                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">Dudas Frecuentes</h2>
-                <p class="text-gray-400 text-sm md:text-base">Respuestas a las preguntas científicas y comerciales más comunes sobre nuestro ecosistema.</p>
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Preguntas frecuentes</span>
+                <h2 class="sec-title mt-4 mb-4">Preguntas <span class="title-shine rva">frecuentes</span></h2>
+                <p class="text-gray-400 text-sm md:text-base">Cómo tomar cada producto, cuánto dura, envíos, regalos y devoluciones.</p>
             </div>
 
-            <div class="space-y-6 reveal text-left">
-                <!-- FAQ 1 -->
-                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10">
-                    <h4 class="text-lg font-black text-white mb-3">¿Qué certificaciones respaldan la pureza de las fórmulas?</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Nuestras materias primas cumplen con estándares de pureza clínica y se envasan bajo estrictos controles sanitarios. Las fórmulas se encuentran libres de azúcares y rellenos industriales para asegurar una asimilación óptima de cada ingrediente activo.
-                    </p>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10">
-                    <h4 class="text-lg font-black text-white mb-3">¿En cuánto tiempo se comienzan a percibir los resultados?</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Si bien la respuesta biológica varía según cada organismo, los efectos de asimilación e hidratación intestinal suelen percibirse a los pocos días de uso continuado, mientras que los beneficios estructurales de firmeza elástica y recuperación de colágeno se aprecian con mayor nitidez tras 2 a 3 semanas.
-                    </p>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10">
-                    <h4 class="text-lg font-black text-white mb-3">¿Cómo funcionan los envíos a lo largo de Chile?</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        En compras directas conmigo (1 a 7 unidades) el despacho es gratis a todas las regiones de Chile. Los pedidos mayoristas (desde 154 puntos) los despacha la compañía desde su portal oficial, con un costo de envío referencial de $6.530. Todos los pedidos se procesan y empaquetan de forma protegida para asegurar que las propiedades biológicas de las fórmulas se preserven intactas hasta su destino.
-                    </p>
-                </div>
+            <div class="faq-list reveal text-left">
+                <details class="faq-item" open>
+                    <summary>¿Cómo se toma cada producto?<span class="faq-ico">+</span></summary>
+                    <div class="faq-body"><ul class="faq-ul"><li><b>RENÖVA+:</b> 1 sachet al día en agua fría o templada (nunca caliente), en ayunas o 30 min después de la cena. Sepáralo 30 min del café y los lácteos.</li><li><b>LIV:</b> 1 scoop (10 g) en 200 ml de agua, 1 vez al día.</li><li><b>24B+:</b> 1 sachet al día, de día, antes o después de entrenar. Trae 4,5 mg de cafeína: evítalo en la noche.</li><li><b>E-BOOST:</b> 1 sachet al día en agua, en la mañana o antes de tu jornada.</li><li><b>24BURN:</b> 1 scoop al día en agua, durante el día.</li></ul></div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cuánto me dura cada envase?<span class="faq-ico">+</span></summary>
+                    <div class="faq-body"><ul class="faq-ul"><li><b>RENÖVA+:</b> 21 sachets, 3 semanas.</li><li><b>LIV:</b> 28 porciones, 4 semanas.</li><li><b>24B+ y E-BOOST:</b> 28 sachets, 4 semanas.</li><li><b>24BURN:</b> 33 scoops, poco más de un mes.</li></ul></div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué regalos incluye mi compra?<span class="faq-ico">+</span></summary>
+                    <div class="faq-body">Con 1 producto: envío gratis, guía de consumo PRO y asesoría por WhatsApp. Con 2: además el ebook <b>Vive Saludable</b> (36 recetas y menú semanal). Con 3 o más: también el ebook <b>Entrena en Casa</b> y seguimiento de 30 días por WhatsApp. Los ebooks se descargan apenas se aprueba tu pago.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué certificaciones respaldan la pureza de las fórmulas?<span class="faq-ico">+</span></summary>
+                    <div class="faq-body">Nuestras materias primas cumplen con estándares de pureza clínica y se envasan bajo estrictos controles sanitarios. Las fórmulas se encuentran libres de azúcares y rellenos industriales para asegurar una asimilación óptima de cada ingrediente activo.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿En cuánto tiempo se comienzan a percibir los resultados?<span class="faq-ico">+</span></summary>
+                    <div class="faq-body">Si bien la respuesta biológica varía según cada organismo, los efectos de asimilación e hidratación intestinal suelen percibirse a los pocos días de uso continuado, mientras que los beneficios estructurales de firmeza elástica y recuperación de colágeno se aprecian con mayor nitidez tras 2 a 3 semanas.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cómo funcionan los envíos a lo largo de Chile?<span class="faq-ico">+</span></summary>
+                    <div class="faq-body">En compras directas conmigo (1 a 7 unidades) el despacho es gratis a todas las regiones de Chile. Los pedidos mayoristas (desde 154 puntos) los despacha la compañía desde su portal oficial, con un costo de envío referencial de $6.530. Todos los pedidos se procesan y empaquetan de forma protegida para asegurar que las propiedades biológicas de las fórmulas se preserven intactas hasta su destino.</div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Puedo devolver mi pedido?<span class="faq-ico">+</span></summary>
+                    <div class="faq-body">Sí. Tienes 10 días corridos desde que recibes tu pedido para devolverlo y recibir tu reembolso, siempre que el envase esté sellado y sin abrir. Escríbeme por WhatsApp y lo coordinamos.</div>
+                </details>
             </div>
         </div>
     </section>
@@ -990,10 +996,11 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="assets/js/index.js?v=20261125l" defer></script>
-    <script src="assets/js/terms.js?v=20261125l" defer></script>
-    <script src="assets/js/checkout.js?v=20261125l" defer></script>
-    <script src="assets/js/hero-particles.js?v=20261125l" defer></script>
-    <script src="assets/js/cycle-countdown.js?v=20261125l" defer></script>
+    <script src="assets/js/index.js?v=20261126b" defer></script>
+    <script src="assets/js/terms.js?v=20261126b" defer></script>
+    <script src="assets/js/checkout.js?v=20261126b" defer></script>
+    <script src="assets/js/hero-particles.js?v=20261126b" defer></script>
+    <script src="assets/js/cycle-countdown.js?v=20261126b" defer></script>
+    <script src="assets/js/dispatch.js?v=20261126b" defer></script>
 </body>
 </html>

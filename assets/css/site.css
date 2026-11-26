@@ -220,3 +220,43 @@ body { background-color: #020617; color: #f8fafc; overflow-x: hidden; }
 /* Barra metalizada translúcida: brillo interior suave + borde de luz */
 .pc-more{background:linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.06)) padding-box,conic-gradient(from var(--pa),color-mix(in srgb,var(--c) 28%,transparent),transparent 30%,color-mix(in srgb,var(--c) 22%,transparent) 60%,transparent 85%,color-mix(in srgb,var(--c) 28%,transparent)) padding-box,linear-gradient(#0d1220,#0d1220) padding-box,conic-gradient(from var(--pa),color-mix(in srgb,var(--c) 75%,transparent),transparent 30%,color-mix(in srgb,var(--c) 75%,transparent) 60%,transparent 85%,color-mix(in srgb,var(--c) 75%,transparent)) border-box;color:#fff}
 .pc-more:hover{background:linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)) padding-box,conic-gradient(from var(--pa),color-mix(in srgb,var(--c) 40%,transparent),transparent 30%,color-mix(in srgb,var(--c) 35%,transparent) 60%,transparent 85%,color-mix(in srgb,var(--c) 40%,transparent)) padding-box,linear-gradient(#0d1220,#0d1220) padding-box,conic-gradient(from var(--pa),var(--c),transparent 30%,var(--c) 60%,transparent 85%,var(--c)) border-box}
+/* Preguntas frecuentes en acordeón */
+.faq-list{display:grid;gap:12px}
+.faq-item{border-radius:22px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);transition:border-color .2s,background .2s}
+.faq-item[open]{border-color:rgba(224,23,122,.4);background:rgba(224,23,122,.05)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-family:Poppins,Inter,sans-serif;font-size:17px;font-weight:700;color:#fff}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-ico{flex-shrink:0;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:400;color:#ff6fb0;border:1px solid rgba(224,23,122,.4);transition:transform .25s}
+.faq-item[open] .faq-ico{transform:rotate(45deg);background:#e0177a;color:#fff;border-color:#e0177a}
+.faq-body{padding:0 24px 22px;font-size:14.5px;line-height:1.7;color:#cbd5e1}
+.faq-ul{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.faq-ul b,.faq-body b{color:#fff}
+/* Testimonios */
+#testimonios{background:radial-gradient(ellipse at top,rgba(224,23,122,.10),transparent 60%),#010413}
+.tm-filters button{font-family:Poppins,Inter,sans-serif}
+.tm-filters button.bg-white\/10{background:#e0177a;color:#fff}
+#testimonios .testimonial-item{border-color:rgba(255,255,255,.08);transition:border-color .3s,transform .3s}
+#testimonios .testimonial-item:hover{border-color:rgba(224,23,122,.45);transform:translateY(-4px)}
+/* Despacho del día */
+.dsp-badge{display:inline-flex;align-items:center;gap:10px;padding:.6rem 1.1rem;border-radius:999px;font-size:14px;color:#e5e7eb;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)}
+.dsp-badge[hidden]{display:none}
+.dsp-badge b{color:#fff}
+.dsp-badge.is-today{background:rgba(250,204,21,.10);border-color:rgba(250,204,21,.45)}
+.dsp-badge.is-today b{color:#facc15}
+.dsp-time{font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums}
+@keyframes dspDrive{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+.dsp-badge.is-today .dsp-ico{animation:dspDrive 1.2s ease-in-out infinite}
+/* Ventana de salida */
+@keyframes exitIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.exit-pop{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(1,4,19,.72);backdrop-filter:blur(6px)}
+.exit-card{position:relative;max-width:420px;width:100%;text-align:center;padding:34px 26px 24px;border-radius:28px;background:linear-gradient(160deg,#1a0a14,#0b0f1a 60%);border:1px solid rgba(224,23,122,.45);box-shadow:0 40px 80px -30px rgba(224,23,122,.6);animation:exitIn .35s ease both;font-family:Inter,sans-serif}
+.exit-x{position:absolute;top:12px;right:14px;width:34px;height:34px;border-radius:50%;font-size:22px;color:#9ca3af;background:rgba(255,255,255,.06)}
+.exit-truck{font-size:44px;animation:dspDrive 1.2s ease-in-out infinite}
+.exit-card h3{margin-top:10px;font-family:Poppins,Inter,sans-serif;font-size:22px;font-weight:800;line-height:1.25;color:#fff}
+.exit-card h3 span{color:#facc15}
+.exit-count{margin-top:14px;font-size:15px;color:#e5e7eb}
+.exit-count b{display:block;margin-top:4px;font-family:ui-monospace,monospace;font-size:28px;color:#facc15}
+.exit-note{margin-top:10px;font-size:11.5px;color:#9ca3af}
+.exit-go{margin-top:18px;width:100%;padding:15px;border-radius:999px;background:#e0177a;color:#fff;font-family:Poppins,Inter,sans-serif;font-weight:700;font-size:16px;box-shadow:0 14px 30px -12px #e0177a}
+.exit-no{margin-top:10px;font-size:13px;color:#9ca3af;text-decoration:underline}
+@media (prefers-reduced-motion:reduce){.dsp-badge .dsp-ico,.exit-truck{animation:none}}

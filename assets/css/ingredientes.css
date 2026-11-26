@@ -145,3 +145,34 @@
 @media (max-width:900px){.pf-best{grid-template-columns:1fr}.pf-best ul{grid-template-columns:1fr}}
 
 #eboost .pf-orbit .pf-center img{max-height:360px;max-width:360px}
+
+/* Selector de packs */
+.pf-packs{margin-top:26px;max-width:820px;margin-left:auto;margin-right:auto}
+.pk-list{display:grid;gap:10px;margin-top:10px}
+.pk-row{position:relative;display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);cursor:pointer;transition:border-color .2s,background .2s}
+.pk-row:hover{border-color:color-mix(in srgb,var(--c) 45%,transparent)}
+.pk-row.is-on{border-color:var(--c);background:color-mix(in srgb,var(--c) 10%,transparent);box-shadow:0 0 0 1px var(--c) inset}
+.pk-row input{position:absolute;opacity:0;pointer-events:none}
+.pk-dot{flex-shrink:0;width:20px;height:20px;border-radius:50%;border:2px solid rgba(255,255,255,.35)}
+.pk-row.is-on .pk-dot{border-color:var(--c);background:radial-gradient(circle,var(--c) 45%,transparent 50%)}
+.pk-txt{flex:1;min-width:0}
+.pk-txt strong{display:block;font-family:Poppins,Inter,sans-serif;font-size:16px;font-weight:700;color:#fff}
+.pk-txt small{font-family:Inter,sans-serif;font-size:12px;font-weight:600;color:#9ca3af}
+.pk-txt>span{display:block;font-size:12.5px;color:color-mix(in srgb,var(--c) 60%,#fff);margin-top:3px}
+.pk-txt>span b{font-weight:800}
+.pk-price{font-family:ui-monospace,monospace;font-size:18px;font-weight:900;color:#fff;text-align:right;white-space:nowrap}
+.pk-price s{display:block;font-size:12px;color:#6b7280}
+.pk-badge{position:absolute;top:-10px;right:16px;font-style:normal;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--c);color:#fff}
+.pk-foot{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:18px}
+.pk-buy{flex:1 1 260px;justify-content:center;font-family:Poppins,Inter,sans-serif;font-size:17px;padding:16px 28px}
+.pk-meta{flex:1 1 260px;display:grid;gap:6px}
+.pk-rev{font-size:13px;font-weight:700;color:#fcd34d;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:520px){.pk-row{padding:14px}.pk-txt strong{font-size:14.5px}.pk-price{font-size:15px}}
+.pk-wh{font-size:12px;color:#9ca3af;text-decoration:underline;text-underline-offset:3px}
+/* Regalo del embajador */
+.pk-gift{display:flex;align-items:center;gap:16px;margin-top:14px;padding:12px 16px;border-radius:18px;background:linear-gradient(100deg,rgba(224,23,122,.12),rgba(255,255,255,.02));border:1px dashed rgba(255,111,176,.45)}
+.pk-gift img{width:76px;height:76px;border-radius:50%;flex-shrink:0;box-shadow:0 10px 24px -8px rgba(224,23,122,.6)}
+.pk-gift-k{display:block;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#ff6fb0}
+.pk-gift strong{display:block;font-family:Poppins,Inter,sans-serif;font-size:16px;font-weight:700;color:#fff;margin-top:2px}
+.pk-gift div>span:last-child{display:block;font-size:12.5px;color:#cbd5e1;margin-top:2px}
+.pk-dsp{margin-top:14px;width:100%;justify-content:center;border-radius:16px;font-size:13.5px}

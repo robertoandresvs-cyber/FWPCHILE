@@ -25,3 +25,69 @@
   to = "/productos.html"
   status = 301
   force = true
+
+[[headers]]
+  for = "/ebooks/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    Cache-Control = "public, max-age=86400"
+
+[[redirects]]
+  from = "/renova.html"
+  to = "/productos.html#renova"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/renova"
+  to = "/productos.html#renova"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/liv.html"
+  to = "/productos.html#liv"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/liv"
+  to = "/productos.html#liv"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/24b.html"
+  to = "/productos.html#24b"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/24b"
+  to = "/productos.html#24b"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eboost.html"
+  to = "/productos.html#eboost"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eboost"
+  to = "/productos.html#eboost"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/24burn.html"
+  to = "/productos.html#24burn"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/24burn"
+  to = "/productos.html#24burn"
+  status = 301
+  force = true

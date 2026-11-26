@@ -33,17 +33,26 @@
     <link rel="icon" type="image/png" href="MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
     <!-- Tailwind CSS & FontAwesome -->
-    <script src="assets/js/config.js?v=20261125l"></script>
-    <script src="assets/js/analytics.js?v=20261125l" defer></script>
-    <script src="assets/js/helpers.js?v=20261125l" defer></script>
-    <script src="assets/js/whatsapp.js?v=20261125l" defer></script>
-    <link href="assets/css/fontawesome-fwp.css?v=20261125l" rel="stylesheet">
+    <script src="assets/js/config.js?v=20261126b"></script>
+    <script src="assets/js/analytics.js?v=20261126b" defer></script>
+    <script src="assets/js/helpers.js?v=20261126b" defer></script>
+    <script src="assets/js/whatsapp.js?v=20261126b" defer></script>
+    <link href="assets/css/fontawesome-fwp.css?v=20261126b" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     
     
 
-    <link rel="stylesheet" href="assets/css/gracias.css?v=20261125l">
-    <style>html,body{overflow-x:clip;max-width:100%}.fwp-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer}.fwp-select:disabled{opacity:.5;cursor:not-allowed}.fwp-select option{background:#0b1220;color:#fff}</style>
+    <link rel="stylesheet" href="assets/css/gracias.css?v=20261126b">
+    <style>html,body{overflow-x:clip;max-width:100%}.fwp-select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;cursor:pointer}.fwp-select:disabled{opacity:.5;cursor:not-allowed}.fwp-select option{background:#0b1220;color:#fff}.eb-kicker{display:block;font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#ff6fb0;margin-bottom:10px}
+.eb-card{display:flex;gap:14px;align-items:center;padding:12px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);margin-bottom:10px}
+.eb-card img{width:72px;height:auto;border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,.45);flex-shrink:0}
+.eb-info strong{display:block;color:#fff;font-size:15px;font-weight:800}
+.eb-info span{display:block;color:#9ca3af;font-size:12px;margin-top:2px}
+.eb-info em{display:block;color:#fcd34d;font-size:12px;font-style:normal;margin-top:8px}
+.eb-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.eb-dl{padding:8px 14px;border-radius:999px;background:#e0177a;color:#fff;font-size:12px;font-weight:800}
+.eb-a4{padding:8px 4px;color:#cbd5e1;font-size:12px;font-weight:700;text-decoration:underline}
+</style>
 </head>
 <body class="antialiased selection:bg-fwp-green selection:text-black min-h-screen flex flex-col justify-between relative">
 
@@ -93,6 +102,8 @@
                 </div>
 
                 <div id="order-summary" class="hidden mb-6 p-4 rounded-xl border border-white/10 text-left text-xs text-gray-300" style="background:rgba(255,255,255,.04)"></div>
+                <div id="ebooks-box" class="hidden mb-6 text-left"></div>
+
                 <div id="gift-notice" class="hidden mb-6 p-4 rounded-xl text-left text-xs" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.35);color:#fcd34d">🎁 Compraste dentro de los 30 minutos: tu pedido incluye una <strong>muestra de regalo</strong>.</div>
 
                 <!-- Custom Alert Container for Validation (without using alerts) -->
@@ -275,8 +286,8 @@
     </footer>
 
     <!-- Vanilla Javascript Logic for Automated Clipboard copying and WhatsApp pre-fill -->
-    <script src="assets/js/comunas.js?v=20261125l" defer></script>
-    <script src="assets/js/gracias.js?v=20261125l" defer></script>
+    <script src="assets/js/comunas.js?v=20261126b" defer></script>
+    <script src="assets/js/gracias.js?v=20261126b" defer></script>
 
 </body>
 </html>

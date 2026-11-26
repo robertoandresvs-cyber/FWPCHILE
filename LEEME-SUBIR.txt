@@ -1,18 +1,23 @@
-FWP Chile · Versión 11 (25-nov-2026)
+FWP Chile · Versión 15 (26-nov-2026)
+Este paquete trae SOLO los archivos nuevos o modificados respecto de lo que hoy está en GitHub.
 
 CÓMO SUBIR
 1. github.com/robertoandresvs-cyber/FWPCHILE > Add file > Upload files
-2. Arrastra TODO el contenido de esta carpeta (los .html, netlify.toml, sitemap.xml y la carpeta "assets").
+2. Arrastra TODO el contenido de esta carpeta (archivos y carpetas). GitHub reemplaza los que tienen el mismo nombre.
 3. Commit changes. Netlify publica en 1-2 minutos.
-4. Opcional: borra ingredientes.html del repositorio (ya no se usa; quien entre a esa dirección llega solo a productos.html).
+
+BORRA DEL REPOSITORIO (ya no se usan; sus direcciones llevan solas a Productos):
+  renova.html · liv.html · 24b.html · eboost.html · 24burn.html · ingredientes.html
 
 NO BORRES "MOCKUP Productos", "Testimonios" ni "Doctores".
 
-QUÉ INCLUYE
-- Portada enfocada en colágeno, tipografía Poppins y rosa RENÖVA+ en todo el inicio.
-- Cifras de confianza que cuentan solas e íconos con movimiento.
-- Orden nuevo: Portada > Confianza > Protocolos > Productos > Ciencia > Expertos > Testimonios > Regalo > Mayoristas > Preguntas.
-- Protocolos directos (sin "Toca lo que quieres mejorar"), con Belleza desde Adentro abierto por defecto.
-- Productos: "Conoce cada producto por dentro", tarjetas con precio, Comprar y botón "Ver fórmula y rutina" con borde animado; la página "Productos" (antes Ingredientes) tiene todo el detalle.
-- Se eliminó "Adquisición por unidad".
-- Expertos con foto, Instagram y anillo animado.
+QUÉ CAMBIA EN ESTA VERSIÓN
+- Regalo del embajador con foto: batidor recargable USB-C desde 2 unidades (packs, protocolos, Gracias y WhatsApp).
+- Despacho del día: de lunes a viernes 06:00-13:00 (hora de Chile) contador "lo despacho HOY"; fuera de horario "sale mañana a primera hora". Feriados en assets/js/config.js.
+- Ventana "¡Espera!" una sola vez por visita, solo en horario de despacho.
+- Términos actualizados con el despacho del día y el batidor.
+- Productos: cada producto tiene su selector de packs (1, 2 o 3 unidades con sus regalos) y botón Comprar.
+- Inicio: testimonios "Resultados reales" justo después de Protocolos.
+- Inicio: preguntas frecuentes en acordeón, con cómo tomar cada producto, duración, regalos y devoluciones.
+- Las fichas individuales se eliminan y redirigen a Productos.
+- Ebooks de regalo (Vive Saludable desde 2 productos; Entrena en Casa + seguimiento desde 3), descargables en Gracias.

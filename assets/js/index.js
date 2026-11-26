@@ -27,19 +27,19 @@
             { key: 'integral', icon: '🌐', label: 'Bienestar integral', products: ['renova', 'liv', 'eboost', '24burn', '24b'] }
         ];
         const FINDER_PRODUCTS = {
-            renova: { color: '#c084fc', page: 'renova.html', slot: 'manana', when: 'Mañana, en ayunas',
+            renova: { color: '#c084fc', page: 'productos.html#renova', slot: 'manana', when: 'Mañana, en ayunas',
                 desc: 'Colágeno hidrolizado Peptan® con resveratrol, Q10, vitaminas y minerales para nutrir piel, cabello, uñas y articulaciones desde el interior.',
                 tip: '1 sachet (15 g) al día en agua fría o templada (nunca caliente), en ayunas o 30 min después de la cena. Aléjalo 30 min del café y los lácteos. La constancia es clave: los cambios en piel y cabello se notan con semanas de uso.' },
-            liv: { color: '#4ade80', page: 'liv.html', slot: 'manana', when: 'Mañana, en ayunas',
+            liv: { color: '#4ade80', page: 'productos.html#liv', slot: 'manana', when: 'Mañana, en ayunas',
                 desc: 'Fibras solubles y probióticos que apoyan tu equilibrio digestivo, ayudan a reducir la sensación de hinchazón y favorecen un tránsito regular.',
                 tip: '1 scoop (10 g) al día en 200 ml de agua; muchos clientes lo prefieren en la mañana en ayunas. Acompáñalo con buena hidratación durante el día.' },
-            eboost: { color: '#fb923c', page: 'eboost.html', slot: 'manana', when: 'Mañana o antes de tu jornada',
+            eboost: { color: '#fb923c', page: 'productos.html#eboost', slot: 'manana', when: 'Mañana o antes de tu jornada',
                 desc: 'Activador con aminoácidos (BCAAs) sabor mandarina para mantener el enfoque y una energía limpia durante tu jornada.',
                 tip: '1 sachet al día en agua, en la mañana o antes de tu jornada más exigente. Evítalo en la noche para no interferir con tu descanso.' },
-            '24burn': { color: '#a3e635', page: '24burn.html', slot: 'dia', when: 'Durante el día',
+            '24burn': { color: '#a3e635', page: 'productos.html#24burn', slot: 'dia', when: 'Durante el día',
                 desc: 'Té verde, Panax Ginseng y L-Carnitina para apoyar tu metabolismo todos los días, con 0 g de azúcar y 0 g de grasa por scoop.',
                 tip: '1 scoop al día en agua, fría o caliente como un té. Tómalo durante el día: es un termogénico diurno. Súmale movimiento diario para potenciar tu rutina.' },
-            '24b': { color: '#16a34a', page: '24b.html', slot: 'dia', when: 'De día, antes o después de entrenar',
+            '24b': { color: '#16a34a', page: 'productos.html#24b', slot: 'dia', when: 'De día, antes o después de entrenar',
                 desc: 'Tres tés (verde, negro y rojo) con frutas, verduras, Panax Ginseng y 13 vitaminas y minerales, sabor té limón. Pensado para tus días activos.',
                 tip: '1 sachet al día en 200 ml de agua, de día: antes o después de entrenar. Trae 4,5 mg de cafeína, así que mejor evítalo en la noche.' }
         };

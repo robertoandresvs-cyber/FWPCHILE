@@ -2,7 +2,7 @@
 window.FWP_TERMS = Object.freeze({
   title: 'Términos y Condiciones',
   html: `
-    <p style="font-size:12px;opacity:.7;margin-bottom:14px">Última actualización: 25 de noviembre de 2026</p>
+    <p style="font-size:12px;opacity:.7;margin-bottom:14px">Última actualización: 26 de noviembre de 2026</p>
     <p>Estos Términos y Condiciones regulan las compras realizadas en fwpchile.lat, sitio operado por Roberto Andrés Vega San Martín, embajador autorizado de FWP en Chile (código de distribuidor 348677). Al marcar la casilla de aceptación y pagar, declaras haberlos leído y aceptado.</p>
 
     <h4>1. Vendedor y contacto</h4>
@@ -15,10 +15,10 @@ window.FWP_TERMS = Object.freeze({
     <p>El pago se realiza a través de Mercado Pago. Al continuar serás redirigido a su checkout oficial: los datos de tu tarjeta los procesa Mercado Pago y nunca pasan por este sitio. El pedido se confirma una vez que Mercado Pago aprueba el pago.</p>
 
     <h4>4. Despacho</h4>
-    <p>El envío de las compras directas es gratis a todo Chile. Después de pagar, completas tus datos de despacho en la página de confirmación y el pedido se procesa dentro de las 24 horas hábiles siguientes. Los plazos de entrega dependen de la empresa de transporte y de la localidad de destino.</p>
+    <p>El envío de las compras directas es gratis a todo Chile. Después de pagar, completas tus datos de despacho en la página de confirmación y el pedido se procesa dentro de las 24 horas hábiles siguientes. <strong>Despacho del día:</strong> los pedidos con pago aprobado de lunes a viernes (días hábiles) antes de las 13:00 hora de Chile se despachan ese mismo día. Los pagos aprobados después de las 13:00, en fin de semana o feriado salen el siguiente día hábil. "Despacho" significa la entrega del pedido a la empresa de transporte, no la llegada a tu domicilio. Los plazos de entrega dependen de la empresa de transporte y de la localidad de destino.</p>
 
     <h4>5. Muestra de regalo y otros regalos</h4>
-    <p>Si inicias tu pago dentro de los 30 minutos siguientes a tu primera visita al sitio, tu pedido incluye una muestra de regalo (una por pedido, sujeta a disponibilidad de stock). Los regalos asociados a protocolos, como el batidor recargable, también están sujetos a disponibilidad. Los regalos no son canjeables por dinero.</p>
+    <p>Si inicias tu pago dentro de los 30 minutos siguientes a tu primera visita al sitio, tu pedido incluye una muestra de regalo (una por pedido, sujeta a disponibilidad de stock). Las compras de 2 o más unidades incluyen un batidor recargable USB-C de regalo (uno por pedido, sujeto a disponibilidad de stock). Los regalos no son canjeables por dinero.</p>
 
     <h4>6. Devoluciones y garantía</h4>
     <p>Al tratarse de una compra a distancia, puedes poner término a tu compra dentro de 10 días corridos desde que recibes el producto (artículo 3° bis de la Ley N° 19.496). Por tratarse de suplementos de uso personal, la devolución aplica solo con el envase sellado y sin abrir. Si tu pedido llega dañado, incompleto o con defectos, rige la garantía legal de la Ley N° 19.496 aunque el envase esté abierto. Para solicitarla, escríbenos por WhatsApp dentro del plazo.</p>

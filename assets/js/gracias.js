@@ -36,6 +36,32 @@ function renderPaymentState() {
     }
 }
 
+function orderUnits(order) {
+    return order && order.items ? order.items.reduce((sum, it) => sum + (Number(it.qty) || 0), 0) : 0;
+}
+
+function renderEbooks() {
+    const box = document.getElementById('ebooks-box');
+    if (!box || !FWP_CONFIG.ebooks) return;
+    const { status } = paymentStatus();
+    const order = readLastOrder();
+    const units = orderUnits(order);
+    const list = FWP_CONFIG.ebooks.filter((e) => units >= e.minUnits);
+    if (!list.length) return;
+    const approved = status === 'approved' || status === 'success';
+    const cards = list.map((e) => `
+        <div class="eb-card">
+            <img src="${e.cover}" alt="Portada ${e.title}" width="90" height="127" loading="lazy">
+            <div class="eb-info">
+                <strong>${e.title}</strong><span>${e.sub}</span>
+                ${approved ? `<div class="eb-btns"><a href="${e.mobile}" download class="eb-dl">Descargar para celular</a><a href="${e.a4}" download class="eb-a4">Versión para imprimir (A4)</a></div>`
+                : `<em>Te lo enviamos por WhatsApp apenas se confirme tu pago.</em>`}
+            </div>
+        </div>`).join('');
+    box.innerHTML = `<span class="eb-kicker">🎁 Tus regalos digitales</span>${cards}`;
+    box.classList.remove('hidden');
+}
+
 function trackPurchaseFromUrl() {
     // Solo se registra la compra si Mercado Pago confirma el pago aprobado.
     const { status, paymentId, reference } = paymentStatus();
@@ -118,9 +144,11 @@ function trackPurchaseFromUrl() {
             const lines = orderLines(order);
             const orderText = lines.length ? `\n🛒 *Pedido:*\n${lines.map((l) => '• ' + l).join('\n')}\n💰 *Total:* ${fmtCLP(order.total)}\n` : '';
             const giftText = order && order.gift ? '🎁 Compré dentro de los 30 min: incluye muestra de regalo\n' : '';
+            const ebookList = (FWP_CONFIG.ebooks || []).filter((e) => orderUnits(order) >= e.minUnits).map((e) => e.title);
+            const ebookText = (orderUnits(order) >= 2 ? '🎁 *Batidor recargable USB-C de regalo*\n' : '') + (ebookList.length ? `📚 *Ebooks de regalo:* ${ebookList.join(' + ')}\n` : '');
             const payText = paymentId ? `🧾 *Pago Mercado Pago:* ${paymentId}${reference ? ' (' + reference + ')' : ''}\n` : '';
             const whatsappMessage = `¡Hola FWP Chile! ${paid ? 'He completado mi pago.' : 'Quiero coordinar mi pedido.'} Aquí tienes mis datos de envío:
-${orderText}${giftText}${payText}
+${orderText}${giftText}${ebookText}${payText}
 👤 *Nombre:* ${name}
 📍 *Dirección:* ${address}
 🏡 *Comuna:* ${comuna}
@@ -153,6 +181,7 @@ Quedo atento a la confirmación de mi despacho prioritario. 🚀`;
 
         document.addEventListener('DOMContentLoaded', () => {
             renderPaymentState();
+            renderEbooks();
             trackPurchaseFromUrl();
             document.getElementById('fwp-shipping-form').addEventListener('submit', handleShippingSubmit);
             FWP_WHATSAPP.bindLinks();

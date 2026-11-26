@@ -51,8 +51,24 @@ window.FWP_CONFIG = Object.freeze({
   packDiscounts: Object.freeze({}),
   valueAdds: Object.freeze([
     { minUnits: 1, items: ['Envío gratis a todo Chile', 'Guía de consumo PRO', 'Asesoría personalizada por WhatsApp'] },
-    { minUnits: 2, items: ['Recetario saludable'] },
-    { minUnits: 3, items: ['Minuta de alimentación referencial', 'Seguimiento de 30 días por WhatsApp'] }
+    { minUnits: 2, items: ['Batidor recargable USB-C de regalo', 'Ebook "Vive Saludable": 36 recetas y menú semanal'] },
+    { minUnits: 3, items: ['Ebook "Entrena en Casa": 13 rutinas y 3 planes', 'Seguimiento de 30 días por WhatsApp'] }
+  ]),
+
+  /* Despacho del día (hora de Chile). days: 1 = lunes … 5 = viernes.
+     holidays: feriados sin despacho, formato AAAA-MM-DD. Revisa la lista cada año. */
+  dispatch: Object.freeze({
+    tz: 'America/Santiago',
+    days: [1, 2, 3, 4, 5],
+    start: 6,
+    cutoff: 13,
+    holidays: ['2026-12-08', '2026-12-25', '2027-01-01', '2027-03-26', '2027-05-21', '2027-07-16', '2027-11-01', '2027-12-08']
+  }),
+
+  /* Ebooks de regalo: se descargan desde Gracias.html cuando el pago está aprobado. */
+  ebooks: Object.freeze([
+    { key: 'recetario', minUnits: 2, title: 'Vive Saludable', sub: 'Recetario · 36 recetas, menú semanal y lista de compras', cover: 'assets/img/ebooks/vive-saludable-recetario.webp', mobile: 'ebooks/vive-saludable-recetario-movil.pdf', a4: 'ebooks/vive-saludable-recetario-a4.pdf' },
+    { key: 'entrena', minUnits: 3, title: 'Entrena en Casa', sub: 'Guía · 49 ejercicios, 13 rutinas y 3 planes semanales', cover: 'assets/img/ebooks/entrena-en-casa.webp', mobile: 'ebooks/entrena-en-casa-movil.pdf', a4: 'ebooks/entrena-en-casa-a4.pdf' }
   ]),
 
   /* Pago con Mercado Pago Checkout Pro: la función de Netlify crea el cobro por el monto exacto
