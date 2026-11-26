@@ -100,9 +100,9 @@
         }
 
         function renderFinder() {
+            if (!document.getElementById('finder-result')) return;
             const grid = document.getElementById('finder-benefits');
-            if (!grid) return;
-            grid.innerHTML = FINDER_BENEFITS.map((b) => {
+            if (grid) grid.innerHTML = FINDER_BENEFITS.map((b) => {
                 const on = finderSelected.has(b.key);
                 return `<button type="button" data-action="finderToggle('${b.key}')" aria-pressed="${on}" class="p-4 rounded-2xl border text-left transition-all" style="border-color:${on ? '#22c55e' : 'rgba(255,255,255,.08)'};background:${on ? 'rgba(34,197,94,.12)' : 'rgba(0,0,0,.4)'}">
                         ${benefitIcon(b)}
@@ -204,7 +204,7 @@
             }
         }
 
-        function selectProtocol(key) {
+        function selectProtocol(key, noScroll) {
             const proto = FINDER_PROTOCOLS.find((p) => p.key === key);
             if (!proto) return;
             finderSelected.clear();
@@ -214,7 +214,7 @@
             });
             renderFinder();
             const res = document.getElementById('finder-result');
-            if (res) res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (res && !noScroll) res.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function scrollToProtocolDirect(id) {
@@ -566,9 +566,38 @@
             badge.classList.add('bg-fwp-green/10', 'text-fwp-green');
         }
         
+        // Cifras que cuentan al aparecer en pantalla
+        function initCounters() {
+            const els = document.querySelectorAll('[data-count]');
+            if (!els.length) return;
+            const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const fmt = (n) => Math.round(n).toLocaleString('es-CL');
+            const run = (el) => {
+                const end = Number(el.dataset.count), pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+                if (reduce) { el.textContent = pre + fmt(end) + suf; return; }
+                const dur = 1800, t0 = performance.now();
+                el.classList.add('is-counting');
+                const step = (t) => {
+                    const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+                    el.textContent = pre + fmt(end * e) + suf;
+                    if (k < 1) requestAnimationFrame(step); else el.classList.remove('is-counting');
+                };
+                requestAnimationFrame(step);
+            };
+            if (!('IntersectionObserver' in window)) return;
+            els.forEach((el) => { el.textContent = (el.dataset.prefix || '') + '0' + (el.dataset.suffix || ''); });
+            const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+                if (!en.isIntersecting) return;
+                run(en.target); io.unobserve(en.target);
+            }), { threshold: 0.4 });
+            els.forEach((el) => io.observe(el));
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
+            initCounters();
             initSimulator();
             renderFinder();
+            if (!document.getElementById('finder-benefits') && document.getElementById('finder-hero')) selectProtocol('proto-belleza', true);
             filterTestimonials('all'); 
             reveal(); 
             FWP_WHATSAPP.bindLinks();

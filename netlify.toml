@@ -13,3 +13,15 @@
 
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "/ingredientes.html"
+  to = "/productos.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ingredientes"
+  to = "/productos.html"
+  status = 301
+  force = true

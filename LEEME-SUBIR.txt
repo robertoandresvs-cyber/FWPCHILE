@@ -1,23 +1,18 @@
-FWP Chile · Versión 25-nov-2026 (Arma tu rutina)
+FWP Chile · Versión 11 (25-nov-2026)
 
 CÓMO SUBIR
-1. Entra a github.com/robertoandresvs-cyber/FWPCHILE
-2. Add file > Upload files
-3. Arrastra TODO el contenido de esta carpeta (los .html y la carpeta "assets" completa).
-   GitHub respeta las carpetas y reemplaza los archivos con el mismo nombre.
-4. Commit changes. Netlify publica solo en 1 o 2 minutos.
+1. github.com/robertoandresvs-cyber/FWPCHILE > Add file > Upload files
+2. Arrastra TODO el contenido de esta carpeta (los .html, netlify.toml, sitemap.xml y la carpeta "assets").
+3. Commit changes. Netlify publica en 1-2 minutos.
+4. Opcional: borra ingredientes.html del repositorio (ya no se usa; quien entre a esa dirección llega solo a productos.html).
+
+NO BORRES "MOCKUP Productos", "Testimonios" ni "Doctores".
 
 QUÉ INCLUYE
-- Portada enfocada en colágeno (tipografía Poppins y rosa RENÖVA+): "¿Tu piel cambia con los años y notas que ya no es la misma?", títulos con movimiento e íconos premium.
-- Ingredientes en oscuro, con "Lo mejor de cada producto", precio y botón Comprar.
-- E-BOOST y 24BURN con imagen a tamaño correcto.
-- Inicio: nueva sección "Arma tu rutina" (recomendador + protocolos en una sola), íconos con imagen.
-- Protocolos con imagen propia, para qué sirven, por qué esos productos juntos y el rol de cada uno.
-- 24B+ Reduce y activa, oferta $39.990 (antes $44.990). 24BURN 0 g azúcar. LIV sabor manzana verde.
-- Gracias: región y luego comuna (346 comunas).
-- Términos con nombre, RUT y código de distribuidor.
-- Ingredientes con fotos nuevas.
-- Imágenes de productos optimizadas (WebP) e imágenes para compartir en WhatsApp/Facebook.
-
-NO BORRES las carpetas "MOCKUP Productos", "Testimonios" ni "Doctores": se siguen usando.
-Después de subir: haz una compra real pequeña para confirmar pago, Gracias y Meta Pixel.
+- Portada enfocada en colágeno, tipografía Poppins y rosa RENÖVA+ en todo el inicio.
+- Cifras de confianza que cuentan solas e íconos con movimiento.
+- Orden nuevo: Portada > Confianza > Protocolos > Productos > Ciencia > Expertos > Testimonios > Regalo > Mayoristas > Preguntas.
+- Protocolos directos (sin "Toca lo que quieres mejorar"), con Belleza desde Adentro abierto por defecto.
+- Productos: tarjetas con precio y Comprar; la página "Productos" (antes Ingredientes) tiene todo el detalle.
+- Se eliminó "Adquisición por unidad".
+- Expertos con foto, Instagram y anillo animado.

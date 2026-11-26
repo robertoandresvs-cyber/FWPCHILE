@@ -40,18 +40,18 @@
     <meta name="msapplication-TileImage" content="MOCKUP%20Productos/LOGO_FWP%20NEGRO.png">
     
     <!-- Tailwind CSS & FontAwesome -->
-    <script src="assets/js/config.js?v=20261125h"></script>
-    <script src="assets/js/analytics.js?v=20261125h" defer></script>
-    <script src="assets/js/helpers.js?v=20261125h" defer></script>
-    <script src="assets/js/whatsapp.js?v=20261125h" defer></script>
-    <link href="assets/css/fontawesome-fwp.css?v=20261125h" rel="stylesheet">
+    <script src="assets/js/config.js?v=20261125j"></script>
+    <script src="assets/js/analytics.js?v=20261125j" defer></script>
+    <script src="assets/js/helpers.js?v=20261125j" defer></script>
+    <script src="assets/js/whatsapp.js?v=20261125j" defer></script>
+    <link href="assets/css/fontawesome-fwp.css?v=20261125j" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
     
 
-    <link rel="stylesheet" href="assets/css/site.css?v=20261125h">
+    <link rel="stylesheet" href="assets/css/site.css?v=20261125j">
 </head>
-<body class="antialiased selection:bg-fwp-green selection:text-black bg-fwp-darker">
+<body class="theme-rva antialiased selection:bg-fwp-green selection:text-black bg-fwp-darker">
 
     <!-- Bloque 1: Navegación y Identidad (Navbar) -->
     <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/10 transition-all duration-300" id="navbar">
@@ -67,10 +67,10 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#productos-unitario" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Productos</a>
-                    <a href="#diagnostico" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Tu Rutina</a>
+                    <a href="#diagnostico" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Protocolos</a>
+                    <a href="productos.html" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Productos</a>
+                    <a href="#expertos" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Expertos</a>
                     <a href="#emprende" class="text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">Mayoristas</a>
-                    <a href="ingredientes.html" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Ingredientes</a>
                 </div>
 
                 <!-- CTA Button & Mobile Menu trigger -->
@@ -87,10 +87,10 @@
 
         <!-- Mobile Menu Drawer -->
         <div id="mobile-menu" class="hidden md:hidden w-full glass-panel border-b border-white/10 flex flex-col p-6 space-y-4 transition-all duration-300">
-            <a href="#productos-unitario" data-action="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Productos</a>
-            <a href="#diagnostico" data-action="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Tu Rutina</a>
+            <a href="#diagnostico" data-action="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Protocolos</a>
+            <a href="productos.html" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Productos</a>
+            <a href="#expertos" data-action="toggleMobileMenu()" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Expertos</a>
             <a href="#emprende" data-action="toggleMobileMenu()" class="text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">Mayoristas</a>
-            <a href="ingredientes.html" class="text-sm font-semibold hover:text-white text-gray-300 transition-colors">Ingredientes</a>
         </div>
     </nav>
 
@@ -173,12 +173,168 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
             <span class="wl-badge"><i class="fas fa-circle-check"></i><span>Distribuidor autorizado de FWP<small>Código 348677</small></span></span>
             <div class="wl-grid wl-6">
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-truck-ramp-box"></i></div><span class="wl-num">+5.000</span><span class="wl-label">productos entregados</span><span class="wl-sub">por mí, en todo Chile</span></div>
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-heart"></i></div><span class="wl-num">6 de 10</span><span class="wl-label">vuelven a comprar</span><span class="wl-sub">clientes que repiten</span></div>
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-user"></i></div><span class="wl-num">+10.000</span><span class="wl-label">clientes</span><span class="wl-sub">en nuestra red FWP</span></div>
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-quote-left"></i></div><span class="wl-num">+1.000</span><span class="wl-label">testimonios</span><span class="wl-sub">de clientes en Chile</span></div>
-                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-map"></i></div><span class="wl-num">10 países</span><span class="wl-label">de Latinoamérica</span><span class="wl-sub">con FWP</span></div>
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-truck-ramp-box"></i></div><span class="wl-num" data-count="5000" data-prefix="+">+5.000</span><span class="wl-label">productos entregados</span><span class="wl-sub">por mí, en todo Chile</span></div>
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-heart"></i></div><span class="wl-num" data-count="6" data-suffix=" de 10">6 de 10</span><span class="wl-label">vuelven a comprar</span><span class="wl-sub">clientes que repiten</span></div>
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-user"></i></div><span class="wl-num" data-count="10000" data-prefix="+">+10.000</span><span class="wl-label">clientes</span><span class="wl-sub">en nuestra red FWP</span></div>
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-quote-left"></i></div><span class="wl-num" data-count="1000" data-prefix="+">+1.000</span><span class="wl-label">testimonios</span><span class="wl-sub">de clientes en Chile</span></div>
+                <div class="wl-tile"><div class="wl-icon"><i class="fas fa-map"></i></div><span class="wl-num" data-count="10" data-suffix=" países">10 países</span><span class="wl-label">de Latinoamérica</span><span class="wl-sub">con FWP</span></div>
                 <div class="wl-tile"><div class="wl-icon"><i class="fas fa-location-dot"></i></div><span class="wl-num">Todo Chile</span><span class="wl-label">despachos</span><span class="wl-sub">de Arica a Punta Arenas</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque 6: Filtro de Intención y Objetivos (Diagnóstico Interactivo) -->
+    <section id="diagnostico" class="py-24 bg-[#010413] border-t border-white/5 relative font-sans">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Protocolos FWP</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">Arma tu rutina</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Elige tu objetivo y te mostramos qué productos van juntos, por qué, cuándo tomarlos y cuánto cuesta.</p>
+            </div>
+
+            <!-- Buscador de beneficios -->
+            <div id="finder" class="max-w-6xl mx-auto reveal">
+                <div class="glass-panel rounded-[2.5rem] p-6 sm:p-10 border border-white/10 relative overflow-hidden text-left">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500"></div>
+
+                    
+
+                    <div class="mb-8">
+                            <h3 class="step-title mb-5"><span class="step-num">1</span><span><span class="title-shine green">Elige tu protocolo</span><small>Cada uno combina los productos que se potencian entre sí</small></span></h3>
+                            <div id="finder-protocols" class="proto-chips"></div>
+                        </div>
+
+                    <div id="finder-empty" class="text-center text-sm text-gray-400 py-8 border-t border-white/10">
+                        Toca los beneficios que buscas y aquí aparecerá tu rutina recomendada: qué productos, cuándo tomarlos y cuánto cuesta.
+                    </div>
+
+                    <div id="finder-result" class="hidden border-t border-white/10 pt-8">
+                        <h3 class="step-title mb-6"><span class="step-num">2</span><span><span class="title-shine green">Tu protocolo</span><small>Qué incluye, para qué sirve y cómo tomarlo</small></span></h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            <div class="lg:col-span-5 finder-hero-card rounded-3xl p-6 lg:sticky" style="top:96px">
+                                <div id="finder-hero" class="mb-5"></div>
+                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-3 font-mono">Tu día</span>
+                                <div id="finder-routine" class="space-y-2 mb-5"></div>
+
+                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-2 font-mono">Incluye</span>
+                                <div id="finder-includes" class="space-y-1.5 text-[12px] text-gray-300 mb-5"></div>
+
+                                <div class="flex justify-between items-baseline border-t border-white/10 pt-4 mb-4">
+                                    <span id="finder-count" class="text-xs text-gray-400 font-mono">0 productos</span>
+                                    <span id="finder-total" class="text-2xl font-black text-white font-mono">$0</span>
+                                </div>
+
+                                <div id="finder-protocol" class="hidden mb-4 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-gray-300"></div>
+
+                                <button type="button" data-action="finderOrder()" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_20px_rgba(16,185,129,0.3)] mb-3">
+                                    PEDIR MI PROTOCOLO
+                                </button>
+                                <a id="finder-whatsapp" href="#" data-whatsapp-location="buscador_beneficios" data-whatsapp-message="" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-white/5 hover:bg-white/20 border border-white/10 text-gray-300 font-bold rounded-full text-center block text-xs transition-colors">
+                                    <i class="fab fa-whatsapp mr-1.5"></i> Quiero asesoría personalizada antes de comprar
+                                </a>
+                            </div>
+
+                            <div class="lg:col-span-7">
+                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-3 font-mono">Qué incluye y cómo tomarlo</span>
+                                <div id="finder-products" class="space-y-3"></div>
+                            </div>
+                        </div>
+                        <p class="text-[10px] text-gray-500 mt-6 text-center">Los suplementos complementan una alimentación equilibrada y hábitos saludables; los resultados dependen de cada persona. Si estás embarazada, en lactancia, tomas medicamentos o tienes una condición de salud, consulta a tu médico antes de usarlos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque 7: Productos (acceso a la página de productos) -->
+    <section id="productos" class="py-24 bg-[#010413] border-t border-white/5 relative font-sans">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Productos FWP</span>
+                <h2 class="sec-title mt-4 mb-4">¿Prefieres un solo producto?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Cada uno se puede comprar por separado. Toca el producto para ver qué lleva, lo mejor de su fórmula y cómo tomarlo.</p>
+            </div>
+            <div class="pgrid reveal">
+                <article class="pcard pc-feat" style="--c:#e0177a">
+                    <span class="pc-tag">⭐ El más vendido</span>
+                    <a href="productos.html#renova" class="pc-img"><img src="assets/img/productos/renova.webp" alt="RENÖVA+" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>RENÖVA+</h3>
+                        <p class="pc-what">Colágeno Peptan® con 18 vitaminas y minerales</p>
+                        <p class="pc-para">Piel, cabello, uñas y articulaciones</p>
+                        <p class="pc-dose">21 sachets · $2.380 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price">$49.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="renova" data-buy-label="RENÖVA+ x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#renova" class="pc-more">Ver qué lleva y cómo tomarlo →</a>
+                    </div>
+                </article>
+                <article class="pcard" style="--c:#0ea5b7">
+                    
+                    <a href="productos.html#liv" class="pc-img"><img src="assets/img/productos/liv.webp" alt="LIV" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>LIV</h3>
+                        <p class="pc-what">Fibras solubles + probióticos</p>
+                        <p class="pc-para">Digestión liviana, menos hinchazón</p>
+                        <p class="pc-dose">28 porciones · $1.785 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price">$49.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="liv" data-buy-label="LIV x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#liv" class="pc-more">Ver qué lleva y cómo tomarlo →</a>
+                    </div>
+                </article>
+                <article class="pcard" style="--c:#16a34a">
+                    <span class="pc-tag off">Oferta por tiempo limitado</span>
+                    <a href="productos.html#24b" class="pc-img"><img src="assets/img/productos/24b.webp" alt="24B+" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>24B+</h3>
+                        <p class="pc-what">Tres tés, ginseng y 13 vitaminas</p>
+                        <p class="pc-para">Energía para tus días activos</p>
+                        <p class="pc-dose">28 sachets · $1.428 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price"><s>$44.990</s> $39.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="24b" data-buy-label="24B+ x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#24b" class="pc-more">Ver qué lleva y cómo tomarlo →</a>
+                    </div>
+                </article>
+                <article class="pcard" style="--c:#ea580c">
+                    
+                    <a href="productos.html#eboost" class="pc-img"><img src="assets/img/productos/eboost.webp" alt="E-BOOST" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>E-BOOST</h3>
+                        <p class="pc-what">BCAA + cafeína natural</p>
+                        <p class="pc-para">Enfoque y energía mental</p>
+                        <p class="pc-dose">28 sachets · $1.428 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price">$39.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="eboost" data-buy-label="E-BOOST x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#eboost" class="pc-more">Ver qué lleva y cómo tomarlo →</a>
+                    </div>
+                </article>
+                <article class="pcard" style="--c:#84cc16">
+                    
+                    <a href="productos.html#24burn" class="pc-img"><img src="assets/img/productos/24burn.webp" alt="24BURN" loading="lazy"></a>
+                    <div class="pc-body">
+                        <h3>24BURN</h3>
+                        <p class="pc-what">Té verde, ginseng y L-Carnitina</p>
+                        <p class="pc-para">Metabolismo activo, 0 g azúcar</p>
+                        <p class="pc-dose">33 scoops · $1.091 al día</p>
+                        <div class="pc-foot">
+                            <span class="pc-price">$35.990</span>
+                            <button type="button" class="pc-buy" data-buy-items="24burn" data-buy-label="24BURN x1">Comprar</button>
+                        </div>
+                        <a href="productos.html#24burn" class="pc-more">Ver qué lleva y cómo tomarlo →</a>
+                    </div>
+                </article>
+            </div>
+            <div class="text-center mt-10 flex flex-col sm:flex-row gap-3 justify-center items-center">
+                <a href="productos.html" class="pc-all">Ver todos los productos en detalle →</a>
+                <a href="https://meli.la/1J7G4Nf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-gray-400 hover:text-white border border-white/10 hover:border-white/25 rounded-full px-4 py-2 transition-colors"><i class="fas fa-shield-alt text-yellow-500"></i> ¿Prefieres la garantía de Mercado Libre? <span class="text-white font-semibold underline">Cómpralo aquí</span></a>
             </div>
         </div>
     </section>
@@ -201,78 +357,215 @@
     </section>
 
     <!-- Bloque 4: Autoridad y Aval Clínico (Medical Advisors) -->
-    <section id="expertos" class="py-24 bg-[#010413] border-t border-white/5 relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none"></div>
+    <section id="expertos" class="py-24 bg-[#010413] border-t border-white/5 relative overflow-hidden">
+        <div class="doc-glow"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-14 reveal">
+                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Medical Advisors FWP</span>
+                <h2 class="sec-title mt-4 mb-4">Médicos que <span class="title-shine rva">recomiendan RENÖVA+</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Especialistas en medicina antiaging y nutricional que forman parte del programa Medical Advisors de FWP. Puedes ver su trabajo en sus perfiles de Instagram.</p>
+            </div>
+            <div class="doc-grid reveal">
+                <article class="doc-card">
+                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dra. Chiaretta Boza"><img src="assets/img/expertos/chiaretta.webp" alt="Dra. Chiaretta Boza" loading="lazy" width="160" height="160"></a>
+                    <span class="doc-spec">Medicina antiaging</span>
+                    <h3>Dra. Chiaretta Boza</h3>
+                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @dra.chiaretta</a>
+                    <blockquote>“La pérdida de colágeno es uno de los principales factores del envejecimiento articular y cutáneo. Renova es una fórmula completa que integro en los tratamientos de mis pacientes por su rápida absorción y combinación con resveratrol.”</blockquote>
+                    <a href="https://www.instagram.com/dra.chiaretta/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
+                </article>
+                <article class="doc-card">
+                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dr. Álvaro Melgar"><img src="assets/img/expertos/melgar.webp" alt="Dr. Álvaro Melgar" loading="lazy" width="160" height="160"></a>
+                    <span class="doc-spec">Medicina antiaging</span>
+                    <h3>Dr. Álvaro Melgar</h3>
+                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @dr.melgu</a>
+                    <blockquote>“En mi experiencia clínica, la suplementación con colágeno hidrolizado es clave para prevenir el deterioro articular y la pérdida de elasticidad en piel y tejidos. Recomiendo Renova por su alta concentración y fórmula avanzada con bio-péptidos y resveratrol.”</blockquote>
+                    <a href="https://www.instagram.com/dr.melgu/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
+                </article>
+                <article class="doc-card">
+                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-ring" aria-label="Instagram de Dr. Fernando Tenorio"><img src="assets/img/expertos/tenorio.webp" alt="Dr. Fernando Tenorio" loading="lazy" width="160" height="160"></a>
+                    <span class="doc-spec">Medicina nutricional</span>
+                    <h3>Dr. Fernando Tenorio</h3>
+                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-ig"><i class="fab fa-instagram"></i> @drfernandotenorio</a>
+                    <blockquote class="doc-bio">Médico especialista en Medicina Nutricional con más de 10 años de experiencia, promoviendo un envejecimiento saludable a través de la nutrición celular y de precisión.</blockquote>
+                    <a href="https://www.instagram.com/drfernandotenorio/" target="_blank" rel="noopener noreferrer" class="doc-btn">Ver su perfil en Instagram</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque 11: Prueba Social Irrefutable (Testimonios Reales) -->
+    <section id="testimonios" class="py-24 bg-fwp-darker border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <span class="text-xs font-bold text-fwp-blue bg-blue-500/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Desarrollo e Innovación</span>
-                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">Conoce a Nuestros Expertos</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Fórmulas de alta pureza respaldadas y recomendadas activamente por especialistas en longevidad, antienvejecimiento y nutrición metabólica.</p>
+                <h2 class="text-sm font-bold text-fwp-green tracking-widest uppercase mb-3">Team FWP</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-white mb-4">Personas reales, rutinas reales</h3>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Clientes y embajadores que integraron FWP a su día a día. Más de 1.000 testimonios en Chile; aquí te mostramos algunos. Los resultados dependen de cada persona y de sus hábitos.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto reveal">
-                <!-- Dra. Chiaretta Boza -->
-                <div class="glass-panel rounded-3xl p-8 border border-white/10 hover:border-purple-500/40 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-full h-80 bg-slate-900 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative shadow-[0_4px_20px_rgba(255,255,255,0.05)] border border-white/10">
-                            <img loading="lazy" decoding="async" src="Doctores/image_76b720.png" alt="Dra. Chiaretta Boza" class="w-full h-full object-cover object-top" data-fallback-src="https://placehold.co/400x500/1e293b/ffffff?font=inter&text=Dra.+Chiaretta+Boza">
-                            <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-[10px] font-bold text-purple-400 px-3 py-1 rounded-full uppercase tracking-wider">
-                                Medicina Antiaging
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-black text-white mb-1">Dra. Chiaretta Boza</h3>
-                        <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider block mb-4">Medicina anti Aging</span>
-                        
-                        <div class="relative pl-6 border-l-2 border-purple-500/30">
-                            <i class="fa-solid fa-quote-left text-purple-500/30 text-2xl absolute left-0 -top-2"></i>
-                            <p class="text-gray-300 text-xs italic leading-relaxed">
-                                "La pérdida de colágeno es uno de los principales factores del envejecimiento articular y cutáneo. Renova es una fórmula completa que integro en los tratamientos de mis pacientes por su rápida absorción y combinación con resveratrol, potenciando los procesos de reparación y fortalecimiento óseo y muscular. Resultados visibles desde las primeras semanas."
-                            </p>
-                        </div>
+            <!-- Filtros de Testimonios -->
+            <div class="flex justify-center gap-4 mb-10 reveal">
+                <div class="inline-flex bg-black/50 p-1 rounded-full border border-white/10 flex-wrap justify-center font-sans">
+                    <button class="px-6 py-2 rounded-full text-sm font-bold bg-white/10 text-white transition-colors" data-action="filterTestimonials('all')">Todos</button>
+                    <button class="px-6 py-2 rounded-full text-sm font-bold text-gray-400 hover:text-white transition-colors" data-action="filterTestimonials('renova')">Regeneración (RENÖVA+)</button>
+                    <button class="px-6 py-2 rounded-full text-sm font-bold text-gray-400 hover:text-white transition-colors" data-action="filterTestimonials('burn')">Metabolismo (24BURN)</button>
+                </div>
+            </div>
+
+            <!-- Grilla de Testimonios con Lightbox -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonios RENÖVA+ -->
+                <div data-action="openTestimonialLightbox(this)" class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio1%20REN%C3%96VA%2B.png" alt="Testimonio 1 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B">
                     </div>
                 </div>
 
-                <!-- Dr. Álvaro Melgar -->
-                <div class="glass-panel rounded-3xl p-8 border border-white/10 hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-full h-80 bg-slate-900 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative shadow-[0_4px_20px_rgba(255,255,255,0.05)] border border-white/10">
-                            <img loading="lazy" decoding="async" src="Doctores/image_76b701.png" alt="Dr. Álvaro Melgar" class="w-full h-full object-cover object-top" data-fallback-src="https://placehold.co/400x500/1e293b/ffffff?font=inter&text=Dr.+Alvaro+Melgar">
-                            <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-[10px] font-bold text-emerald-400 px-3 py-1 rounded-full uppercase tracking-wider">
-                                Medicina Antiaging
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-black text-white mb-1">Dr. Alvaro Melgar</h3>
-                        <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-4">Medicina anti Aging</span>
-                        
-                        <div class="relative pl-6 border-l-2 border-emerald-500/30">
-                            <i class="fa-solid fa-quote-left text-emerald-500/30 text-2xl absolute left-0 -top-2"></i>
-                            <p class="text-gray-300 text-xs italic leading-relaxed">
-                                "En mi experiencia clínica, la suplementación con colágeno hidrolizado es clave para prevenir el deterioro articular y la pérdida de elasticidad en piel y tejidos. Recomiendo Renova por su alta concentración y fórmula avanzada con bio-péptidos y resveratrol, que favorece la regeneración celular y optimiza la recuperación muscular. Es una herramienta eficaz para ralentizar el impacto del envejecimiento natural desde los 25 años."
-                            </p>
-                        </div>
+                <div data-action="openTestimonialLightbox(this)" class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in" style="transition-delay: 100ms;">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio2%20REN%C3%96VA%2B.png" alt="Testimonio 2 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B">
                     </div>
                 </div>
 
-                <!-- Dr. Fernando Tenorio -->
-                <div class="glass-panel rounded-3xl p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="w-full h-80 bg-slate-900 rounded-2xl mb-6 overflow-hidden flex items-center justify-center relative shadow-[0_4px_20px_rgba(255,255,255,0.05)] border border-white/10">
-                            <img loading="lazy" decoding="async" src="Doctores/image_76b73f.png" alt="Dr. Fernando Tenorio" class="w-full h-full object-cover object-top" data-fallback-src="https://placehold.co/400x500/1e293b/ffffff?font=inter&text=Dr.+Fernando+Tenorio">
-                            <div class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-[10px] font-bold text-blue-400 px-3 py-1 rounded-full uppercase tracking-wider">
-                                Medicina Nutricional
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-black text-white mb-1">DR. FERNANDO TENORIO</h3>
-                        <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider block mb-4">Especialista en Medicina Nutricional</span>
-                        
-                        <div class="relative pl-6 border-l-2 border-blue-500/30">
-                            <i class="fa-solid fa-quote-left text-blue-500/30 text-2xl absolute left-0 -top-2"></i>
-                            <p class="text-gray-300 text-xs italic leading-relaxed">
-                                "Médico especialista en Medicina Nutricional con más de 10 años de experiencia, promoviendo la concientización y tratamientos para un envejecimiento saludable a través de la nutrición celular y precisión molecular."
-                            </p>
-                        </div>
+                <div data-action="openTestimonialLightbox(this)" class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in" style="transition-delay: 200ms;">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio3%20REN%C3%96VA%2B.png" alt="Testimonio 3 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B">
                     </div>
                 </div>
+
+                <!-- Testimonios 24BURN -->
+                <div data-action="openTestimonialLightbox(this)" class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img loading="lazy" decoding="async" src="Testimonios/Termimonio1%2024BURN%20Alvaro.png" alt="Testimonio Alvaro 24BURN" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/a3e635?text=Alvaro">
+                    </div>
+                </div>
+
+                <div data-action="openTestimonialLightbox(this)" class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in" style="transition-delay: 100ms;">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio2%2024BURN%20Ana.png" alt="Testimonio Ana 24BURN" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/a3e635?text=Ana">
+                    </div>
+                </div>
+
+                <div data-action="openTestimonialLightbox(this)" class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in" style="transition-delay: 200ms;">
+                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
+                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio3%2024BURN%20Damy.png" alt="Testimonio Damy 24BURN" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/a3e635?text=Damy">
+                    </div>
+                </div>
+
+                <!-- Testimonios de texto -->
+                <div class="testimonial-item glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Carolina Guerrero</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Hola cariño, súper, me desinflama muchísimo, lo amé ❤️ Te encargaré el otro." · "Sí, lo amé, aparte que sabe rico" · "Siempre en ayunas"</p>
+                </div>
+
+                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Coni Morales</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Soy mañosa para tomar cosas y el sabor es muy rico. Antes estaba muy buena para comer y me ha ayudado mucho con eso. Lo tomo en la mañana en ayunas y me ha servido excelente."</p>
+                </div>
+
+                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Norma Vega</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Lo preparé con agua caliente, tres cucharitas llenas con el polvo. El color es del té negro y el sabor es muy agradable, es como tomar té con limón, dulce — no es necesario agregar azúcar ni endulzante. Al enfriarse sigue siendo muy rico."</p>
+                </div>
+
+                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Mónica Arriagada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"El té me ha servido muchísimo, mi cuerpo ha mejorado notablemente y no ando hinchada. Mi piel ya no está reseca y me han comentado mis cambios. Además, tengo muchísima energía, que es lo que más buscaba tener. Aquí ganaste una fiel clienta, ¡gracias!"</p>
+                </div>
+
+                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Cliente verificada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Ya creo que me quedan para dos tecitos más. Mi esposo también está consumiendo porque le da energía para el día." · "El 24BURN es súper potente, qué rico que ambos estén consumiendo el producto y que les esté ayudando."</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Lore</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Ya estoy viendo resultados y aún voy en mi primer bote. Mi carita está cambiando, tenía muchas manchas y los poros estaban súper abiertos. Ahora está mucho mejor, mi autoestima subió bastante."</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Carol Flores</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Colágeno excelente, ya no se me cae el pelo."</p>
+                </div>
+
+                <div class="testimonial-item renova burn glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Verónica</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Tomo el colágeno y el otro para bajar de peso, y me ha hecho súper bien."</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Paola</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Me compré el de colágeno y resveratrol y es genial."</p>
+                </div>
+
+                <div class="testimonial-item glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Mabel Vallejos</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">TikTok</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Es buenísimo, 100% recomendado."</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Cliente verificada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"El colágeno es buenísimo, se me han pasado los dolores musculares y me siento más activa."</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Cliente verificada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Estoy contenta con RENÖVA+, llevo 1 mes y 10 días, mi cepillo de pelo nada de pelos y mis uñas más firmes — fue un cambio muy rápido."</p>
+                </div>
+
+                <div class="testimonial-item glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Acuario</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Súper bueno, yo igual viendo resultados, ¡amo!"</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Sule</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"A mí RENÖVA+ me ha permitido que mi cabello se caiga menos."</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Cliente verificada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Me creció harto el pelo, el brillo de la piel cambia al tiro, es cuático el producto."</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">quetzalcoalt6</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">TikTok Live</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Sí, el RENÖVA+ sí es muy bueno, y la piel cambió también, está súper tersa."</p>
+                </div>
+
+                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Lily</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">TikTok Live</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Me favoreció con el cabello, la piel, el cutis — la he notado humectada."</p>
+                </div>
+
+                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
+                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Mabel Vallejos</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">TikTok Live</span></div>
+                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
+                    <p class="text-gray-300 text-sm leading-relaxed">"Yo tomo el del tarrito y he bajado 13 kilos con ese."</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#" data-whatsapp-location="landing" data-whatsapp-message="¡Hola!%20He%20visto%20los%20testimonios%20de%20FWP%20y%20me%20gustaría%20iniciar%20mi%20proceso." target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-white/10 hover:bg-white hover:text-black border border-white/20 rounded-full font-bold transition-all">
+                    Inicia tu Transformación
+                </a>
             </div>
         </div>
     </section>
@@ -317,107 +610,6 @@
                         <a href="#" data-whatsapp-location="landing" data-whatsapp-message="¡Hola!%20He%20desbloqueado%20la%20Sorpresa%20del%20Embajador%20con%20el%20código%20EMBAJADOR_VIP.%20Me%20interesa%20adquirir%20mi%20protocolo%20y%20reclamar%20mi%20Batidor%20Recargable%20Tipo%20C%20de%20regalo." target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-black font-black text-xs rounded-full uppercase tracking-wider transition-all shadow-lg">
                             Reclamar Sorpresa por WhatsApp 📲
                         </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloque 6: Filtro de Intención y Objetivos (Diagnóstico Interactivo) -->
-    <section id="diagnostico" class="py-24 bg-[#010413] border-t border-white/5 relative font-sans">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 reveal">
-                <span class="text-xs font-bold text-fwp-green bg-fwp-green/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Protocolos FWP</span>
-                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">Arma tu rutina</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Marca lo que quieres mejorar y te armo tu protocolo: qué productos, cuándo tomarlos y cuánto cuesta.</p>
-            </div>
-
-            <!-- Buscador de beneficios -->
-            <div id="finder" class="max-w-6xl mx-auto reveal">
-                <div class="glass-panel rounded-[2.5rem] p-6 sm:p-10 border border-white/10 relative overflow-hidden text-left">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500"></div>
-
-                    <div class="flex justify-between items-center mb-5">
-                        <h3 class="step-title"><span class="step-num">1</span><span><span class="title-shine green">Toca lo que quieres mejorar</span><small>Puedes elegir varios</small></span></h3>
-                        <button type="button" data-action="finderReset()" class="text-[11px] text-gray-400 hover:text-white underline">Limpiar</button>
-                    </div>
-                    <div id="finder-benefits" class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-                        <button type="button" data-action="finderToggle('energia')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
-                            <span class="text-2xl block mb-1">⚡</span>
-                            <span class="text-xs font-bold text-white block leading-tight">Más energía durante el día</span>
-                        </button>
-                        <button type="button" data-action="finderToggle('enfoque')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
-                            <span class="text-2xl block mb-1">🎯</span>
-                            <span class="text-xs font-bold text-white block leading-tight">Enfoque y concentración</span>
-                        </button>
-                        <button type="button" data-action="finderToggle('descanso')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
-                            <span class="text-2xl block mb-1">🌙</span>
-                            <span class="text-xs font-bold text-white block leading-tight">Descansar mejor</span>
-                        </button>
-                        <button type="button" data-action="finderToggle('digestion')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
-                            <span class="text-2xl block mb-1">🌿</span>
-                            <span class="text-xs font-bold text-white block leading-tight">Digestión liviana, menos hinchazón</span>
-                        </button>
-                        <button type="button" data-action="finderToggle('peso')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
-                            <span class="text-2xl block mb-1">🔥</span>
-                            <span class="text-xs font-bold text-white block leading-tight">Apoyar el control de peso</span>
-                        </button>
-                        <button type="button" data-action="finderToggle('piel')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
-                            <span class="text-2xl block mb-1">✨</span>
-                            <span class="text-xs font-bold text-white block leading-tight">Piel, cabello y uñas</span>
-                        </button>
-                        <button type="button" data-action="finderToggle('articulaciones')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
-                            <span class="text-2xl block mb-1">🦴</span>
-                            <span class="text-xs font-bold text-white block leading-tight">Articulaciones y movilidad</span>
-                        </button>
-                        <button type="button" data-action="finderToggle('integral')" aria-pressed="false" class="p-4 rounded-2xl border text-left transition-all" style="border-color:rgba(255,255,255,.08);background:rgba(0,0,0,.4)">
-                            <span class="text-2xl block mb-1">🌐</span>
-                            <span class="text-xs font-bold text-white block leading-tight">Bienestar integral</span>
-                        </button>
-                    </div>
-
-                    <div class="mb-8">
-                            <h3 class="step-title mb-5"><span class="step-num alt">o</span><span><span class="title-shine green">Elige directamente un protocolo</span><small>Ya armados, con su explicación</small></span></h3>
-                            <div id="finder-protocols" class="proto-chips"></div>
-                        </div>
-
-                    <div id="finder-empty" class="text-center text-sm text-gray-400 py-8 border-t border-white/10">
-                        Toca los beneficios que buscas y aquí aparecerá tu rutina recomendada: qué productos, cuándo tomarlos y cuánto cuesta.
-                    </div>
-
-                    <div id="finder-result" class="hidden border-t border-white/10 pt-8">
-                        <h3 class="step-title mb-6"><span class="step-num">2</span><span><span class="title-shine green">Tu protocolo</span><small>Qué incluye, para qué sirve y cómo tomarlo</small></span></h3>
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                            <div class="lg:col-span-5 finder-hero-card rounded-3xl p-6 lg:sticky" style="top:96px">
-                                <div id="finder-hero" class="mb-5"></div>
-                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-3 font-mono">Tu día</span>
-                                <div id="finder-routine" class="space-y-2 mb-5"></div>
-
-                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-2 font-mono">Incluye</span>
-                                <div id="finder-includes" class="space-y-1.5 text-[12px] text-gray-300 mb-5"></div>
-
-                                <div class="flex justify-between items-baseline border-t border-white/10 pt-4 mb-4">
-                                    <span id="finder-count" class="text-xs text-gray-400 font-mono">0 productos</span>
-                                    <span id="finder-total" class="text-2xl font-black text-white font-mono">$0</span>
-                                </div>
-
-                                <div id="finder-protocol" class="hidden mb-4 p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-gray-300"></div>
-
-                                <button type="button" data-action="finderOrder()" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-black font-black rounded-full hover:scale-105 transition-all text-center block text-sm shadow-[0_4px_20px_rgba(16,185,129,0.3)] mb-3">
-                                    PEDIR MI PROTOCOLO
-                                </button>
-                                <a id="finder-whatsapp" href="#" data-whatsapp-location="buscador_beneficios" data-whatsapp-message="" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-white/5 hover:bg-white/20 border border-white/10 text-gray-300 font-bold rounded-full text-center block text-xs transition-colors">
-                                    <i class="fab fa-whatsapp mr-1.5"></i> Quiero asesoría personalizada antes de comprar
-                                </a>
-                            </div>
-
-                            <div class="lg:col-span-7">
-                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest block mb-3 font-mono">Qué incluye y cómo tomarlo</span>
-                                <div id="finder-products" class="space-y-3"></div>
-                            </div>
-                        </div>
-                        <p class="text-[10px] text-gray-500 mt-6 text-center">Los suplementos complementan una alimentación equilibrada y hábitos saludables; los resultados dependen de cada persona. Si estás embarazada, en lactancia, tomas medicamentos o tienes una condición de salud, consulta a tu médico antes de usarlos.</p>
                     </div>
                 </div>
             </div>
@@ -642,438 +834,10 @@
                             <p class="text-xs text-gray-400 leading-relaxed">Presiona <strong class="text-white">Ir a pagar</strong> y completa tu compra. El envío lo calcula el portal.</p>
                         </div>
                     </div>
-                    <p class="text-xs text-gray-400 text-center mt-8">¿Buscas de 1 a 7 unidades? <a href="#productos-unitario" class="text-emerald-400 font-bold underline">Cómpralas directo conmigo con envío gratis</a>.</p>
+                    <p class="text-xs text-gray-400 text-center mt-8">¿Buscas de 1 a 7 unidades? <a href="#productos" class="text-emerald-400 font-bold underline">Cómpralas directo conmigo con envío gratis</a>.</p>
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <!-- Bloque 10: Compra por Unidades Sueltas -->
-    <section id="productos-unitario" class="py-24 bg-[#010413] border-t border-white/5 relative font-sans">
-        <div class="absolute inset-0 bg-gradient-to-t from-transparent via-blue-950/5 to-transparent pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 reveal">
-                <span class="text-xs font-bold text-purple-400 bg-purple-500/10 px-4 py-1.5 rounded-full uppercase tracking-wider">Unidades Individuales</span>
-                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 mb-4">Adquisición por Unidad</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Optimiza aspectos específicos de tu organismo con nuestras fórmulas individuales de alta pureza.</p>
-                <a href="https://meli.la/1J7G4Nf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-5 text-xs text-gray-400 hover:text-white border border-white/10 hover:border-white/25 rounded-full px-4 py-2 transition-colors">
-                    <i class="fas fa-shield-alt text-yellow-500"></i>
-                    ¿Prefieres comprar con la garantía de Mercado Libre? <span class="text-white font-semibold underline">Cómpralo aquí</span>
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 max-w-7xl mx-auto reveal items-stretch">
-                
-                <!-- RENÖVA+ Unidad -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-3 right-3 bg-white/10 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 font-mono">
-                        🚚 Envío Gratis
-                    </div>
-                    <div>
-                        <div class="relative rounded-2xl p-4 flex justify-center items-end h-64 mb-4 overflow-visible">
-                            <img loading="lazy" decoding="async" src="assets/img/productos/renova.webp" 
-                                 alt="RENÖVA+ Unidad" class="object-contain animate-float-1 h-[210px] glow-rva-img transition-transform duration-300 origin-bottom group-hover:scale-105 self-end mb-0"
-                                 data-image-fallback="renova">
-                        </div>
-                        <h4 class="text-lg font-black text-white mb-1">RENÖVA+</h4>
-                        <span class="text-[11px] font-bold text-purple-400 uppercase tracking-widest block font-mono">Colágeno Peptan® (315 g)</span>
-                        <span class="text-xs font-bold text-gray-400 block font-sans">21 Sachets · 21 días · <span class="text-white">$2.380 al día</span></span>
-                        <span class="text-[11px] font-bold text-purple-400 block font-sans mt-1">Piel · Cabello · Uñas · Articulaciones</span>
-                        <a href="renova.html" target="_blank" rel="noopener" class="text-[11px] text-purple-400 hover:text-purple-300 underline mb-3 inline-block">Ver ficha completa</a>
-                        
-                        <div class="text-xs text-gray-300 mb-4 leading-relaxed font-sans text-left space-y-3">
-                            <p class="font-semibold text-gray-100">
-                                RENÖVA+: Es un biopéptido activo de colágeno respaldado por Peptan®, marca número 1 a nivel mundial diseñado para trabajar desde el interior fortaleciendo cabello, uñas, piel, articulaciones y todo el sistema músculo-esquelético.
-                            </p>
-                            <ul class="space-y-1.5 text-gray-400">
-                                <li class="flex items-start gap-1.5"><span class="text-purple-400 font-bold">✨</span> <span>Mejora la elasticidad y firmeza de tu piel</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-purple-400 font-bold">✨</span> <span>Aspecto hidratado y rejuvenecido</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-purple-400 font-bold">💅</span> <span>Fortalece uñas y cabello, favoreciendo el crecimiento</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-purple-400 font-bold">🛡️</span> <span>Refuerza tu sistema inmunológico día a día</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-purple-400 font-bold">🦴</span> <span>Fortalece tus articulaciones y musculatura</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-purple-400 font-bold">💪</span> <span>Apoya la regeneración y recuperación física</span></li>
-                            </ul>
-                            <p class="text-[11px] text-gray-400 italic">
-                                Muchas personas lo utilizan para apoyar molestias articulares, rigidez muscular o desgaste propio de la edad, ya que aporta 11,4 gramos de colágeno de alta biodisponibilidad, una dosis superior a la mayoría de productos del mercado.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-auto font-sans">
-                        <div class="flex justify-between items-center mb-4 border-t border-white/10 pt-3">
-                            <span class="text-[10px] text-gray-500 uppercase font-bold font-mono">Precio Detalle</span>
-                            <span class="text-xl font-black text-white font-mono">$49.990</span>
-                        </div>
-                        <a href="#" data-buy-items="renova" data-link-key="renova" data-buy-label="RENÖVA+ Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(155,44,134,0.3)] font-bold">
-                            COMPRAR AHORA
-                        </a>
-                        <button type="button" data-add-cart data-product-id="renova" data-product-name="RENÖVA+ Unidad" data-product-price="49990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
-                            + Agregar a mi pedido
-                        </button>
-                    </div>
-                </div>
-
-                <!-- LIV Unidad -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-green-500/30 transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-3 right-3 bg-white/10 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 font-mono">
-                        🚚 Envío Gratis
-                    </div>
-                    <div>
-                        <div class="relative rounded-2xl p-4 flex justify-center items-end h-64 mb-4 overflow-visible">
-                            <img loading="lazy" decoding="async" src="assets/img/productos/liv.webp" alt="LIV Unidad" class="object-contain animate-float-2 h-[210px] glow-liv-img transition-transform duration-300 origin-bottom group-hover:scale-105 self-end mb-0" data-fallback-src="https://placehold.co/110x150/0f172a/4ade80?text=LIV">
-                        </div>
-                        <h4 class="text-lg font-black text-white mb-1">LIV</h4>
-                        <span class="text-[11px] font-bold text-green-400 uppercase tracking-widest block font-mono">Salud Gastrointestinal (280 g)</span>
-                        <span class="text-xs font-bold text-gray-400 block font-sans">Sabor manzana verde · 28 porciones · <span class="text-white">$1.785 al día</span></span>
-                        <span class="text-[11px] font-bold text-green-400 block font-sans mt-1">Digestión · Menos hinchazón · Tránsito regular</span>
-                        <a href="liv.html" target="_blank" rel="noopener" class="text-[11px] text-green-400 hover:text-green-300 underline mb-3 inline-block">Ver ficha completa</a>
-                        
-                        <div class="text-xs text-gray-300 mb-4 leading-relaxed font-sans text-left space-y-3">
-                            <p class="font-semibold text-gray-100">
-                                LIV: Es una sinergia de fibras solubles activas y probióticos seleccionados, diseñada para trabajar desde el sistema digestivo para apoyar el equilibrio digestivo, reducir la sensación de hinchazón y favorecer un tránsito regular de forma natural.
-                            </p>
-                            <ul class="space-y-1.5 text-gray-400">
-                                <li class="flex items-start gap-1.5"><span class="text-green-400 font-bold">✨</span> <span>Ayuda a reducir la sensación de inflamación abdominal y la pesadez</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-green-400 font-bold">✨</span> <span>Mejora la digestión y asimilación de alimentos</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-green-400 font-bold">🦠</span> <span>Equilibra tu microbiota con probióticos activos</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-green-400 font-bold">🛡️</span> <span>Refuerza la salud intestinal y barrera digestiva</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-green-400 font-bold">🍂</span> <span>Regula el tránsito lento de manera suave y diaria</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-green-400 font-bold">💧</span> <span>Favorece la depuración natural de toxinas</span></li>
-                            </ul>
-                            <p class="text-[11px] text-gray-400 italic">
-                                Muchas personas lo utilizan para decir adiós a la hinchazón abdominal tras las comidas y volver a sentirse livianas, ya que su formulación aporta prebióticos y probióticos de alta calidad clínica sin azúcar ni lactosa.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-auto font-sans">
-                        <div class="flex justify-between items-center mb-4 border-t border-white/10 pt-3 font-mono">
-                            <span class="text-[10px] text-gray-500 uppercase font-bold">Precio Detalle</span>
-                            <span class="text-xl font-black text-white font-mono">$49.990</span>
-                        </div>
-                        <a href="#" data-buy-items="liv" data-link-key="liv" data-buy-label="LIV Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(74,222,128,0.3)] font-bold">
-                            COMPRAR AHORA
-                        </a>
-                        <button type="button" data-add-cart data-product-id="liv" data-product-name="LIV Unidad" data-product-price="49990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
-                            + Agregar a mi pedido
-                        </button>
-                    </div>
-                </div>
-
-                <!-- 24B+ Unidad -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-3 right-3 bg-white/10 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 font-mono">
-                        🚚 Envío Gratis
-                    </div>
-                    <div>
-                        <div class="relative rounded-2xl p-4 flex justify-center items-end h-64 mb-4 overflow-visible">
-                            <img loading="lazy" decoding="async" src="assets/img/productos/24b.webp" alt="24B+ Unidad" class="object-contain animate-float-1 h-[180px] glow-b24-img transition-transform duration-300 origin-bottom group-hover:scale-105 self-end mb-0" data-fallback-src="https://placehold.co/135x185/0f172a/4ade80?text=24B%2B">
-                        </div>
-                        <h4 class="text-lg font-black text-white mb-1">24B+</h4>
-                        <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-widest block font-mono">Reduce y Activa · Té limón (280 g)</span>
-                        <span class="text-xs font-bold text-gray-400 block font-sans">28 Sachets · 28 días · <span class="text-white">$1.428 al día</span></span>
-                        <span class="text-[11px] font-bold text-emerald-400 block font-sans mt-1">Actividad física · Tres tés · Vitaminas</span>
-                        <a href="24b.html" target="_blank" rel="noopener" class="text-[11px] text-emerald-400 hover:text-emerald-300 underline mb-3 inline-block">Ver ficha completa</a>
-                        
-                        <div class="text-xs text-gray-300 mb-4 leading-relaxed font-sans text-left space-y-3">
-                            <p class="font-semibold text-gray-100">
-                                24B+: Una mezcla de té verde, té negro y té rojo con limón, alcachofa, brócoli, espárrago y manzana, más Panax Ginseng y 13 vitaminas y minerales. Pensado para acompañarte en tus días activos y tus entrenamientos.
-                            </p>
-                            <ul class="space-y-1.5 text-gray-400">
-                                <li class="flex items-start gap-1.5"><span class="text-emerald-400 font-bold">✨</span> <span>Tres tés: verde, negro y rojo</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-emerald-400 font-bold">✨</span> <span>Frutas y verduras en polvo: limón, alcachofa, brócoli, espárrago</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-emerald-400 font-bold">🍋</span> <span>Rico sabor té limón, endulzado con estevia</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-emerald-400 font-bold">💤</span> <span>36 mg de Panax Ginseng por sachet</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-emerald-400 font-bold">🛡️</span> <span>Vitaminas del complejo B, vitamina C, hierro y zinc</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-emerald-400 font-bold">🌅</span> <span>Bajo en cafeína: 4,5 mg por sachet</span></li>
-                            </ul>
-                            <p class="text-[11px] text-gray-400 italic">
-                                Tómalo de día, antes o después de entrenar. Como trae algo de cafeína, mejor evítalo en la noche.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-auto font-sans">
-                        <div class="flex justify-between items-center mb-4 border-t border-white/10 pt-3 font-mono">
-                            <span class="text-[10px] text-emerald-400 uppercase font-bold">Oferta por tiempo limitado</span>
-                            <span class="text-right font-mono"><span class="block text-[11px] text-gray-500 line-through">$44.990</span><span class="text-xl font-black text-white">$39.990</span></span>
-                        </div>
-                        <a href="#" data-buy-items="24b" data-link-key="24b" data-buy-label="24B+ Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(16,185,129,0.3)] font-bold">
-                            COMPRAR AHORA
-                        </a>
-                        <button type="button" data-add-cart data-product-id="24b" data-product-name="24B+ Unidad" data-product-price="39990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
-                            + Agregar a mi pedido
-                        </button>
-                    </div>
-                </div>
-
-                <!-- EBOOST Unidad -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-orange-500/30 transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-3 right-3 bg-white/10 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 font-mono">
-                        🚚 Envío Gratis
-                    </div>
-                    <div>
-                        <div class="relative rounded-2xl p-4 flex justify-center items-end h-64 mb-4 overflow-visible">
-                            <img loading="lazy" decoding="async" src="assets/img/productos/eboost.webp" alt="EBOOST Unidad" class="object-contain animate-float-3 h-[160px] glow-eboost-img transition-transform duration-300 origin-bottom group-hover:scale-105 self-end mb-0" data-fallback-src="https://placehold.co/85x80/0f172a/f97316?text=EBOOST">
-                        </div>
-                        <h4 class="text-lg font-black text-white mb-1">EBOOST</h4>
-                        <span class="text-[11px] font-bold text-orange-400 uppercase tracking-widest block font-mono">Energía Cognitiva (196 g)</span>
-                        <span class="text-xs font-bold text-gray-400 block font-sans">28 Sachets · 28 días · <span class="text-white">$1.428 al día</span></span>
-                        <span class="text-[11px] font-bold text-orange-400 block font-sans mt-1">Energía · Enfoque · Concentración</span>
-                        <a href="eboost.html" target="_blank" rel="noopener" class="text-[11px] text-orange-400 hover:text-orange-300 underline mb-3 inline-block">Ver ficha completa</a>
-                        
-                        <div class="text-xs text-gray-300 mb-4 leading-relaxed font-sans text-left space-y-3">
-                            <p class="font-semibold text-gray-100">
-                                EBOOST: Es un nootrópico y activador cognitivo enriquecido con aminoácidos (BCAAs), diseñado para mantener tu mente en un estado de enfoque láser, energía limpia y máxima productividad sin sobreestimulación.
-                            </p>
-                            <ul class="space-y-1.5 text-gray-400">
-                                <li class="flex items-start gap-1.5"><span class="text-orange-400 font-bold">✨</span> <span>Eleva el enfoque y concentración mental</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-orange-400 font-bold">✨</span> <span>Aporta energía celular limpia de larga duración</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-orange-400 font-bold">🧠</span> <span>Activa tu rendimiento cognitivo y claridad</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-orange-400 font-bold">⚡</span> <span>Combate la fatiga mental y letargo diario</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-orange-400 font-bold">💪</span> <span>Enriquecido con BCAAs para soporte muscular</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-orange-400 font-bold">🛡️</span> <span>Libre de picos de ansiedad o bajones bruscos</span></li>
-                            </ul>
-                            <p class="text-[11px] text-gray-400 italic">
-                                Muchas personas lo utilizan para superar jornadas exigentes de estudio o trabajo y entrenar al máximo, ya que su potencia molecular activa el vigor de manera natural y sostenida.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-auto font-sans">
-                        <div class="flex justify-between items-center mb-4 border-t border-white/10 pt-3 font-mono">
-                            <span class="text-[10px] text-gray-500 uppercase font-bold">Precio Detalle</span>
-                            <span class="text-xl font-black text-white font-mono">$39.990</span>
-                        </div>
-                        <a href="#" data-buy-items="eboost" data-link-key="eboost" data-buy-label="EBOOST Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(249,115,22,0.3)] font-bold">
-                            COMPRAR AHORA
-                        </a>
-                        <button type="button" data-add-cart data-product-id="eboost" data-product-name="EBOOST Unidad" data-product-price="39990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
-                            + Agregar a mi pedido
-                        </button>
-                    </div>
-                </div>
-
-                <!-- 24BURN Unidad -->
-                <div class="glass-panel rounded-3xl p-6 flex flex-col justify-between border border-white/5 hover:border-lime-500/30 transition-all duration-300 relative overflow-hidden group">
-                    <div class="absolute top-3 right-3 bg-white/10 text-white text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider z-10 font-mono">
-                        🚚 Envío Gratis
-                    </div>
-                    <div>
-                        <div class="relative rounded-2xl p-4 flex justify-center items-end h-64 mb-4 overflow-visible">
-                            <img loading="lazy" decoding="async" src="assets/img/productos/24burn.webp" alt="24BURN Unidad" class="object-contain animate-float-1 h-[170px] glow-burn-img transition-transform duration-300 origin-bottom group-hover:scale-105 self-end mb-0" data-fallback-src="https://placehold.co/135x185/0f172a/a3e635?text=24BURN">
-                        </div>
-                        <h4 class="text-lg font-black text-white mb-1">24BURN</h4>
-                        <span class="text-[11px] font-bold text-lime-400 uppercase tracking-widest block font-mono">Activación Diurna (500 g)</span>
-                        <span class="text-xs font-bold text-gray-400 block font-sans">33 Scoops · 33 días · <span class="text-white">$1.091 al día</span></span>
-                        <span class="text-[11px] font-bold text-lime-400 block font-sans mt-1">Metabolismo · Energía · 0 g azúcar</span>
-                        <a href="24burn.html" target="_blank" rel="noopener" class="text-[11px] text-lime-400 hover:text-lime-300 underline mb-3 inline-block">Ver ficha completa</a>
-                        
-                        <div class="text-xs text-gray-300 mb-4 leading-relaxed font-sans text-left space-y-3">
-                            <p class="font-semibold text-gray-100">
-                                24BURN: Es un termogénico diurno de alta potencia formulado con extractos naturales como té verde, ginseng y l-carnitina, diseñado para optimizar la oxidación de grasa y acelerar el metabolismo.
-                            </p>
-                            <ul class="space-y-1.5 text-gray-400">
-                                <li class="flex items-start gap-1.5"><span class="text-lime-400 font-bold">✨</span> <span>Estimula la quema de grasa y termogénesis natural</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-lime-400 font-bold">✨</span> <span>Acelera el metabolismo lento de forma saludable</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-lime-400 font-bold">🔋</span> <span>Convierte la grasa acumulada en energía activa</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-lime-400 font-bold">🍃</span> <span>Acción depurativa y antioxidante celular profunda</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-lime-400 font-bold">🏃‍♂️</span> <span>Mejora el rendimiento físico en el ejercicio</span></li>
-                                <li class="flex items-start gap-1.5"><span class="text-lime-400 font-bold">🛡️</span> <span>Ayuda a controlar la ansiedad entre comidas</span></li>
-                            </ul>
-                            <p class="text-[11px] text-gray-400 italic">
-                                Muchas personas lo utilizan como el aliado definitivo en su proceso de pérdida de peso y definición, ya que sus ingredientes clínicos permiten oxidar grasas mientras aportan una dosis extra de vitalidad diaria.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="mt-auto font-sans">
-                        <div class="flex justify-between items-center mb-4 border-t border-white/10 pt-3 font-mono">
-                            <span class="text-[10px] text-gray-500 uppercase font-bold">Precio Detalle</span>
-                            <span class="text-xl font-black text-white font-mono">$35.990</span>
-                        </div>
-                        <a href="#" data-buy-items="24burn" data-link-key="24burn" data-buy-label="24BURN Unidad" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-lime-600 hover:bg-lime-500 text-black font-bold rounded-xl text-center block text-xs transition-colors shadow-[0_4px_12px_rgba(16,185,129,0.3)] font-bold">
-                            COMPRAR AHORA
-                        </a>
-                        <button type="button" data-add-cart data-product-id="24burn" data-product-name="24BURN Unidad" data-product-price="35990" class="w-full mt-2 py-2 border border-white/15 hover:border-white/30 text-gray-300 hover:text-white font-semibold rounded-xl text-center block text-[11px] transition-colors">
-                            + Agregar a mi pedido
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloque 11: Prueba Social Irrefutable (Testimonios Reales) -->
-    <section id="testimonios" class="py-24 bg-fwp-darker border-t border-white/5 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-sm font-bold text-fwp-green tracking-widest uppercase mb-3">Team FWP</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-white mb-4">Personas reales, rutinas reales</h3>
-                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">Clientes y embajadores que integraron FWP a su día a día. Más de 1.000 testimonios en Chile; aquí te mostramos algunos. Los resultados dependen de cada persona y de sus hábitos.</p>
-            </div>
-
-            <!-- Filtros de Testimonios -->
-            <div class="flex justify-center gap-4 mb-10 reveal">
-                <div class="inline-flex bg-black/50 p-1 rounded-full border border-white/10 flex-wrap justify-center font-sans">
-                    <button class="px-6 py-2 rounded-full text-sm font-bold bg-white/10 text-white transition-colors" data-action="filterTestimonials('all')">Todos</button>
-                    <button class="px-6 py-2 rounded-full text-sm font-bold text-gray-400 hover:text-white transition-colors" data-action="filterTestimonials('renova')">Regeneración (RENÖVA+)</button>
-                    <button class="px-6 py-2 rounded-full text-sm font-bold text-gray-400 hover:text-white transition-colors" data-action="filterTestimonials('burn')">Metabolismo (24BURN)</button>
-                </div>
-            </div>
-
-            <!-- Grilla de Testimonios con Lightbox -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Testimonios RENÖVA+ -->
-                <div data-action="openTestimonialLightbox(this)" class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
-                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio1%20REN%C3%96VA%2B.png" alt="Testimonio 1 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B">
-                    </div>
-                </div>
-
-                <div data-action="openTestimonialLightbox(this)" class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in" style="transition-delay: 100ms;">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
-                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio2%20REN%C3%96VA%2B.png" alt="Testimonio 2 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B">
-                    </div>
-                </div>
-
-                <div data-action="openTestimonialLightbox(this)" class="testimonial-item renova glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in" style="transition-delay: 200ms;">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
-                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio3%20REN%C3%96VA%2B.png" alt="Testimonio 3 RENÖVA+" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/9b2c86?text=Renova%2B">
-                    </div>
-                </div>
-
-                <!-- Testimonios 24BURN -->
-                <div data-action="openTestimonialLightbox(this)" class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
-                        <img loading="lazy" decoding="async" src="Testimonios/Termimonio1%2024BURN%20Alvaro.png" alt="Testimonio Alvaro 24BURN" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/a3e635?text=Alvaro">
-                    </div>
-                </div>
-
-                <div data-action="openTestimonialLightbox(this)" class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in" style="transition-delay: 100ms;">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
-                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio2%2024BURN%20Ana.png" alt="Testimonio Ana 24BURN" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/a3e635?text=Ana">
-                    </div>
-                </div>
-
-                <div data-action="openTestimonialLightbox(this)" class="testimonial-item burn glass-panel p-2 rounded-2xl reveal group overflow-hidden cursor-zoom-in" style="transition-delay: 200ms;">
-                    <div class="relative overflow-hidden rounded-xl bg-black/30 h-72 flex items-center justify-center">
-                        <img loading="lazy" decoding="async" src="Testimonios/Testimonio3%2024BURN%20Damy.png" alt="Testimonio Damy 24BURN" class="max-h-full max-w-full object-contain testimonial-img transition-transform duration-300 group-hover:scale-105" data-fallback-src="https://placehold.co/600x400/0f172a/a3e635?text=Damy">
-                    </div>
-                </div>
-
-                <!-- Testimonios de texto -->
-                <div class="testimonial-item glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Carolina Guerrero</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Hola cariño, súper, me desinflama muchísimo, lo amé ❤️ Te encargaré el otro." · "Sí, lo amé, aparte que sabe rico" · "Siempre en ayunas"</p>
-                </div>
-
-                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Coni Morales</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Soy mañosa para tomar cosas y el sabor es muy rico. Antes estaba muy buena para comer y me ha ayudado mucho con eso. Lo tomo en la mañana en ayunas y me ha servido excelente."</p>
-                </div>
-
-                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Norma Vega</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Lo preparé con agua caliente, tres cucharitas llenas con el polvo. El color es del té negro y el sabor es muy agradable, es como tomar té con limón, dulce — no es necesario agregar azúcar ni endulzante. Al enfriarse sigue siendo muy rico."</p>
-                </div>
-
-                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Mónica Arriagada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"El té me ha servido muchísimo, mi cuerpo ha mejorado notablemente y no ando hinchada. Mi piel ya no está reseca y me han comentado mis cambios. Además, tengo muchísima energía, que es lo que más buscaba tener. Aquí ganaste una fiel clienta, ¡gracias!"</p>
-                </div>
-
-                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Cliente verificada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Ya creo que me quedan para dos tecitos más. Mi esposo también está consumiendo porque le da energía para el día." · "El 24BURN es súper potente, qué rico que ambos estén consumiendo el producto y que les esté ayudando."</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Lore</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Ya estoy viendo resultados y aún voy en mi primer bote. Mi carita está cambiando, tenía muchas manchas y los poros estaban súper abiertos. Ahora está mucho mejor, mi autoestima subió bastante."</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Carol Flores</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Colágeno excelente, ya no se me cae el pelo."</p>
-                </div>
-
-                <div class="testimonial-item renova burn glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Verónica</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Tomo el colágeno y el otro para bajar de peso, y me ha hecho súper bien."</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Paola</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Me compré el de colágeno y resveratrol y es genial."</p>
-                </div>
-
-                <div class="testimonial-item glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Mabel Vallejos</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">TikTok</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Es buenísimo, 100% recomendado."</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Cliente verificada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"El colágeno es buenísimo, se me han pasado los dolores musculares y me siento más activa."</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Cliente verificada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Estoy contenta con RENÖVA+, llevo 1 mes y 10 días, mi cepillo de pelo nada de pelos y mis uñas más firmes — fue un cambio muy rápido."</p>
-                </div>
-
-                <div class="testimonial-item glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Acuario</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Súper bueno, yo igual viendo resultados, ¡amo!"</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Sule</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">Instagram</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"A mí RENÖVA+ me ha permitido que mi cabello se caiga menos."</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Cliente verificada</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">WhatsApp</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Me creció harto el pelo, el brillo de la piel cambia al tiro, es cuático el producto."</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">quetzalcoalt6</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">TikTok Live</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Sí, el RENÖVA+ sí es muy bueno, y la piel cambió también, está súper tersa."</p>
-                </div>
-
-                <div class="testimonial-item renova glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Lily</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">TikTok Live</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Me favoreció con el cabello, la piel, el cutis — la he notado humectada."</p>
-                </div>
-
-                <div class="testimonial-item burn glass-panel p-6 rounded-2xl reveal flex flex-col">
-                    <div class="flex items-center justify-between mb-2"><span class="text-xs font-bold text-white">Mabel Vallejos</span><span class="text-[10px] text-gray-500 uppercase tracking-wide">TikTok Live</span></div>
-                    <div class="flex gap-0.5 mb-3 text-yellow-400 text-sm">★★★★★</div>
-                    <p class="text-gray-300 text-sm leading-relaxed">"Yo tomo el del tarrito y he bajado 13 kilos con ese."</p>
-                </div>
-            </div>
-
-            <div class="mt-12 text-center">
-                <a href="#" data-whatsapp-location="landing" data-whatsapp-message="¡Hola!%20He%20visto%20los%20testimonios%20de%20FWP%20y%20me%20gustaría%20iniciar%20mi%20proceso." target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-white/10 hover:bg-white hover:text-black border border-white/20 rounded-full font-bold transition-all">
-                    Inicia tu Transformación
-                </a>
-            </div>
         </div>
     </section>
 
@@ -1157,10 +921,10 @@
                 <div class="text-left">
                     <h4 class="text-white font-bold mb-4">Ecosistema</h4>
                     <ul class="space-y-2 text-sm text-gray-500">
-                        <li><a href="#productos-unitario" class="hover:text-white transition-colors">Productos</a></li><li><a href="#diagnostico" class="hover:text-white transition-colors">Protocolos</a></li>
+                        <li><a href="#productos" class="hover:text-white transition-colors">Productos</a></li><li><a href="#diagnostico" class="hover:text-white transition-colors">Protocolos</a></li>
                         <li><a href="#diagnostico" class="hover:text-white transition-colors">Tu Rutina</a></li>
                         <li><a href="#emprende" class="hover:text-white transition-colors">Compra mayorista</a></li>
-                        <li><a href="ingredientes.html" class="hover:text-white transition-colors">Ingredientes</a></li>
+                        <li><a href="productos.html" class="hover:text-white transition-colors">Productos en detalle</a></li>
                         <li><a href="#testimonios" class="hover:text-white transition-colors">Team FWP</a></li>
                     </ul>
                 </div>
@@ -1226,10 +990,10 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="assets/js/index.js?v=20261125h" defer></script>
-    <script src="assets/js/terms.js?v=20261125h" defer></script>
-    <script src="assets/js/checkout.js?v=20261125h" defer></script>
-    <script src="assets/js/hero-particles.js?v=20261125h" defer></script>
-    <script src="assets/js/cycle-countdown.js?v=20261125h" defer></script>
+    <script src="assets/js/index.js?v=20261125j" defer></script>
+    <script src="assets/js/terms.js?v=20261125j" defer></script>
+    <script src="assets/js/checkout.js?v=20261125j" defer></script>
+    <script src="assets/js/hero-particles.js?v=20261125j" defer></script>
+    <script src="assets/js/cycle-countdown.js?v=20261125j" defer></script>
 </body>
 </html>
